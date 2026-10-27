@@ -1,0 +1,25 @@
+本次入库验证记录
+
+1. python prototype/verify.py
+PASS：固定 Seed 可复现；整数矩形无重叠；Port 位于边界 Block 外侧边中心；接缝坐标、地貌和初始权限合法；封口、全部有效 Route、镜像位移、三条通路与六处奖励返回检查通过。
+
+2. python tools/verify_progress.py --replay
+PASS：受测源码 SHA-256 与原结果一致。
+PASS：独立检查全部 16 张合格地图，以及 4 张拒绝候选的真实奖励失败关系。
+PASS：60 个推荐制作任务的尺寸/职责配额、Port 边界 Block 坐标、地貌、权限及目标 Route 合法。
+PASS：全部 20 个 Seed 在临时目录重放，地图或拒绝候选逐字段等于原存档，原实验文件未被覆盖。
+
+271028 PASS；271029 PASS；271030 PASS；271031 FAIL；271032 PASS
+271033 PASS；271034 PASS；271035 PASS；271036 PASS；271037 PASS
+271038 PASS；271039 FAIL；271040 PASS；271041 PASS；271042 PASS
+271043 FAIL；271044 FAIL；271045 PASS；271046 PASS；271047 PASS
+
+上面的 FAIL 是应保留的原实验拒绝结果，验证通过代表它们被准确复现和识别，不代表生成器已消除这些失败。
+
+3. Python 源码语法及 README 相对链接检查
+PASS：源码可编译；README 指向的本仓库文件均存在。
+
+4. tools/export_png.py
+PASS：在临时目录通过系统 Chromium 将 port-detail.svg 导出为 1700×1150 PNG，没有覆盖实验原件。Playwright 仅用于可选预览导出。
+
+上述检查仅证明当前占位几何、数据和静态图关系；未进行真实 Godot 动作、接缝、镜像或封口物理认证。

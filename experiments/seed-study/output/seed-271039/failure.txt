@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/workspace/map-seed-study/run_batch.py", line 73, in worker
+    m=gen.build();generation=time.perf_counter()-started;gen.phase='independent_validation';metrics=verify(m)
+      ^^^^^^^^^^^
+  File "/workspace/map-seed-study/source/generate.py", line 194, in build
+    return self.finish()
+           ^^^^^^^^^^^^^
+  File "/workspace/map-seed-study/run_batch.py", line 68, in finish
+    def finish(self,*a,**kw):self.phase='boss_rewards_and_graph_validation';return super().finish(*a,**kw)
+                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/map-seed-study/source/generate.py", line 189, in finish
+    return assemble(self)
+           ^^^^^^^^^^^^^^
+  File "/workspace/map-seed-study/source/generate.py", line 242, in assemble
+    assert nodes and all('BOSS' in search(n) for n in nodes)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

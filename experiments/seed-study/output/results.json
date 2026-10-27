@@ -1,0 +1,711 @@
+{
+  "seeds": [
+    271028,
+    271029,
+    271030,
+    271031,
+    271032,
+    271033,
+    271034,
+    271035,
+    271036,
+    271037,
+    271038,
+    271039,
+    271040,
+    271041,
+    271042,
+    271043,
+    271044,
+    271045,
+    271046,
+    271047
+  ],
+  "source_sha256": {
+    "generate.py": "30bda7df8ea78296b772930737744af9c19c0a889a5bffa90430c85fdd2c5aed",
+    "model.py": "20288e91a47ac2bc60c80805a7bd7cd5831cd7df1b01b18b0d1aa3094431b598"
+  },
+  "per_seed_timeout_seconds": 90,
+  "retry_count": 0,
+  "results": [
+    {
+      "seed": 271028,
+      "status": "PASS",
+      "seconds": 1.4316,
+      "instances": 49,
+      "used_templates": 37,
+      "distinct_sizes": 18,
+      "connections": 61,
+      "cycles": 13,
+      "rewards": 6,
+      "active_port_endpoints": 122,
+      "offcentre_active_endpoints": 116,
+      "offset_horizontal_seams": 26,
+      "horizontal_seams": 35,
+      "mirrored": 20,
+      "closures": 67,
+      "one_way": 3,
+      "surfaces": {
+        "ROCK": 34,
+        "ONE_WAY_PLATFORM": 26,
+        "AIR": 1
+      },
+      "bounds_blocks": [
+        -16,
+        -21,
+        38,
+        10
+      ],
+      "search_expansions": 53449,
+      "main_paths": 3,
+      "rect_area": 774,
+      "bounding_box": [
+        54,
+        31
+      ],
+      "occupancy": 0.46236559139784944,
+      "closure_ratio": 0.3544973544973545,
+      "reachable_instances": 49,
+      "horizontal_offset_ratio": 0.7428571428571429,
+      "offcentre_ratio": 0.9508196721311475
+    },
+    {
+      "seed": 271029,
+      "status": "PASS",
+      "seconds": 1.3935,
+      "instances": 43,
+      "used_templates": 33,
+      "distinct_sizes": 19,
+      "connections": 61,
+      "cycles": 19,
+      "rewards": 6,
+      "active_port_endpoints": 122,
+      "offcentre_active_endpoints": 106,
+      "offset_horizontal_seams": 23,
+      "horizontal_seams": 34,
+      "mirrored": 17,
+      "closures": 54,
+      "one_way": 0,
+      "surfaces": {
+        "ONE_WAY_PLATFORM": 27,
+        "ROCK": 34
+      },
+      "bounds_blocks": [
+        -16,
+        -5,
+        36,
+        28
+      ],
+      "search_expansions": 49798,
+      "main_paths": 3,
+      "rect_area": 768,
+      "bounding_box": [
+        52,
+        33
+      ],
+      "occupancy": 0.44755244755244755,
+      "closure_ratio": 0.3068181818181818,
+      "reachable_instances": 43,
+      "horizontal_offset_ratio": 0.6764705882352942,
+      "offcentre_ratio": 0.8688524590163934
+    },
+    {
+      "seed": 271030,
+      "status": "PASS",
+      "seconds": 1.307,
+      "instances": 45,
+      "used_templates": 32,
+      "distinct_sizes": 18,
+      "connections": 59,
+      "cycles": 15,
+      "rewards": 6,
+      "active_port_endpoints": 118,
+      "offcentre_active_endpoints": 109,
+      "offset_horizontal_seams": 21,
+      "horizontal_seams": 29,
+      "mirrored": 26,
+      "closures": 61,
+      "one_way": 0,
+      "surfaces": {
+        "ONE_WAY_PLATFORM": 30,
+        "ROCK": 29
+      },
+      "bounds_blocks": [
+        -3,
+        -10,
+        37,
+        25
+      ],
+      "search_expansions": 52076,
+      "main_paths": 3,
+      "rect_area": 696,
+      "bounding_box": [
+        40,
+        35
+      ],
+      "occupancy": 0.49714285714285716,
+      "closure_ratio": 0.3407821229050279,
+      "reachable_instances": 45,
+      "horizontal_offset_ratio": 0.7241379310344828,
+      "offcentre_ratio": 0.923728813559322
+    },
+    {
+      "seed": 271031,
+      "status": "FAIL",
+      "seconds": 1.4554,
+      "phase": "boss_rewards_and_graph_validation",
+      "error": "AssertionError: ",
+      "trace": "Traceback (most recent call last):\n  File \"/workspace/map-seed-study/run_batch.py\", line 73, in worker\n    m=gen.build();generation=time.perf_counter()-started;gen.phase='independent_validation';metrics=verify(m)\n      ^^^^^^^^^^^\n  File \"/workspace/map-seed-study/source/generate.py\", line 194, in build\n    return self.finish()\n           ^^^^^^^^^^^^^\n  File \"/workspace/map-seed-study/run_batch.py\", line 68, in finish\n    def finish(self,*a,**kw):self.phase='boss_rewards_and_graph_validation';return super().finish(*a,**kw)\n                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/map-seed-study/source/generate.py\", line 189, in finish\n    return assemble(self)\n           ^^^^^^^^^^^^^^\n  File \"/workspace/map-seed-study/source/generate.py\", line 242, in assemble\n    assert nodes and all('BOSS' in search(n) for n in nodes)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+    },
+    {
+      "seed": 271032,
+      "status": "PASS",
+      "seconds": 1.6064,
+      "instances": 45,
+      "used_templates": 33,
+      "distinct_sizes": 20,
+      "connections": 63,
+      "cycles": 19,
+      "rewards": 6,
+      "active_port_endpoints": 126,
+      "offcentre_active_endpoints": 113,
+      "offset_horizontal_seams": 27,
+      "horizontal_seams": 36,
+      "mirrored": 24,
+      "closures": 55,
+      "one_way": 0,
+      "surfaces": {
+        "ROCK": 36,
+        "ONE_WAY_PLATFORM": 27
+      },
+      "bounds_blocks": [
+        -8,
+        -7,
+        28,
+        37
+      ],
+      "search_expansions": 55291,
+      "main_paths": 3,
+      "rect_area": 758,
+      "bounding_box": [
+        36,
+        44
+      ],
+      "occupancy": 0.47853535353535354,
+      "closure_ratio": 0.30386740331491713,
+      "reachable_instances": 45,
+      "horizontal_offset_ratio": 0.75,
+      "offcentre_ratio": 0.8968253968253969
+    },
+    {
+      "seed": 271033,
+      "status": "PASS",
+      "seconds": 1.467,
+      "instances": 47,
+      "used_templates": 37,
+      "distinct_sizes": 20,
+      "connections": 65,
+      "cycles": 19,
+      "rewards": 6,
+      "active_port_endpoints": 130,
+      "offcentre_active_endpoints": 115,
+      "offset_horizontal_seams": 20,
+      "horizontal_seams": 36,
+      "mirrored": 22,
+      "closures": 59,
+      "one_way": 3,
+      "surfaces": {
+        "ONE_WAY_PLATFORM": 29,
+        "ROCK": 35,
+        "AIR": 1
+      },
+      "bounds_blocks": [
+        -12,
+        -15,
+        38,
+        16
+      ],
+      "search_expansions": 52527,
+      "main_paths": 3,
+      "rect_area": 833,
+      "bounding_box": [
+        50,
+        31
+      ],
+      "occupancy": 0.5374193548387097,
+      "closure_ratio": 0.31216931216931215,
+      "reachable_instances": 47,
+      "horizontal_offset_ratio": 0.5555555555555556,
+      "offcentre_ratio": 0.8846153846153846
+    },
+    {
+      "seed": 271034,
+      "status": "PASS",
+      "seconds": 1.7062,
+      "instances": 45,
+      "used_templates": 34,
+      "distinct_sizes": 19,
+      "connections": 62,
+      "cycles": 18,
+      "rewards": 6,
+      "active_port_endpoints": 124,
+      "offcentre_active_endpoints": 111,
+      "offset_horizontal_seams": 21,
+      "horizontal_seams": 33,
+      "mirrored": 17,
+      "closures": 57,
+      "one_way": 0,
+      "surfaces": {
+        "ONE_WAY_PLATFORM": 29,
+        "ROCK": 33
+      },
+      "bounds_blocks": [
+        -5,
+        -9,
+        39,
+        25
+      ],
+      "search_expansions": 56374,
+      "main_paths": 3,
+      "rect_area": 756,
+      "bounding_box": [
+        44,
+        34
+      ],
+      "occupancy": 0.5053475935828877,
+      "closure_ratio": 0.3149171270718232,
+      "reachable_instances": 45,
+      "horizontal_offset_ratio": 0.6363636363636364,
+      "offcentre_ratio": 0.8951612903225806
+    },
+    {
+      "seed": 271035,
+      "status": "PASS",
+      "seconds": 1.3616,
+      "instances": 44,
+      "used_templates": 34,
+      "distinct_sizes": 19,
+      "connections": 61,
+      "cycles": 18,
+      "rewards": 6,
+      "active_port_endpoints": 122,
+      "offcentre_active_endpoints": 109,
+      "offset_horizontal_seams": 21,
+      "horizontal_seams": 31,
+      "mirrored": 20,
+      "closures": 57,
+      "one_way": 0,
+      "surfaces": {
+        "ROCK": 31,
+        "ONE_WAY_PLATFORM": 30
+      },
+      "bounds_blocks": [
+        -11,
+        -6,
+        33,
+        26
+      ],
+      "search_expansions": 51291,
+      "main_paths": 3,
+      "rect_area": 788,
+      "bounding_box": [
+        44,
+        32
+      ],
+      "occupancy": 0.5596590909090909,
+      "closure_ratio": 0.31843575418994413,
+      "reachable_instances": 44,
+      "horizontal_offset_ratio": 0.6774193548387096,
+      "offcentre_ratio": 0.8934426229508197
+    },
+    {
+      "seed": 271036,
+      "status": "PASS",
+      "seconds": 1.3709,
+      "instances": 48,
+      "used_templates": 36,
+      "distinct_sizes": 18,
+      "connections": 65,
+      "cycles": 18,
+      "rewards": 6,
+      "active_port_endpoints": 130,
+      "offcentre_active_endpoints": 116,
+      "offset_horizontal_seams": 26,
+      "horizontal_seams": 36,
+      "mirrored": 20,
+      "closures": 64,
+      "one_way": 3,
+      "surfaces": {
+        "ROCK": 35,
+        "ONE_WAY_PLATFORM": 29,
+        "AIR": 1
+      },
+      "bounds_blocks": [
+        -6,
+        -9,
+        49,
+        24
+      ],
+      "search_expansions": 51465,
+      "main_paths": 3,
+      "rect_area": 871,
+      "bounding_box": [
+        55,
+        33
+      ],
+      "occupancy": 0.47988980716253443,
+      "closure_ratio": 0.32989690721649484,
+      "reachable_instances": 48,
+      "horizontal_offset_ratio": 0.7222222222222222,
+      "offcentre_ratio": 0.8923076923076924
+    },
+    {
+      "seed": 271037,
+      "status": "PASS",
+      "seconds": 1.3846,
+      "instances": 45,
+      "used_templates": 37,
+      "distinct_sizes": 19,
+      "connections": 62,
+      "cycles": 18,
+      "rewards": 6,
+      "active_port_endpoints": 124,
+      "offcentre_active_endpoints": 111,
+      "offset_horizontal_seams": 26,
+      "horizontal_seams": 31,
+      "mirrored": 17,
+      "closures": 60,
+      "one_way": 0,
+      "surfaces": {
+        "ONE_WAY_PLATFORM": 31,
+        "ROCK": 31
+      },
+      "bounds_blocks": [
+        -4,
+        -15,
+        42,
+        22
+      ],
+      "search_expansions": 53023,
+      "main_paths": 3,
+      "rect_area": 822,
+      "bounding_box": [
+        46,
+        37
+      ],
+      "occupancy": 0.48296122209165687,
+      "closure_ratio": 0.32608695652173914,
+      "reachable_instances": 45,
+      "horizontal_offset_ratio": 0.8387096774193549,
+      "offcentre_ratio": 0.8951612903225806
+    },
+    {
+      "seed": 271038,
+      "status": "PASS",
+      "seconds": 1.5535,
+      "instances": 45,
+      "used_templates": 33,
+      "distinct_sizes": 19,
+      "connections": 62,
+      "cycles": 18,
+      "rewards": 6,
+      "active_port_endpoints": 124,
+      "offcentre_active_endpoints": 115,
+      "offset_horizontal_seams": 20,
+      "horizontal_seams": 33,
+      "mirrored": 19,
+      "closures": 62,
+      "one_way": 0,
+      "surfaces": {
+        "ROCK": 33,
+        "ONE_WAY_PLATFORM": 29
+      },
+      "bounds_blocks": [
+        -9,
+        -5,
+        21,
+        40
+      ],
+      "search_expansions": 51715,
+      "main_paths": 3,
+      "rect_area": 794,
+      "bounding_box": [
+        30,
+        45
+      ],
+      "occupancy": 0.5881481481481482,
+      "closure_ratio": 0.3333333333333333,
+      "reachable_instances": 45,
+      "horizontal_offset_ratio": 0.6060606060606061,
+      "offcentre_ratio": 0.9274193548387096
+    },
+    {
+      "seed": 271039,
+      "status": "FAIL",
+      "seconds": 1.4579,
+      "phase": "boss_rewards_and_graph_validation",
+      "error": "AssertionError: ",
+      "trace": "Traceback (most recent call last):\n  File \"/workspace/map-seed-study/run_batch.py\", line 73, in worker\n    m=gen.build();generation=time.perf_counter()-started;gen.phase='independent_validation';metrics=verify(m)\n      ^^^^^^^^^^^\n  File \"/workspace/map-seed-study/source/generate.py\", line 194, in build\n    return self.finish()\n           ^^^^^^^^^^^^^\n  File \"/workspace/map-seed-study/run_batch.py\", line 68, in finish\n    def finish(self,*a,**kw):self.phase='boss_rewards_and_graph_validation';return super().finish(*a,**kw)\n                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/map-seed-study/source/generate.py\", line 189, in finish\n    return assemble(self)\n           ^^^^^^^^^^^^^^\n  File \"/workspace/map-seed-study/source/generate.py\", line 242, in assemble\n    assert nodes and all('BOSS' in search(n) for n in nodes)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+    },
+    {
+      "seed": 271040,
+      "status": "PASS",
+      "seconds": 1.3847,
+      "instances": 44,
+      "used_templates": 31,
+      "distinct_sizes": 18,
+      "connections": 62,
+      "cycles": 19,
+      "rewards": 6,
+      "active_port_endpoints": 124,
+      "offcentre_active_endpoints": 114,
+      "offset_horizontal_seams": 20,
+      "horizontal_seams": 34,
+      "mirrored": 23,
+      "closures": 54,
+      "one_way": 0,
+      "surfaces": {
+        "ONE_WAY_PLATFORM": 28,
+        "ROCK": 34
+      },
+      "bounds_blocks": [
+        -13,
+        -11,
+        36,
+        18
+      ],
+      "search_expansions": 51755,
+      "main_paths": 3,
+      "rect_area": 780,
+      "bounding_box": [
+        49,
+        29
+      ],
+      "occupancy": 0.5489092188599578,
+      "closure_ratio": 0.30337078651685395,
+      "reachable_instances": 44,
+      "horizontal_offset_ratio": 0.5882352941176471,
+      "offcentre_ratio": 0.9193548387096774
+    },
+    {
+      "seed": 271041,
+      "status": "PASS",
+      "seconds": 1.545,
+      "instances": 48,
+      "used_templates": 36,
+      "distinct_sizes": 18,
+      "connections": 67,
+      "cycles": 20,
+      "rewards": 6,
+      "active_port_endpoints": 134,
+      "offcentre_active_endpoints": 123,
+      "offset_horizontal_seams": 28,
+      "horizontal_seams": 39,
+      "mirrored": 25,
+      "closures": 53,
+      "one_way": 3,
+      "surfaces": {
+        "ONE_WAY_PLATFORM": 28,
+        "ROCK": 38,
+        "AIR": 1
+      },
+      "bounds_blocks": [
+        -5,
+        -28,
+        33,
+        9
+      ],
+      "search_expansions": 53036,
+      "main_paths": 3,
+      "rect_area": 775,
+      "bounding_box": [
+        38,
+        37
+      ],
+      "occupancy": 0.5512091038406828,
+      "closure_ratio": 0.28342245989304815,
+      "reachable_instances": 48,
+      "horizontal_offset_ratio": 0.717948717948718,
+      "offcentre_ratio": 0.917910447761194
+    },
+    {
+      "seed": 271042,
+      "status": "PASS",
+      "seconds": 1.2947,
+      "instances": 46,
+      "used_templates": 35,
+      "distinct_sizes": 18,
+      "connections": 65,
+      "cycles": 20,
+      "rewards": 6,
+      "active_port_endpoints": 130,
+      "offcentre_active_endpoints": 115,
+      "offset_horizontal_seams": 24,
+      "horizontal_seams": 40,
+      "mirrored": 23,
+      "closures": 48,
+      "one_way": 3,
+      "surfaces": {
+        "ONE_WAY_PLATFORM": 25,
+        "ROCK": 39,
+        "AIR": 1
+      },
+      "bounds_blocks": [
+        -11,
+        -18,
+        27,
+        19
+      ],
+      "search_expansions": 49843,
+      "main_paths": 3,
+      "rect_area": 745,
+      "bounding_box": [
+        38,
+        37
+      ],
+      "occupancy": 0.5298719772403983,
+      "closure_ratio": 0.2696629213483146,
+      "reachable_instances": 46,
+      "horizontal_offset_ratio": 0.6,
+      "offcentre_ratio": 0.8846153846153846
+    },
+    {
+      "seed": 271043,
+      "status": "FAIL",
+      "seconds": 1.5177,
+      "phase": "boss_rewards_and_graph_validation",
+      "error": "AssertionError: ",
+      "trace": "Traceback (most recent call last):\n  File \"/workspace/map-seed-study/run_batch.py\", line 73, in worker\n    m=gen.build();generation=time.perf_counter()-started;gen.phase='independent_validation';metrics=verify(m)\n      ^^^^^^^^^^^\n  File \"/workspace/map-seed-study/source/generate.py\", line 194, in build\n    return self.finish()\n           ^^^^^^^^^^^^^\n  File \"/workspace/map-seed-study/run_batch.py\", line 68, in finish\n    def finish(self,*a,**kw):self.phase='boss_rewards_and_graph_validation';return super().finish(*a,**kw)\n                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/map-seed-study/source/generate.py\", line 189, in finish\n    return assemble(self)\n           ^^^^^^^^^^^^^^\n  File \"/workspace/map-seed-study/source/generate.py\", line 242, in assemble\n    assert nodes and all('BOSS' in search(n) for n in nodes)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+    },
+    {
+      "seed": 271044,
+      "status": "FAIL",
+      "seconds": 1.3531,
+      "phase": "boss_rewards_and_graph_validation",
+      "error": "AssertionError: ",
+      "trace": "Traceback (most recent call last):\n  File \"/workspace/map-seed-study/run_batch.py\", line 73, in worker\n    m=gen.build();generation=time.perf_counter()-started;gen.phase='independent_validation';metrics=verify(m)\n      ^^^^^^^^^^^\n  File \"/workspace/map-seed-study/source/generate.py\", line 194, in build\n    return self.finish()\n           ^^^^^^^^^^^^^\n  File \"/workspace/map-seed-study/run_batch.py\", line 68, in finish\n    def finish(self,*a,**kw):self.phase='boss_rewards_and_graph_validation';return super().finish(*a,**kw)\n                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/map-seed-study/source/generate.py\", line 189, in finish\n    return assemble(self)\n           ^^^^^^^^^^^^^^\n  File \"/workspace/map-seed-study/source/generate.py\", line 242, in assemble\n    assert nodes and all('BOSS' in search(n) for n in nodes)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+    },
+    {
+      "seed": 271045,
+      "status": "PASS",
+      "seconds": 1.3381,
+      "instances": 46,
+      "used_templates": 35,
+      "distinct_sizes": 18,
+      "connections": 63,
+      "cycles": 18,
+      "rewards": 6,
+      "active_port_endpoints": 126,
+      "offcentre_active_endpoints": 117,
+      "offset_horizontal_seams": 22,
+      "horizontal_seams": 36,
+      "mirrored": 18,
+      "closures": 58,
+      "one_way": 3,
+      "surfaces": {
+        "ROCK": 35,
+        "ONE_WAY_PLATFORM": 27,
+        "AIR": 1
+      },
+      "bounds_blocks": [
+        -30,
+        -11,
+        25,
+        18
+      ],
+      "search_expansions": 52081,
+      "main_paths": 3,
+      "rect_area": 812,
+      "bounding_box": [
+        55,
+        29
+      ],
+      "occupancy": 0.509090909090909,
+      "closure_ratio": 0.31521739130434784,
+      "reachable_instances": 46,
+      "horizontal_offset_ratio": 0.6111111111111112,
+      "offcentre_ratio": 0.9285714285714286
+    },
+    {
+      "seed": 271046,
+      "status": "PASS",
+      "seconds": 1.4322,
+      "instances": 48,
+      "used_templates": 37,
+      "distinct_sizes": 17,
+      "connections": 66,
+      "cycles": 19,
+      "rewards": 6,
+      "active_port_endpoints": 132,
+      "offcentre_active_endpoints": 122,
+      "offset_horizontal_seams": 23,
+      "horizontal_seams": 36,
+      "mirrored": 23,
+      "closures": 55,
+      "one_way": 3,
+      "surfaces": {
+        "ROCK": 35,
+        "ONE_WAY_PLATFORM": 30,
+        "AIR": 1
+      },
+      "bounds_blocks": [
+        -9,
+        -9,
+        34,
+        29
+      ],
+      "search_expansions": 53204,
+      "main_paths": 3,
+      "rect_area": 763,
+      "bounding_box": [
+        43,
+        38
+      ],
+      "occupancy": 0.4669522643818849,
+      "closure_ratio": 0.29411764705882354,
+      "reachable_instances": 48,
+      "horizontal_offset_ratio": 0.6388888888888888,
+      "offcentre_ratio": 0.9242424242424242
+    },
+    {
+      "seed": 271047,
+      "status": "PASS",
+      "seconds": 1.3342,
+      "instances": 45,
+      "used_templates": 31,
+      "distinct_sizes": 17,
+      "connections": 65,
+      "cycles": 21,
+      "rewards": 6,
+      "active_port_endpoints": 130,
+      "offcentre_active_endpoints": 118,
+      "offset_horizontal_seams": 25,
+      "horizontal_seams": 33,
+      "mirrored": 21,
+      "closures": 52,
+      "one_way": 0,
+      "surfaces": {
+        "ROCK": 33,
+        "ONE_WAY_PLATFORM": 32
+      },
+      "bounds_blocks": [
+        -2,
+        -14,
+        46,
+        19
+      ],
+      "search_expansions": 50581,
+      "main_paths": 3,
+      "rect_area": 756,
+      "bounding_box": [
+        48,
+        33
+      ],
+      "occupancy": 0.4772727272727273,
+      "closure_ratio": 0.2857142857142857,
+      "reachable_instances": 45,
+      "horizontal_offset_ratio": 0.7575757575757576,
+      "offcentre_ratio": 0.9076923076923077
+    }
+  ]
+}

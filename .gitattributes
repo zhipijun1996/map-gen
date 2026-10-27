@@ -1,0 +1,11 @@
+# Preserve frozen evidence and source hashes byte-for-byte on checkout.
+experiments/seed-study/source/** -text
+experiments/seed-study/output/** -text
+prototype/output/** -text
+docs/MAP_FOUNDATION.md -text whitespace=-blank-at-eol
+docs/MAP_GENERATION_GUIDE.md -text whitespace=-blank-at-eol
+
+# Archived CSV exports intentionally use UTF-8 BOM and CRLF.
+*.csv -text whitespace=cr-at-eol
+# Original exception messages in this result table include a trailing space.
+experiments/seed-study/output/results.csv -text whitespace=-blank-at-eol,cr-at-eol

@@ -1,0 +1,61 @@
+﻿id,width,height,role,mechanic_target,difficulty_target,ports,route_targets,return_mode,status
+P01,2,2,穿越,jump,1,"L LEFT block=[0, 1] ROCK INOUT; R RIGHT block=[1, 1] ROCK INOUT",L->R; R->L,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P02,2,2,穿越,recoil,2,"L LEFT block=[0, 1] ROCK INOUT; R RIGHT block=[1, 0] ROCK INOUT",L->R; R->L,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P03,2,2,穿越,grapple,3,"L LEFT block=[0, 0] ROCK INOUT; R RIGHT block=[1, 1] ROCK INOUT; U TOP block=[0, 0] ONE_WAY_PLATFORM INOUT",L->R; R->L; L->U; U->L; R->U; U->R,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P04,2,2,奖励,jump,1,"P LEFT block=[0, 1] ROCK INOUT",P->P,single_port_roundtrip,AUTHORING_PROPOSAL_NOT_TESTED
+P05,3,2,穿越,double_jump,4,"L LEFT block=[0, 1] ROCK INOUT; R RIGHT block=[2, 1] ROCK INOUT",L->R; R->L,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P06,3,2,穿越,jump,1,"L LEFT block=[0, 1] ROCK INOUT; R RIGHT block=[2, 0] ROCK INOUT",L->R; R->L,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P07,3,2,穿越,recoil,2,"L LEFT block=[0, 0] ROCK INOUT; R RIGHT block=[2, 1] ROCK INOUT; U TOP block=[1, 0] ONE_WAY_PLATFORM INOUT",L->R; R->L; L->U; U->L; R->U; U->R,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P08,3,2,奖励,recoil,2,"P RIGHT block=[2, 1] ROCK INOUT",P->P,single_port_roundtrip,AUTHORING_PROPOSAL_NOT_TESTED
+P09,2,3,穿越,grapple,3,"U TOP block=[1, 0] ONE_WAY_PLATFORM INOUT; D BOTTOM block=[1, 2] ONE_WAY_PLATFORM INOUT",U->D; D->U,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P10,2,3,穿越,double_jump,4,"U TOP block=[0, 0] ONE_WAY_PLATFORM INOUT; D BOTTOM block=[1, 2] ONE_WAY_PLATFORM INOUT",U->D; D->U,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P11,2,3,穿越,jump,1,"U TOP block=[1, 0] ONE_WAY_PLATFORM INOUT; D BOTTOM block=[0, 2] ONE_WAY_PLATFORM INOUT; L LEFT block=[0, 1] ROCK INOUT",U->D; D->U; U->L; L->U; D->L; L->D,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P12,2,3,奖励,grapple,3,"P TOP block=[1, 0] ONE_WAY_PLATFORM INOUT",P->P,single_port_roundtrip,AUTHORING_PROPOSAL_NOT_TESTED
+P13,4,3,穿越,recoil,2,"L LEFT block=[0, 2] ROCK INPUT; R RIGHT block=[3, 0] AIR OUTPUT",L->R,one_way_air_output,AUTHORING_PROPOSAL_NOT_TESTED
+P14,4,3,穿越,grapple,3,"L LEFT block=[0, 0] AIR INPUT; R RIGHT block=[3, 2] ROCK OUTPUT",L->R,one_way_air_input,AUTHORING_PROPOSAL_NOT_TESTED
+P15,4,3,穿越,double_jump,4,"L LEFT block=[0, 0] ROCK INOUT; R RIGHT block=[3, 1] ROCK INOUT; U TOP block=[2, 0] ONE_WAY_PLATFORM INOUT",L->R; R->L; L->U; U->L; R->U; U->R,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P16,4,3,穿越,jump,1,"L LEFT block=[0, 2] ROCK INOUT; R RIGHT block=[3, 0] ROCK INOUT",L->R; R->L,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P17,4,3,穿越,recoil,2,"L LEFT block=[0, 1] ROCK INOUT; U TOP block=[3, 0] ONE_WAY_PLATFORM INOUT",L->U; U->L,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P18,4,3,穿越,grapple,3,"L LEFT block=[0, 1] ROCK INOUT; D BOTTOM block=[0, 2] ONE_WAY_PLATFORM INOUT; U TOP block=[2, 0] ONE_WAY_PLATFORM INOUT",L->D; D->L; L->U; U->L; D->U; U->D,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P19,4,3,穿越,double_jump,4,"L LEFT block=[0, 0] ROCK INOUT; R RIGHT block=[3, 2] ROCK INOUT; U TOP block=[2, 0] ONE_WAY_PLATFORM INOUT",L->R; R->L; L->U; U->L; R->U; U->R,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P20,4,3,枢纽,jump,1,"L LEFT block=[0, 1] ROCK INOUT; R RIGHT block=[3, 1] ROCK INOUT; U TOP block=[2, 0] ONE_WAY_PLATFORM INOUT; D BOTTOM block=[1, 2] ONE_WAY_PLATFORM INOUT",L->R; R->L; L->U; U->L; R->U; U->R; L->D; D->L; R->D; D->R,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P21,4,3,奖励,double_jump,4,"P BOTTOM block=[2, 2] ONE_WAY_PLATFORM INOUT",P->P,single_port_roundtrip,AUTHORING_PROPOSAL_NOT_TESTED
+P22,3,4,穿越,jump,1,"U TOP block=[1, 0] ONE_WAY_PLATFORM INOUT; D BOTTOM block=[1, 3] ONE_WAY_PLATFORM INOUT",U->D; D->U,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P23,3,4,穿越,recoil,2,"U TOP block=[0, 0] ONE_WAY_PLATFORM INOUT; D BOTTOM block=[1, 3] ONE_WAY_PLATFORM INOUT; L LEFT block=[0, 1] ROCK INOUT",U->D; D->U; U->L; L->U; D->L; L->D,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P24,3,4,穿越,grapple,3,"U TOP block=[2, 0] ONE_WAY_PLATFORM INOUT; D BOTTOM block=[0, 3] ONE_WAY_PLATFORM INOUT",U->D; D->U,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P25,3,4,穿越,recoil,4,"L LEFT block=[0, 3] ROCK INPUT; R RIGHT block=[2, 0] AIR OUTPUT",L->R,one_way_air_output,AUTHORING_PROPOSAL_NOT_TESTED
+P26,3,4,穿越,grapple,1,"L LEFT block=[0, 0] AIR INPUT; R RIGHT block=[2, 3] ROCK OUTPUT",L->R,one_way_air_input,AUTHORING_PROPOSAL_NOT_TESTED
+P27,3,4,穿越,recoil,2,"U TOP block=[1, 0] ONE_WAY_PLATFORM INOUT; D BOTTOM block=[1, 3] ONE_WAY_PLATFORM INOUT",U->D; D->U,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P28,3,4,穿越,grapple,3,"U TOP block=[0, 0] ONE_WAY_PLATFORM INOUT; D BOTTOM block=[1, 3] ONE_WAY_PLATFORM INOUT",U->D; D->U,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P29,3,4,枢纽,recoil,2,"L LEFT block=[0, 1] ROCK INOUT; R RIGHT block=[2, 2] ROCK INOUT; U TOP block=[1, 0] ONE_WAY_PLATFORM INOUT; D BOTTOM block=[1, 3] ONE_WAY_PLATFORM INOUT",L->R; R->L; L->U; U->L; R->U; U->R; L->D; D->L; R->D; D->R; U->D; D->U,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P30,3,4,奖励,jump,1,"P LEFT block=[0, 2] ROCK INOUT",P->P,single_port_roundtrip,AUTHORING_PROPOSAL_NOT_TESTED
+P31,5,3,穿越,double_jump,4,"L LEFT block=[0, 1] ROCK INOUT; R RIGHT block=[4, 1] ROCK INOUT; U TOP block=[3, 0] ONE_WAY_PLATFORM INOUT",L->R; R->L; L->U; U->L; R->U; U->R,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P32,5,3,穿越,jump,1,"L LEFT block=[0, 2] ROCK INOUT; R RIGHT block=[4, 1] ROCK INOUT",L->R; R->L,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P33,5,3,穿越,recoil,2,"L LEFT block=[0, 0] ROCK INOUT; R RIGHT block=[4, 1] ROCK INOUT",L->R; R->L,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P34,5,3,奖励,recoil,2,"L LEFT block=[0, 2] ROCK INPUT; R RIGHT block=[4, 0] ROCK OUTPUT",L->R,one_way_loop_return,AUTHORING_PROPOSAL_NOT_TESTED
+P35,6,3,穿越,grapple,3,"L LEFT block=[0, 1] ROCK INOUT; R RIGHT block=[5, 1] ROCK INOUT; U TOP block=[4, 0] ONE_WAY_PLATFORM INOUT",L->R; R->L; L->U; U->L; R->U; U->R,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P36,6,3,穿越,double_jump,4,"L LEFT block=[0, 2] ROCK INOUT; R RIGHT block=[5, 1] ROCK INOUT",L->R; R->L,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P37,6,3,穿越,jump,1,"L LEFT block=[0, 0] ROCK INOUT; R RIGHT block=[5, 1] ROCK INOUT",L->R; R->L,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P38,6,3,枢纽,grapple,3,"L LEFT block=[0, 1] ROCK INOUT; R RIGHT block=[5, 1] ROCK INOUT; U TOP block=[4, 0] ONE_WAY_PLATFORM INOUT; D BOTTOM block=[1, 2] ONE_WAY_PLATFORM INOUT; L2 LEFT block=[0, 2] ROCK INOUT",L->R; R->L; L->U; U->L; R->U; U->R; L->D; D->L; R->D; D->R; L2->R; R->L2; L2->U; U->L2,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P39,3,5,穿越,recoil,2,"U TOP block=[1, 0] ONE_WAY_PLATFORM INOUT; D BOTTOM block=[1, 4] ONE_WAY_PLATFORM INOUT; L LEFT block=[0, 1] ROCK INOUT",U->D; D->U; U->L; L->U; D->L; L->D,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P40,3,5,穿越,grapple,3,"U TOP block=[0, 0] ONE_WAY_PLATFORM INOUT; D BOTTOM block=[1, 4] ONE_WAY_PLATFORM INOUT",U->D; D->U,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P41,3,5,奖励,grapple,3,"L LEFT block=[0, 4] ROCK INPUT; R RIGHT block=[2, 0] ROCK OUTPUT",L->R,one_way_loop_return,AUTHORING_PROPOSAL_NOT_TESTED
+P42,3,6,穿越,double_jump,4,"U TOP block=[1, 0] ONE_WAY_PLATFORM INOUT; D BOTTOM block=[1, 5] ONE_WAY_PLATFORM INOUT",U->D; D->U,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P43,3,6,穿越,jump,1,"U TOP block=[0, 0] ONE_WAY_PLATFORM INOUT; D BOTTOM block=[1, 5] ONE_WAY_PLATFORM INOUT; L LEFT block=[0, 1] ROCK INOUT",U->D; D->U; U->L; L->U; D->L; L->D,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P44,3,6,枢纽,double_jump,4,"L LEFT block=[0, 1] ROCK INOUT; R RIGHT block=[2, 4] ROCK INOUT; U TOP block=[1, 0] ONE_WAY_PLATFORM INOUT; D BOTTOM block=[1, 5] ONE_WAY_PLATFORM INOUT",L->R; R->L; L->U; U->L; R->U; U->R; L->D; D->L; R->D; D->R; U->D; D->U,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P45,3,6,奖励,double_jump,4,"U TOP block=[0, 0] ONE_WAY_PLATFORM INPUT; R RIGHT block=[2, 5] ROCK OUTPUT",U->R,cross_route_rejoin,AUTHORING_PROPOSAL_NOT_TESTED
+P46,4,4,枢纽,jump,1,"L LEFT block=[0, 1] ROCK INOUT; R RIGHT block=[3, 2] ROCK INOUT; U TOP block=[2, 0] ONE_WAY_PLATFORM INOUT; D BOTTOM block=[1, 3] ONE_WAY_PLATFORM INOUT",L->R; R->L; L->U; U->L; R->U; U->R; L->D; D->L; R->D; D->R,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P47,4,4,枢纽,recoil,2,"L LEFT block=[0, 1] ROCK INOUT; R RIGHT block=[3, 2] ROCK INOUT; U TOP block=[2, 0] ONE_WAY_PLATFORM INOUT; D BOTTOM block=[1, 3] ONE_WAY_PLATFORM INOUT; L2 LEFT block=[0, 3] ROCK INOUT",L->R; R->L; L->U; U->L; R->U; U->R; L->D; D->L; R->D; D->R; L2->R; R->L2; L2->U; U->L2; U->D; D->U,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P48,4,4,奖励,jump,1,"U TOP block=[0, 0] ONE_WAY_PLATFORM INPUT; R RIGHT block=[3, 3] ROCK OUTPUT",U->R,cross_route_rejoin,AUTHORING_PROPOSAL_NOT_TESTED
+P49,5,4,枢纽,grapple,3,"L LEFT block=[0, 1] ROCK INOUT; R RIGHT block=[4, 2] ROCK INOUT; U TOP block=[3, 0] ONE_WAY_PLATFORM INOUT; D BOTTOM block=[1, 3] ONE_WAY_PLATFORM INOUT",L->R; R->L; L->U; U->L; R->U; U->R; L->D; D->L; R->D; D->R,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P50,5,4,枢纽,double_jump,4,"L LEFT block=[0, 1] ROCK INOUT; R RIGHT block=[4, 2] ROCK INOUT; U TOP block=[3, 0] ONE_WAY_PLATFORM INOUT; D BOTTOM block=[1, 3] ONE_WAY_PLATFORM INOUT",L->R; R->L; L->U; U->L; R->U; U->R; L->D; D->L; R->D; D->R; U->D; D->U,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P51,5,4,开阔,jump,1,"L LEFT block=[0, 1] ROCK INOUT; R RIGHT block=[4, 2] ROCK INOUT; U TOP block=[3, 0] ONE_WAY_PLATFORM INOUT; D BOTTOM block=[1, 3] ONE_WAY_PLATFORM INOUT",L->R; R->L; L->U; U->L; R->U; U->R; L->D; D->L; R->D; D->R,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P52,6,4,枢纽,jump,1,"L LEFT block=[0, 1] ROCK INOUT; R RIGHT block=[5, 2] ROCK INOUT; U TOP block=[4, 0] ONE_WAY_PLATFORM INOUT; D BOTTOM block=[1, 3] ONE_WAY_PLATFORM INOUT; L2 LEFT block=[0, 3] ROCK INOUT",L->R; R->L; L->U; U->L; R->U; U->R; L->D; D->L; R->D; D->R; L2->R; R->L2; L2->U; U->L2,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P53,6,4,开阔,recoil,2,"L LEFT block=[0, 1] ROCK INOUT; R RIGHT block=[5, 2] ROCK INOUT; U TOP block=[4, 0] ONE_WAY_PLATFORM INOUT; D BOTTOM block=[1, 3] ONE_WAY_PLATFORM INOUT",L->R; R->L; L->U; U->L; R->U; U->R; L->D; D->L; R->D; D->R; U->D; D->U,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P54,6,4,开阔,grapple,3,"L LEFT block=[0, 1] ROCK INOUT; R RIGHT block=[5, 2] ROCK INOUT; U TOP block=[4, 0] ONE_WAY_PLATFORM INOUT; D BOTTOM block=[1, 3] ONE_WAY_PLATFORM INOUT; L2 LEFT block=[0, 3] ROCK INOUT",L->R; R->L; L->U; U->L; R->U; U->R; L->D; D->L; R->D; D->R; L2->R; R->L2; L2->U; U->L2,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P55,6,5,开阔,double_jump,4,"L LEFT block=[0, 1] ROCK INOUT; R RIGHT block=[5, 3] ROCK INOUT; U TOP block=[4, 0] ONE_WAY_PLATFORM INOUT; D BOTTOM block=[1, 4] ONE_WAY_PLATFORM INOUT",L->R; R->L; L->U; U->L; R->U; U->R; L->D; D->L; R->D; D->R; U->D; D->U,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P56,6,5,开阔,jump,1,"L LEFT block=[0, 1] ROCK INOUT; R RIGHT block=[5, 3] ROCK INOUT; U TOP block=[4, 0] ONE_WAY_PLATFORM INOUT; D BOTTOM block=[1, 4] ONE_WAY_PLATFORM INOUT",L->R; R->L; L->U; U->L; R->U; U->R; L->D; D->L; R->D; D->R,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P57,6,6,开阔,recoil,2,"L LEFT block=[0, 1] ROCK INOUT; R RIGHT block=[5, 4] ROCK INOUT; U TOP block=[4, 0] ONE_WAY_PLATFORM INOUT; D BOTTOM block=[1, 5] ONE_WAY_PLATFORM INOUT; L2 LEFT block=[0, 5] ROCK INOUT",L->R; R->L; L->U; U->L; R->U; U->R; L->D; D->L; R->D; D->R; L2->R; R->L2; L2->U; U->L2; U->D; D->U,bidirectional,AUTHORING_PROPOSAL_NOT_TESTED
+P58,6,6,起点,jump,1,"R RIGHT block=[5, 3] ROCK OUTPUT",,spawn_anchor,AUTHORING_PROPOSAL_NOT_TESTED
+P59,8,6,Boss,jump,1,"L LEFT block=[0, 3] ROCK INPUT",,boss_anchor,AUTHORING_PROPOSAL_NOT_TESTED
+P60,10,6,Boss,recoil,2,"L LEFT block=[0, 3] ROCK INPUT",,boss_anchor,AUTHORING_PROPOSAL_NOT_TESTED

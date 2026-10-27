@@ -1,0 +1,35 @@
+失序之钟 / Map Study 02 / Seed 271028
+
+修订重点：
+没有预先固定水平路线带、Module 行列或 Boss 坐标。
+预定义模板库包含 18 种基础矩形尺寸，边界 Port 由具体 Block 索引决定。
+相对两边通常使用不同的 Block 偏移；部分边具有多个 Port。
+从已有可用 Port 向外生长：origin_B = (world2_A - local2_B) / 2。
+先检查整数坐标与不重叠，再通过额外精确匹配和有界 Beam Search 闭环。
+Boss 和奖励从合法前沿选择放置；AIR 支路必须重新接回既有网络。
+
+本 Seed：49 实例、37 模板、18 尺寸、61 连接，6 奖励、20 镜像、67 未用 Port 封口。
+122 个已用 Port 端点中 116 个不在 Module 边中点。
+35 处左右接口连接中 26 处相邻 Module 的上下边界发生错层。
+ROCK 34、ONE_WAY_PLATFORM 26、AIR 1；3 条初始单向连接。
+13 是忽略方向和内部 Route 后的几何邻接图独立环数量，不表示 13 个可任意双向走的实际环。
+实际有向图包含全部有效 Route；查出三条 Start 到 Boss 的通路示例，不宣称三种成熟玩法路线。
+
+查看：
+map.png / map.svg：总体布局、Block 网格、模板编号和接缝编号。
+port-detail.png / port-detail.svg：真实 C33 接缝的边界 Block 和坐标推导。
+module-atlas.svg：本图全部 37 种已用模板的原向 Port 分布和局部 Block 偏移。
+map-inspector.html：离线浏览器打开，点击 Module / C 编号，查看完整 Port、Route 与配对。
+ports.csv / connections.csv：完整接口与连接清单。
+map.json / module_library.json：可复现的布局和静态契约数据。
+
+复现：
+python generate.py
+python render.py
+python detail.py
+python verify.py
+只需 Python 标准库；HTML 不联网。PNG 是 Chromium 渲染 SVG 的截图。
+
+限制：Module 仍按文档占据完整矩形；不制作 L 形占用。
+全部 Cell、动作、接缝、镜像、封口碰撞均为未认证占位内容。
+检查通过代表几何和静态图层面成立，不能作为正式游戏物理认证。
