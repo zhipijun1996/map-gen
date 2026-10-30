@@ -1,0 +1,31 @@
+$ python prototype/verify.py
+PASS: seed reproducibility, integer occupancy, boundary Block parity, exact seams, permissions, closures, full route graph, mirrors, 3 paths, 6 reward return paths, all 3 surfaces.
+
+$ python tools/verify_progress.py
+PASS: source hashes, 16 complete accepted maps and all 4 independently confirmed reward rejections
+PASS: proposed 60 authoring tasks, shape/role counts and exact boundary-Block port/permission rules
+
+$ python tools/verify_progress.py --replay
+PASS: source hashes, 16 complete accepted maps and all 4 independently confirmed reward rejections
+PASS: proposed 60 authoring tasks, shape/role counts and exact boundary-Block port/permission rules
+REPLAY 271028: PASS matches original
+REPLAY 271029: PASS matches original
+REPLAY 271030: PASS matches original
+REPLAY 271031: FAIL matches original
+REPLAY 271032: PASS matches original
+REPLAY 271033: PASS matches original
+REPLAY 271034: PASS matches original
+REPLAY 271035: PASS matches original
+REPLAY 271036: PASS matches original
+REPLAY 271037: PASS matches original
+REPLAY 271038: PASS matches original
+REPLAY 271039: FAIL matches original
+REPLAY 271040: PASS matches original
+REPLAY 271041: PASS matches original
+REPLAY 271042: PASS matches original
+REPLAY 271043: FAIL matches original
+REPLAY 271044: FAIL matches original
+REPLAY 271045: PASS matches original
+REPLAY 271046: PASS matches original
+REPLAY 271047: PASS matches original
+PASS: all 20 fixed seeds reproduce the exact archived map or rejected candidate; no archive files changed

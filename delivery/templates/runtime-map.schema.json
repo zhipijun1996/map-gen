@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:mapgen:runtime-map:v1",
+  "title": "map-gen fixed runtime map v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "delivery_version", "map_id", "seed", "generator", "module_package", "coordinates", "identity", "bounds_blocks", "instances", "connections", "anchors", "graph", "validation"],
+  "properties": {
+    "schema": {"const": "mapgen/runtime-map/v1"},
+    "delivery_version": {"const": "0.1.0"},
+    "map_id": {"$ref": "#/$defs/id"},
+    "seed": {"type": "integer"},
+    "generator": {
+      "type": "object", "additionalProperties": false,
+      "required": ["repository", "commit", "profile", "structural_sha256"],
+      "properties": {"repository": {"type": "string"}, "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"}, "profile": {"const": "stable"}, "structural_sha256": {"$ref": "#/$defs/sha256"}}
+    },
+    "module_package": {
+      "type": "object", "additionalProperties": false, "required": ["version", "sha256", "root"],
+      "properties": {"version": {"const": "1.1.0"}, "sha256": {"$ref": "#/$defs/sha256"}, "root": {"const": "module_pack"}}
+    },
+    "coordinates": {
+      "const": {"block_size_pixels": 128, "axes": "x_right_y_down", "local_frame": "owned_rectangle_pixels", "content_transform_applied": true, "placement_rule": "world_pixel = origin_blocks * 128 + local_pixel"}
+    },
+    "identity": {"type": "object", "required": ["scope", "rule"], "properties": {"scope": {"type": "string"}, "rule": {"type": "string"}}},
+    "bounds_blocks": {"$ref": "#/$defs/int4"},
+    "instances": {"type": "array", "minItems": 39, "items": {"$ref": "#/$defs/instance"}},
+    "connections": {"type": "array", "items": {"$ref": "#/$defs/connection"}},
+    "anchors": {
+      "type": "object", "additionalProperties": false,
+      "required": ["start_departure", "player_spawn", "boss_arrival", "boss_encounter", "boss_completion", "target_reward_instances"],
+      "properties": {
+        "start_departure": {"$ref": "#/$defs/anchor"}, "boss_arrival": {"$ref": "#/$defs/anchor"},
+        "player_spawn": {"type": "object", "additionalProperties": false, "required": ["status", "position_pixels", "reason"], "properties": {"status": {"const": "UNRESOLVED"}, "position_pixels": {"type": "null"}, "reason": {"type": "string"}}},
+        "boss_encounter": {"type": "object", "additionalProperties": false, "required": ["instance_id", "status"], "properties": {"instance_id": {"$ref": "#/$defs/id"}, "status": {"const": "HOST_BINDING_REQUIRED"}}},
+        "boss_completion": {"type": "object", "additionalProperties": false, "required": ["status", "exit_port_id", "reason"], "properties": {"status": {"const": "UNRESOLVED"}, "exit_port_id": {"type": "null"}, "reason": {"type": "string"}}},
+        "target_reward_instances": {"type": "array", "minItems": 6, "maxItems": 6, "uniqueItems": true, "items": {"$ref": "#/$defs/id"}}
+      }
+    },
+    "graph": {
+      "type": "object", "additionalProperties": false, "required": ["nodes", "edges", "main_paths"],
+      "properties": {
+        "nodes": {"type": "array", "items": {"$ref": "#/$defs/node"}},
+        "edges": {"type": "array", "items": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/id"}}},
+        "main_paths": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/id"}}}
+      }
+    },
+    "validation": {
+      "type": "object", "additionalProperties": false, "required": ["static_generation", "runtime_export", "whole_map_physics", "playable_in_host", "source_quality"],
+      "properties": {"static_generation": {"const": "PASS"}, "runtime_export": {"const": "VERIFY_REQUIRED"}, "whole_map_physics": {"const": "NOT_RUN"}, "playable_in_host": {"const": "NOT_RUN"}, "source_quality": {"type": "object"}}
+    }
+  },
+  "$defs": {
+    "id": {"type": "string", "minLength": 1},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "ref": {"type": "string", "pattern": "^[A-Za-z0-9_./-]+$"},
+    "int2": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer"}},
+    "int4": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "integer"}},
+    "point": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "number"}},
+    "face": {"enum": ["LEFT", "RIGHT", "TOP", "BOTTOM"]},
+    "endpoint": {"type": "object", "additionalProperties": false, "required": ["instance_id", "port_id"], "properties": {"instance_id": {"$ref": "#/$defs/id"}, "port_id": {"$ref": "#/$defs/id"}}},
+    "anchor": {"type": "object", "additionalProperties": false, "required": ["instance_id", "port_id", "validation"], "properties": {"instance_id": {"$ref": "#/$defs/id"}, "port_id": {"$ref": "#/$defs/id"}, "validation": {"const": "STATIC_GRAPH_ONLY"}}},
+    "port": {
+      "type": "object", "additionalProperties": false, "required": ["id", "face", "surface", "permission", "local_position_pixels"],
+      "properties": {"id": {"$ref": "#/$defs/id"}, "face": {"$ref": "#/$defs/face"}, "surface": {"enum": ["ROCK", "AIR", "ONE_WAY_PLATFORM"]}, "permission": {"enum": ["INPUT", "OUTPUT", "INOUT"]}, "local_position_pixels": {"$ref": "#/$defs/point"}}
+    },
+    "seal": {
+      "type": "object", "additionalProperties": false, "required": ["port_id", "component", "face", "rect_pixels", "opening_pixels", "thickness_pixels", "certified", "physical_validation"],
+      "properties": {"port_id": {"$ref": "#/$defs/id"}, "component": {"const": "gear-seal/1"}, "face": {"$ref": "#/$defs/face"}, "rect_pixels": {"$ref": "#/$defs/int4"}, "opening_pixels": {"const": 128}, "thickness_pixels": {"const": 32}, "certified": {"const": false}, "physical_validation": {"const": "NOT_RUN"}}
+    },
+    "route": {
+      "type": "object", "additionalProperties": false, "required": ["id", "from_port", "to_port", "required_reward_ids", "required_abilities", "author_path_pixels", "source_validation", "capability_requirements"],
+      "properties": {"id": {"$ref": "#/$defs/id"}, "from_port": {"$ref": "#/$defs/id"}, "to_port": {"$ref": "#/$defs/id"}, "required_reward_ids": {"type": "array", "items": {"$ref": "#/$defs/id"}}, "required_abilities": {"type": "array", "items": {"$ref": "#/$defs/id"}}, "author_path_pixels": {"type": "array", "items": {"$ref": "#/$defs/point"}}, "source_validation": {"type": "object"}, "capability_requirements": {"type": "object"}}
+    },
+    "instance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "module_id", "content_version", "role", "origin_blocks", "size_blocks", "transform", "content_ref", "ports", "connected_port_ids", "seals", "routes", "required_services", "source_scene_ref", "source_compiled_ref"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"}, "module_id": {"$ref": "#/$defs/id"}, "content_version": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+        "role": {"enum": ["start", "boss", "target_reward", "traversal"]}, "origin_blocks": {"$ref": "#/$defs/int2"}, "size_blocks": {"$ref": "#/$defs/int2"},
+        "transform": {"type": "object", "additionalProperties": false, "required": ["mirror_x", "content_is_materialized"], "properties": {"mirror_x": {"type": "boolean"}, "content_is_materialized": {"const": true}}},
+        "content_ref": {"$ref": "#/$defs/ref"}, "ports": {"type": "array", "items": {"$ref": "#/$defs/port"}}, "connected_port_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+        "seals": {"type": "array", "items": {"$ref": "#/$defs/seal"}}, "routes": {"type": "array", "items": {"$ref": "#/$defs/route"}}, "required_services": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/id"}}, "source_scene_ref": {"$ref": "#/$defs/ref"}, "source_compiled_ref": {"$ref": "#/$defs/ref"}
+      }
+    },
+    "connection": {
+      "type": "object", "additionalProperties": false, "required": ["id", "a", "b", "position_pixels", "surface"],
+      "properties": {"id": {"$ref": "#/$defs/id"}, "a": {"$ref": "#/$defs/endpoint"}, "b": {"$ref": "#/$defs/endpoint"}, "position_pixels": {"$ref": "#/$defs/point"}, "surface": {"enum": ["ROCK", "AIR", "ONE_WAY_PLATFORM"]}}
+    },
+    "node": {
+      "type": "object", "additionalProperties": false, "required": ["id", "kind", "instance_id"],
+      "properties": {"id": {"$ref": "#/$defs/id"}, "kind": {"enum": ["start", "boss", "port_arrive", "port_depart", "reward"]}, "instance_id": {"$ref": "#/$defs/id"}, "port_id": {"$ref": "#/$defs/id"}, "route_id": {"$ref": "#/$defs/id"}, "reward_ids": {"type": "array", "items": {"$ref": "#/$defs/id"}}, "target": {"type": "boolean"}}
+    }
+  }
+}
