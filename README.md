@@ -1,5 +1,7 @@
 # 《失序之钟》Map Generator
 
+Godot 运行入口（0.1.0 接入候选）：[安装、主游戏调用与验证边界](docs/GODOT_RUNTIME.md) · [真实模块/固定 Seed/连续回放报告](reports/runtime-v1/README.md)。使用锁定的 map-edit modules 1.0.0、实例 Port 子集与齿轮封口；游戏调用全部为 GDScript。
+
 以不重叠的矩形 Module、边界 Block 上的 Port 和显式有向 Route，生成连续二维探索地图。
 
 当前保存的是可复现的布局与静态图原型，以及 20 个 Seed 的完整评估。真实 Module 来自 [map-edit](https://github.com/zhipijun1996/map-edit)，该仓库正在迁移新格式；正式数据接入尚未实施。

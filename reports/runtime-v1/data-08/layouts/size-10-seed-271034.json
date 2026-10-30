@@ -1,0 +1,963 @@
+{
+	"connections": [
+		{
+			"a": [
+				"map/windchime-plains-jump-recoil-v1/seed-271034/node-000",
+				"C"
+			],
+			"b": [
+				"map/windchime-plains-jump-recoil-v1/seed-271034/node-001",
+				"B"
+			]
+		},
+		{
+			"a": [
+				"map/windchime-plains-jump-recoil-v1/seed-271034/node-000",
+				"D"
+			],
+			"b": [
+				"map/windchime-plains-jump-recoil-v1/seed-271034/node-001",
+				"A"
+			]
+		},
+		{
+			"a": [
+				"map/windchime-plains-jump-recoil-v1/seed-271034/node-001",
+				"D"
+			],
+			"b": [
+				"map/windchime-plains-jump-recoil-v1/seed-271034/node-002",
+				"L"
+			]
+		}
+	],
+	"cycles": [
+		{
+			"connections": [
+				{
+					"a": [
+						"map/windchime-plains-jump-recoil-v1/seed-271034/node-000",
+						"C"
+					],
+					"b": [
+						"map/windchime-plains-jump-recoil-v1/seed-271034/node-001",
+						"B"
+					]
+				},
+				{
+					"a": [
+						"map/windchime-plains-jump-recoil-v1/seed-271034/node-000",
+						"D"
+					],
+					"b": [
+						"map/windchime-plains-jump-recoil-v1/seed-271034/node-001",
+						"A"
+					]
+				}
+			],
+			"fork": "map/windchime-plains-jump-recoil-v1/seed-271034/node-000",
+			"join": "map/windchime-plains-jump-recoil-v1/seed-271034/node-001"
+		}
+	],
+	"diagnostics": {
+		"configuration_feedback": [],
+		"cycles": 1,
+		"elapsed_usec": 2480,
+		"pool_size": 102,
+		"rejections": {},
+		"retries": 1,
+		"steps": 2
+	},
+	"effective_edges": [
+		{
+			"from": "map/windchime-plains-jump-recoil-v1/seed-271034/node-000/C/out",
+			"kind": "seam",
+			"physical": "NOT_TESTED",
+			"to": "map/windchime-plains-jump-recoil-v1/seed-271034/node-001/B/in"
+		},
+		{
+			"from": "map/windchime-plains-jump-recoil-v1/seed-271034/node-001/B/out",
+			"kind": "seam",
+			"physical": "NOT_TESTED",
+			"to": "map/windchime-plains-jump-recoil-v1/seed-271034/node-000/C/in"
+		},
+		{
+			"from": "map/windchime-plains-jump-recoil-v1/seed-271034/node-000/D/out",
+			"kind": "seam",
+			"physical": "NOT_TESTED",
+			"to": "map/windchime-plains-jump-recoil-v1/seed-271034/node-001/A/in"
+		},
+		{
+			"from": "map/windchime-plains-jump-recoil-v1/seed-271034/node-001/A/out",
+			"kind": "seam",
+			"physical": "NOT_TESTED",
+			"to": "map/windchime-plains-jump-recoil-v1/seed-271034/node-000/D/in"
+		},
+		{
+			"from": "map/windchime-plains-jump-recoil-v1/seed-271034/node-001/D/out",
+			"kind": "seam",
+			"physical": "NOT_TESTED",
+			"to": "map/windchime-plains-jump-recoil-v1/seed-271034/node-002/L/in"
+		},
+		{
+			"from": "map/windchime-plains-jump-recoil-v1/seed-271034/node-002/L/out",
+			"kind": "seam",
+			"physical": "NOT_TESTED",
+			"to": "map/windchime-plains-jump-recoil-v1/seed-271034/node-001/D/in"
+		},
+		{
+			"conditions": {
+				"closureProfile": "all-ports-open-test-only",
+				"connectedPortSubset": [
+					"A",
+					"B",
+					"C",
+					"D"
+				],
+				"enemies": [
+					{
+						"definition": "plains_diver",
+						"id": "review-center-diver",
+						"initial_idle_cooldown": 0.0,
+						"position": [
+							640.0,
+							480.0
+						]
+					}
+				],
+				"entryPort": "D",
+				"latches": [
+					{
+						"bell": [
+							800.0,
+							560.0
+						],
+						"gate": [
+							192.0,
+							416.0,
+							256.0,
+							24.0
+						],
+						"id": "wing-pair",
+						"initial_open": "B",
+						"open_seconds": 0.0,
+						"paired_gate": [
+							832.0,
+							416.0,
+							256.0,
+							24.0
+						]
+					}
+				],
+				"orientation": "original",
+				"spawn": [
+					1256.0,
+					718.0
+				],
+				"status": "declared_pending_qualification",
+				"warmupFrames": 4.0,
+				"worldRebuiltBeforeRoute": true
+			},
+			"from": "map/windchime-plains-jump-recoil-v1/seed-271034/node-000/D/in",
+			"instance_id": "map/windchime-plains-jump-recoil-v1/seed-271034/node-000",
+			"kind": "module_route",
+			"physical": "NOT_TESTED",
+			"route_id": "D-to-C",
+			"to": "map/windchime-plains-jump-recoil-v1/seed-271034/node-000/C/out",
+			"validation": {
+				"availableAbilities": [
+					"move",
+					"jump",
+					"shot_recoil"
+				],
+				"kind": "original_native_route_qualification",
+				"originalReportSha256": "17071cdfbf0f369595e9db19f89443b328d230b8abf67d891dea07ef9ef9234a",
+				"physicalSignature": "483f3cfe106e4a2b41bbb2fdb84ba4b2dbae9d5ab71fb6522acd0f10797f436e",
+				"scope": "Independently initialized local route; arbitrary seams, alternate configurations, minimal capabilities and chaining remain UNKNOWN.",
+				"status": "passed_scoped",
+				"testNeighborFixtures": []
+			}
+		},
+		{
+			"conditions": {
+				"closureProfile": "all-ports-open-test-only",
+				"connectedPortSubset": [
+					"A",
+					"B",
+					"C",
+					"D"
+				],
+				"enemies": [
+					{
+						"definition": "plains_diver",
+						"id": "review-center-diver",
+						"initial_idle_cooldown": 0.0,
+						"position": [
+							640.0,
+							480.0
+						]
+					}
+				],
+				"entryPort": "C",
+				"latches": [
+					{
+						"bell": [
+							800.0,
+							560.0
+						],
+						"gate": [
+							192.0,
+							416.0,
+							256.0,
+							24.0
+						],
+						"id": "wing-pair",
+						"initial_open": "B",
+						"open_seconds": 0.0,
+						"paired_gate": [
+							832.0,
+							416.0,
+							256.0,
+							24.0
+						]
+					}
+				],
+				"orientation": "original",
+				"spawn": [
+					1256.0,
+					78.0
+				],
+				"status": "declared_pending_qualification",
+				"warmupFrames": 4.0,
+				"worldRebuiltBeforeRoute": true
+			},
+			"from": "map/windchime-plains-jump-recoil-v1/seed-271034/node-000/C/in",
+			"instance_id": "map/windchime-plains-jump-recoil-v1/seed-271034/node-000",
+			"kind": "module_route",
+			"physical": "NOT_TESTED",
+			"route_id": "C-to-D",
+			"to": "map/windchime-plains-jump-recoil-v1/seed-271034/node-000/D/out",
+			"validation": {
+				"availableAbilities": [
+					"move",
+					"jump",
+					"shot_recoil"
+				],
+				"kind": "original_native_route_qualification",
+				"originalReportSha256": "17071cdfbf0f369595e9db19f89443b328d230b8abf67d891dea07ef9ef9234a",
+				"physicalSignature": "483f3cfe106e4a2b41bbb2fdb84ba4b2dbae9d5ab71fb6522acd0f10797f436e",
+				"scope": "Independently initialized local route; arbitrary seams, alternate configurations, minimal capabilities and chaining remain UNKNOWN.",
+				"status": "passed_scoped",
+				"testNeighborFixtures": []
+			}
+		},
+		{
+			"conditions": {
+				"closureProfile": "all-ports-open-test-only",
+				"connectedPortSubset": [
+					"A",
+					"B",
+					"C",
+					"D"
+				],
+				"enemies": [
+					{
+						"definition": "plains_diver",
+						"id": "review-center-diver",
+						"initial_idle_cooldown": 0.0,
+						"position": [
+							640.0,
+							480.0
+						]
+					}
+				],
+				"entryPort": "A",
+				"latches": [
+					{
+						"bell": [
+							800.0,
+							560.0
+						],
+						"gate": [
+							192.0,
+							416.0,
+							256.0,
+							24.0
+						],
+						"id": "wing-pair",
+						"initial_open": "B",
+						"open_seconds": 0.0,
+						"paired_gate": [
+							832.0,
+							416.0,
+							256.0,
+							24.0
+						]
+					}
+				],
+				"orientation": "original",
+				"spawn": [
+					24.0,
+					718.0
+				],
+				"status": "declared_pending_qualification",
+				"warmupFrames": 4.0,
+				"worldRebuiltBeforeRoute": true
+			},
+			"from": "map/windchime-plains-jump-recoil-v1/seed-271034/node-001/A/in",
+			"instance_id": "map/windchime-plains-jump-recoil-v1/seed-271034/node-001",
+			"kind": "module_route",
+			"physical": "NOT_TESTED",
+			"route_id": "A-to-B",
+			"to": "map/windchime-plains-jump-recoil-v1/seed-271034/node-001/B/out",
+			"validation": {
+				"availableAbilities": [
+					"move",
+					"jump",
+					"shot_recoil"
+				],
+				"kind": "original_native_route_qualification",
+				"originalReportSha256": "17071cdfbf0f369595e9db19f89443b328d230b8abf67d891dea07ef9ef9234a",
+				"physicalSignature": "483f3cfe106e4a2b41bbb2fdb84ba4b2dbae9d5ab71fb6522acd0f10797f436e",
+				"scope": "Independently initialized local route; arbitrary seams, alternate configurations, minimal capabilities and chaining remain UNKNOWN.",
+				"status": "passed_scoped",
+				"testNeighborFixtures": []
+			}
+		},
+		{
+			"conditions": {
+				"closureProfile": "all-ports-open-test-only",
+				"connectedPortSubset": [
+					"A",
+					"B",
+					"C",
+					"D"
+				],
+				"enemies": [
+					{
+						"definition": "plains_diver",
+						"id": "review-center-diver",
+						"initial_idle_cooldown": 0.0,
+						"position": [
+							640.0,
+							480.0
+						]
+					}
+				],
+				"entryPort": "D",
+				"latches": [
+					{
+						"bell": [
+							800.0,
+							560.0
+						],
+						"gate": [
+							192.0,
+							416.0,
+							256.0,
+							24.0
+						],
+						"id": "wing-pair",
+						"initial_open": "B",
+						"open_seconds": 0.0,
+						"paired_gate": [
+							832.0,
+							416.0,
+							256.0,
+							24.0
+						]
+					}
+				],
+				"orientation": "original",
+				"spawn": [
+					1256.0,
+					718.0
+				],
+				"status": "declared_pending_qualification",
+				"warmupFrames": 4.0,
+				"worldRebuiltBeforeRoute": true
+			},
+			"from": "map/windchime-plains-jump-recoil-v1/seed-271034/node-001/D/in",
+			"instance_id": "map/windchime-plains-jump-recoil-v1/seed-271034/node-001",
+			"kind": "module_route",
+			"physical": "NOT_TESTED",
+			"route_id": "D-to-B",
+			"to": "map/windchime-plains-jump-recoil-v1/seed-271034/node-001/B/out",
+			"validation": {
+				"availableAbilities": [
+					"move",
+					"jump",
+					"shot_recoil"
+				],
+				"kind": "original_native_route_qualification",
+				"originalReportSha256": "17071cdfbf0f369595e9db19f89443b328d230b8abf67d891dea07ef9ef9234a",
+				"physicalSignature": "483f3cfe106e4a2b41bbb2fdb84ba4b2dbae9d5ab71fb6522acd0f10797f436e",
+				"scope": "Independently initialized local route; arbitrary seams, alternate configurations, minimal capabilities and chaining remain UNKNOWN.",
+				"status": "passed_scoped",
+				"testNeighborFixtures": []
+			}
+		},
+		{
+			"conditions": {
+				"closureProfile": "all-ports-open-test-only",
+				"connectedPortSubset": [
+					"A",
+					"B",
+					"C",
+					"D"
+				],
+				"enemies": [
+					{
+						"definition": "plains_diver",
+						"id": "review-center-diver",
+						"initial_idle_cooldown": 0.0,
+						"position": [
+							640.0,
+							480.0
+						]
+					}
+				],
+				"entryPort": "A",
+				"latches": [
+					{
+						"bell": [
+							800.0,
+							560.0
+						],
+						"gate": [
+							192.0,
+							416.0,
+							256.0,
+							24.0
+						],
+						"id": "wing-pair",
+						"initial_open": "B",
+						"open_seconds": 0.0,
+						"paired_gate": [
+							832.0,
+							416.0,
+							256.0,
+							24.0
+						]
+					}
+				],
+				"orientation": "original",
+				"spawn": [
+					24.0,
+					718.0
+				],
+				"status": "declared_pending_qualification",
+				"warmupFrames": 4.0,
+				"worldRebuiltBeforeRoute": true
+			},
+			"from": "map/windchime-plains-jump-recoil-v1/seed-271034/node-001/A/in",
+			"instance_id": "map/windchime-plains-jump-recoil-v1/seed-271034/node-001",
+			"kind": "module_route",
+			"physical": "NOT_TESTED",
+			"route_id": "A-to-D",
+			"to": "map/windchime-plains-jump-recoil-v1/seed-271034/node-001/D/out",
+			"validation": {
+				"availableAbilities": [
+					"move",
+					"jump",
+					"shot_recoil"
+				],
+				"kind": "original_native_route_qualification",
+				"originalReportSha256": "17071cdfbf0f369595e9db19f89443b328d230b8abf67d891dea07ef9ef9234a",
+				"physicalSignature": "483f3cfe106e4a2b41bbb2fdb84ba4b2dbae9d5ab71fb6522acd0f10797f436e",
+				"scope": "Independently initialized local route; arbitrary seams, alternate configurations, minimal capabilities and chaining remain UNKNOWN.",
+				"status": "passed_scoped",
+				"testNeighborFixtures": []
+			}
+		},
+		{
+			"conditions": {
+				"closureProfile": "all-ports-open-test-only",
+				"connectedPortSubset": [
+					"A",
+					"B",
+					"C",
+					"D"
+				],
+				"enemies": [
+					{
+						"definition": "plains_diver",
+						"id": "review-center-diver",
+						"initial_idle_cooldown": 0.0,
+						"position": [
+							640.0,
+							480.0
+						]
+					}
+				],
+				"entryPort": "B",
+				"latches": [
+					{
+						"bell": [
+							800.0,
+							560.0
+						],
+						"gate": [
+							192.0,
+							416.0,
+							256.0,
+							24.0
+						],
+						"id": "wing-pair",
+						"initial_open": "B",
+						"open_seconds": 0.0,
+						"paired_gate": [
+							832.0,
+							416.0,
+							256.0,
+							24.0
+						]
+					}
+				],
+				"orientation": "original",
+				"spawn": [
+					24.0,
+					78.0
+				],
+				"status": "declared_pending_qualification",
+				"warmupFrames": 4.0,
+				"worldRebuiltBeforeRoute": true
+			},
+			"from": "map/windchime-plains-jump-recoil-v1/seed-271034/node-001/B/in",
+			"instance_id": "map/windchime-plains-jump-recoil-v1/seed-271034/node-001",
+			"kind": "module_route",
+			"physical": "NOT_TESTED",
+			"route_id": "B-to-A",
+			"to": "map/windchime-plains-jump-recoil-v1/seed-271034/node-001/A/out",
+			"validation": {
+				"availableAbilities": [
+					"move",
+					"jump",
+					"shot_recoil"
+				],
+				"kind": "original_native_route_qualification",
+				"originalReportSha256": "17071cdfbf0f369595e9db19f89443b328d230b8abf67d891dea07ef9ef9234a",
+				"physicalSignature": "483f3cfe106e4a2b41bbb2fdb84ba4b2dbae9d5ab71fb6522acd0f10797f436e",
+				"scope": "Independently initialized local route; arbitrary seams, alternate configurations, minimal capabilities and chaining remain UNKNOWN.",
+				"status": "passed_scoped",
+				"testNeighborFixtures": []
+			}
+		},
+		{
+			"conditions": {
+				"closureProfile": "all-ports-open-test-only",
+				"connectedPortSubset": [
+					"A",
+					"B",
+					"C",
+					"D"
+				],
+				"enemies": [
+					{
+						"definition": "plains_diver",
+						"id": "review-center-diver",
+						"initial_idle_cooldown": 0.0,
+						"position": [
+							640.0,
+							480.0
+						]
+					}
+				],
+				"entryPort": "B",
+				"latches": [
+					{
+						"bell": [
+							800.0,
+							560.0
+						],
+						"gate": [
+							192.0,
+							416.0,
+							256.0,
+							24.0
+						],
+						"id": "wing-pair",
+						"initial_open": "B",
+						"open_seconds": 0.0,
+						"paired_gate": [
+							832.0,
+							416.0,
+							256.0,
+							24.0
+						]
+					}
+				],
+				"orientation": "original",
+				"spawn": [
+					24.0,
+					78.0
+				],
+				"status": "declared_pending_qualification",
+				"warmupFrames": 4.0,
+				"worldRebuiltBeforeRoute": true
+			},
+			"from": "map/windchime-plains-jump-recoil-v1/seed-271034/node-001/B/in",
+			"instance_id": "map/windchime-plains-jump-recoil-v1/seed-271034/node-001",
+			"kind": "module_route",
+			"physical": "NOT_TESTED",
+			"route_id": "B-to-D",
+			"to": "map/windchime-plains-jump-recoil-v1/seed-271034/node-001/D/out",
+			"validation": {
+				"availableAbilities": [
+					"move",
+					"jump",
+					"shot_recoil"
+				],
+				"kind": "original_native_route_qualification",
+				"originalReportSha256": "17071cdfbf0f369595e9db19f89443b328d230b8abf67d891dea07ef9ef9234a",
+				"physicalSignature": "483f3cfe106e4a2b41bbb2fdb84ba4b2dbae9d5ab71fb6522acd0f10797f436e",
+				"scope": "Independently initialized local route; arbitrary seams, alternate configurations, minimal capabilities and chaining remain UNKNOWN.",
+				"status": "passed_scoped",
+				"testNeighborFixtures": []
+			}
+		},
+		{
+			"conditions": {
+				"closureProfile": "all-ports-open-test-only",
+				"connectedPortSubset": [
+					"A",
+					"B",
+					"C",
+					"D"
+				],
+				"enemies": [
+					{
+						"definition": "plains_diver",
+						"id": "review-center-diver",
+						"initial_idle_cooldown": 0.0,
+						"position": [
+							640.0,
+							480.0
+						]
+					}
+				],
+				"entryPort": "D",
+				"latches": [
+					{
+						"bell": [
+							800.0,
+							560.0
+						],
+						"gate": [
+							192.0,
+							416.0,
+							256.0,
+							24.0
+						],
+						"id": "wing-pair",
+						"initial_open": "B",
+						"open_seconds": 0.0,
+						"paired_gate": [
+							832.0,
+							416.0,
+							256.0,
+							24.0
+						]
+					}
+				],
+				"orientation": "original",
+				"spawn": [
+					1256.0,
+					718.0
+				],
+				"status": "declared_pending_qualification",
+				"warmupFrames": 4.0,
+				"worldRebuiltBeforeRoute": true
+			},
+			"from": "map/windchime-plains-jump-recoil-v1/seed-271034/node-001/D/in",
+			"instance_id": "map/windchime-plains-jump-recoil-v1/seed-271034/node-001",
+			"kind": "module_route",
+			"physical": "NOT_TESTED",
+			"route_id": "D-to-A",
+			"to": "map/windchime-plains-jump-recoil-v1/seed-271034/node-001/A/out",
+			"validation": {
+				"availableAbilities": [
+					"move",
+					"jump",
+					"shot_recoil"
+				],
+				"kind": "original_native_route_qualification",
+				"originalReportSha256": "17071cdfbf0f369595e9db19f89443b328d230b8abf67d891dea07ef9ef9234a",
+				"physicalSignature": "483f3cfe106e4a2b41bbb2fdb84ba4b2dbae9d5ab71fb6522acd0f10797f436e",
+				"scope": "Independently initialized local route; arbitrary seams, alternate configurations, minimal capabilities and chaining remain UNKNOWN.",
+				"status": "passed_scoped",
+				"testNeighborFixtures": []
+			}
+		},
+		{
+			"conditions": {
+				"status": "UNKNOWN"
+			},
+			"from": "map/windchime-plains-jump-recoil-v1/seed-271034/node-002/L/in",
+			"instance_id": "map/windchime-plains-jump-recoil-v1/seed-271034/node-002",
+			"kind": "module_route",
+			"physical": "NOT_TESTED",
+			"route_id": "L-to-L",
+			"to": "map/windchime-plains-jump-recoil-v1/seed-271034/node-002/L/out",
+			"validation": {
+				"availableAbilities": [
+					"move",
+					"jump",
+					"shot_recoil"
+				],
+				"kind": "original_native_route_qualification",
+				"originalReportSha256": "f6387bb0d585a5bb5807fdfc8200a58030f82e5916b937dda0324c0f0da54b8b",
+				"physicalSignature": "ad80e32dc3437def56d2fc9247bb6221632c13453cfceebcbc4608eccb7da763",
+				"scope": "Independently initialized local route; arbitrary seams, alternate configurations, minimal capabilities and chaining remain UNKNOWN.",
+				"status": "passed_scoped",
+				"testNeighborFixtures": []
+			}
+		}
+	],
+	"generator_version": "mapgen-godot/1",
+	"goal": {
+		"adapter": "native-anchors/1",
+		"instance_id": "map/windchime-plains-jump-recoil-v1/seed-271034/node-001",
+		"node": "map/windchime-plains-jump-recoil-v1/seed-271034/node-001/B/in",
+		"port_id": "B",
+		"position": [
+			1304.0,
+			78.0
+		]
+	},
+	"instances": [
+		{
+			"configuration": {
+				"component": "gear-seal/1",
+				"id": "mapgen-gear-subset/1",
+				"upstream_scope": "original-all-ports"
+			},
+			"connected_port_ids": [
+				"C",
+				"D"
+			],
+			"content_version": "sha256:5aebe7b7a122a26eabb4f25a4a4324244b336552d1d450b41c1659a01b6c8c0f",
+			"instance_id": "map/windchime-plains-jump-recoil-v1/seed-271034/node-000",
+			"mirror_x": false,
+			"module_id": "b31-n06-fourport-two-low-ingress",
+			"orientation": "identity",
+			"origin": [
+				0,
+				0
+			],
+			"relocations": [],
+			"sealed_ports": [
+				{
+					"component": "gear-seal/1",
+					"face": "LEFT",
+					"opening_pixels": 128.0,
+					"port_id": "A",
+					"rect_pixels": [
+						0.0,
+						640.0,
+						32.0,
+						128.0
+					],
+					"thickness_pixels": 32.0
+				},
+				{
+					"component": "gear-seal/1",
+					"face": "LEFT",
+					"opening_pixels": 128.0,
+					"port_id": "B",
+					"rect_pixels": [
+						0.0,
+						0.0,
+						32.0,
+						128.0
+					],
+					"thickness_pixels": 32.0
+				}
+			]
+		},
+		{
+			"configuration": {
+				"component": "gear-seal/1",
+				"id": "mapgen-gear-subset/1",
+				"upstream_scope": "original-all-ports"
+			},
+			"connected_port_ids": [
+				"A",
+				"B",
+				"D"
+			],
+			"content_version": "sha256:5aebe7b7a122a26eabb4f25a4a4324244b336552d1d450b41c1659a01b6c8c0f",
+			"instance_id": "map/windchime-plains-jump-recoil-v1/seed-271034/node-001",
+			"mirror_x": false,
+			"module_id": "b31-n06-fourport-two-low-ingress",
+			"orientation": "identity",
+			"origin": [
+				10,
+				0
+			],
+			"relocations": [],
+			"sealed_ports": [
+				{
+					"component": "gear-seal/1",
+					"face": "RIGHT",
+					"opening_pixels": 128.0,
+					"port_id": "C",
+					"rect_pixels": [
+						1248.0,
+						0.0,
+						32.0,
+						128.0
+					],
+					"thickness_pixels": 32.0
+				}
+			]
+		},
+		{
+			"configuration": {
+				"component": "gear-seal/1",
+				"id": "mapgen-gear-subset/1",
+				"upstream_scope": "original-all-ports"
+			},
+			"connected_port_ids": [
+				"L"
+			],
+			"content_version": "sha256:163b7af98b953336d1d6dde95e62283c91f90517a057f5397b4ab7438c74edf5",
+			"instance_id": "map/windchime-plains-jump-recoil-v1/seed-271034/node-002",
+			"mirror_x": false,
+			"module_id": "idea-plains-hq04-001",
+			"orientation": "identity",
+			"origin": [
+				20,
+				3
+			],
+			"relocations": [],
+			"sealed_ports": []
+		}
+	],
+	"lock": {
+		"godot_binary_sha256": "8d106cbe6144c2dc7e881d61d2429c1a8a76e6b22ef48bd5e48dcf934953f71e",
+		"godot_build_hash": "ed1daf0bf",
+		"godot_version": "4.7.2-stable (official)",
+		"host_commit": "12f6cb006d7119598e3235f4ca4f7323e4c9d092",
+		"host_dependency": "runtime/host-lock.json",
+		"host_profile": "gunman-rush-native-12f6cb0",
+		"package_version": "1.0.0",
+		"runtime_fingerprint": "d48e964eb987b15a8ffea0c0e9d98fcf8ac2f0461b0489ea7ea70e1f36221084",
+		"schema": "mapgen/package-lock/1",
+		"sha256": "35a9fcec22bf9defcb93d3683e3b3aed4f928526fe099a72f6b5168a7bb20db3",
+		"url": "https://raw.githubusercontent.com/zhipijun1996/map-edit/1776e80bbcaaebad8ad69c23e0de5df38fcc5c95/releases/map-edit-modules-1.0.0.zip"
+	},
+	"region": {
+		"abilities": [
+			"move",
+			"jump",
+			"shot_recoil"
+		],
+		"allow_mirror": false,
+		"allow_relocation": false,
+		"anchor_adapter_version": "native-anchors/1",
+		"assembly": {
+			"nodes_per_step": 1.0,
+			"time_budget_usec": 8000.0
+		},
+		"fallback": {
+			"enabled": true,
+			"path": "res://configs/fallback.json",
+			"policy": "verified_small_layout; scale and reward count may be reduced",
+			"sha256": "aa4b52d4cdb0e0f32d0fbcd117ba9159762ba9c12b03d913351e15ec1fb4f686"
+		},
+		"host_profile": "gunman-rush-native-12f6cb0",
+		"id": "windchime-plains-jump-recoil-v1",
+		"module_budget": 10,
+		"native_profile_id": null,
+		"package_sha256": "35a9fcec22bf9defcb93d3683e3b3aed4f928526fe099a72f6b5168a7bb20db3",
+		"player_profile": {
+			"actor_body_pixels": [
+				24.0,
+				36.0
+			],
+			"id": "native-default-jump-recoil/1",
+			"max_air_shots": 1.0,
+			"max_jumps": 1.0,
+			"tuning_sha256": "65abb4abffd122f79bc4718a94e6db1bbe19a8e2c5dcdac314aa10cd9698114c"
+		},
+		"prewarm_resources": [
+			"res://scripts/generation/platforming_module.gd",
+			"res://scripts/generation/module_moving_platform.gd",
+			"res://scripts/generation/module_saw_hazard.gd",
+			"res://scripts/art/plains_wood_platform_art.gd",
+			"res://scripts/underworld_plains/underworld_objects.gd",
+			"res://scripts/enemies/enemy_actor.gd",
+			"res://scripts/world/shot_latch.gd"
+		],
+		"region": "平原",
+		"repetition": {
+			"adjacent_weight": 4.0,
+			"area_reference": 16.0,
+			"strength": 1.0
+		},
+		"reward_density": 0.08,
+		"reward_route_overrides": {
+			"idea-plains-hq04-001": {
+				"L-to-L": [
+					"reward"
+				]
+			},
+			"idea-spec02-s13-001": {
+				"L-to-L": [
+					"reward"
+				]
+			}
+		},
+		"runtime_host_profile": "gunman-rush-native-12f6cb0",
+		"schema": "mapgen/region/1",
+		"seal_component": "gear-seal/1",
+		"search": {
+			"beam_width": 36.0,
+			"max_candidates": 18.0,
+			"max_connector_length": 4.0,
+			"max_retries": 48.0,
+			"max_steps": 80000.0,
+			"wall_clock_ms": 0
+		},
+		"target_branches": 1
+	},
+	"required_rewards": 1,
+	"rewards": [
+		{
+			"entry_node": "map/windchime-plains-jump-recoil-v1/seed-271034/node-002/L/in",
+			"evidence": "explicit_adapter",
+			"exit_node": "map/windchime-plains-jump-recoil-v1/seed-271034/node-002/L/out",
+			"instance_id": "map/windchime-plains-jump-recoil-v1/seed-271034/node-002",
+			"physical": "NOT_TESTED",
+			"position": [
+				3136.0,
+				516.0
+			],
+			"route_id": "L-to-L",
+			"site_id": "reward"
+		}
+	],
+	"schema": "mapgen/layout/1",
+	"seed": 271034,
+	"spawn": {
+		"adapter": "native-anchors/1",
+		"instance_id": "map/windchime-plains-jump-recoil-v1/seed-271034/node-000",
+		"node": "map/windchime-plains-jump-recoil-v1/seed-271034/node-000/D/in",
+		"port_id": "D",
+		"position": [
+			1256.0,
+			718.0
+		]
+	},
+	"validation": {
+		"closures": "AUTHORED_PATH_CLEARANCE_ONLY",
+		"declared_routes": "PASS",
+		"errors": [],
+		"geometry": "PASS",
+		"ok": true,
+		"rewards": 1,
+		"seams": "NOT_TESTED",
+		"whole_map_physics": "NOT_TESTED"
+	}
+}
