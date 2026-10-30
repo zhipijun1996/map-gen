@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/workspace/map-gen/experiments/optimization-v1/run.py", line 87, in worker
+    try:assembled=gen.build()
+                  ^^^^^^^^^^^
+  File "/workspace/map-gen/experiments/optimization-v1/solver.py", line 350, in build
+    try:return self.finish()
+               ^^^^^^^^^^^^^
+  File "/workspace/map-gen/experiments/optimization-v1/solver.py", line 342, in finish
+    raise SearchFailure('reward_or_final_graph_exhausted')
+solver.SearchFailure: reward_or_final_graph_exhausted

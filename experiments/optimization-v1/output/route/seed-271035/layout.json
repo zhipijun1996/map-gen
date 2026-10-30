@@ -1,0 +1,2168 @@
+{
+  "schema": "mapgen/optimization-preview/1",
+  "seed": 271035,
+  "variant": "route",
+  "status": "REJECTED",
+  "full_record": "failed-candidate.json.gz",
+  "package": {
+    "version": "1.1.0",
+    "url": "https://raw.githubusercontent.com/zhipijun1996/map-edit/47aefebe07f4f0e7471f3d1546214502a6b2aade/releases/map-edit-modules-1.1.0.zip",
+    "sha256": "5ad5a7871941b2c1ffa759b18f7b1e80f2fe7e571b72f95d1e0ef26031f08723",
+    "catalog_sha256": "307b3c02c08d6f9abd58ef10bfe0716709bc8260db49a2a2c21d36980330be7a"
+  },
+  "validation": {
+    "acceptance": "REJECTED",
+    "original_assembly": "REJECTED",
+    "true_reward_route_graph": "REJECTED",
+    "whole_map_physics": "NOT_RUN",
+    "fallback_used": false,
+    "seed_replaced": false
+  },
+  "summary": {},
+  "instances": [
+    {
+      "id": "M01",
+      "source_module_id": "game-plains-windchime-lesson",
+      "content_version": "sha256:b2ee44df5422a7b4dd9be1358a075c46cefb00992de802607389f6f94ecfa433",
+      "origin": [
+        0,
+        0
+      ],
+      "size_blocks": [
+        4,
+        3
+      ],
+      "mirror_x": false,
+      "connected_port_ids": [
+        "R"
+      ],
+      "sealed_ports": [
+        {
+          "port_id": "entry",
+          "component": "gear-seal/1",
+          "face": "LEFT",
+          "rect_pixels": [
+            0,
+            128,
+            32,
+            128
+          ],
+          "opening_pixels": 128,
+          "thickness_pixels": 32,
+          "certified": false,
+          "physical_validation": "NOT_RUN"
+        }
+      ],
+      "retained_route_ids": [],
+      "reward_sites": [],
+      "reward": false
+    },
+    {
+      "id": "M02",
+      "source_module_id": "idea-spec02-s08-001",
+      "content_version": "sha256:61e50f8cb2f8891111268d811e9a18d52ebea8feb72a5e1fb575b500d34adb57",
+      "origin": [
+        4,
+        0
+      ],
+      "size_blocks": [
+        4,
+        3
+      ],
+      "mirror_x": true,
+      "connected_port_ids": [
+        "R",
+        "T"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "R-to-T",
+        "T-to-R"
+      ],
+      "reward_sites": [],
+      "reward": false
+    },
+    {
+      "id": "M03",
+      "source_module_id": "idea-spec02-s06-001",
+      "content_version": "sha256:dc06d73e4aa4eee1e3905283817e54f893489ed1ca9fabb428f3e8ad233f4f78",
+      "origin": [
+        1,
+        -6
+      ],
+      "size_blocks": [
+        4,
+        6
+      ],
+      "mirror_x": false,
+      "connected_port_ids": [
+        "T",
+        "B"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "B-to-T",
+        "T-to-B"
+      ],
+      "reward_sites": [],
+      "reward": false
+    },
+    {
+      "id": "M04",
+      "source_module_id": "idea-spec02-s12-001",
+      "content_version": "sha256:86fbe2242a6250453f2be3fe14276bcb698d88b88226a34999506d720816df2d",
+      "origin": [
+        0,
+        -10
+      ],
+      "size_blocks": [
+        5,
+        4
+      ],
+      "mirror_x": true,
+      "connected_port_ids": [
+        "L",
+        "R",
+        "T",
+        "B"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "L-to-R",
+        "L-to-T",
+        "L-to-B",
+        "R-to-L",
+        "R-to-T",
+        "R-to-B",
+        "T-to-L",
+        "T-to-R",
+        "T-to-B",
+        "B-to-L",
+        "B-to-R",
+        "B-to-T"
+      ],
+      "reward_sites": [],
+      "reward": false
+    },
+    {
+      "id": "M05",
+      "source_module_id": "generated-011d0a163822daaeea61e2280dbe4b26f7f48fa38d57ac30d06110da0634723b",
+      "content_version": "sha256:c01133af98647af1ea3d2b09bc24bc4132f70f51574bf98f37648203e904a32b",
+      "origin": [
+        5,
+        -9
+      ],
+      "size_blocks": [
+        2,
+        2
+      ],
+      "mirror_x": true,
+      "connected_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "entry-to-exit",
+        "exit-to-entry"
+      ],
+      "reward_sites": [],
+      "reward": false
+    },
+    {
+      "id": "M06",
+      "source_module_id": "game-plains-micro-rise",
+      "content_version": "sha256:b943cb54bf9a693d707ec99b2a2320c49293f2f2bd1ab36998aefa0d9e3fa959",
+      "origin": [
+        7,
+        -9
+      ],
+      "size_blocks": [
+        2,
+        2
+      ],
+      "mirror_x": false,
+      "connected_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "entry-to-exit",
+        "exit-to-entry"
+      ],
+      "reward_sites": [],
+      "reward": false
+    },
+    {
+      "id": "M07",
+      "source_module_id": "idea-interface-s09-001",
+      "content_version": "sha256:c3d4ad5ba2898b4f730be3ba3310db937f10c123c05eab163e2d00179464892a",
+      "origin": [
+        9,
+        -9
+      ],
+      "size_blocks": [
+        3,
+        4
+      ],
+      "mirror_x": false,
+      "connected_port_ids": [
+        "L",
+        "B"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "L-to-B",
+        "B-to-L"
+      ],
+      "reward_sites": [],
+      "reward": false
+    },
+    {
+      "id": "M08",
+      "source_module_id": "idea-0363f85c-16c0-4b5f-b3b0-461335608db7-enemies-2",
+      "content_version": "sha256:4cb1d54217bbeef5dcb654c58dc773a53f12bf5cd6bce24f9eb9b7b085eed468",
+      "origin": [
+        10,
+        -5
+      ],
+      "size_blocks": [
+        3,
+        4
+      ],
+      "mirror_x": true,
+      "connected_port_ids": [
+        "A",
+        "B"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "A-to-B",
+        "B-to-A",
+        "A-to-A-retry"
+      ],
+      "reward_sites": [
+        {
+          "id": "reward",
+          "position": [
+            156,
+            20
+          ],
+          "region": [
+            116,
+            -8,
+            80,
+            56
+          ],
+          "amount": 4
+        }
+      ],
+      "reward": false
+    },
+    {
+      "id": "M09",
+      "source_module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x1",
+      "content_version": "sha256:af922edabaef3ded1bbec91ca0643930e736dd3a365514ab2077bc3fa8c57101",
+      "origin": [
+        3,
+        -11
+      ],
+      "size_blocks": [
+        2,
+        1
+      ],
+      "mirror_x": true,
+      "connected_port_ids": [
+        "A",
+        "B"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "A-to-B",
+        "B-to-A"
+      ],
+      "reward_sites": [],
+      "reward": false
+    },
+    {
+      "id": "M10",
+      "source_module_id": "workshop-macro-gate-brake-return-0",
+      "content_version": "sha256:f2c78c40ffb898db69ff256ef31358ad0cc25d90a1530dfc861d394be08a3b13",
+      "origin": [
+        8,
+        -1
+      ],
+      "size_blocks": [
+        6,
+        4
+      ],
+      "mirror_x": true,
+      "connected_port_ids": [
+        "A",
+        "D"
+      ],
+      "sealed_ports": [
+        {
+          "port_id": "C",
+          "component": "gear-seal/1",
+          "face": "LEFT",
+          "rect_pixels": [
+            0,
+            128,
+            32,
+            128
+          ],
+          "opening_pixels": 128,
+          "thickness_pixels": 32,
+          "certified": false,
+          "physical_validation": "NOT_RUN"
+        },
+        {
+          "port_id": "B",
+          "component": "gear-seal/1",
+          "face": "LEFT",
+          "rect_pixels": [
+            0,
+            384,
+            32,
+            128
+          ],
+          "opening_pixels": 128,
+          "thickness_pixels": 32,
+          "certified": false,
+          "physical_validation": "NOT_RUN"
+        }
+      ],
+      "retained_route_ids": [
+        "A-to-D",
+        "D-to-A"
+      ],
+      "reward_sites": [],
+      "reward": false
+    },
+    {
+      "id": "M11",
+      "source_module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-top-2x2",
+      "content_version": "sha256:d69457b13e20608b2d64d4d739a43a56925dda99591d81b1a75b1ad5d1b469c6",
+      "origin": [
+        5,
+        -12
+      ],
+      "size_blocks": [
+        2,
+        2
+      ],
+      "mirror_x": false,
+      "connected_port_ids": [
+        "A",
+        "B"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "A-to-B",
+        "B-to-A"
+      ],
+      "reward_sites": [],
+      "reward": false
+    },
+    {
+      "id": "M12",
+      "source_module_id": "generated-59296f7c9ebdbbc68e0913efe12ce46af74300db662d08af14337f205f6dae85",
+      "content_version": "sha256:d8fc8e8d92f5d6bb84efbb389aa113eb518ff4064e7274760813258f60f09b09",
+      "origin": [
+        14,
+        -2
+      ],
+      "size_blocks": [
+        3,
+        3
+      ],
+      "mirror_x": false,
+      "connected_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "entry-to-exit"
+      ],
+      "reward_sites": [],
+      "reward": false
+    },
+    {
+      "id": "M13",
+      "source_module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-1x2",
+      "content_version": "sha256:7a1d5b20c9a59b3e2d634ca4d5a157e190b3505f203196c80dd3ef0d1e2aea75",
+      "origin": [
+        6,
+        -14
+      ],
+      "size_blocks": [
+        1,
+        2
+      ],
+      "mirror_x": false,
+      "connected_port_ids": [
+        "A",
+        "B"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "A-to-B",
+        "B-to-A"
+      ],
+      "reward_sites": [],
+      "reward": false
+    },
+    {
+      "id": "M14",
+      "source_module_id": "game-plains-perch-double",
+      "content_version": "sha256:ce95de7824e1975f20b605912258bc255375c373134587842514f226a791e04c",
+      "origin": [
+        -3,
+        -10
+      ],
+      "size_blocks": [
+        3,
+        3
+      ],
+      "mirror_x": false,
+      "connected_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "entry-to-exit",
+        "exit-to-entry"
+      ],
+      "reward_sites": [],
+      "reward": false
+    },
+    {
+      "id": "M15",
+      "source_module_id": "generated-8df5613256e70989f6ae5795803344bdc3e636fe3232c2e35175fae612f633ba",
+      "content_version": "sha256:43fd888a501cbbca23ae11b8a41932bfe6572782517d761962265febf32db832",
+      "origin": [
+        -6,
+        -12
+      ],
+      "size_blocks": [
+        3,
+        5
+      ],
+      "mirror_x": true,
+      "connected_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "entry-to-exit",
+        "exit-to-entry"
+      ],
+      "reward_sites": [
+        {
+          "id": "visible-cache",
+          "position": [
+            226.0,
+            206.0
+          ],
+          "region": [
+            196,
+            201,
+            60,
+            10
+          ],
+          "amount": 16
+        }
+      ],
+      "reward": false
+    },
+    {
+      "id": "M16",
+      "source_module_id": "game-plains-remote-bell",
+      "content_version": "sha256:9e4035d99e024793c98767d4f5a42d5cf581b9750cd02f255a4bcf001c04a78f",
+      "origin": [
+        -3,
+        -12
+      ],
+      "size_blocks": [
+        5,
+        2
+      ],
+      "mirror_x": false,
+      "connected_port_ids": [
+        "entry"
+      ],
+      "sealed_ports": [
+        {
+          "port_id": "exit",
+          "component": "gear-seal/1",
+          "face": "RIGHT",
+          "rect_pixels": [
+            608,
+            128,
+            32,
+            128
+          ],
+          "opening_pixels": 128,
+          "thickness_pixels": 32,
+          "certified": false,
+          "physical_validation": "NOT_RUN"
+        }
+      ],
+      "retained_route_ids": [],
+      "reward_sites": [],
+      "reward": false
+    },
+    {
+      "id": "M17",
+      "source_module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-top-1x2",
+      "content_version": "sha256:aca174764eebe4659c043970ad138772cb58578837cd4a4e1cd83df60e16ea01",
+      "origin": [
+        5,
+        -15
+      ],
+      "size_blocks": [
+        1,
+        2
+      ],
+      "mirror_x": true,
+      "connected_port_ids": [
+        "A"
+      ],
+      "sealed_ports": [
+        {
+          "port_id": "B",
+          "component": "gear-seal/1",
+          "face": "TOP",
+          "rect_pixels": [
+            0,
+            0,
+            128,
+            32
+          ],
+          "opening_pixels": 128,
+          "thickness_pixels": 32,
+          "certified": false,
+          "physical_validation": "NOT_RUN"
+        }
+      ],
+      "retained_route_ids": [],
+      "reward_sites": [],
+      "reward": false
+    },
+    {
+      "id": "M18",
+      "source_module_id": "idea-interface-s07-001",
+      "content_version": "sha256:c61667f3f8189667e774477b584ef4a1a0dd3b45c0932dc029cd9de9918bf77e",
+      "origin": [
+        17,
+        -2
+      ],
+      "size_blocks": [
+        4,
+        3
+      ],
+      "mirror_x": false,
+      "connected_port_ids": [
+        "L",
+        "T"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "L-to-T",
+        "T-to-L"
+      ],
+      "reward_sites": [],
+      "reward": false
+    },
+    {
+      "id": "M19",
+      "source_module_id": "idea-spec02-s10-001",
+      "content_version": "sha256:c98aa31cbdf015b01a6708ca8c52921ccea2f1ecd62452717968fe5b9b8fd814",
+      "origin": [
+        18,
+        -7
+      ],
+      "size_blocks": [
+        3,
+        5
+      ],
+      "mirror_x": false,
+      "connected_port_ids": [
+        "R",
+        "B"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "R-to-B",
+        "B-to-R"
+      ],
+      "reward_sites": [],
+      "reward": false
+    },
+    {
+      "id": "M20",
+      "source_module_id": "game-plains-micro-landing",
+      "content_version": "sha256:1f4a977dae14617e6cda013a0db623a62b70104c0496e2d86c9a4d438bd0dc52",
+      "origin": [
+        21,
+        -6
+      ],
+      "size_blocks": [
+        1,
+        1
+      ],
+      "mirror_x": false,
+      "connected_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "main"
+      ],
+      "reward_sites": [],
+      "reward": false
+    },
+    {
+      "id": "M21",
+      "source_module_id": "game-plains-fork-paths",
+      "content_version": "sha256:3b796ef52899c779c10d1f1eee55e3a3c18aedc4aa3ebc8c52ac381bbe6b9783",
+      "origin": [
+        22,
+        -10
+      ],
+      "size_blocks": [
+        4,
+        5
+      ],
+      "mirror_x": true,
+      "connected_port_ids": [
+        "entry",
+        "fork_right",
+        "fork_up",
+        "C"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "entry-to-fork_right",
+        "fork_right-to-entry",
+        "entry-to-fork_up",
+        "fork_up-to-entry",
+        "fork_right-to-fork_up",
+        "fork_up-to-fork_right",
+        "entry-to-C",
+        "C-to-entry",
+        "fork_right-to-C",
+        "C-to-fork_right",
+        "fork_up-to-C",
+        "C-to-fork_up"
+      ],
+      "reward_sites": [],
+      "reward": false
+    },
+    {
+      "id": "M22",
+      "source_module_id": "block-demand-a1-bidirectional-risk-reward-1",
+      "content_version": "sha256:d25f3edcc3ed7b12db3a083775b2f0395c76491ddb8c5e09e655c4c254eeafb4",
+      "origin": [
+        18,
+        -11
+      ],
+      "size_blocks": [
+        4,
+        2
+      ],
+      "mirror_x": false,
+      "connected_port_ids": [
+        "A",
+        "B"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "A-to-B",
+        "B-to-A"
+      ],
+      "reward_sites": [
+        {
+          "id": "visible-cache",
+          "position": [
+            474.0,
+            206.0
+          ],
+          "region": [
+            449,
+            201,
+            50,
+            10
+          ],
+          "amount": 8
+        }
+      ],
+      "reward": false
+    },
+    {
+      "id": "M23",
+      "source_module_id": "idea-interface-s11-001",
+      "content_version": "sha256:69e521575c88d5bce822eb037773288e3ad10efa4365192945185a0aa76f1dc7",
+      "origin": [
+        13,
+        -10
+      ],
+      "size_blocks": [
+        5,
+        4
+      ],
+      "mirror_x": false,
+      "connected_port_ids": [
+        "R",
+        "B"
+      ],
+      "sealed_ports": [
+        {
+          "port_id": "L",
+          "component": "gear-seal/1",
+          "face": "LEFT",
+          "rect_pixels": [
+            0,
+            256,
+            32,
+            128
+          ],
+          "opening_pixels": 128,
+          "thickness_pixels": 32,
+          "certified": false,
+          "physical_validation": "NOT_RUN"
+        }
+      ],
+      "retained_route_ids": [
+        "R-to-B",
+        "B-to-R"
+      ],
+      "reward_sites": [],
+      "reward": false
+    },
+    {
+      "id": "M24",
+      "source_module_id": "idea-plains-hq02-001",
+      "content_version": "sha256:de31cc48d5af991f48ac44f6af4c0ff3f6d0fc94067bf38aca162ae4345fd25b",
+      "origin": [
+        14,
+        -6
+      ],
+      "size_blocks": [
+        3,
+        4
+      ],
+      "mirror_x": true,
+      "connected_port_ids": [
+        "T"
+      ],
+      "sealed_ports": [
+        {
+          "port_id": "B",
+          "component": "gear-seal/1",
+          "face": "BOTTOM",
+          "rect_pixels": [
+            0,
+            480,
+            128,
+            32
+          ],
+          "opening_pixels": 128,
+          "thickness_pixels": 32,
+          "certified": false,
+          "physical_validation": "NOT_RUN"
+        }
+      ],
+      "retained_route_ids": [],
+      "reward_sites": [],
+      "reward": false
+    },
+    {
+      "id": "M25",
+      "source_module_id": "idea-interface-s12-001",
+      "content_version": "sha256:9d2244662c5fe81484ba67440de1400469b828c390f96ce38ec87e41f4174447",
+      "origin": [
+        22,
+        -14
+      ],
+      "size_blocks": [
+        5,
+        4
+      ],
+      "mirror_x": true,
+      "connected_port_ids": [
+        "L",
+        "R",
+        "T",
+        "B"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "L-to-R",
+        "L-to-T",
+        "L-to-B",
+        "R-to-L",
+        "R-to-T",
+        "R-to-B",
+        "T-to-L",
+        "T-to-R",
+        "T-to-B",
+        "B-to-L",
+        "B-to-R",
+        "B-to-T"
+      ],
+      "reward_sites": [],
+      "reward": false
+    },
+    {
+      "id": "M26",
+      "source_module_id": "game-moving-transfer",
+      "content_version": "sha256:69e4b597822a6d9063905c928bcefb17e2064453fb04bfebfd842e3da7dfef19",
+      "origin": [
+        14,
+        -14
+      ],
+      "size_blocks": [
+        8,
+        2
+      ],
+      "mirror_x": true,
+      "connected_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "entry-to-exit",
+        "exit-to-entry"
+      ],
+      "reward_sites": [],
+      "reward": false
+    },
+    {
+      "id": "M27",
+      "source_module_id": "game-spike-gap",
+      "content_version": "sha256:dbcb506e6270186dce3818006546d99b76bec4f7d6d06d3088867cac6b1a0778",
+      "origin": [
+        9,
+        -14
+      ],
+      "size_blocks": [
+        5,
+        2
+      ],
+      "mirror_x": false,
+      "connected_port_ids": [
+        "exit"
+      ],
+      "sealed_ports": [
+        {
+          "port_id": "entry",
+          "component": "gear-seal/1",
+          "face": "LEFT",
+          "rect_pixels": [
+            0,
+            0,
+            32,
+            128
+          ],
+          "opening_pixels": 128,
+          "thickness_pixels": 32,
+          "certified": false,
+          "physical_validation": "NOT_RUN"
+        }
+      ],
+      "retained_route_ids": [],
+      "reward_sites": [],
+      "reward": false
+    },
+    {
+      "id": "M28",
+      "source_module_id": "idea-interface-s15-001",
+      "content_version": "sha256:df2ffcb19db863ea03cc3458dd695a711e7b865bb1c535678c0e06d4c5c593ea",
+      "origin": [
+        26,
+        -7
+      ],
+      "size_blocks": [
+        3,
+        2
+      ],
+      "mirror_x": false,
+      "connected_port_ids": [
+        "L",
+        "R"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "L-to-R",
+        "R-to-L"
+      ],
+      "reward_sites": [],
+      "reward": false
+    },
+    {
+      "id": "M29",
+      "source_module_id": "generated-c234da4022051a1194ce251aa0da25d06ee572aa2a1c58873f8843f6d934feb2",
+      "content_version": "sha256:358b97bd550302d6ed7b0f7d0957c32c1102f6823f0ce0c3ac71a4c310b5aacc",
+      "origin": [
+        27,
+        -13
+      ],
+      "size_blocks": [
+        4,
+        5
+      ],
+      "mirror_x": false,
+      "connected_port_ids": [
+        "entry"
+      ],
+      "sealed_ports": [
+        {
+          "port_id": "exit",
+          "component": "gear-seal/1",
+          "face": "BOTTOM",
+          "rect_pixels": [
+            256,
+            608,
+            128,
+            32
+          ],
+          "opening_pixels": 128,
+          "thickness_pixels": 32,
+          "certified": false,
+          "physical_validation": "NOT_RUN"
+        }
+      ],
+      "retained_route_ids": [],
+      "reward_sites": [
+        {
+          "id": "visible-cache",
+          "position": [
+            355.0,
+            426.0
+          ],
+          "region": [
+            325,
+            421,
+            60,
+            10
+          ],
+          "amount": 14
+        }
+      ],
+      "reward": false
+    },
+    {
+      "id": "M30",
+      "source_module_id": "game-forest-exploration-modules-backlook-fruit-cache",
+      "content_version": "sha256:670e89047187a3531c1e096e1820bf7a0f1ac74e1c43c91d8789f00c6abeaf10",
+      "origin": [
+        29,
+        -8
+      ],
+      "size_blocks": [
+        4,
+        2
+      ],
+      "mirror_x": true,
+      "connected_port_ids": [
+        "entry",
+        "exit",
+        "C"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "entry-to-exit",
+        "exit-to-entry",
+        "entry-to-C",
+        "C-to-entry",
+        "exit-to-C",
+        "C-to-exit"
+      ],
+      "reward_sites": [],
+      "reward": false
+    },
+    {
+      "id": "M31",
+      "source_module_id": "idea-interface-s02-001",
+      "content_version": "sha256:b61839300b2e7faf9662e419d41835f912221a0de02252616a5ab1eeecf425ff",
+      "origin": [
+        31,
+        -13
+      ],
+      "size_blocks": [
+        3,
+        5
+      ],
+      "mirror_x": true,
+      "connected_port_ids": [
+        "T",
+        "B"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "B-to-T",
+        "T-to-B"
+      ],
+      "reward_sites": [],
+      "reward": false
+    },
+    {
+      "id": "M32",
+      "source_module_id": "block-demand-a3-bidirectional-map-traversal-0",
+      "content_version": "sha256:df6b2e84032bc79bd1769a1e91a791ae6ba07e87fda4f7f9966a65944e29f4ff",
+      "origin": [
+        33,
+        -8
+      ],
+      "size_blocks": [
+        5,
+        3
+      ],
+      "mirror_x": true,
+      "connected_port_ids": [
+        "A",
+        "B"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "A-to-B",
+        "B-to-A"
+      ],
+      "reward_sites": [],
+      "reward": false
+    },
+    {
+      "id": "M33",
+      "source_module_id": "idea-interface-s09-001",
+      "content_version": "sha256:c3d4ad5ba2898b4f730be3ba3310db937f10c123c05eab163e2d00179464892a",
+      "origin": [
+        25,
+        -18
+      ],
+      "size_blocks": [
+        3,
+        4
+      ],
+      "mirror_x": true,
+      "connected_port_ids": [
+        "L",
+        "B"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "L-to-B",
+        "B-to-L"
+      ],
+      "reward_sites": [],
+      "reward": false
+    },
+    {
+      "id": "M34",
+      "source_module_id": "game-forest-hollow-trunk-geometry-aircatch",
+      "content_version": "sha256:0f81c9f6d251f30a74c7dc90f5c23cedaa45a2d9c6f9dca772fa5d6c6d9b6b39",
+      "origin": [
+        28,
+        -21
+      ],
+      "size_blocks": [
+        5,
+        7
+      ],
+      "mirror_x": false,
+      "connected_port_ids": [
+        "entry",
+        "C"
+      ],
+      "sealed_ports": [
+        {
+          "port_id": "exit",
+          "component": "gear-seal/1",
+          "face": "RIGHT",
+          "rect_pixels": [
+            608,
+            384,
+            32,
+            128
+          ],
+          "opening_pixels": 128,
+          "thickness_pixels": 32,
+          "certified": false,
+          "physical_validation": "NOT_RUN"
+        }
+      ],
+      "retained_route_ids": [
+        "entry-to-C",
+        "C-to-entry"
+      ],
+      "reward_sites": [],
+      "reward": false
+    },
+    {
+      "id": "M35",
+      "source_module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-1x2",
+      "content_version": "sha256:7a1d5b20c9a59b3e2d634ca4d5a157e190b3505f203196c80dd3ef0d1e2aea75",
+      "origin": [
+        33,
+        -15
+      ],
+      "size_blocks": [
+        1,
+        2
+      ],
+      "mirror_x": false,
+      "connected_port_ids": [
+        "A",
+        "B"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "A-to-B",
+        "B-to-A"
+      ],
+      "reward_sites": [],
+      "reward": false
+    },
+    {
+      "id": "M36",
+      "source_module_id": "game-plains-boss-arena",
+      "content_version": "sha256:b11d7715850df541281f897be00d547b34fce0ef09262ec24ffb505f1064a083",
+      "origin": [
+        38,
+        -10
+      ],
+      "size_blocks": [
+        9,
+        5
+      ],
+      "mirror_x": false,
+      "connected_port_ids": [
+        "L"
+      ],
+      "sealed_ports": [
+        {
+          "port_id": "exit",
+          "component": "gear-seal/1",
+          "face": "RIGHT",
+          "rect_pixels": [
+            1120,
+            384,
+            32,
+            128
+          ],
+          "opening_pixels": 128,
+          "thickness_pixels": 32,
+          "certified": false,
+          "physical_validation": "NOT_RUN"
+        }
+      ],
+      "retained_route_ids": [],
+      "reward_sites": [],
+      "reward": false
+    }
+  ],
+  "connections": [
+    {
+      "a": "M01.R",
+      "b": "M02.R",
+      "world2": [
+        8,
+        3
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M02.T",
+      "b": "M03.B",
+      "world2": [
+        9,
+        0
+      ],
+      "surface": "ONE_WAY_PLATFORM"
+    },
+    {
+      "a": "M03.T",
+      "b": "M04.B",
+      "world2": [
+        3,
+        -12
+      ],
+      "surface": "ONE_WAY_PLATFORM"
+    },
+    {
+      "a": "M04.L",
+      "b": "M05.exit",
+      "world2": [
+        10,
+        -15
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M04.R",
+      "b": "M14.exit",
+      "world2": [
+        0,
+        -19
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M04.T",
+      "b": "M09.B",
+      "world2": [
+        7,
+        -20
+      ],
+      "surface": "ONE_WAY_PLATFORM"
+    },
+    {
+      "a": "M05.entry",
+      "b": "M06.entry",
+      "world2": [
+        14,
+        -15
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M06.exit",
+      "b": "M07.L",
+      "world2": [
+        18,
+        -17
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M07.B",
+      "b": "M08.B",
+      "world2": [
+        23,
+        -10
+      ],
+      "surface": "ONE_WAY_PLATFORM"
+    },
+    {
+      "a": "M08.A",
+      "b": "M10.D",
+      "world2": [
+        23,
+        -2
+      ],
+      "surface": "ONE_WAY_PLATFORM"
+    },
+    {
+      "a": "M09.A",
+      "b": "M11.A",
+      "world2": [
+        10,
+        -21
+      ],
+      "surface": "ONE_WAY_PLATFORM"
+    },
+    {
+      "a": "M10.A",
+      "b": "M12.entry",
+      "world2": [
+        28,
+        1
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M11.B",
+      "b": "M13.B",
+      "world2": [
+        13,
+        -24
+      ],
+      "surface": "ONE_WAY_PLATFORM"
+    },
+    {
+      "a": "M12.exit",
+      "b": "M18.L",
+      "world2": [
+        34,
+        -1
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M13.A",
+      "b": "M17.A",
+      "world2": [
+        12,
+        -27
+      ],
+      "surface": "ONE_WAY_PLATFORM"
+    },
+    {
+      "a": "M14.entry",
+      "b": "M15.entry",
+      "world2": [
+        -6,
+        -15
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M15.exit",
+      "b": "M16.entry",
+      "world2": [
+        -6,
+        -21
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M18.T",
+      "b": "M19.B",
+      "world2": [
+        41,
+        -4
+      ],
+      "surface": "ONE_WAY_PLATFORM"
+    },
+    {
+      "a": "M19.R",
+      "b": "M20.entry",
+      "world2": [
+        42,
+        -11
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M20.exit",
+      "b": "M21.fork_right",
+      "world2": [
+        44,
+        -11
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M21.entry",
+      "b": "M28.L",
+      "world2": [
+        52,
+        -11
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M21.fork_up",
+      "b": "M22.B",
+      "world2": [
+        44,
+        -19
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M21.C",
+      "b": "M25.B",
+      "world2": [
+        47,
+        -20
+      ],
+      "surface": "ONE_WAY_PLATFORM"
+    },
+    {
+      "a": "M22.A",
+      "b": "M23.R",
+      "world2": [
+        36,
+        -19
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M23.B",
+      "b": "M24.T",
+      "world2": [
+        33,
+        -12
+      ],
+      "surface": "ONE_WAY_PLATFORM"
+    },
+    {
+      "a": "M25.L",
+      "b": "M29.entry",
+      "world2": [
+        54,
+        -23
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M25.R",
+      "b": "M26.entry",
+      "world2": [
+        44,
+        -27
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M25.T",
+      "b": "M33.B",
+      "world2": [
+        51,
+        -28
+      ],
+      "surface": "ONE_WAY_PLATFORM"
+    },
+    {
+      "a": "M26.exit",
+      "b": "M27.exit",
+      "world2": [
+        28,
+        -27
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M28.R",
+      "b": "M30.exit",
+      "world2": [
+        58,
+        -13
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M30.entry",
+      "b": "M32.B",
+      "world2": [
+        66,
+        -13
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M30.C",
+      "b": "M31.B",
+      "world2": [
+        63,
+        -16
+      ],
+      "surface": "ONE_WAY_PLATFORM"
+    },
+    {
+      "a": "M31.T",
+      "b": "M35.B",
+      "world2": [
+        67,
+        -26
+      ],
+      "surface": "ONE_WAY_PLATFORM"
+    },
+    {
+      "a": "M32.A",
+      "b": "M36.L",
+      "world2": [
+        76,
+        -13
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M33.L",
+      "b": "M34.entry",
+      "world2": [
+        56,
+        -35
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M34.C",
+      "b": "M35.A",
+      "world2": [
+        66,
+        -29
+      ],
+      "surface": "ONE_WAY_PLATFORM"
+    }
+  ],
+  "main_paths": [],
+  "actual_graph_edges": [
+    [
+      "M01.R:depart",
+      "M02.R:arrive"
+    ],
+    [
+      "M02.R:arrive",
+      "M02.T:depart"
+    ],
+    [
+      "M02.R:depart",
+      "M01.R:arrive"
+    ],
+    [
+      "M02.T:arrive",
+      "M02.R:depart"
+    ],
+    [
+      "M02.T:depart",
+      "M03.B:arrive"
+    ],
+    [
+      "M03.B:arrive",
+      "M03.T:depart"
+    ],
+    [
+      "M03.B:depart",
+      "M02.T:arrive"
+    ],
+    [
+      "M03.T:arrive",
+      "M03.B:depart"
+    ],
+    [
+      "M03.T:depart",
+      "M04.B:arrive"
+    ],
+    [
+      "M04.B:arrive",
+      "M04.L:depart"
+    ],
+    [
+      "M04.B:arrive",
+      "M04.R:depart"
+    ],
+    [
+      "M04.B:arrive",
+      "M04.T:depart"
+    ],
+    [
+      "M04.B:depart",
+      "M03.T:arrive"
+    ],
+    [
+      "M04.L:arrive",
+      "M04.R:depart"
+    ],
+    [
+      "M04.L:arrive",
+      "M04.T:depart"
+    ],
+    [
+      "M04.L:arrive",
+      "M04.B:depart"
+    ],
+    [
+      "M04.L:depart",
+      "M05.exit:arrive"
+    ],
+    [
+      "M04.R:arrive",
+      "M04.L:depart"
+    ],
+    [
+      "M04.R:arrive",
+      "M04.T:depart"
+    ],
+    [
+      "M04.R:arrive",
+      "M04.B:depart"
+    ],
+    [
+      "M04.R:depart",
+      "M14.exit:arrive"
+    ],
+    [
+      "M04.T:arrive",
+      "M04.L:depart"
+    ],
+    [
+      "M04.T:arrive",
+      "M04.R:depart"
+    ],
+    [
+      "M04.T:arrive",
+      "M04.B:depart"
+    ],
+    [
+      "M04.T:depart",
+      "M09.B:arrive"
+    ],
+    [
+      "M05.entry:arrive",
+      "M05.exit:depart"
+    ],
+    [
+      "M05.entry:depart",
+      "M06.entry:arrive"
+    ],
+    [
+      "M05.exit:arrive",
+      "M05.entry:depart"
+    ],
+    [
+      "M05.exit:depart",
+      "M04.L:arrive"
+    ],
+    [
+      "M06.entry:arrive",
+      "M06.exit:depart"
+    ],
+    [
+      "M06.entry:depart",
+      "M05.entry:arrive"
+    ],
+    [
+      "M06.exit:arrive",
+      "M06.entry:depart"
+    ],
+    [
+      "M06.exit:depart",
+      "M07.L:arrive"
+    ],
+    [
+      "M07.B:arrive",
+      "M07.L:depart"
+    ],
+    [
+      "M07.B:depart",
+      "M08.B:arrive"
+    ],
+    [
+      "M07.L:arrive",
+      "M07.B:depart"
+    ],
+    [
+      "M07.L:depart",
+      "M06.exit:arrive"
+    ],
+    [
+      "M08.A:arrive",
+      "M08.B:depart"
+    ],
+    [
+      "M08.A:arrive",
+      "M08.A:depart"
+    ],
+    [
+      "M08.A:depart",
+      "M10.D:arrive"
+    ],
+    [
+      "M08.B:arrive",
+      "M08.A:depart"
+    ],
+    [
+      "M08.B:depart",
+      "M07.B:arrive"
+    ],
+    [
+      "M09.A:arrive",
+      "M09.B:depart"
+    ],
+    [
+      "M09.A:depart",
+      "M11.A:arrive"
+    ],
+    [
+      "M09.B:arrive",
+      "M09.A:depart"
+    ],
+    [
+      "M09.B:depart",
+      "M04.T:arrive"
+    ],
+    [
+      "M10.A:arrive",
+      "M10.D:depart"
+    ],
+    [
+      "M10.A:depart",
+      "M12.entry:arrive"
+    ],
+    [
+      "M10.D:arrive",
+      "M10.A:depart"
+    ],
+    [
+      "M10.D:depart",
+      "M08.A:arrive"
+    ],
+    [
+      "M11.A:arrive",
+      "M11.B:depart"
+    ],
+    [
+      "M11.A:depart",
+      "M09.A:arrive"
+    ],
+    [
+      "M11.B:arrive",
+      "M11.A:depart"
+    ],
+    [
+      "M11.B:depart",
+      "M13.B:arrive"
+    ],
+    [
+      "M12.entry:arrive",
+      "M12.exit:depart"
+    ],
+    [
+      "M12.entry:depart",
+      "M10.A:arrive"
+    ],
+    [
+      "M12.exit:depart",
+      "M18.L:arrive"
+    ],
+    [
+      "M13.A:arrive",
+      "M13.B:depart"
+    ],
+    [
+      "M13.A:depart",
+      "M17.A:arrive"
+    ],
+    [
+      "M13.B:arrive",
+      "M13.A:depart"
+    ],
+    [
+      "M13.B:depart",
+      "M11.B:arrive"
+    ],
+    [
+      "M14.entry:arrive",
+      "M14.exit:depart"
+    ],
+    [
+      "M14.entry:depart",
+      "M15.entry:arrive"
+    ],
+    [
+      "M14.exit:arrive",
+      "M14.entry:depart"
+    ],
+    [
+      "M14.exit:depart",
+      "M04.R:arrive"
+    ],
+    [
+      "M15.entry:arrive",
+      "M15:reward:entry-to-exit:visible-cache"
+    ],
+    [
+      "M15.entry:depart",
+      "M14.entry:arrive"
+    ],
+    [
+      "M15.exit:arrive",
+      "M15.entry:depart"
+    ],
+    [
+      "M15.exit:depart",
+      "M16.entry:arrive"
+    ],
+    [
+      "M15:reward:entry-to-exit:visible-cache",
+      "M15.exit:depart"
+    ],
+    [
+      "M16.entry:depart",
+      "M15.exit:arrive"
+    ],
+    [
+      "M17.A:depart",
+      "M13.A:arrive"
+    ],
+    [
+      "M18.L:arrive",
+      "M18.T:depart"
+    ],
+    [
+      "M18.L:depart",
+      "M12.exit:arrive"
+    ],
+    [
+      "M18.T:arrive",
+      "M18.L:depart"
+    ],
+    [
+      "M18.T:depart",
+      "M19.B:arrive"
+    ],
+    [
+      "M19.B:arrive",
+      "M19.R:depart"
+    ],
+    [
+      "M19.B:depart",
+      "M18.T:arrive"
+    ],
+    [
+      "M19.R:arrive",
+      "M19.B:depart"
+    ],
+    [
+      "M19.R:depart",
+      "M20.entry:arrive"
+    ],
+    [
+      "M20.entry:arrive",
+      "M20.exit:depart"
+    ],
+    [
+      "M20.entry:depart",
+      "M19.R:arrive"
+    ],
+    [
+      "M20.exit:depart",
+      "M21.fork_right:arrive"
+    ],
+    [
+      "M21.C:arrive",
+      "M21.entry:depart"
+    ],
+    [
+      "M21.C:arrive",
+      "M21.fork_right:depart"
+    ],
+    [
+      "M21.C:arrive",
+      "M21.fork_up:depart"
+    ],
+    [
+      "M21.C:depart",
+      "M25.B:arrive"
+    ],
+    [
+      "M21.entry:arrive",
+      "M21.fork_right:depart"
+    ],
+    [
+      "M21.entry:arrive",
+      "M21.fork_up:depart"
+    ],
+    [
+      "M21.entry:arrive",
+      "M21.C:depart"
+    ],
+    [
+      "M21.entry:depart",
+      "M28.L:arrive"
+    ],
+    [
+      "M21.fork_right:arrive",
+      "M21.entry:depart"
+    ],
+    [
+      "M21.fork_right:arrive",
+      "M21.fork_up:depart"
+    ],
+    [
+      "M21.fork_right:arrive",
+      "M21.C:depart"
+    ],
+    [
+      "M21.fork_right:depart",
+      "M20.exit:arrive"
+    ],
+    [
+      "M21.fork_up:arrive",
+      "M21.entry:depart"
+    ],
+    [
+      "M21.fork_up:arrive",
+      "M21.fork_right:depart"
+    ],
+    [
+      "M21.fork_up:arrive",
+      "M21.C:depart"
+    ],
+    [
+      "M21.fork_up:depart",
+      "M22.B:arrive"
+    ],
+    [
+      "M22.A:arrive",
+      "M22:reward:A-to-B:visible-cache"
+    ],
+    [
+      "M22.A:depart",
+      "M23.R:arrive"
+    ],
+    [
+      "M22.B:arrive",
+      "M22.A:depart"
+    ],
+    [
+      "M22.B:depart",
+      "M21.fork_up:arrive"
+    ],
+    [
+      "M22:reward:A-to-B:visible-cache",
+      "M22.B:depart"
+    ],
+    [
+      "M23.B:arrive",
+      "M23.R:depart"
+    ],
+    [
+      "M23.B:depart",
+      "M24.T:arrive"
+    ],
+    [
+      "M23.R:arrive",
+      "M23.B:depart"
+    ],
+    [
+      "M23.R:depart",
+      "M22.A:arrive"
+    ],
+    [
+      "M24.T:depart",
+      "M23.B:arrive"
+    ],
+    [
+      "M25.B:arrive",
+      "M25.L:depart"
+    ],
+    [
+      "M25.B:arrive",
+      "M25.R:depart"
+    ],
+    [
+      "M25.B:arrive",
+      "M25.T:depart"
+    ],
+    [
+      "M25.B:depart",
+      "M21.C:arrive"
+    ],
+    [
+      "M25.L:arrive",
+      "M25.R:depart"
+    ],
+    [
+      "M25.L:arrive",
+      "M25.T:depart"
+    ],
+    [
+      "M25.L:arrive",
+      "M25.B:depart"
+    ],
+    [
+      "M25.L:depart",
+      "M29.entry:arrive"
+    ],
+    [
+      "M25.R:arrive",
+      "M25.L:depart"
+    ],
+    [
+      "M25.R:arrive",
+      "M25.T:depart"
+    ],
+    [
+      "M25.R:arrive",
+      "M25.B:depart"
+    ],
+    [
+      "M25.R:depart",
+      "M26.entry:arrive"
+    ],
+    [
+      "M25.T:arrive",
+      "M25.L:depart"
+    ],
+    [
+      "M25.T:arrive",
+      "M25.R:depart"
+    ],
+    [
+      "M25.T:arrive",
+      "M25.B:depart"
+    ],
+    [
+      "M25.T:depart",
+      "M33.B:arrive"
+    ],
+    [
+      "M26.entry:arrive",
+      "M26.exit:depart"
+    ],
+    [
+      "M26.entry:depart",
+      "M25.R:arrive"
+    ],
+    [
+      "M26.exit:arrive",
+      "M26.entry:depart"
+    ],
+    [
+      "M26.exit:depart",
+      "M27.exit:arrive"
+    ],
+    [
+      "M27.exit:depart",
+      "M26.exit:arrive"
+    ],
+    [
+      "M28.L:arrive",
+      "M28.R:depart"
+    ],
+    [
+      "M28.L:depart",
+      "M21.entry:arrive"
+    ],
+    [
+      "M28.R:arrive",
+      "M28.L:depart"
+    ],
+    [
+      "M28.R:depart",
+      "M30.exit:arrive"
+    ],
+    [
+      "M29.entry:depart",
+      "M25.L:arrive"
+    ],
+    [
+      "M30.C:arrive",
+      "M30.entry:depart"
+    ],
+    [
+      "M30.C:arrive",
+      "M30.exit:depart"
+    ],
+    [
+      "M30.C:depart",
+      "M31.B:arrive"
+    ],
+    [
+      "M30.entry:arrive",
+      "M30.exit:depart"
+    ],
+    [
+      "M30.entry:arrive",
+      "M30.C:depart"
+    ],
+    [
+      "M30.entry:depart",
+      "M32.B:arrive"
+    ],
+    [
+      "M30.exit:arrive",
+      "M30.entry:depart"
+    ],
+    [
+      "M30.exit:arrive",
+      "M30.C:depart"
+    ],
+    [
+      "M30.exit:depart",
+      "M28.R:arrive"
+    ],
+    [
+      "M31.B:arrive",
+      "M31.T:depart"
+    ],
+    [
+      "M31.B:depart",
+      "M30.C:arrive"
+    ],
+    [
+      "M31.T:arrive",
+      "M31.B:depart"
+    ],
+    [
+      "M31.T:depart",
+      "M35.B:arrive"
+    ],
+    [
+      "M32.A:arrive",
+      "M32.B:depart"
+    ],
+    [
+      "M32.A:depart",
+      "M36.L:arrive"
+    ],
+    [
+      "M32.B:arrive",
+      "M32.A:depart"
+    ],
+    [
+      "M32.B:depart",
+      "M30.entry:arrive"
+    ],
+    [
+      "M33.B:arrive",
+      "M33.L:depart"
+    ],
+    [
+      "M33.B:depart",
+      "M25.T:arrive"
+    ],
+    [
+      "M33.L:arrive",
+      "M33.B:depart"
+    ],
+    [
+      "M33.L:depart",
+      "M34.entry:arrive"
+    ],
+    [
+      "M34.C:arrive",
+      "M34.entry:depart"
+    ],
+    [
+      "M34.C:depart",
+      "M35.A:arrive"
+    ],
+    [
+      "M34.entry:arrive",
+      "M34.C:depart"
+    ],
+    [
+      "M34.entry:depart",
+      "M33.L:arrive"
+    ],
+    [
+      "M35.A:arrive",
+      "M35.B:depart"
+    ],
+    [
+      "M35.A:depart",
+      "M34.C:arrive"
+    ],
+    [
+      "M35.B:arrive",
+      "M35.A:depart"
+    ],
+    [
+      "M35.B:depart",
+      "M31.T:arrive"
+    ],
+    [
+      "M36.L:arrive",
+      "BOSS"
+    ],
+    [
+      "M36.L:depart",
+      "M32.A:arrive"
+    ],
+    [
+      "START",
+      "M01.R:depart"
+    ]
+  ]
+}

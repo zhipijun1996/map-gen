@@ -1,0 +1,29 @@
+{
+  "schema": "mapgen/optimization-study/1",
+  "package_version": "1.1.0",
+  "package_sha256": "5ad5a7871941b2c1ffa759b18f7b1e80f2fe7e571b72f95d1e0ef26031f08723",
+  "seeds": [271028,271029,271030,271031,271032,271033,271034,271035,271036,271037,271038,271039,271040,271041,271042,271043,271044,271045,271046,271047],
+  "pilot_seeds": [910001,910002,910003],
+  "variants": ["route", "expansion", "backtrack"],
+  "growth_target": 32,
+  "reward_target": 6,
+  "close_attempts": 3,
+  "close_depth": 3,
+  "closure_beam_width": 18,
+  "growth_frontier_limit": 22,
+  "growth_choice_count": 5,
+  "candidate_expansion_budget": 500000,
+  "per_seed_timeout_seconds": 90,
+  "max_growth_backtracks": 128,
+  "max_rewind_depth": 3,
+  "max_terminal_states": 128,
+  "max_layout_repairs": 8,
+  "expansion_weights": {
+    "usable_exit": 8,
+    "bidirectional_exit": 3,
+    "terminal_slot": 2,
+    "dead_end": -24
+  },
+  "selection_rule": "Evaluate all fixed seeds for all cumulative variants. No seed replacement, no fallback, no module content edits, no target reduction. Record all failed complete layouts and backtracked dead-end states. Timed-out and budget-exhausted seeds remain failures.",
+  "interpretation": "Fixed seeds are a previously observed regression/optimization benchmark, not an independent holdout. A static pass is not Godot or gameplay certification."
+}

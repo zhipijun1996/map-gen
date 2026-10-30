@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/workspace/map-gen/experiments/optimization-v1/run.py", line 87, in worker
+    try:assembled=gen.build()
+                  ^^^^^^^^^^^
+  File "/workspace/map-gen/experiments/optimization-v1/solver.py", line 346, in build
+    self.grow(self.config['growth_target']);growth=copy.deepcopy(self.items)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/map-gen/experiments/optimization-v1/solver.py", line 233, in grow
+    raise SearchFailure('growth_exhausted')
+solver.SearchFailure: growth_exhausted

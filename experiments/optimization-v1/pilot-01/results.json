@@ -1,0 +1,1010 @@
+{
+  "schema": "mapgen/optimization-results/1",
+  "stage": "pilot",
+  "seeds": [
+    910001,
+    910002,
+    910003
+  ],
+  "variants": [
+    "route",
+    "expansion",
+    "backtrack"
+  ],
+  "config": {
+    "schema": "mapgen/optimization-study/1",
+    "package_version": "1.1.0",
+    "package_sha256": "5ad5a7871941b2c1ffa759b18f7b1e80f2fe7e571b72f95d1e0ef26031f08723",
+    "seeds": [
+      271028,
+      271029,
+      271030,
+      271031,
+      271032,
+      271033,
+      271034,
+      271035,
+      271036,
+      271037,
+      271038,
+      271039,
+      271040,
+      271041,
+      271042,
+      271043,
+      271044,
+      271045,
+      271046,
+      271047
+    ],
+    "pilot_seeds": [
+      910001,
+      910002,
+      910003
+    ],
+    "variants": [
+      "route",
+      "expansion",
+      "backtrack"
+    ],
+    "growth_target": 32,
+    "reward_target": 6,
+    "close_attempts": 3,
+    "close_depth": 3,
+    "closure_beam_width": 18,
+    "growth_frontier_limit": 22,
+    "growth_choice_count": 5,
+    "candidate_expansion_budget": 500000,
+    "per_seed_timeout_seconds": 90,
+    "max_growth_backtracks": 128,
+    "max_rewind_depth": 3,
+    "max_terminal_states": 128,
+    "max_layout_repairs": 8,
+    "expansion_weights": {
+      "usable_exit": 8,
+      "bidirectional_exit": 3,
+      "terminal_slot": 2,
+      "dead_end": -24
+    },
+    "selection_rule": "Evaluate all fixed seeds for all cumulative variants. No seed replacement, no fallback, no module content edits, no target reduction. Record all failed complete layouts and backtracked dead-end states. Timed-out and budget-exhausted seeds remain failures.",
+    "interpretation": "Fixed seeds are a previously observed regression/optimization benchmark, not an independent holdout. A static pass is not Godot or gameplay certification."
+  },
+  "source_sha256": {
+    "experiments/legacy-real-v2/adapter.py": "e01ac1b0e454ee62106b42a311c8b414d7a218324d35ecf29e2c84eda68d2a02",
+    "experiments/legacy-real-v2/bindings.json": "e606097ca30588344e2bbaf04fb8113a9f417f101ffbf69a9a5b95f62e517e35",
+    "experiments/legacy-real-v2/package-lock.json": "45e740708891fa2ebb2f63be82a073bc21c12d83ef9fcd6005c9dbc0d72dbd69",
+    "experiments/legacy-real-v2/report.py": "8d751b9d27f63e891a353a5cc30ff5b434da60ba54863a491312384675b47ad5",
+    "experiments/legacy-real-v2/run.py": "98d3c0a0bf40de11e3c457de9b75c93591a5745c6b11be5aa1098cee0e14a249",
+    "experiments/legacy-real-v2/test_adapter.py": "3086f06ae3bdb6ebf8e41c399a0cff4fb3597fe9901fb955f0e181b7d3febb8a",
+    "experiments/legacy-real-v2/transform.py": "27d9beb016aea925cc7b4945ae8c6cb5fe73cd76d5e3d550213d9ff4d23a68b7",
+    "experiments/optimization-v1/PLAN.md": "8d04804a5715eb4c1bdc88be3400d0146d3d554957b07a439a9a59dad9ecea5b",
+    "experiments/optimization-v1/config.json": "94ada88c180d372f4a4e43a2fcdfa7aa46ab2a6496bfba49af9ecb4df9335974",
+    "experiments/optimization-v1/run.py": "7addfb220a4dba0482dbda846362bef42163fb5d69b5c795d5d4813bcc8449c0",
+    "experiments/optimization-v1/solver.py": "db88eaccd93a964ab7d3b91623c676df98f5fa71ebec38972b88c9b132ca8f52",
+    "experiments/seed-study/source/generate.py": "30bda7df8ea78296b772930737744af9c19c0a889a5bffa90430c85fdd2c5aed",
+    "experiments/seed-study/source/model.py": "20288e91a47ac2bc60c80805a7bd7cd5831cd7df1b01b18b0d1aa3094431b598"
+  },
+  "baseline_results_sha256": "cb1c2569ce0b177f0257ece18d6b61373ab83bffb6ba9b210a1f12728062977a",
+  "baseline": [
+    {
+      "seed": 271028,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "boss_rewards_and_graph_validation",
+        "error": "RuntimeError: boss cannot fit"
+      },
+      "instances": 32,
+      "connections": 32,
+      "mirrored": 16,
+      "sealed_ports": 9,
+      "rewards": 0,
+      "reward_sites": 2,
+      "boss_reachable": false,
+      "unreachable_instances": 29,
+      "air_connected": false,
+      "blockers": 5,
+      "blocker_reasons": [
+        "boss_not_placed",
+        "boss_unreachable",
+        "legacy_generator_rejected",
+        "reward_target_not_met",
+        "unreachable_instances"
+      ],
+      "seconds": 1.913
+    },
+    {
+      "seed": 271029,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "growth",
+        "error": "RuntimeError: growth exhausted"
+      },
+      "instances": 9,
+      "connections": 8,
+      "mirrored": 4,
+      "sealed_ports": 2,
+      "rewards": 0,
+      "reward_sites": 0,
+      "boss_reachable": false,
+      "unreachable_instances": 3,
+      "air_connected": null,
+      "blockers": 5,
+      "blocker_reasons": [
+        "boss_not_placed",
+        "boss_unreachable",
+        "legacy_generator_rejected",
+        "reward_target_not_met",
+        "unreachable_instances"
+      ],
+      "seconds": 0.0276
+    },
+    {
+      "seed": 271030,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "boss_rewards_and_graph_validation",
+        "error": "RuntimeError: boss cannot fit"
+      },
+      "instances": 34,
+      "connections": 37,
+      "mirrored": 17,
+      "sealed_ports": 8,
+      "rewards": 0,
+      "reward_sites": 3,
+      "boss_reachable": false,
+      "unreachable_instances": 24,
+      "air_connected": false,
+      "blockers": 5,
+      "blocker_reasons": [
+        "boss_not_placed",
+        "boss_unreachable",
+        "legacy_generator_rejected",
+        "reward_target_not_met",
+        "unreachable_instances"
+      ],
+      "seconds": 0.3061
+    },
+    {
+      "seed": 271031,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "growth",
+        "error": "RuntimeError: growth exhausted"
+      },
+      "instances": 13,
+      "connections": 12,
+      "mirrored": 5,
+      "sealed_ports": 2,
+      "rewards": 0,
+      "reward_sites": 1,
+      "boss_reachable": false,
+      "unreachable_instances": 9,
+      "air_connected": null,
+      "blockers": 5,
+      "blocker_reasons": [
+        "boss_not_placed",
+        "boss_unreachable",
+        "legacy_generator_rejected",
+        "reward_target_not_met",
+        "unreachable_instances"
+      ],
+      "seconds": 0.0267
+    },
+    {
+      "seed": 271032,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "boss_rewards_and_graph_validation",
+        "error": "RuntimeError: boss cannot fit"
+      },
+      "instances": 32,
+      "connections": 32,
+      "mirrored": 18,
+      "sealed_ports": 7,
+      "rewards": 0,
+      "reward_sites": 7,
+      "boss_reachable": false,
+      "unreachable_instances": 27,
+      "air_connected": false,
+      "blockers": 5,
+      "blocker_reasons": [
+        "boss_not_placed",
+        "boss_unreachable",
+        "legacy_generator_rejected",
+        "reward_target_not_met",
+        "unreachable_instances"
+      ],
+      "seconds": 0.3617
+    },
+    {
+      "seed": 271033,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "boss_rewards_and_graph_validation",
+        "error": "RuntimeError: boss cannot fit"
+      },
+      "instances": 32,
+      "connections": 31,
+      "mirrored": 12,
+      "sealed_ports": 8,
+      "rewards": 0,
+      "reward_sites": 2,
+      "boss_reachable": false,
+      "unreachable_instances": 29,
+      "air_connected": false,
+      "blockers": 5,
+      "blocker_reasons": [
+        "boss_not_placed",
+        "boss_unreachable",
+        "legacy_generator_rejected",
+        "reward_target_not_met",
+        "unreachable_instances"
+      ],
+      "seconds": 0.6414
+    },
+    {
+      "seed": 271034,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "boss_rewards_and_graph_validation",
+        "error": "RuntimeError: boss cannot fit"
+      },
+      "instances": 34,
+      "connections": 35,
+      "mirrored": 20,
+      "sealed_ports": 6,
+      "rewards": 0,
+      "reward_sites": 4,
+      "boss_reachable": false,
+      "unreachable_instances": 26,
+      "air_connected": false,
+      "blockers": 5,
+      "blocker_reasons": [
+        "boss_not_placed",
+        "boss_unreachable",
+        "legacy_generator_rejected",
+        "reward_target_not_met",
+        "unreachable_instances"
+      ],
+      "seconds": 0.3957
+    },
+    {
+      "seed": 271035,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "boss_rewards_and_graph_validation",
+        "error": "RuntimeError: boss cannot fit"
+      },
+      "instances": 32,
+      "connections": 31,
+      "mirrored": 15,
+      "sealed_ports": 5,
+      "rewards": 0,
+      "reward_sites": 3,
+      "boss_reachable": false,
+      "unreachable_instances": 19,
+      "air_connected": false,
+      "blockers": 5,
+      "blocker_reasons": [
+        "boss_not_placed",
+        "boss_unreachable",
+        "legacy_generator_rejected",
+        "reward_target_not_met",
+        "unreachable_instances"
+      ],
+      "seconds": 0.2426
+    },
+    {
+      "seed": 271036,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "boss_rewards_and_graph_validation",
+        "error": "RuntimeError: boss cannot fit"
+      },
+      "instances": 32,
+      "connections": 31,
+      "mirrored": 17,
+      "sealed_ports": 12,
+      "rewards": 0,
+      "reward_sites": 6,
+      "boss_reachable": false,
+      "unreachable_instances": 29,
+      "air_connected": false,
+      "blockers": 5,
+      "blocker_reasons": [
+        "boss_not_placed",
+        "boss_unreachable",
+        "legacy_generator_rejected",
+        "reward_target_not_met",
+        "unreachable_instances"
+      ],
+      "seconds": 1.2036
+    },
+    {
+      "seed": 271037,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "boss_rewards_and_graph_validation",
+        "error": "RuntimeError: reward cannot fit"
+      },
+      "instances": 34,
+      "connections": 35,
+      "mirrored": 19,
+      "sealed_ports": 6,
+      "rewards": 1,
+      "reward_sites": 4,
+      "boss_reachable": false,
+      "unreachable_instances": 30,
+      "air_connected": false,
+      "blockers": 5,
+      "blocker_reasons": [
+        "boss_unreachable",
+        "legacy_generator_rejected",
+        "reward_target_not_met",
+        "target_reward_unreachable",
+        "unreachable_instances"
+      ],
+      "seconds": 0.22
+    },
+    {
+      "seed": 271038,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "boss_rewards_and_graph_validation",
+        "error": "RuntimeError: boss cannot fit"
+      },
+      "instances": 32,
+      "connections": 31,
+      "mirrored": 17,
+      "sealed_ports": 4,
+      "rewards": 0,
+      "reward_sites": 1,
+      "boss_reachable": false,
+      "unreachable_instances": 30,
+      "air_connected": false,
+      "blockers": 5,
+      "blocker_reasons": [
+        "boss_not_placed",
+        "boss_unreachable",
+        "legacy_generator_rejected",
+        "reward_target_not_met",
+        "unreachable_instances"
+      ],
+      "seconds": 0.4049
+    },
+    {
+      "seed": 271039,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "boss_rewards_and_graph_validation",
+        "error": "RuntimeError: boss cannot fit"
+      },
+      "instances": 32,
+      "connections": 31,
+      "mirrored": 17,
+      "sealed_ports": 7,
+      "rewards": 0,
+      "reward_sites": 2,
+      "boss_reachable": false,
+      "unreachable_instances": 29,
+      "air_connected": false,
+      "blockers": 5,
+      "blocker_reasons": [
+        "boss_not_placed",
+        "boss_unreachable",
+        "legacy_generator_rejected",
+        "reward_target_not_met",
+        "unreachable_instances"
+      ],
+      "seconds": 0.4954
+    },
+    {
+      "seed": 271040,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "growth",
+        "error": "RuntimeError: growth exhausted"
+      },
+      "instances": 29,
+      "connections": 30,
+      "mirrored": 15,
+      "sealed_ports": 6,
+      "rewards": 0,
+      "reward_sites": 5,
+      "boss_reachable": false,
+      "unreachable_instances": 27,
+      "air_connected": null,
+      "blockers": 5,
+      "blocker_reasons": [
+        "boss_not_placed",
+        "boss_unreachable",
+        "legacy_generator_rejected",
+        "reward_target_not_met",
+        "unreachable_instances"
+      ],
+      "seconds": 0.1896
+    },
+    {
+      "seed": 271041,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "growth",
+        "error": "RuntimeError: growth exhausted"
+      },
+      "instances": 9,
+      "connections": 8,
+      "mirrored": 4,
+      "sealed_ports": 2,
+      "rewards": 0,
+      "reward_sites": 1,
+      "boss_reachable": false,
+      "unreachable_instances": 5,
+      "air_connected": null,
+      "blockers": 5,
+      "blocker_reasons": [
+        "boss_not_placed",
+        "boss_unreachable",
+        "legacy_generator_rejected",
+        "reward_target_not_met",
+        "unreachable_instances"
+      ],
+      "seconds": 0.0258
+    },
+    {
+      "seed": 271042,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "boss_rewards_and_graph_validation",
+        "error": "RuntimeError: reward cannot fit"
+      },
+      "instances": 34,
+      "connections": 33,
+      "mirrored": 16,
+      "sealed_ports": 11,
+      "rewards": 1,
+      "reward_sites": 5,
+      "boss_reachable": false,
+      "unreachable_instances": 31,
+      "air_connected": false,
+      "blockers": 5,
+      "blocker_reasons": [
+        "boss_unreachable",
+        "legacy_generator_rejected",
+        "reward_target_not_met",
+        "target_reward_unreachable",
+        "unreachable_instances"
+      ],
+      "seconds": 1.0602
+    },
+    {
+      "seed": 271043,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "growth",
+        "error": "RuntimeError: growth exhausted"
+      },
+      "instances": 7,
+      "connections": 6,
+      "mirrored": 3,
+      "sealed_ports": 2,
+      "rewards": 0,
+      "reward_sites": 1,
+      "boss_reachable": false,
+      "unreachable_instances": 0,
+      "air_connected": null,
+      "blockers": 4,
+      "blocker_reasons": [
+        "boss_not_placed",
+        "boss_unreachable",
+        "legacy_generator_rejected",
+        "reward_target_not_met"
+      ],
+      "seconds": 0.02
+    },
+    {
+      "seed": 271044,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "growth",
+        "error": "RuntimeError: growth exhausted"
+      },
+      "instances": 25,
+      "connections": 25,
+      "mirrored": 15,
+      "sealed_ports": 4,
+      "rewards": 0,
+      "reward_sites": 2,
+      "boss_reachable": false,
+      "unreachable_instances": 23,
+      "air_connected": null,
+      "blockers": 5,
+      "blocker_reasons": [
+        "boss_not_placed",
+        "boss_unreachable",
+        "legacy_generator_rejected",
+        "reward_target_not_met",
+        "unreachable_instances"
+      ],
+      "seconds": 0.1442
+    },
+    {
+      "seed": 271045,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "growth",
+        "error": "RuntimeError: growth exhausted"
+      },
+      "instances": 21,
+      "connections": 21,
+      "mirrored": 10,
+      "sealed_ports": 5,
+      "rewards": 0,
+      "reward_sites": 1,
+      "boss_reachable": false,
+      "unreachable_instances": 17,
+      "air_connected": null,
+      "blockers": 5,
+      "blocker_reasons": [
+        "boss_not_placed",
+        "boss_unreachable",
+        "legacy_generator_rejected",
+        "reward_target_not_met",
+        "unreachable_instances"
+      ],
+      "seconds": 0.1365
+    },
+    {
+      "seed": 271046,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "boss_rewards_and_graph_validation",
+        "error": "RuntimeError: boss cannot fit"
+      },
+      "instances": 32,
+      "connections": 32,
+      "mirrored": 15,
+      "sealed_ports": 6,
+      "rewards": 0,
+      "reward_sites": 4,
+      "boss_reachable": false,
+      "unreachable_instances": 30,
+      "air_connected": false,
+      "blockers": 5,
+      "blocker_reasons": [
+        "boss_not_placed",
+        "boss_unreachable",
+        "legacy_generator_rejected",
+        "reward_target_not_met",
+        "unreachable_instances"
+      ],
+      "seconds": 0.2303
+    },
+    {
+      "seed": 271047,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "boss_rewards_and_graph_validation",
+        "error": "RuntimeError: reward cannot fit"
+      },
+      "instances": 33,
+      "connections": 33,
+      "mirrored": 16,
+      "sealed_ports": 6,
+      "rewards": 0,
+      "reward_sites": 3,
+      "boss_reachable": false,
+      "unreachable_instances": 31,
+      "air_connected": false,
+      "blockers": 4,
+      "blocker_reasons": [
+        "boss_unreachable",
+        "legacy_generator_rejected",
+        "reward_target_not_met",
+        "unreachable_instances"
+      ],
+      "seconds": 0.3101
+    }
+  ],
+  "fallback_count": 0,
+  "seed_replacement_count": 0,
+  "results": [
+    {
+      "seed": 910001,
+      "variant": "route",
+      "status": "REJECTED",
+      "error": {
+        "type": "SearchFailure",
+        "message": "boss_exhausted",
+        "phase": "boss_rewards"
+      },
+      "instances": 32,
+      "used_base_modules": 27,
+      "rewards": 0,
+      "reward_sites": 3,
+      "connections": 31,
+      "cycles": 0,
+      "main_paths": 0,
+      "mirrored": 18,
+      "seals": 5,
+      "reachable_instances": 32,
+      "blocker_reasons": [
+        "boss_not_placed",
+        "boss_unreachable",
+        "reward_target_not_met",
+        "search_rejected"
+      ],
+      "bounds_blocks": [
+        -53,
+        -13,
+        10,
+        4
+      ],
+      "expansions": 8542,
+      "backtracks": 0,
+      "layout_repairs": 0,
+      "terminal_states": 0,
+      "recorded_failures": 2,
+      "closed_loops_across_search": 0,
+      "pruning": {
+        "no_route_from_actual_entry": 903,
+        "seal_or_route_configuration": 17,
+        "no_onward_route_from_actual_entry": 40
+      },
+      "generation_seconds": 0.456755,
+      "file_sha256": "9204fecba805c05fef3567709f7005281d0d33bc7da17f88bba83d7da64e8da9",
+      "state_sha256": "fea4c3f9a9aa5eec0b2193429aec6d22a495e6588d5da14b5ccd7edf238144d8"
+    },
+    {
+      "seed": 910002,
+      "variant": "route",
+      "status": "REJECTED",
+      "error": {
+        "type": "SearchFailure",
+        "message": "reward_or_final_graph_exhausted",
+        "phase": "boss_rewards"
+      },
+      "instances": 36,
+      "used_base_modules": 29,
+      "rewards": 0,
+      "reward_sites": 16,
+      "connections": 43,
+      "cycles": 8,
+      "main_paths": 0,
+      "mirrored": 21,
+      "seals": 22,
+      "reachable_instances": 36,
+      "blocker_reasons": [
+        "reward_target_not_met",
+        "search_rejected"
+      ],
+      "bounds_blocks": [
+        -47,
+        0,
+        51,
+        17
+      ],
+      "expansions": 75541,
+      "backtracks": 0,
+      "layout_repairs": 0,
+      "terminal_states": 2,
+      "recorded_failures": 2,
+      "closed_loops_across_search": 1,
+      "pruning": {
+        "no_route_from_actual_entry": 6680,
+        "seal_or_route_configuration": 41,
+        "no_onward_route_from_actual_entry": 84,
+        "entry_has_no_reward_route": 18,
+        "reward_claim_or_onward_invalid": 64
+      },
+      "generation_seconds": 2.278388,
+      "file_sha256": "ee811e31d32b8ef2c03007a91d46a711d12d049c0532b064a9db0cf17ad4d30e",
+      "state_sha256": "1d167390b8a462d637eda29c617a2288b8a7543ae77211d6ddd950e8c82a24f6"
+    },
+    {
+      "seed": 910003,
+      "variant": "route",
+      "status": "REJECTED",
+      "error": {
+        "type": "SearchFailure",
+        "message": "reward_or_final_graph_exhausted",
+        "phase": "boss_rewards"
+      },
+      "instances": 35,
+      "used_base_modules": 33,
+      "rewards": 0,
+      "reward_sites": 2,
+      "connections": 35,
+      "cycles": 1,
+      "main_paths": 0,
+      "mirrored": 19,
+      "seals": 9,
+      "reachable_instances": 35,
+      "blocker_reasons": [
+        "reward_target_not_met",
+        "search_rejected"
+      ],
+      "bounds_blocks": [
+        -31,
+        -4,
+        31,
+        7
+      ],
+      "expansions": 76415,
+      "backtracks": 0,
+      "layout_repairs": 0,
+      "terminal_states": 0,
+      "recorded_failures": 2,
+      "closed_loops_across_search": 1,
+      "pruning": {
+        "no_route_from_actual_entry": 4576,
+        "seal_or_route_configuration": 36,
+        "no_onward_route_from_actual_entry": 84
+      },
+      "generation_seconds": 1.92692,
+      "file_sha256": "68d0bb556422d361f409a650b9eeff666fb50613e5db5e9807b1c2062c8c4b20",
+      "state_sha256": "cd1627241abe4261dabba65e7b6a368ac80c1df00bbec6db92da58b8d935f3cf"
+    },
+    {
+      "seed": 910001,
+      "variant": "expansion",
+      "status": "STATIC_PASS",
+      "error": null,
+      "instances": 46,
+      "used_base_modules": 23,
+      "rewards": 6,
+      "reward_sites": 11,
+      "connections": 59,
+      "cycles": 14,
+      "main_paths": 3,
+      "mirrored": 20,
+      "seals": 25,
+      "reachable_instances": 46,
+      "blocker_reasons": [],
+      "bounds_blocks": [
+        -13,
+        -8,
+        155,
+        6
+      ],
+      "expansions": 110972,
+      "backtracks": 0,
+      "layout_repairs": 0,
+      "terminal_states": 6,
+      "recorded_failures": 0,
+      "closed_loops_across_search": 3,
+      "pruning": {
+        "no_route_from_actual_entry": 8494,
+        "entry_has_no_reward_route": 171,
+        "no_onward_route_from_actual_entry": 644,
+        "reward_claim_or_onward_invalid": 385
+      },
+      "generation_seconds": 2.214502,
+      "file_sha256": "8d32d7d5a46fc4587d1ae283e037578971be5f864154fa96c3709599751ef01b",
+      "state_sha256": "13e785844cee06fa8f225ca53bcce20b5329ad2f87d709bc71dd790dc0ca1797"
+    },
+    {
+      "seed": 910002,
+      "variant": "expansion",
+      "status": "REJECTED",
+      "error": {
+        "type": "SearchFailure",
+        "message": "reward_or_final_graph_exhausted",
+        "phase": "boss_rewards"
+      },
+      "instances": 39,
+      "used_base_modules": 19,
+      "rewards": 0,
+      "reward_sites": 7,
+      "connections": 51,
+      "cycles": 13,
+      "main_paths": 0,
+      "mirrored": 19,
+      "seals": 34,
+      "reachable_instances": 39,
+      "blocker_reasons": [
+        "reward_target_not_met",
+        "search_rejected"
+      ],
+      "bounds_blocks": [
+        -41,
+        -5,
+        103,
+        9
+      ],
+      "expansions": 129940,
+      "backtracks": 0,
+      "layout_repairs": 0,
+      "terminal_states": 5,
+      "recorded_failures": 2,
+      "closed_loops_across_search": 3,
+      "pruning": {
+        "no_route_from_actual_entry": 7799,
+        "entry_has_no_reward_route": 210,
+        "no_onward_route_from_actual_entry": 656,
+        "reward_claim_or_onward_invalid": 371
+      },
+      "generation_seconds": 2.411277,
+      "file_sha256": "dc43697895900f7cde9e81aa5fa03290f3a7581d6475bddf441033048a777fcd",
+      "state_sha256": "cc8f5e50102221f7158335f19a0fdbc58a50f3a0fd88de84c4e075bf1cc42a16"
+    },
+    {
+      "seed": 910003,
+      "variant": "expansion",
+      "status": "STATIC_PASS",
+      "error": null,
+      "instances": 46,
+      "used_base_modules": 25,
+      "rewards": 6,
+      "reward_sites": 14,
+      "connections": 58,
+      "cycles": 13,
+      "main_paths": 3,
+      "mirrored": 31,
+      "seals": 31,
+      "reachable_instances": 46,
+      "blocker_reasons": [],
+      "bounds_blocks": [
+        -55,
+        -12,
+        40,
+        13
+      ],
+      "expansions": 177591,
+      "backtracks": 0,
+      "layout_repairs": 0,
+      "terminal_states": 6,
+      "recorded_failures": 0,
+      "closed_loops_across_search": 3,
+      "pruning": {
+        "no_route_from_actual_entry": 12953,
+        "entry_has_no_reward_route": 497,
+        "no_onward_route_from_actual_entry": 456,
+        "reward_claim_or_onward_invalid": 699
+      },
+      "generation_seconds": 3.505445,
+      "file_sha256": "4f0d2ba09d7f9e938e52e7104bb312e991842693e61c786a62ae658d081a4c76",
+      "state_sha256": "223bfea843e9233f91aa5bec5cf4f5ac1f0a9bd247c9d6fc00c2bf3a69908b2c"
+    },
+    {
+      "seed": 910001,
+      "variant": "backtrack",
+      "status": "STATIC_PASS",
+      "error": null,
+      "instances": 46,
+      "used_base_modules": 23,
+      "rewards": 6,
+      "reward_sites": 11,
+      "connections": 59,
+      "cycles": 14,
+      "main_paths": 3,
+      "mirrored": 20,
+      "seals": 25,
+      "reachable_instances": 46,
+      "blocker_reasons": [],
+      "bounds_blocks": [
+        -13,
+        -8,
+        155,
+        6
+      ],
+      "expansions": 110972,
+      "backtracks": 0,
+      "layout_repairs": 0,
+      "terminal_states": 6,
+      "recorded_failures": 0,
+      "closed_loops_across_search": 3,
+      "pruning": {
+        "no_route_from_actual_entry": 8494,
+        "entry_has_no_reward_route": 171,
+        "no_onward_route_from_actual_entry": 644,
+        "reward_claim_or_onward_invalid": 385
+      },
+      "generation_seconds": 2.219022,
+      "file_sha256": "ea06ec894740acbefd45bb800879167c30834554502b464aa026742b533a0eb1",
+      "state_sha256": "a10413ec50f33bac6b4285d770e5b7679fffbe8dd1324d74441af323516bd4d4"
+    },
+    {
+      "seed": 910002,
+      "variant": "backtrack",
+      "status": "REJECTED",
+      "error": {
+        "type": "BudgetExhausted",
+        "message": "terminal_state_budget",
+        "phase": "boss_rewards"
+      },
+      "instances": 43,
+      "used_base_modules": 21,
+      "rewards": 4,
+      "reward_sites": 11,
+      "connections": 55,
+      "cycles": 13,
+      "main_paths": 0,
+      "mirrored": 22,
+      "seals": 30,
+      "reachable_instances": 43,
+      "blocker_reasons": [
+        "reward_target_not_met",
+        "search_rejected"
+      ],
+      "bounds_blocks": [
+        -46,
+        -5,
+        103,
+        9
+      ],
+      "expansions": 209287,
+      "backtracks": 0,
+      "layout_repairs": 0,
+      "terminal_states": 129,
+      "recorded_failures": 67,
+      "closed_loops_across_search": 3,
+      "pruning": {
+        "no_route_from_actual_entry": 8784,
+        "entry_has_no_reward_route": 481,
+        "no_onward_route_from_actual_entry": 656,
+        "reward_claim_or_onward_invalid": 3227
+      },
+      "generation_seconds": 6.103731,
+      "file_sha256": "8d16f885ab2ceb8011acddadeeb0b621d10609839d7546c1169ffd6abe92cac0",
+      "state_sha256": "86b7a99fce765cf6f1c2e94bad86560043617d8cae191964c6b37a266c9a6684"
+    },
+    {
+      "seed": 910003,
+      "variant": "backtrack",
+      "status": "STATIC_PASS",
+      "error": null,
+      "instances": 46,
+      "used_base_modules": 25,
+      "rewards": 6,
+      "reward_sites": 14,
+      "connections": 58,
+      "cycles": 13,
+      "main_paths": 3,
+      "mirrored": 31,
+      "seals": 31,
+      "reachable_instances": 46,
+      "blocker_reasons": [],
+      "bounds_blocks": [
+        -55,
+        -12,
+        40,
+        13
+      ],
+      "expansions": 177591,
+      "backtracks": 0,
+      "layout_repairs": 0,
+      "terminal_states": 6,
+      "recorded_failures": 0,
+      "closed_loops_across_search": 3,
+      "pruning": {
+        "no_route_from_actual_entry": 12953,
+        "entry_has_no_reward_route": 497,
+        "no_onward_route_from_actual_entry": 456,
+        "reward_claim_or_onward_invalid": 699
+      },
+      "generation_seconds": 3.48426,
+      "file_sha256": "ff6fe078e62b946522689b26fdde342c5eba4d4b5ea63cfb6e40754b19988025",
+      "state_sha256": "32a7a4377d1021d8a101fdae1674fa76ba1c550fbf21228f47259631227ca049"
+    }
+  ]
+}

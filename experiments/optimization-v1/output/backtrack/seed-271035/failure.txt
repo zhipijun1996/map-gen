@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/workspace/map-gen/experiments/optimization-v1/run.py", line 87, in worker
+    try:assembled=gen.build()
+                  ^^^^^^^^^^^
+  File "/workspace/map-gen/experiments/optimization-v1/solver.py", line 350, in build
+    try:return self.finish()
+               ^^^^^^^^^^^^^
+  File "/workspace/map-gen/experiments/optimization-v1/solver.py", line 340, in finish
+    result=self.place_rewards(0)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/map-gen/experiments/optimization-v1/solver.py", line 311, in place_rewards
+    result=self.place_rewards(n+1)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/map-gen/experiments/optimization-v1/solver.py", line 311, in place_rewards
+    result=self.place_rewards(n+1)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/map-gen/experiments/optimization-v1/solver.py", line 311, in place_rewards
+    result=self.place_rewards(n+1)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/map-gen/experiments/optimization-v1/solver.py", line 309, in place_rewards
+    raise SearchFailure('terminal_slice_exhausted')
+solver.SearchFailure: terminal_slice_exhausted

@@ -1,0 +1,44 @@
+{
+  "trials": 60,
+  "unique_seed_variant_pairs": 60,
+  "checks": [
+    {
+      "command": "python experiments/optimization-v1/test_solver.py",
+      "result": "PASS: 8 tests, including independent validation of all 60 records and deterministic success/failure representatives"
+    },
+    {
+      "command": "python prototype/verify.py",
+      "result": "PASS"
+    },
+    {
+      "command": "python tools/verify_progress.py --replay",
+      "result": "PASS: all original 20 archived maps/rejections exactly match"
+    },
+    {
+      "command": "source/config and v1/v2 archive checks",
+      "result": "PASS: frozen inputs unchanged"
+    },
+    {
+      "command": "Chromium comparison page",
+      "result": "PASS: 20 SVG selections and 60 matching layout/full-record links"
+    }
+  ],
+  "static_pass": {
+    "route": 0,
+    "expansion": 18,
+    "backtrack": 19
+  },
+  "three_main_paths_and_static_pass": {
+    "route": 0,
+    "expansion": 15,
+    "backtrack": 16
+  },
+  "not_run": [
+    "Godot",
+    "whole-map physics",
+    "main-game integration"
+  ],
+  "module_content_changed": false,
+  "fallback_used": false,
+  "seed_replaced": false
+}

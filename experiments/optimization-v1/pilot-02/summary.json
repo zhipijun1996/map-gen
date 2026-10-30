@@ -1,0 +1,89 @@
+{
+  "stage": "pilot",
+  "seeds": [
+    910001,
+    910002,
+    910003
+  ],
+  "baseline": {
+    "trials": 20,
+    "passed": 0,
+    "rejected": 20
+  },
+  "variants": {
+    "route": {
+      "trials": 3,
+      "passed": 0,
+      "rejected": 3,
+      "errors": 0,
+      "timeouts": 0,
+      "failure_causes": {
+        "boss_exhausted": 1,
+        "reward_or_final_graph_exhausted": 2
+      },
+      "median_seconds": 1.920586,
+      "p95_seconds": 2.283267,
+      "median_expansions": 75541,
+      "median_backtracks": 0,
+      "passed_median_instances": null,
+      "passed_median_base_modules": null,
+      "passed_median_cycles": null,
+      "passed_with_three_main_paths": 0,
+      "passed_bounds_median_blocks": [
+        null,
+        null
+      ]
+    },
+    "expansion": {
+      "trials": 3,
+      "passed": 2,
+      "rejected": 1,
+      "errors": 0,
+      "timeouts": 0,
+      "failure_causes": {
+        "reward_or_final_graph_exhausted": 1
+      },
+      "median_seconds": 2.396793,
+      "p95_seconds": 3.576629,
+      "median_expansions": 129940,
+      "median_backtracks": 0,
+      "passed_median_instances": 46.0,
+      "passed_median_base_modules": 24.0,
+      "passed_median_cycles": 13.5,
+      "passed_with_three_main_paths": 2,
+      "passed_bounds_median_blocks": [
+        131.5,
+        19.5
+      ]
+    },
+    "backtrack": {
+      "trials": 3,
+      "passed": 3,
+      "rejected": 0,
+      "errors": 0,
+      "timeouts": 0,
+      "failure_causes": {},
+      "median_seconds": 3.34384,
+      "p95_seconds": 3.607627,
+      "median_expansions": 147331,
+      "median_backtracks": 0,
+      "passed_median_instances": 46,
+      "passed_median_base_modules": 23,
+      "passed_median_cycles": 13,
+      "passed_with_three_main_paths": 3,
+      "passed_bounds_median_blocks": [
+        160,
+        16
+      ]
+    }
+  },
+  "targets": {
+    "growth": 32,
+    "rewards": 6
+  },
+  "package_version": "1.1.0",
+  "module_content_changed": false,
+  "fallback_count": 0,
+  "seed_replacement_count": 0,
+  "whole_map_physics": "NOT_RUN"
+}
