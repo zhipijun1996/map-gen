@@ -13,10 +13,22 @@ import urllib.request
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[2]
+OWN_TESTS = ['data_suite.gd', 'assembly_suite.gd', 'assembly_suite.tscn',
+             'physics_suite.gd', 'physics_suite.tscn']
 
 
 def digest(data):
     return hashlib.sha256(data).hexdigest()
+
+
+def copy_generator_source(target):
+    """Do not copy the host's installed tests along with our own test folder."""
+    target = Path(target)
+    for folder in ['addons/mapgen', 'configs', 'example']:
+        shutil.copytree(ROOT / 'godot' / folder, target / folder, dirs_exist_ok=True)
+    (target / 'tests').mkdir(parents=True, exist_ok=True)
+    for name in OWN_TESTS:
+        shutil.copy2(ROOT / 'godot/tests' / name, target / 'tests' / name)
 
 
 def install(target, archive=None, host_source=None, host_profile='native'):
@@ -58,8 +70,7 @@ def install(target, archive=None, host_source=None, host_profile='native'):
     lock.update(host_profile=selected_host['id'], host_commit=selected_host['commit'], host_dependency=dependency)
     host = installer.install(pack / dependency, target, host_source)
     if target != ROOT / 'godot':
-        for folder in ['addons/mapgen', 'configs', 'example', 'tests']:
-            shutil.copytree(ROOT / 'godot' / folder, target / folder, dirs_exist_ok=True)
+        copy_generator_source(target)
         if not (target / 'project.godot').exists():
             shutil.copy2(ROOT / 'godot/project.godot', target / 'project.godot')
     (target / 'configs/package-lock.json').write_text(json.dumps(lock, indent=2) + '\n')

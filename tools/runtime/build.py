@@ -21,8 +21,10 @@ def build():
         if hashlib.sha256((host / 'module_pack' / rel).read_bytes()).hexdigest() != expected:
             raise ValueError('changed_package:' + rel)
     source = [host / 'project.godot']
-    for folder in ['addons/mapgen', 'example', 'configs', 'tests']:
+    for folder in ['addons/mapgen', 'example', 'configs']:
         source.extend(p for p in (host / folder).rglob('*') if p.is_file() and p.suffix != '.uid')
+    source.extend(host / 'tests' / name for name in ['data_suite.gd', 'assembly_suite.gd',
+                  'assembly_suite.tscn', 'physics_suite.gd', 'physics_suite.tscn'])
     archives = {}
     files = source + [host / rel for rel in lock['files']] + [host / 'module_pack' / rel for rel in manifest['files']] + [host / 'module_pack/manifest.json']
     addon = [p for p in source if p.relative_to(host).parts[0] in ['addons', 'configs']]
