@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/workspace/map-gen/experiments/legacy-real-v2/run.py", line 72, in real
+    built = gen.build()
+            ^^^^^^^^^^^
+  File "/workspace/map-gen/experiments/seed-study/source/generate.py", line 191, in build
+    self.grow(32)
+  File "/workspace/map-gen/experiments/legacy-real-v2/run.py", line 30, in grow
+    self.phase = 'growth'; return super().grow(*a, **kw)
+                                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/map-gen/experiments/seed-study/source/generate.py", line 113, in grow
+    if not options:raise RuntimeError('growth exhausted')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: growth exhausted

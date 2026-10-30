@@ -1,0 +1,627 @@
+{
+  "seed": 271031,
+  "phase": "growth",
+  "instances": [
+    {
+      "id": "M01",
+      "module_id": "START",
+      "name": "风铃教学",
+      "origin": [
+        0,
+        0
+      ],
+      "size_blocks": [
+        4,
+        3
+      ],
+      "mirror_x": false,
+      "ports": {
+        "R": {
+          "id": "R",
+          "source_port_id": "exit",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            8,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            8,
+            3
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M02",
+      "module_id": "T:game-plains-windchime-sequence",
+      "name": "风铃顺序挑战",
+      "origin": [
+        4,
+        0
+      ],
+      "size_blocks": [
+        4,
+        3
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            8,
+            3
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            8,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            16,
+            3
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M03",
+      "module_id": "T:game-plains-micro-landing",
+      "name": "微型落地点",
+      "origin": [
+        8,
+        1
+      ],
+      "size_blocks": [
+        1,
+        1
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            16,
+            3
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            2,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            18,
+            3
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M04",
+      "module_id": "T:game-forest-air-chain-geometry-hook-hook",
+      "name": "双钩连续腾空",
+      "origin": [
+        9,
+        0
+      ],
+      "size_blocks": [
+        4,
+        2
+      ],
+      "mirror_x": true,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            8,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            26,
+            3
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            18,
+            3
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M05",
+      "module_id": "T:idea-plains-hq05-001",
+      "name": "击中炮台，让它替你开门",
+      "origin": [
+        13,
+        0
+      ],
+      "size_blocks": [
+        4,
+        3
+      ],
+      "mirror_x": false,
+      "ports": {
+        "L": {
+          "id": "L",
+          "source_port_id": "L",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            26,
+            3
+          ]
+        },
+        "T": {
+          "id": "T",
+          "source_port_id": "T",
+          "face": "TOP",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            7,
+            0
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            33,
+            0
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M06",
+      "module_id": "T:idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x2",
+      "name": "双台转角 · 2×2 · 左↔下",
+      "origin": [
+        16,
+        -2
+      ],
+      "size_blocks": [
+        2,
+        2
+      ],
+      "mirror_x": true,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "face": "RIGHT",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            4,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            36,
+            -3
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "BOTTOM",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            1,
+            4
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            33,
+            0
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M07",
+      "module_id": "T:generated-09efd9583360ae3e414d7430c9b0e7e12a730b0fe8a5f19a90fc98c9b80c2ac2",
+      "name": "左射开门，蹬墙折返",
+      "origin": [
+        18,
+        -3
+      ],
+      "size_blocks": [
+        3,
+        4
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            6,
+            5
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            42,
+            -1
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "face": "LEFT",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            36,
+            -3
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M08",
+      "module_id": "T:idea-interface-s07-001",
+      "name": "S07 · 回射转角：开顶门，也把自己送上去",
+      "origin": [
+        21,
+        -2
+      ],
+      "size_blocks": [
+        4,
+        3
+      ],
+      "mirror_x": false,
+      "ports": {
+        "L": {
+          "id": "L",
+          "source_port_id": "L",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            42,
+            -1
+          ]
+        },
+        "T": {
+          "id": "T",
+          "source_port_id": "T",
+          "face": "TOP",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            7,
+            0
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            49,
+            -4
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M09",
+      "module_id": "T:idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x1",
+      "name": "双台转角 · 2×1 · 左↔下",
+      "origin": [
+        23,
+        -3
+      ],
+      "size_blocks": [
+        2,
+        1
+      ],
+      "mirror_x": false,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "face": "LEFT",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            46,
+            -5
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "BOTTOM",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            3,
+            2
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            49,
+            -4
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M10",
+      "module_id": "T:idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-top-2x1",
+      "name": "双台转角 · 2×1 · 左↔上",
+      "origin": [
+        21,
+        -3
+      ],
+      "size_blocks": [
+        2,
+        1
+      ],
+      "mirror_x": true,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "face": "RIGHT",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            4,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            46,
+            -5
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "TOP",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            1,
+            0
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            43,
+            -6
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M11",
+      "module_id": "T:idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-1x2",
+      "name": "双台转角 · 1×2 · 左↔下",
+      "origin": [
+        21,
+        -5
+      ],
+      "size_blocks": [
+        1,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "face": "LEFT",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            42,
+            -9
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "BOTTOM",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            1,
+            4
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            43,
+            -6
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M12",
+      "module_id": "T:idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x1",
+      "name": "双台转角 · 2×1 · 左↔下",
+      "origin": [
+        19,
+        -5
+      ],
+      "size_blocks": [
+        2,
+        1
+      ],
+      "mirror_x": true,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "face": "RIGHT",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            4,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            42,
+            -9
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "BOTTOM",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            1,
+            2
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            39,
+            -8
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M13",
+      "module_id": "T:idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-top-2x1",
+      "name": "双台转角 · 2×1 · 左↔上",
+      "origin": [
+        19,
+        -4
+      ],
+      "size_blocks": [
+        2,
+        1
+      ],
+      "mirror_x": true,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "face": "RIGHT",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            4,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            42,
+            -7
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "TOP",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            1,
+            0
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            39,
+            -8
+          ]
+        }
+      },
+      "reward": false
+    }
+  ]
+}

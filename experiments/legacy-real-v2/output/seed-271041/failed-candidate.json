@@ -1,0 +1,2259 @@
+{
+  "schema": "mapgen/legacy-real-study/2",
+  "seed": 271041,
+  "status": "REJECTED",
+  "certified_for_game": false,
+  "package": {
+    "version": "1.1.0",
+    "url": "https://raw.githubusercontent.com/zhipijun1996/map-edit/47aefebe07f4f0e7471f3d1546214502a6b2aade/releases/map-edit-modules-1.1.0.zip",
+    "sha256": "5ad5a7871941b2c1ffa759b18f7b1e80f2fe7e571b72f95d1e0ef26031f08723",
+    "catalog_sha256": "307b3c02c08d6f9abd58ef10bfe0716709bc8260db49a2a2c21d36980330be7a"
+  },
+  "bindings": {
+    "START": {
+      "module_id": "game-plains-windchime-lesson",
+      "port_aliases": {
+        "exit": "R"
+      },
+      "scope": "experimental boundary spawn at exit, same as v1; no interior spawn route inferred"
+    },
+    "BOSS": {
+      "module_id": "game-plains-boss-arena",
+      "port_aliases": {
+        "entry": "L"
+      },
+      "scope": "arrival at package-declared entryPortIds; no fight or exit completion required"
+    }
+  },
+  "available_abilities": [
+    "double_jump",
+    "grapple",
+    "jump",
+    "recoil"
+  ],
+  "generation": {
+    "status": "REJECTED",
+    "phase": "growth",
+    "error": "RuntimeError: growth exhausted"
+  },
+  "instances": [
+    {
+      "id": "M01",
+      "module_id": "START",
+      "name": "风铃教学",
+      "origin": [
+        0,
+        0
+      ],
+      "size_blocks": [
+        4,
+        3
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            0,
+            3
+          ]
+        },
+        "R": {
+          "id": "R",
+          "source_port_id": "exit",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            8,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            8,
+            3
+          ]
+        }
+      },
+      "reward": false,
+      "solver_port_ids": [
+        "R"
+      ],
+      "source_module_id": "game-plains-windchime-lesson",
+      "content_version": "sha256:b2ee44df5422a7b4dd9be1358a075c46cefb00992de802607389f6f94ecfa433",
+      "scene": "modules/game-plains-windchime-lesson/module.tscn",
+      "scene_origin_offset": [
+        0,
+        -76
+      ],
+      "source_bounds": {
+        "x": 0,
+        "y": 76,
+        "w": 512,
+        "h": 384
+      },
+      "content": {
+        "platforms": [
+          [
+            0,
+            224,
+            480,
+            40
+          ],
+          [
+            480,
+            224,
+            32,
+            24
+          ]
+        ],
+        "one_way_platform_indices": [],
+        "wall_platform_indices": [],
+        "hazards": [],
+        "thorns": [],
+        "saws": [],
+        "moving_platforms": [],
+        "hooks": [],
+        "latches": [
+          {
+            "id": "windchime_plains_windchime_lesson",
+            "bell": [
+              170.0,
+              159.0
+            ],
+            "gate": [
+              320,
+              4,
+              24,
+              220
+            ],
+            "open_seconds": 0,
+            "prompt": "SHOOT BELL",
+            "kind": "safe_lesson",
+            "link_color": "e8bd65"
+          }
+        ],
+        "enemies": [],
+        "reward_sites": [],
+        "schema": "pcg/compiled-module-content/v1",
+        "source_sha256": "0846f23881d9106d68032323b6278e4f79550e33f1cb73cf4e920323039da942",
+        "stable_id": "game-plains-windchime-lesson",
+        "world_bounds": [
+          0,
+          0,
+          512,
+          384
+        ],
+        "entry_port": [
+          24.0,
+          206.0
+        ],
+        "exit_port": [
+          496.0,
+          206.0
+        ],
+        "coordinate_frame": "owned_rectangle_pixels",
+        "source_affine": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          -76
+        ]
+      },
+      "connected_port_ids": [
+        "R"
+      ],
+      "sealed_ports": [
+        {
+          "port_id": "entry",
+          "component": "gear-seal/1",
+          "face": "LEFT",
+          "rect_pixels": [
+            0,
+            128,
+            32,
+            128
+          ],
+          "opening_pixels": 128,
+          "thickness_pixels": 32,
+          "certified": false,
+          "physical_validation": "NOT_RUN"
+        }
+      ],
+      "effective_routes": [],
+      "retained_route_ids": [],
+      "reward_sites": []
+    },
+    {
+      "id": "M02",
+      "module_id": "T:game-forest-directional-geometry-build-narrow",
+      "name": "侧钩刺口",
+      "origin": [
+        4,
+        -1
+      ],
+      "size_blocks": [
+        5,
+        4
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            5
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            8,
+            3
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            10,
+            5
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            18,
+            3
+          ]
+        }
+      },
+      "reward": false,
+      "solver_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "source_module_id": "game-forest-directional-geometry-build-narrow",
+      "content_version": "sha256:718e42ae613e055d3a93a59ca2f6eedfd81130a5971f2d3c462271d52b38eb57",
+      "scene": "modules/game-forest-directional-geometry-build-narrow/module.tscn",
+      "scene_origin_offset": [
+        128,
+        376
+      ],
+      "source_bounds": {
+        "x": -128,
+        "y": -376,
+        "w": 640,
+        "h": 512
+      },
+      "content": {
+        "platforms": [
+          [
+            0,
+            352,
+            208,
+            60
+          ],
+          [
+            0,
+            0,
+            478,
+            266
+          ],
+          [
+            378,
+            352,
+            262,
+            60
+          ]
+        ],
+        "one_way_platform_indices": [],
+        "wall_platform_indices": [],
+        "hazards": [
+          [
+            338,
+            238,
+            60,
+            44
+          ],
+          [
+            338,
+            352,
+            60,
+            52
+          ]
+        ],
+        "thorns": [],
+        "saws": [],
+        "moving_platforms": [],
+        "hooks": [
+          {
+            "kind": "bounce",
+            "source_id": "side_ring",
+            "x": 328,
+            "y": 336
+          }
+        ],
+        "latches": [],
+        "enemies": [],
+        "reward_sites": [],
+        "schema": "pcg/compiled-module-content/v1",
+        "source_sha256": "fd10c43b5f9362155ad516c6e71f991c71051888ce67b8dae2f539fb1035527c",
+        "stable_id": "game-forest-directional-geometry-build-narrow",
+        "world_bounds": [
+          0,
+          0,
+          640,
+          512
+        ],
+        "entry_port": [
+          24.0,
+          334.0
+        ],
+        "exit_port": [
+          616.0,
+          334.0
+        ],
+        "coordinate_frame": "owned_rectangle_pixels",
+        "source_affine": [
+          1,
+          0,
+          0,
+          1,
+          128,
+          376
+        ]
+      },
+      "connected_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "sealed_ports": [],
+      "effective_routes": [
+        {
+          "id": "entry-to-exit",
+          "from_port": "entry",
+          "to_port": "exit",
+          "displacement": [
+            5.0,
+            0.0
+          ],
+          "required_abilities": [
+            "jump",
+            "recoil",
+            "grapple"
+          ],
+          "action_tags": [],
+          "difficulty": null,
+          "resource_profile": {
+            "status": "UNKNOWN",
+            "requiredRewards": []
+          },
+          "validation": {
+            "status": "passed_scoped",
+            "kind": "original_native_route_qualification",
+            "physicalSignature": "2e8f2806b295c88a60ae9260a14f69d3aeeb7fee03a6d81819ee6aa84edb57e6",
+            "originalReportSha256": "5955ca46f5b1ca4c83804f6d9ed68c129aab9ed31083f878a9c7e44649874ed3",
+            "availableAbilities": [
+              "move",
+              "jump",
+              "shot_recoil",
+              "grapple"
+            ],
+            "testNeighborFixtures": [],
+            "scope": "Independently initialized local route; arbitrary seams, alternate configurations, minimal capabilities and chaining remain UNKNOWN."
+          },
+          "reward_ids": [],
+          "path_points": [
+            [
+              0,
+              320
+            ],
+            [
+              178,
+              334
+            ],
+            [
+              258,
+              316
+            ],
+            [
+              318,
+              316
+            ],
+            [
+              418,
+              316
+            ],
+            [
+              528,
+              334
+            ],
+            [
+              640,
+              320
+            ]
+          ]
+        }
+      ],
+      "retained_route_ids": [
+        "entry-to-exit"
+      ],
+      "reward_sites": []
+    },
+    {
+      "id": "M03",
+      "module_id": "T:idea-interface-s15-001",
+      "name": "S15 · 短距抬升 · 岩岸接口版",
+      "origin": [
+        9,
+        1
+      ],
+      "size_blocks": [
+        3,
+        2
+      ],
+      "mirror_x": true,
+      "ports": {
+        "L": {
+          "id": "L",
+          "source_port_id": "L",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            6,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            24,
+            5
+          ]
+        },
+        "R": {
+          "id": "R",
+          "source_port_id": "R",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            18,
+            3
+          ]
+        }
+      },
+      "reward": false,
+      "solver_port_ids": [
+        "L",
+        "R"
+      ],
+      "source_module_id": "idea-interface-s15-001",
+      "content_version": "sha256:df2ffcb19db863ea03cc3458dd695a711e7b865bb1c535678c0e06d4c5c593ea",
+      "scene": "modules/idea-interface-s15-001/module.tscn",
+      "scene_origin_offset": [
+        0,
+        0
+      ],
+      "source_bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 384,
+        "h": 256
+      },
+      "content": {
+        "platforms": [
+          [
+            272,
+            224,
+            112,
+            32
+          ],
+          [
+            0,
+            96,
+            96,
+            160
+          ]
+        ],
+        "one_way_platform_indices": [],
+        "wall_platform_indices": [],
+        "hazards": [],
+        "thorns": [],
+        "saws": [],
+        "moving_platforms": [],
+        "hooks": [],
+        "latches": [],
+        "enemies": [],
+        "reward_sites": [],
+        "schema": "pcg/compiled-module-content/v1",
+        "source_sha256": "73aed9652147a7b82a352ef5e57d88d3a7f76df7b9feecd675a4f77b01e88c58",
+        "stable_id": "idea-interface-s15-001",
+        "world_bounds": [
+          0,
+          0,
+          384,
+          256
+        ],
+        "entry_port": [
+          360.0,
+          206.0
+        ],
+        "exit_port": [
+          24.0,
+          78.0
+        ],
+        "coordinate_frame": "owned_rectangle_pixels",
+        "source_affine": [
+          -1,
+          0,
+          0,
+          1,
+          384,
+          0
+        ]
+      },
+      "connected_port_ids": [
+        "L",
+        "R"
+      ],
+      "sealed_ports": [],
+      "effective_routes": [
+        {
+          "id": "L-to-R",
+          "from_port": "L",
+          "to_port": "R",
+          "displacement": [
+            -3.0,
+            -1.0
+          ],
+          "required_abilities": [
+            "jump",
+            "recoil"
+          ],
+          "action_tags": [],
+          "difficulty": null,
+          "resource_profile": {
+            "status": "UNKNOWN",
+            "requiredRewards": []
+          },
+          "validation": {
+            "status": "passed_scoped",
+            "kind": "original_native_route_qualification",
+            "physicalSignature": "d74bc6339c43695d44efd82db5e66d293a7bbb6cb4116db292905dc2a8614cbe",
+            "originalReportSha256": "7e3d5bf5405b6e8ba478cf8795afef08e1fa052e08e6e7389cdc21d01aed889d",
+            "availableAbilities": [
+              "move",
+              "jump",
+              "shot_recoil"
+            ],
+            "testNeighborFixtures": [],
+            "scope": "Independently initialized local route; arbitrary seams, alternate configurations, minimal capabilities and chaining remain UNKNOWN."
+          },
+          "reward_ids": [],
+          "path_points": [
+            [
+              384,
+              192
+            ],
+            [
+              304,
+              192
+            ],
+            [
+              208,
+              96
+            ],
+            [
+              48,
+              64
+            ],
+            [
+              0,
+              64
+            ]
+          ]
+        },
+        {
+          "id": "R-to-L",
+          "from_port": "R",
+          "to_port": "L",
+          "displacement": [
+            3.0,
+            1.0
+          ],
+          "required_abilities": [
+            "jump",
+            "recoil"
+          ],
+          "action_tags": [],
+          "difficulty": null,
+          "resource_profile": {
+            "status": "UNKNOWN",
+            "requiredRewards": []
+          },
+          "validation": {
+            "status": "passed_scoped",
+            "kind": "original_native_route_qualification",
+            "physicalSignature": "d74bc6339c43695d44efd82db5e66d293a7bbb6cb4116db292905dc2a8614cbe",
+            "originalReportSha256": "7e3d5bf5405b6e8ba478cf8795afef08e1fa052e08e6e7389cdc21d01aed889d",
+            "availableAbilities": [
+              "move",
+              "jump",
+              "shot_recoil"
+            ],
+            "testNeighborFixtures": [],
+            "scope": "Independently initialized local route; arbitrary seams, alternate configurations, minimal capabilities and chaining remain UNKNOWN."
+          },
+          "reward_ids": [],
+          "path_points": [
+            [
+              0,
+              64
+            ],
+            [
+              48,
+              64
+            ],
+            [
+              176,
+              96
+            ],
+            [
+              304,
+              192
+            ],
+            [
+              384,
+              192
+            ]
+          ]
+        }
+      ],
+      "retained_route_ids": [
+        "L-to-R",
+        "R-to-L"
+      ],
+      "reward_sites": []
+    },
+    {
+      "id": "M04",
+      "module_id": "T:game-plains-low-arch",
+      "name": "低矮拱顶",
+      "origin": [
+        12,
+        1
+      ],
+      "size_blocks": [
+        5,
+        2
+      ],
+      "mirror_x": true,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            10,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            34,
+            5
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            24,
+            5
+          ]
+        }
+      },
+      "reward": false,
+      "solver_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "source_module_id": "game-plains-low-arch",
+      "content_version": "sha256:7d210ba1e2cf7cfe227bad5f6ec6d476bd967176d0251ee5deadd825a1a94deb",
+      "scene": "modules/game-plains-low-arch/module.tscn",
+      "scene_origin_offset": [
+        0,
+        -76
+      ],
+      "source_bounds": {
+        "x": 0,
+        "y": 76,
+        "w": 640,
+        "h": 256
+      },
+      "content": {
+        "platforms": [
+          [
+            0,
+            224,
+            640,
+            32
+          ]
+        ],
+        "one_way_platform_indices": [],
+        "wall_platform_indices": [],
+        "hazards": [
+          [
+            200,
+            84,
+            240,
+            18
+          ]
+        ],
+        "thorns": [],
+        "saws": [
+          {
+            "source_id": "arch_wheel",
+            "origin": [
+              320.0,
+              232.0
+            ],
+            "travel": [
+              0,
+              0
+            ],
+            "radius": 18,
+            "period": 4,
+            "initial_phase": 0,
+            "damage": 1,
+            "contact_interval": 0.7
+          }
+        ],
+        "moving_platforms": [],
+        "hooks": [],
+        "latches": [],
+        "enemies": [],
+        "reward_sites": [],
+        "schema": "pcg/compiled-module-content/v1",
+        "source_sha256": "e09e08c15fa7d26a9e4e7a627fd5faa3ddbb5faa60ef4f6092df69c69e69b73f",
+        "stable_id": "game-plains-low-arch",
+        "world_bounds": [
+          0,
+          0,
+          640,
+          256
+        ],
+        "entry_port": [
+          616.0,
+          206.0
+        ],
+        "exit_port": [
+          24.0,
+          206.0
+        ],
+        "coordinate_frame": "owned_rectangle_pixels",
+        "source_affine": [
+          -1,
+          0,
+          0,
+          1,
+          640,
+          -76
+        ]
+      },
+      "connected_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "sealed_ports": [],
+      "effective_routes": [
+        {
+          "id": "entry-to-exit",
+          "from_port": "entry",
+          "to_port": "exit",
+          "displacement": [
+            -5.0,
+            0.0
+          ],
+          "required_abilities": [
+            "jump",
+            "recoil"
+          ],
+          "action_tags": [
+            "jump",
+            "jump_release",
+            "settle",
+            "shoot"
+          ],
+          "difficulty": null,
+          "resource_profile": {
+            "status": "UNKNOWN",
+            "requiredRewards": []
+          },
+          "validation": {
+            "status": "passed_scoped",
+            "kind": "original_native_route_qualification",
+            "physicalSignature": "3f333b0439cfb2316b178bf68fd8ec172073643e3289038c20a8e595e17549bc",
+            "originalReportSha256": "87ef5a0740657c0d6e0a3fc26cce34b09550245399b11e04310364f2f8ffb587",
+            "availableAbilities": [
+              "move",
+              "jump",
+              "shot_recoil"
+            ],
+            "testNeighborFixtures": [],
+            "scope": "Independently initialized local route; arbitrary seams, alternate configurations, minimal capabilities and chaining remain UNKNOWN."
+          },
+          "reward_ids": [],
+          "path_points": [
+            [
+              640,
+              192
+            ],
+            [
+              490,
+              192
+            ],
+            [
+              395,
+              156
+            ],
+            [
+              320,
+              148
+            ],
+            [
+              240,
+              156
+            ],
+            [
+              155,
+              192
+            ],
+            [
+              0,
+              192
+            ]
+          ]
+        }
+      ],
+      "retained_route_ids": [
+        "entry-to-exit"
+      ],
+      "reward_sites": []
+    },
+    {
+      "id": "M05",
+      "module_id": "T:game-plains-micro-landing",
+      "name": "微型落地点",
+      "origin": [
+        17,
+        2
+      ],
+      "size_blocks": [
+        1,
+        1
+      ],
+      "mirror_x": true,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            2,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            36,
+            5
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            34,
+            5
+          ]
+        }
+      },
+      "reward": false,
+      "solver_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "source_module_id": "game-plains-micro-landing",
+      "content_version": "sha256:1f4a977dae14617e6cda013a0db623a62b70104c0496e2d86c9a4d438bd0dc52",
+      "scene": "modules/game-plains-micro-landing/module.tscn",
+      "scene_origin_offset": [
+        0,
+        -204
+      ],
+      "source_bounds": {
+        "x": 0,
+        "y": 204,
+        "w": 128,
+        "h": 128
+      },
+      "content": {
+        "platforms": [
+          [
+            28,
+            96,
+            100,
+            30
+          ],
+          [
+            0,
+            96,
+            52,
+            24
+          ]
+        ],
+        "one_way_platform_indices": [],
+        "wall_platform_indices": [],
+        "hazards": [],
+        "thorns": [],
+        "saws": [],
+        "moving_platforms": [],
+        "hooks": [],
+        "latches": [],
+        "enemies": [],
+        "reward_sites": [],
+        "schema": "pcg/compiled-module-content/v1",
+        "source_sha256": "987541839a789f6b9df35fa1a31d84de8b66ce39fab85a3eb5cd5db3faaa8971",
+        "stable_id": "game-plains-micro-landing",
+        "world_bounds": [
+          0,
+          0,
+          128,
+          128
+        ],
+        "entry_port": [
+          104.0,
+          78.0
+        ],
+        "exit_port": [
+          24.0,
+          78.0
+        ],
+        "coordinate_frame": "owned_rectangle_pixels",
+        "source_affine": [
+          -1,
+          0,
+          0,
+          1,
+          128,
+          -204
+        ]
+      },
+      "connected_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "sealed_ports": [],
+      "effective_routes": [
+        {
+          "id": "main",
+          "from_port": "entry",
+          "to_port": "exit",
+          "displacement": [
+            -1.0,
+            0.0
+          ],
+          "required_abilities": [
+            "jump",
+            "recoil"
+          ],
+          "action_tags": [
+            "settle"
+          ],
+          "difficulty": null,
+          "resource_profile": {
+            "status": "UNKNOWN",
+            "requiredRewards": []
+          },
+          "validation": {
+            "status": "passed_scoped",
+            "kind": "original_native_route_qualification",
+            "physicalSignature": "63c264ae4261b85e5dae50ea3b8ab179033a0fbf997f60385e9d0cf59a4d5bce",
+            "originalReportSha256": "92fa6d77a9fcc5331d3904011cca6373c62bbec1b757b5db95fe9409a3d710d5",
+            "availableAbilities": [
+              "move",
+              "jump",
+              "shot_recoil"
+            ],
+            "testNeighborFixtures": [],
+            "scope": "Independently initialized local route; arbitrary seams, alternate configurations, minimal capabilities and chaining remain UNKNOWN."
+          },
+          "reward_ids": [],
+          "path_points": [
+            [
+              108,
+              78
+            ],
+            [
+              48,
+              78
+            ]
+          ]
+        }
+      ],
+      "retained_route_ids": [
+        "main"
+      ],
+      "reward_sites": []
+    },
+    {
+      "id": "M06",
+      "module_id": "T:generated-59296f7c9ebdbbc68e0913efe12ce46af74300db662d08af14337f205f6dae85",
+      "name": "紧凑钟台：下射抬升穿门",
+      "origin": [
+        18,
+        0
+      ],
+      "size_blocks": [
+        3,
+        3
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            5
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            36,
+            5
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            6,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            42,
+            3
+          ]
+        }
+      },
+      "reward": false,
+      "solver_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "source_module_id": "generated-59296f7c9ebdbbc68e0913efe12ce46af74300db662d08af14337f205f6dae85",
+      "content_version": "sha256:d8fc8e8d92f5d6bb84efbb389aa113eb518ff4064e7274760813258f60f09b09",
+      "scene": "modules/generated-59296f7c9ebdbbc68e0913efe12ce46af74300db662d08af14337f205f6dae85/module.tscn",
+      "scene_origin_offset": [
+        -128,
+        -114
+      ],
+      "source_bounds": {
+        "x": 128,
+        "y": 114,
+        "w": 384,
+        "h": 384
+      },
+      "content": {
+        "platforms": [
+          [
+            0,
+            352,
+            112,
+            32
+          ],
+          [
+            96.58580067552367,
+            224,
+            192,
+            72
+          ],
+          [
+            264.58580067552367,
+            224,
+            119.41419932447633,
+            24
+          ]
+        ],
+        "one_way_platform_indices": [],
+        "wall_platform_indices": [],
+        "hazards": [],
+        "thorns": [],
+        "saws": [],
+        "moving_platforms": [],
+        "hooks": [],
+        "latches": [
+          {
+            "id": "lift_bell",
+            "bell": [
+              30.0,
+              300.7979687452316
+            ],
+            "gate": [
+              220.58580067552367,
+              44,
+              24,
+              180
+            ],
+            "open_seconds": 1.6,
+            "prompt": "SHOOT DOWN / LIFT + OPEN"
+          }
+        ],
+        "enemies": [],
+        "reward_sites": [],
+        "schema": "pcg/compiled-module-content/v1",
+        "source_sha256": "c02b4252846dc684d17f04e7c3d637351bb9e436efbfb2626a68ecbbf95592e8",
+        "stable_id": "generated-59296f7c9ebdbbc68e0913efe12ce46af74300db662d08af14337f205f6dae85",
+        "world_bounds": [
+          0,
+          0,
+          384,
+          384
+        ],
+        "entry_port": [
+          24.0,
+          334.0
+        ],
+        "exit_port": [
+          360.0,
+          206.0
+        ],
+        "coordinate_frame": "owned_rectangle_pixels",
+        "source_affine": [
+          1,
+          0,
+          0,
+          1,
+          -128,
+          -114
+        ]
+      },
+      "connected_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "sealed_ports": [],
+      "effective_routes": [
+        {
+          "id": "entry-to-exit",
+          "from_port": "entry",
+          "to_port": "exit",
+          "displacement": [
+            3.0,
+            -1.0
+          ],
+          "required_abilities": [
+            "jump",
+            "recoil"
+          ],
+          "action_tags": [
+            "jump",
+            "jump_release",
+            "settle",
+            "shoot"
+          ],
+          "difficulty": null,
+          "resource_profile": {
+            "status": "UNKNOWN",
+            "requiredRewards": []
+          },
+          "validation": {
+            "status": "passed_scoped",
+            "kind": "original_native_route_qualification",
+            "physicalSignature": "d52dde3cfc81caa66d70fbfcbae8efa482a3782f1d8cf9a2b1892020f15f0212",
+            "originalReportSha256": "a0f0d7baa3b5e13a3142757b64797ac63717fb4fac251c5d025f027169a77b43",
+            "availableAbilities": [
+              "move",
+              "jump",
+              "shot_recoil"
+            ],
+            "testNeighborFixtures": [],
+            "scope": "Independently initialized local route; arbitrary seams, alternate configurations, minimal capabilities and chaining remain UNKNOWN."
+          },
+          "reward_ids": [],
+          "path_points": [
+            [
+              0,
+              320
+            ],
+            [
+              52,
+              334
+            ],
+            [
+              72,
+              186
+            ],
+            [
+              157,
+              186
+            ],
+            [
+              272,
+              206
+            ],
+            [
+              384,
+              192
+            ]
+          ]
+        }
+      ],
+      "retained_route_ids": [
+        "entry-to-exit"
+      ],
+      "reward_sites": []
+    },
+    {
+      "id": "M07",
+      "module_id": "T:generated-09efd9583360ae3e414d7430c9b0e7e12a730b0fe8a5f19a90fc98c9b80c2ac2",
+      "name": "左射开门，蹬墙折返",
+      "origin": [
+        21,
+        -1
+      ],
+      "size_blocks": [
+        3,
+        4
+      ],
+      "mirror_x": true,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            5
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            42,
+            3
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "face": "RIGHT",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            6,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            48,
+            1
+          ]
+        }
+      },
+      "reward": false,
+      "solver_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "source_module_id": "generated-09efd9583360ae3e414d7430c9b0e7e12a730b0fe8a5f19a90fc98c9b80c2ac2",
+      "content_version": "sha256:bb807e35fff96c732914b8d95236e983bdf01bf626164d66f4baf86a531680a7",
+      "scene": "modules/generated-09efd9583360ae3e414d7430c9b0e7e12a730b0fe8a5f19a90fc98c9b80c2ac2/module.tscn",
+      "scene_origin_offset": [
+        128,
+        -86
+      ],
+      "source_bounds": {
+        "x": -128,
+        "y": 86,
+        "w": 384,
+        "h": 512
+      },
+      "content": {
+        "platforms": [
+          [
+            164,
+            352,
+            24,
+            60
+          ],
+          [
+            29,
+            34,
+            32,
+            270
+          ],
+          [
+            216,
+            224,
+            168,
+            24
+          ],
+          [
+            29,
+            352,
+            32,
+            160
+          ],
+          [
+            61,
+            352,
+            103,
+            24
+          ],
+          [
+            0,
+            352,
+            29,
+            24
+          ]
+        ],
+        "one_way_platform_indices": [
+          2
+        ],
+        "wall_platform_indices": [
+          1,
+          3
+        ],
+        "hazards": [],
+        "thorns": [],
+        "saws": [],
+        "moving_platforms": [],
+        "hooks": [],
+        "latches": [
+          {
+            "id": "reverse-bell",
+            "bell": [
+              256.0,
+              394.0
+            ],
+            "gate": [
+              266,
+              0,
+              10,
+              512
+            ],
+            "open_seconds": 1
+          }
+        ],
+        "enemies": [],
+        "reward_sites": [
+          {
+            "id": "visible-cache",
+            "position": [
+              336.0,
+              206.0
+            ],
+            "region": [
+              306,
+              201,
+              60,
+              10
+            ],
+            "amount": 8
+          }
+        ],
+        "schema": "pcg/compiled-module-content/v1",
+        "source_sha256": "865a2de8d297ccf8a8c4cc2700670abde24f6467128f4f58a5c17116c728e343",
+        "stable_id": "generated-09efd9583360ae3e414d7430c9b0e7e12a730b0fe8a5f19a90fc98c9b80c2ac2",
+        "world_bounds": [
+          0,
+          0,
+          384,
+          512
+        ],
+        "entry_port": [
+          16.0,
+          334.0
+        ],
+        "exit_port": [
+          360.0,
+          206.0
+        ],
+        "coordinate_frame": "owned_rectangle_pixels",
+        "source_affine": [
+          -1,
+          0,
+          0,
+          1,
+          256,
+          -86
+        ]
+      },
+      "connected_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "sealed_ports": [],
+      "effective_routes": [],
+      "retained_route_ids": [],
+      "reward_sites": [
+        {
+          "id": "visible-cache",
+          "position": [
+            336.0,
+            206.0
+          ],
+          "region": [
+            306,
+            201,
+            60,
+            10
+          ],
+          "amount": 8
+        }
+      ]
+    },
+    {
+      "id": "M08",
+      "module_id": "T:idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-top-2x1",
+      "name": "双台转角 · 2×1 · 左↔上",
+      "origin": [
+        24,
+        0
+      ],
+      "size_blocks": [
+        2,
+        1
+      ],
+      "mirror_x": false,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "face": "LEFT",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            48,
+            1
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "TOP",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            3,
+            0
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            51,
+            0
+          ]
+        }
+      },
+      "reward": false,
+      "solver_port_ids": [
+        "A",
+        "B"
+      ],
+      "source_module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-top-2x1",
+      "content_version": "sha256:4307594cb28c8b0104c2833a4c8faade89ae85bf181c80bfe949dd6046ee4f66",
+      "scene": "modules/idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-top-2x1/module.tscn",
+      "scene_origin_offset": [
+        0,
+        0
+      ],
+      "source_bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 128
+      },
+      "content": {
+        "platforms": [
+          [
+            0,
+            96,
+            104,
+            12
+          ],
+          [
+            144,
+            32,
+            112,
+            12
+          ]
+        ],
+        "one_way_platform_indices": [
+          0,
+          1
+        ],
+        "wall_platform_indices": [],
+        "hazards": [],
+        "thorns": [],
+        "saws": [],
+        "moving_platforms": [],
+        "hooks": [],
+        "latches": [],
+        "enemies": [],
+        "reward_sites": [],
+        "schema": "pcg/compiled-module-content/v1",
+        "source_sha256": "1036c48952a6d5c71802d690cbeff198c75ab3d910d9e1078f017def411e1154",
+        "stable_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-top-2x1",
+        "world_bounds": [
+          0,
+          0,
+          256,
+          128
+        ],
+        "entry_port": [
+          24.0,
+          78.0
+        ],
+        "exit_port": [
+          192.0,
+          14.0
+        ],
+        "coordinate_frame": "owned_rectangle_pixels",
+        "source_affine": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      },
+      "connected_port_ids": [
+        "A",
+        "B"
+      ],
+      "sealed_ports": [],
+      "effective_routes": [
+        {
+          "id": "A-to-B",
+          "from_port": "A",
+          "to_port": "B",
+          "displacement": [
+            1.5,
+            -0.5
+          ],
+          "required_abilities": [
+            "jump",
+            "recoil"
+          ],
+          "action_tags": [],
+          "difficulty": null,
+          "resource_profile": {
+            "status": "UNKNOWN",
+            "requiredRewards": []
+          },
+          "validation": {
+            "status": "passed_scoped",
+            "kind": "original_native_route_qualification",
+            "physicalSignature": "193a4f064b9d298cea8ffe710b1b7695fd55e347c6db0df0b9edba7f365206ea",
+            "originalReportSha256": "5435c91c82622450594016fa0a6833eb43800e47817df75077747c3f15f3e808",
+            "availableAbilities": [
+              "move",
+              "jump",
+              "shot_recoil"
+            ],
+            "testNeighborFixtures": [],
+            "scope": "Independently initialized local route; arbitrary seams, alternate configurations, minimal capabilities and chaining remain UNKNOWN."
+          },
+          "reward_ids": [],
+          "path_points": [
+            [
+              0,
+              64
+            ],
+            [
+              48,
+              76
+            ],
+            [
+              192,
+              16
+            ],
+            [
+              192,
+              12
+            ],
+            [
+              192,
+              0
+            ]
+          ]
+        },
+        {
+          "id": "B-to-A",
+          "from_port": "B",
+          "to_port": "A",
+          "displacement": [
+            -1.5,
+            0.5
+          ],
+          "required_abilities": [
+            "jump",
+            "recoil"
+          ],
+          "action_tags": [],
+          "difficulty": null,
+          "resource_profile": {
+            "status": "UNKNOWN",
+            "requiredRewards": []
+          },
+          "validation": {
+            "status": "passed_scoped",
+            "kind": "original_native_route_qualification",
+            "physicalSignature": "193a4f064b9d298cea8ffe710b1b7695fd55e347c6db0df0b9edba7f365206ea",
+            "originalReportSha256": "5435c91c82622450594016fa0a6833eb43800e47817df75077747c3f15f3e808",
+            "availableAbilities": [
+              "move",
+              "jump",
+              "shot_recoil"
+            ],
+            "testNeighborFixtures": [],
+            "scope": "Independently initialized local route; arbitrary seams, alternate configurations, minimal capabilities and chaining remain UNKNOWN."
+          },
+          "reward_ids": [],
+          "path_points": [
+            [
+              192,
+              0
+            ],
+            [
+              192,
+              12
+            ],
+            [
+              72,
+              16
+            ],
+            [
+              48,
+              76
+            ],
+            [
+              0,
+              64
+            ]
+          ]
+        }
+      ],
+      "retained_route_ids": [
+        "A-to-B",
+        "B-to-A"
+      ],
+      "reward_sites": []
+    },
+    {
+      "id": "M09",
+      "module_id": "T:idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x1",
+      "name": "双台转角 · 2×1 · 左↔下",
+      "origin": [
+        24,
+        -1
+      ],
+      "size_blocks": [
+        2,
+        1
+      ],
+      "mirror_x": false,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "face": "LEFT",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            48,
+            -1
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "BOTTOM",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            3,
+            2
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            51,
+            0
+          ]
+        }
+      },
+      "reward": false,
+      "solver_port_ids": [
+        "A",
+        "B"
+      ],
+      "source_module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x1",
+      "content_version": "sha256:af922edabaef3ded1bbec91ca0643930e736dd3a365514ab2077bc3fa8c57101",
+      "scene": "modules/idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x1/module.tscn",
+      "scene_origin_offset": [
+        0,
+        0
+      ],
+      "source_bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 128
+      },
+      "content": {
+        "platforms": [
+          [
+            0,
+            96,
+            104,
+            12
+          ],
+          [
+            144,
+            96,
+            112,
+            12
+          ]
+        ],
+        "one_way_platform_indices": [
+          0,
+          1
+        ],
+        "wall_platform_indices": [],
+        "hazards": [],
+        "thorns": [],
+        "saws": [],
+        "moving_platforms": [],
+        "hooks": [],
+        "latches": [],
+        "enemies": [],
+        "reward_sites": [],
+        "schema": "pcg/compiled-module-content/v1",
+        "source_sha256": "778f5ecc20e292916be7ee86c1f55f9e25d9f588e4fc843fb12f35de6f0c8c57",
+        "stable_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x1",
+        "world_bounds": [
+          0,
+          0,
+          256,
+          128
+        ],
+        "entry_port": [
+          24.0,
+          78.0
+        ],
+        "exit_port": [
+          192.0,
+          78.0
+        ],
+        "coordinate_frame": "owned_rectangle_pixels",
+        "source_affine": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      },
+      "connected_port_ids": [
+        "B"
+      ],
+      "sealed_ports": [
+        {
+          "port_id": "A",
+          "component": "gear-seal/1",
+          "face": "LEFT",
+          "rect_pixels": [
+            0,
+            0,
+            32,
+            128
+          ],
+          "opening_pixels": 128,
+          "thickness_pixels": 32,
+          "certified": false,
+          "physical_validation": "NOT_RUN"
+        }
+      ],
+      "effective_routes": [],
+      "retained_route_ids": [],
+      "reward_sites": []
+    }
+  ],
+  "connections": [
+    {
+      "a": "M01.R",
+      "b": "M02.entry",
+      "world2": [
+        8,
+        3
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M02.exit",
+      "b": "M03.R",
+      "world2": [
+        18,
+        3
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M03.L",
+      "b": "M04.exit",
+      "world2": [
+        24,
+        5
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M04.entry",
+      "b": "M05.exit",
+      "world2": [
+        34,
+        5
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M05.entry",
+      "b": "M06.entry",
+      "world2": [
+        36,
+        5
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M06.exit",
+      "b": "M07.entry",
+      "world2": [
+        42,
+        3
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M07.exit",
+      "b": "M08.A",
+      "world2": [
+        48,
+        1
+      ],
+      "surface": "ONE_WAY_PLATFORM"
+    },
+    {
+      "a": "M08.B",
+      "b": "M09.B",
+      "world2": [
+        51,
+        0
+      ],
+      "surface": "ONE_WAY_PLATFORM"
+    }
+  ],
+  "air_connected": null,
+  "blockers": [
+    {
+      "reason": "legacy_generator_rejected",
+      "status": "REJECTED",
+      "phase": "growth",
+      "error": "RuntimeError: growth exhausted"
+    },
+    {
+      "reason": "boss_not_placed"
+    },
+    {
+      "reason": "boss_unreachable"
+    },
+    {
+      "reason": "reward_target_not_met",
+      "expected": 6,
+      "actual": 0
+    },
+    {
+      "reason": "unreachable_instances",
+      "instances": [
+        {
+          "instance": "M05",
+          "module_id": "game-plains-micro-landing"
+        },
+        {
+          "instance": "M06",
+          "module_id": "generated-59296f7c9ebdbbc68e0913efe12ce46af74300db662d08af14337f205f6dae85"
+        },
+        {
+          "instance": "M07",
+          "module_id": "generated-09efd9583360ae3e414d7430c9b0e7e12a730b0fe8a5f19a90fc98c9b80c2ac2"
+        },
+        {
+          "instance": "M08",
+          "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-top-2x1"
+        },
+        {
+          "instance": "M09",
+          "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x1"
+        }
+      ]
+    }
+  ],
+  "physical_notes": [
+    {
+      "instance": "M01",
+      "module_id": "game-plains-windchime-lesson",
+      "reason": "transformed_or_sealed_configuration_physics_not_run"
+    },
+    {
+      "instance": "M02",
+      "module_id": "game-forest-directional-geometry-build-narrow",
+      "route_id": "entry-to-exit",
+      "reason": "available_ability_superset_not_physically_witnessed",
+      "witnessed": [
+        "jump",
+        "recoil",
+        "grapple"
+      ]
+    },
+    {
+      "instance": "M03",
+      "module_id": "idea-interface-s15-001",
+      "route_id": "L-to-R",
+      "reason": "available_ability_superset_not_physically_witnessed",
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M03",
+      "module_id": "idea-interface-s15-001",
+      "route_id": "R-to-L",
+      "reason": "available_ability_superset_not_physically_witnessed",
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M03",
+      "module_id": "idea-interface-s15-001",
+      "reason": "transformed_or_sealed_configuration_physics_not_run"
+    },
+    {
+      "instance": "M04",
+      "module_id": "game-plains-low-arch",
+      "route_id": "entry-to-exit",
+      "reason": "available_ability_superset_not_physically_witnessed",
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M04",
+      "module_id": "game-plains-low-arch",
+      "reason": "transformed_or_sealed_configuration_physics_not_run"
+    },
+    {
+      "instance": "M05",
+      "module_id": "game-plains-micro-landing",
+      "route_id": "main",
+      "reason": "available_ability_superset_not_physically_witnessed",
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M05",
+      "module_id": "game-plains-micro-landing",
+      "reason": "transformed_or_sealed_configuration_physics_not_run"
+    },
+    {
+      "instance": "M06",
+      "module_id": "generated-59296f7c9ebdbbc68e0913efe12ce46af74300db662d08af14337f205f6dae85",
+      "route_id": "entry-to-exit",
+      "reason": "available_ability_superset_not_physically_witnessed",
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M07",
+      "module_id": "generated-09efd9583360ae3e414d7430c9b0e7e12a730b0fe8a5f19a90fc98c9b80c2ac2",
+      "reason": "transformed_or_sealed_configuration_physics_not_run"
+    },
+    {
+      "instance": "M08",
+      "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-top-2x1",
+      "route_id": "A-to-B",
+      "reason": "available_ability_superset_not_physically_witnessed",
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M08",
+      "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-top-2x1",
+      "route_id": "B-to-A",
+      "reason": "available_ability_superset_not_physically_witnessed",
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M09",
+      "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x1",
+      "reason": "transformed_or_sealed_configuration_physics_not_run"
+    }
+  ],
+  "legacy_map": null,
+  "independent_audit": {
+    "geometry": "PASS",
+    "gear_seal_coverage": "PASS",
+    "boss_reachable": false,
+    "target_reward_instances": 0,
+    "all_reward_sites": 1,
+    "route_reward_nodes": [],
+    "unreachable_instances": [
+      {
+        "instance": "M05",
+        "module_id": "game-plains-micro-landing"
+      },
+      {
+        "instance": "M06",
+        "module_id": "generated-59296f7c9ebdbbc68e0913efe12ce46af74300db662d08af14337f205f6dae85"
+      },
+      {
+        "instance": "M07",
+        "module_id": "generated-09efd9583360ae3e414d7430c9b0e7e12a730b0fe8a5f19a90fc98c9b80c2ac2"
+      },
+      {
+        "instance": "M08",
+        "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-top-2x1"
+      },
+      {
+        "instance": "M09",
+        "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x1"
+      }
+    ],
+    "blockers": [
+      {
+        "reason": "boss_not_placed"
+      },
+      {
+        "reason": "boss_unreachable"
+      },
+      {
+        "reason": "reward_target_not_met",
+        "expected": 6,
+        "actual": 0
+      },
+      {
+        "reason": "unreachable_instances",
+        "instances": [
+          {
+            "instance": "M05",
+            "module_id": "game-plains-micro-landing"
+          },
+          {
+            "instance": "M06",
+            "module_id": "generated-59296f7c9ebdbbc68e0913efe12ce46af74300db662d08af14337f205f6dae85"
+          },
+          {
+            "instance": "M07",
+            "module_id": "generated-09efd9583360ae3e414d7430c9b0e7e12a730b0fe8a5f19a90fc98c9b80c2ac2"
+          },
+          {
+            "instance": "M08",
+            "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-top-2x1"
+          },
+          {
+            "instance": "M09",
+            "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x1"
+          }
+        ]
+      }
+    ],
+    "edges": [
+      [
+        "M01.R:depart",
+        "M02.entry:arrive"
+      ],
+      [
+        "M02.entry:arrive",
+        "M02.exit:depart"
+      ],
+      [
+        "M02.entry:depart",
+        "M01.R:arrive"
+      ],
+      [
+        "M02.exit:depart",
+        "M03.R:arrive"
+      ],
+      [
+        "M03.L:arrive",
+        "M03.R:depart"
+      ],
+      [
+        "M03.L:depart",
+        "M04.exit:arrive"
+      ],
+      [
+        "M03.R:arrive",
+        "M03.L:depart"
+      ],
+      [
+        "M03.R:depart",
+        "M02.exit:arrive"
+      ],
+      [
+        "M04.entry:arrive",
+        "M04.exit:depart"
+      ],
+      [
+        "M04.entry:depart",
+        "M05.exit:arrive"
+      ],
+      [
+        "M04.exit:depart",
+        "M03.L:arrive"
+      ],
+      [
+        "M05.entry:arrive",
+        "M05.exit:depart"
+      ],
+      [
+        "M05.entry:depart",
+        "M06.entry:arrive"
+      ],
+      [
+        "M05.exit:depart",
+        "M04.entry:arrive"
+      ],
+      [
+        "M06.entry:arrive",
+        "M06.exit:depart"
+      ],
+      [
+        "M06.entry:depart",
+        "M05.entry:arrive"
+      ],
+      [
+        "M06.exit:depart",
+        "M07.entry:arrive"
+      ],
+      [
+        "M07.entry:depart",
+        "M06.exit:arrive"
+      ],
+      [
+        "M07.exit:depart",
+        "M08.A:arrive"
+      ],
+      [
+        "M08.A:arrive",
+        "M08.B:depart"
+      ],
+      [
+        "M08.A:depart",
+        "M07.exit:arrive"
+      ],
+      [
+        "M08.B:arrive",
+        "M08.A:depart"
+      ],
+      [
+        "M08.B:depart",
+        "M09.B:arrive"
+      ],
+      [
+        "M09.B:depart",
+        "M08.B:arrive"
+      ],
+      [
+        "START",
+        "M01.R:depart"
+      ]
+    ]
+  },
+  "validation": {
+    "whole_map_physics": "NOT_RUN",
+    "gear_seal_physics": "NOT_RUN",
+    "acceptance": "REJECTED",
+    "no_retry": true
+  }
+}

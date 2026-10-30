@@ -1,0 +1,170 @@
+{
+  "geometry": "PASS",
+  "gear_seal_coverage": "PASS",
+  "boss_reachable": false,
+  "target_reward_instances": 0,
+  "all_reward_sites": 1,
+  "route_reward_nodes": [],
+  "unreachable_instances": [
+    {
+      "instance": "M05",
+      "module_id": "game-plains-micro-landing"
+    },
+    {
+      "instance": "M06",
+      "module_id": "generated-59296f7c9ebdbbc68e0913efe12ce46af74300db662d08af14337f205f6dae85"
+    },
+    {
+      "instance": "M07",
+      "module_id": "generated-09efd9583360ae3e414d7430c9b0e7e12a730b0fe8a5f19a90fc98c9b80c2ac2"
+    },
+    {
+      "instance": "M08",
+      "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-top-2x1"
+    },
+    {
+      "instance": "M09",
+      "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x1"
+    }
+  ],
+  "blockers": [
+    {
+      "reason": "boss_not_placed"
+    },
+    {
+      "reason": "boss_unreachable"
+    },
+    {
+      "reason": "reward_target_not_met",
+      "expected": 6,
+      "actual": 0
+    },
+    {
+      "reason": "unreachable_instances",
+      "instances": [
+        {
+          "instance": "M05",
+          "module_id": "game-plains-micro-landing"
+        },
+        {
+          "instance": "M06",
+          "module_id": "generated-59296f7c9ebdbbc68e0913efe12ce46af74300db662d08af14337f205f6dae85"
+        },
+        {
+          "instance": "M07",
+          "module_id": "generated-09efd9583360ae3e414d7430c9b0e7e12a730b0fe8a5f19a90fc98c9b80c2ac2"
+        },
+        {
+          "instance": "M08",
+          "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-top-2x1"
+        },
+        {
+          "instance": "M09",
+          "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x1"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    [
+      "M01.R:depart",
+      "M02.entry:arrive"
+    ],
+    [
+      "M02.entry:arrive",
+      "M02.exit:depart"
+    ],
+    [
+      "M02.entry:depart",
+      "M01.R:arrive"
+    ],
+    [
+      "M02.exit:depart",
+      "M03.R:arrive"
+    ],
+    [
+      "M03.L:arrive",
+      "M03.R:depart"
+    ],
+    [
+      "M03.L:depart",
+      "M04.exit:arrive"
+    ],
+    [
+      "M03.R:arrive",
+      "M03.L:depart"
+    ],
+    [
+      "M03.R:depart",
+      "M02.exit:arrive"
+    ],
+    [
+      "M04.entry:arrive",
+      "M04.exit:depart"
+    ],
+    [
+      "M04.entry:depart",
+      "M05.exit:arrive"
+    ],
+    [
+      "M04.exit:depart",
+      "M03.L:arrive"
+    ],
+    [
+      "M05.entry:arrive",
+      "M05.exit:depart"
+    ],
+    [
+      "M05.entry:depart",
+      "M06.entry:arrive"
+    ],
+    [
+      "M05.exit:depart",
+      "M04.entry:arrive"
+    ],
+    [
+      "M06.entry:arrive",
+      "M06.exit:depart"
+    ],
+    [
+      "M06.entry:depart",
+      "M05.entry:arrive"
+    ],
+    [
+      "M06.exit:depart",
+      "M07.entry:arrive"
+    ],
+    [
+      "M07.entry:depart",
+      "M06.exit:arrive"
+    ],
+    [
+      "M07.exit:depart",
+      "M08.A:arrive"
+    ],
+    [
+      "M08.A:arrive",
+      "M08.B:depart"
+    ],
+    [
+      "M08.A:depart",
+      "M07.exit:arrive"
+    ],
+    [
+      "M08.B:arrive",
+      "M08.A:depart"
+    ],
+    [
+      "M08.B:depart",
+      "M09.B:arrive"
+    ],
+    [
+      "M09.B:depart",
+      "M08.B:arrive"
+    ],
+    [
+      "START",
+      "M01.R:depart"
+    ]
+  ]
+}

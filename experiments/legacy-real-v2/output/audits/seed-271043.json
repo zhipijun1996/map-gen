@@ -1,0 +1,125 @@
+{
+  "geometry": "PASS",
+  "gear_seal_coverage": "PASS",
+  "boss_reachable": false,
+  "target_reward_instances": 0,
+  "all_reward_sites": 1,
+  "route_reward_nodes": [
+    {
+      "node": "M04:reward:A-to-B:visible-cache",
+      "instance": "M04",
+      "module_id": "block-demand-a1-bidirectional-risk-reward-1",
+      "route_id": "A-to-B",
+      "reward_ids": [
+        "visible-cache"
+      ],
+      "target": false,
+      "reachable": false,
+      "can_continue_to_boss": false
+    }
+  ],
+  "unreachable_instances": [],
+  "blockers": [
+    {
+      "reason": "boss_not_placed"
+    },
+    {
+      "reason": "boss_unreachable"
+    },
+    {
+      "reason": "reward_target_not_met",
+      "expected": 6,
+      "actual": 0
+    }
+  ],
+  "edges": [
+    [
+      "M01.R:depart",
+      "M02.entry:arrive"
+    ],
+    [
+      "M02.entry:arrive",
+      "M02.exit:depart"
+    ],
+    [
+      "M02.entry:depart",
+      "M01.R:arrive"
+    ],
+    [
+      "M02.exit:depart",
+      "M03.entry:arrive"
+    ],
+    [
+      "M03.entry:arrive",
+      "M03.exit:depart"
+    ],
+    [
+      "M03.entry:depart",
+      "M02.exit:arrive"
+    ],
+    [
+      "M03.exit:depart",
+      "M04.B:arrive"
+    ],
+    [
+      "M04.A:arrive",
+      "M04:reward:A-to-B:visible-cache"
+    ],
+    [
+      "M04.A:depart",
+      "M05.R:arrive"
+    ],
+    [
+      "M04.B:arrive",
+      "M04.A:depart"
+    ],
+    [
+      "M04.B:depart",
+      "M03.exit:arrive"
+    ],
+    [
+      "M04:reward:A-to-B:visible-cache",
+      "M04.B:depart"
+    ],
+    [
+      "M05.R:arrive",
+      "M05.T:depart"
+    ],
+    [
+      "M05.R:depart",
+      "M04.A:arrive"
+    ],
+    [
+      "M05.T:arrive",
+      "M05.R:depart"
+    ],
+    [
+      "M05.T:depart",
+      "M06.B:arrive"
+    ],
+    [
+      "M06.A:arrive",
+      "M06.B:depart"
+    ],
+    [
+      "M06.A:depart",
+      "M07.A:arrive"
+    ],
+    [
+      "M06.B:arrive",
+      "M06.A:depart"
+    ],
+    [
+      "M06.B:depart",
+      "M05.T:arrive"
+    ],
+    [
+      "M07.A:depart",
+      "M06.A:arrive"
+    ],
+    [
+      "START",
+      "M01.R:depart"
+    ]
+  ]
+}

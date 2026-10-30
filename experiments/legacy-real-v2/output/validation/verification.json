@@ -1,0 +1,38 @@
+{
+  "checks": [
+    {
+      "command": "python prototype/verify.py",
+      "result": "PASS"
+    },
+    {
+      "command": "python tools/verify_progress.py --replay",
+      "result": "PASS; all 20 original maps/rejections exactly match"
+    },
+    {
+      "command": "python experiments/legacy-real-v2/test_adapter.py",
+      "result": "PASS; 14 tests, including all 20 real candidate exact replays"
+    },
+    {
+      "command": "python experiments/legacy-real-v2/report.py",
+      "result": "PASS; all candidate geometry and seal coverage checked; directed failures retained"
+    },
+    {
+      "command": "Chromium local HTTP report check",
+      "result": "PASS; 20 SVG/JSON seed links, no script errors"
+    },
+    {
+      "command": "generation source/config and archive hashes",
+      "result": "PASS"
+    },
+    {
+      "command": "protected old experiment, v1, docs, tools comparison",
+      "result": "PASS; unchanged"
+    }
+  ],
+  "not_run": [
+    "Godot",
+    "main-game integration",
+    "full-map physical traversal"
+  ],
+  "static_acceptance": "20/20 real candidates rejected; no target reductions, retries or replacement maps"
+}

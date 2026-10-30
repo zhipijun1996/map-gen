@@ -1,0 +1,270 @@
+{
+  "geometry": "PASS",
+  "gear_seal_coverage": "PASS",
+  "boss_reachable": false,
+  "target_reward_instances": 0,
+  "all_reward_sites": 1,
+  "route_reward_nodes": [],
+  "unreachable_instances": [
+    {
+      "instance": "M05",
+      "module_id": "idea-plains-hq05-001"
+    },
+    {
+      "instance": "M06",
+      "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x2"
+    },
+    {
+      "instance": "M07",
+      "module_id": "generated-09efd9583360ae3e414d7430c9b0e7e12a730b0fe8a5f19a90fc98c9b80c2ac2"
+    },
+    {
+      "instance": "M08",
+      "module_id": "idea-interface-s07-001"
+    },
+    {
+      "instance": "M09",
+      "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x1"
+    },
+    {
+      "instance": "M10",
+      "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-top-2x1"
+    },
+    {
+      "instance": "M11",
+      "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-1x2"
+    },
+    {
+      "instance": "M12",
+      "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x1"
+    },
+    {
+      "instance": "M13",
+      "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-top-2x1"
+    }
+  ],
+  "blockers": [
+    {
+      "reason": "boss_not_placed"
+    },
+    {
+      "reason": "boss_unreachable"
+    },
+    {
+      "reason": "reward_target_not_met",
+      "expected": 6,
+      "actual": 0
+    },
+    {
+      "reason": "unreachable_instances",
+      "instances": [
+        {
+          "instance": "M05",
+          "module_id": "idea-plains-hq05-001"
+        },
+        {
+          "instance": "M06",
+          "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x2"
+        },
+        {
+          "instance": "M07",
+          "module_id": "generated-09efd9583360ae3e414d7430c9b0e7e12a730b0fe8a5f19a90fc98c9b80c2ac2"
+        },
+        {
+          "instance": "M08",
+          "module_id": "idea-interface-s07-001"
+        },
+        {
+          "instance": "M09",
+          "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x1"
+        },
+        {
+          "instance": "M10",
+          "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-top-2x1"
+        },
+        {
+          "instance": "M11",
+          "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-1x2"
+        },
+        {
+          "instance": "M12",
+          "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x1"
+        },
+        {
+          "instance": "M13",
+          "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-top-2x1"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    [
+      "M01.R:depart",
+      "M02.entry:arrive"
+    ],
+    [
+      "M02.entry:arrive",
+      "M02.exit:depart"
+    ],
+    [
+      "M02.entry:depart",
+      "M01.R:arrive"
+    ],
+    [
+      "M02.exit:depart",
+      "M03.entry:arrive"
+    ],
+    [
+      "M03.entry:arrive",
+      "M03.exit:depart"
+    ],
+    [
+      "M03.entry:depart",
+      "M02.exit:arrive"
+    ],
+    [
+      "M03.exit:depart",
+      "M04.exit:arrive"
+    ],
+    [
+      "M04.entry:arrive",
+      "M04.exit:depart"
+    ],
+    [
+      "M04.entry:depart",
+      "M05.L:arrive"
+    ],
+    [
+      "M04.exit:depart",
+      "M03.exit:arrive"
+    ],
+    [
+      "M05.L:arrive",
+      "M05.T:depart"
+    ],
+    [
+      "M05.L:depart",
+      "M04.entry:arrive"
+    ],
+    [
+      "M05.T:arrive",
+      "M05.L:depart"
+    ],
+    [
+      "M05.T:depart",
+      "M06.B:arrive"
+    ],
+    [
+      "M06.A:arrive",
+      "M06.B:depart"
+    ],
+    [
+      "M06.A:depart",
+      "M07.exit:arrive"
+    ],
+    [
+      "M06.B:arrive",
+      "M06.A:depart"
+    ],
+    [
+      "M06.B:depart",
+      "M05.T:arrive"
+    ],
+    [
+      "M07.entry:depart",
+      "M08.L:arrive"
+    ],
+    [
+      "M07.exit:depart",
+      "M06.A:arrive"
+    ],
+    [
+      "M08.L:arrive",
+      "M08.T:depart"
+    ],
+    [
+      "M08.L:depart",
+      "M07.entry:arrive"
+    ],
+    [
+      "M08.T:arrive",
+      "M08.L:depart"
+    ],
+    [
+      "M08.T:depart",
+      "M09.B:arrive"
+    ],
+    [
+      "M09.A:arrive",
+      "M09.B:depart"
+    ],
+    [
+      "M09.A:depart",
+      "M10.A:arrive"
+    ],
+    [
+      "M09.B:arrive",
+      "M09.A:depart"
+    ],
+    [
+      "M09.B:depart",
+      "M08.T:arrive"
+    ],
+    [
+      "M10.A:arrive",
+      "M10.B:depart"
+    ],
+    [
+      "M10.A:depart",
+      "M09.A:arrive"
+    ],
+    [
+      "M10.B:arrive",
+      "M10.A:depart"
+    ],
+    [
+      "M10.B:depart",
+      "M11.B:arrive"
+    ],
+    [
+      "M11.A:arrive",
+      "M11.B:depart"
+    ],
+    [
+      "M11.A:depart",
+      "M12.A:arrive"
+    ],
+    [
+      "M11.B:arrive",
+      "M11.A:depart"
+    ],
+    [
+      "M11.B:depart",
+      "M10.B:arrive"
+    ],
+    [
+      "M12.A:arrive",
+      "M12.B:depart"
+    ],
+    [
+      "M12.A:depart",
+      "M11.A:arrive"
+    ],
+    [
+      "M12.B:arrive",
+      "M12.A:depart"
+    ],
+    [
+      "M12.B:depart",
+      "M13.B:arrive"
+    ],
+    [
+      "M13.B:depart",
+      "M12.B:arrive"
+    ],
+    [
+      "START",
+      "M01.R:depart"
+    ]
+  ]
+}

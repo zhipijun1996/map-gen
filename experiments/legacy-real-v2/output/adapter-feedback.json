@@ -1,0 +1,109 @@
+{
+  "bindings": {
+    "START": {
+      "module_id": "game-plains-windchime-lesson",
+      "port_aliases": {
+        "exit": "R"
+      },
+      "scope": "experimental boundary spawn at exit, same as v1; no interior spawn route inferred"
+    },
+    "BOSS": {
+      "module_id": "game-plains-boss-arena",
+      "port_aliases": {
+        "entry": "L"
+      },
+      "scope": "arrival at package-declared entryPortIds; no fight or exit completion required"
+    }
+  },
+  "module_feedback": [
+    {
+      "module_id": "b31-n08-reward-return-interface0",
+      "reason": "legacy_module_reward_phase_requires_route_level_audit"
+    },
+    {
+      "module_id": "b31-n12-three-side-port-interface0",
+      "reason": "legacy_module_reward_phase_requires_route_level_audit"
+    },
+    {
+      "module_id": "batch30-block-n04-0-2",
+      "reason": "legacy_module_reward_phase_requires_route_level_audit"
+    },
+    {
+      "module_id": "batch30-n11-e-e-width96",
+      "reason": "legacy_module_reward_phase_requires_route_level_audit"
+    },
+    {
+      "module_id": "block-demand-a1-bidirectional-risk-reward-1",
+      "reason": "legacy_module_reward_phase_requires_route_level_audit"
+    },
+    {
+      "module_id": "generated-075be5b9171782cf385f2d8ea3c21e2f5fe876f688f2929ba61bc34487d2fe53",
+      "reason": "legacy_module_reward_phase_requires_route_level_audit"
+    },
+    {
+      "module_id": "generated-8df5613256e70989f6ae5795803344bdc3e636fe3232c2e35175fae612f633ba",
+      "reason": "legacy_module_reward_phase_requires_route_level_audit"
+    },
+    {
+      "module_id": "generated-a8f918f1ee9e8e682a919cdbb67ba2015fcfe075d54e5f25147fbe04dd156d2a",
+      "reason": "legacy_module_reward_phase_requires_route_level_audit"
+    }
+  ],
+  "missing_air_roles": {
+    "AIR_A": [],
+    "AIR_B": []
+  },
+  "reward_association_gaps": {
+    "schema": "map-edit/reward-association-audit/v1",
+    "modulesWithRewards": 31,
+    "rewardSites": 32,
+    "modulesWithGaps": 5,
+    "modules": [
+      {
+        "id": "generated-75b420621682d36fc3b7262784c347f0acea7e55422f7e0abaebbc285fa89198",
+        "title": "wall-slide-launch-window-v5-0",
+        "rewardIdsWithoutConfirmedRoute": [
+          "visible-cache"
+        ],
+        "routesWithoutRewardAssociation": [],
+        "reason": "No retained qualified route explicitly requires these rewards. Empty requiredRewards does not prove an optional reward is uncollectible; no association is invented. Module and rewards remain in the package."
+      },
+      {
+        "id": "idea-0363f85c-16c0-4b5f-b3b0-461335608db7-enemies-2",
+        "title": "左右交替命中，反冲接力上升 · 2怪",
+        "rewardIdsWithoutConfirmedRoute": [
+          "reward"
+        ],
+        "routesWithoutRewardAssociation": [],
+        "reason": "No retained qualified route explicitly requires these rewards. Empty requiredRewards does not prove an optional reward is uncollectible; no association is invented. Module and rewards remain in the package."
+      },
+      {
+        "id": "idea-0363f85c-16c0-4b5f-b3b0-461335608db7-enemies-3",
+        "title": "左右交替命中，反冲接力上升 · 3怪",
+        "rewardIdsWithoutConfirmedRoute": [
+          "reward"
+        ],
+        "routesWithoutRewardAssociation": [],
+        "reason": "No retained qualified route explicitly requires these rewards. Empty requiredRewards does not prove an optional reward is uncollectible; no association is invented. Module and rewards remain in the package."
+      },
+      {
+        "id": "idea-96ba6bf1-9b60-470a-9128-54ae7ea44af3",
+        "title": "错相升井：四台换乘，三道横锯",
+        "rewardIdsWithoutConfirmedRoute": [
+          "reward"
+        ],
+        "routesWithoutRewardAssociation": [],
+        "reason": "No retained qualified route explicitly requires these rewards. Empty requiredRewards does not prove an optional reward is uncollectible; no association is invented. Module and rewards remain in the package."
+      },
+      {
+        "id": "idea-orbit-choice-001",
+        "title": "环岛分流：追台，再选择离岛时机",
+        "rewardIdsWithoutConfirmedRoute": [
+          "reward"
+        ],
+        "routesWithoutRewardAssociation": [],
+        "reason": "No retained qualified route explicitly requires these rewards. Empty requiredRewards does not prove an optional reward is uncollectible; no association is invented. Module and rewards remain in the package."
+      }
+    ]
+  }
+}

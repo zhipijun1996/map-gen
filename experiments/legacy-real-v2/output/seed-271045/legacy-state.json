@@ -1,0 +1,1099 @@
+{
+  "seed": 271045,
+  "phase": "growth",
+  "instances": [
+    {
+      "id": "M01",
+      "module_id": "START",
+      "name": "风铃教学",
+      "origin": [
+        0,
+        0
+      ],
+      "size_blocks": [
+        4,
+        3
+      ],
+      "mirror_x": false,
+      "ports": {
+        "R": {
+          "id": "R",
+          "source_port_id": "exit",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            8,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            8,
+            3
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M02",
+      "module_id": "T:game-plains-remote-bell",
+      "name": "远程风铃",
+      "origin": [
+        4,
+        0
+      ],
+      "size_blocks": [
+        5,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            8,
+            3
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            10,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            18,
+            3
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M03",
+      "module_id": "T:game-plains-bell-ferry-control",
+      "name": "风铃控制摆渡",
+      "origin": [
+        9,
+        0
+      ],
+      "size_blocks": [
+        6,
+        3
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            18,
+            3
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            12,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            30,
+            3
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M04",
+      "module_id": "T:game-challenge-long-gap",
+      "name": "长距离跨越",
+      "origin": [
+        15,
+        1
+      ],
+      "size_blocks": [
+        6,
+        2
+      ],
+      "mirror_x": true,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            12,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            42,
+            3
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            30,
+            3
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M05",
+      "module_id": "T:generated-59296f7c9ebdbbc68e0913efe12ce46af74300db662d08af14337f205f6dae85",
+      "name": "紧凑钟台：下射抬升穿门",
+      "origin": [
+        21,
+        0
+      ],
+      "size_blocks": [
+        3,
+        3
+      ],
+      "mirror_x": true,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            6,
+            5
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            48,
+            5
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            42,
+            3
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M06",
+      "module_id": "T:game-route-junction",
+      "name": "路线枢纽",
+      "origin": [
+        24,
+        1
+      ],
+      "size_blocks": [
+        6,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry_left": {
+          "id": "entry_left",
+          "source_port_id": "entry_left",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            48,
+            5
+          ]
+        },
+        "entry_right": {
+          "id": "entry_right",
+          "source_port_id": "entry_right",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            12,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            60,
+            5
+          ]
+        },
+        "exit_upper_left": {
+          "id": "exit_upper_left",
+          "source_port_id": "exit_upper_left",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            48,
+            3
+          ]
+        },
+        "exit_upper_right": {
+          "id": "exit_upper_right",
+          "source_port_id": "exit_upper_right",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            12,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            60,
+            3
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M07",
+      "module_id": "T:game-forest-playful-module-variants-forked-bough-hh",
+      "name": "双钩分叉高枝",
+      "origin": [
+        30,
+        1
+      ],
+      "size_blocks": [
+        7,
+        4
+      ],
+      "mirror_x": true,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            14,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            74,
+            5
+          ]
+        },
+        "basin": {
+          "id": "basin",
+          "source_port_id": "basin",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            7
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            60,
+            9
+          ]
+        },
+        "crown": {
+          "id": "crown",
+          "source_port_id": "crown",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            60,
+            3
+          ]
+        },
+        "lower_exit": {
+          "id": "lower_exit",
+          "source_port_id": "lower_exit",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            60,
+            5
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M08",
+      "module_id": "T:game-plains-micro-rise",
+      "name": "微型上升",
+      "origin": [
+        37,
+        2
+      ],
+      "size_blocks": [
+        2,
+        2
+      ],
+      "mirror_x": true,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            4,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            78,
+            7
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            74,
+            5
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M09",
+      "module_id": "T:game-forest-exploration-modules-backlook-fruit-cache",
+      "name": "回望果实宝藏",
+      "origin": [
+        26,
+        3
+      ],
+      "size_blocks": [
+        4,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            52,
+            9
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            8,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            60,
+            9
+          ]
+        },
+        "C": {
+          "id": "C",
+          "source_port_id": "C",
+          "face": "TOP",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            3,
+            0
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            55,
+            6
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M10",
+      "module_id": "T:generated-777ce57682915e11719c9540e5c0f374c1aaef971321099e9459a34b1c3615a2",
+      "name": "双台接力，择时换乘",
+      "origin": [
+        16,
+        3
+      ],
+      "size_blocks": [
+        10,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            32,
+            9
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            20,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            52,
+            9
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M11",
+      "module_id": "T:game-plains-twin-gears",
+      "name": "双齿轮节奏",
+      "origin": [
+        10,
+        3
+      ],
+      "size_blocks": [
+        6,
+        2
+      ],
+      "mirror_x": true,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            12,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            32,
+            9
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            20,
+            9
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M12",
+      "module_id": "T:game-plains-micro-landing",
+      "name": "微型落地点",
+      "origin": [
+        9,
+        4
+      ],
+      "size_blocks": [
+        1,
+        1
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            18,
+            9
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            2,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            20,
+            9
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M13",
+      "module_id": "T:idea-spec02-s07-001",
+      "name": "S07 · 起跳换脚，下一块台才出现",
+      "origin": [
+        39,
+        2
+      ],
+      "size_blocks": [
+        4,
+        3
+      ],
+      "mirror_x": false,
+      "ports": {
+        "L": {
+          "id": "L",
+          "source_port_id": "L",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            78,
+            7
+          ]
+        },
+        "T": {
+          "id": "T",
+          "source_port_id": "T",
+          "face": "TOP",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            7,
+            0
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            85,
+            4
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M14",
+      "module_id": "T:game-plains-high-perches",
+      "name": "高处落脚点",
+      "origin": [
+        4,
+        2
+      ],
+      "size_blocks": [
+        5,
+        3
+      ],
+      "mirror_x": true,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            10,
+            5
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            18,
+            9
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            8,
+            5
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M15",
+      "module_id": "T:idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x2",
+      "name": "双台转角 · 2×2 · 左↔下",
+      "origin": [
+        42,
+        0
+      ],
+      "size_blocks": [
+        2,
+        2
+      ],
+      "mirror_x": true,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "face": "RIGHT",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            4,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            88,
+            1
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "BOTTOM",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            1,
+            4
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            85,
+            4
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M16",
+      "module_id": "T:idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x2",
+      "name": "双台转角 · 2×2 · 左↔下",
+      "origin": [
+        44,
+        0
+      ],
+      "size_blocks": [
+        2,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "face": "LEFT",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            88,
+            1
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "BOTTOM",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            3,
+            4
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            91,
+            4
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M17",
+      "module_id": "T:idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-top-2x1",
+      "name": "双台转角 · 2×1 · 左↔上",
+      "origin": [
+        45,
+        2
+      ],
+      "size_blocks": [
+        2,
+        1
+      ],
+      "mirror_x": true,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "face": "RIGHT",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            4,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            94,
+            5
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "TOP",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            1,
+            0
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            91,
+            4
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M18",
+      "module_id": "T:idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-top-2x2",
+      "name": "双台转角 · 2×2 · 左↔上",
+      "origin": [
+        47,
+        1
+      ],
+      "size_blocks": [
+        2,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "face": "LEFT",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            94,
+            5
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "TOP",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            3,
+            0
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            97,
+            2
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M19",
+      "module_id": "T:idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-1x2",
+      "name": "双台转角 · 1×2 · 左↔下",
+      "origin": [
+        48,
+        -1
+      ],
+      "size_blocks": [
+        1,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "face": "LEFT",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            96,
+            -1
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "BOTTOM",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            1,
+            4
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            97,
+            2
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M20",
+      "module_id": "T:idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x1",
+      "name": "双台转角 · 2×1 · 左↔下",
+      "origin": [
+        46,
+        -1
+      ],
+      "size_blocks": [
+        2,
+        1
+      ],
+      "mirror_x": true,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "face": "RIGHT",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            4,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            96,
+            -1
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "BOTTOM",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            1,
+            2
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            93,
+            0
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M21",
+      "module_id": "T:idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-top-2x1",
+      "name": "双台转角 · 2×1 · 左↔上",
+      "origin": [
+        46,
+        0
+      ],
+      "size_blocks": [
+        2,
+        1
+      ],
+      "mirror_x": true,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "face": "RIGHT",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            4,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            96,
+            1
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "TOP",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            1,
+            0
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            93,
+            0
+          ]
+        }
+      },
+      "reward": false
+    }
+  ]
+}
