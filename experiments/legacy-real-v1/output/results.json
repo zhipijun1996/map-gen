@@ -1,0 +1,662 @@
+{
+  "base_commit": "c2ac2c3625f659364b187592c836c5ff2bceb892",
+  "source_sha256": {
+    "model.py": "20288e91a47ac2bc60c80805a7bd7cd5831cd7df1b01b18b0d1aa3094431b598",
+    "generate.py": "30bda7df8ea78296b772930737744af9c19c0a889a5bffa90430c85fdd2c5aed"
+  },
+  "seeds": [
+    271028,
+    271029,
+    271030,
+    271031,
+    271032,
+    271033,
+    271034,
+    271035,
+    271036,
+    271037,
+    271038,
+    271039,
+    271040,
+    271041,
+    271042,
+    271043,
+    271044,
+    271045,
+    271046,
+    271047
+  ],
+  "retry_count": 0,
+  "per_seed_timeout_seconds": 90,
+  "unchanged_defaults": {
+    "grow_count": 32,
+    "close_attempts": 3,
+    "close_max_depth": 3,
+    "frontier_limit": 22,
+    "closure_sources": 24,
+    "beam_width": 18,
+    "rewards": 6,
+    "main_paths_max": 3,
+    "abilities": [
+      "double_jump",
+      "grapple",
+      "jump",
+      "recoil"
+    ]
+  },
+  "bindings": {
+    "status": "PROPOSED_NOT_USER_CONFIRMED",
+    "START": {
+      "module_id": "game-plains-windchime-lesson",
+      "port_aliases": {
+        "exit": "R"
+      }
+    },
+    "BOSS": {
+      "module_id": "game-plains-boss-arena",
+      "port_aliases": {
+        "entry": "L"
+      }
+    }
+  },
+  "baseline": [
+    {
+      "seed": 271028,
+      "status": "PASS",
+      "exact_json_match": true,
+      "archive_path": "experiments/seed-study/output/seed-271028/map.json",
+      "archive_sha256": "67f00897bd964d53e82740e62ac186af75c1e771968416822fe3028b59209143",
+      "replay_sha256": "67f00897bd964d53e82740e62ac186af75c1e771968416822fe3028b59209143",
+      "summary": {
+        "instances": 49,
+        "connections": 61,
+        "cycles": 13,
+        "rewards": 6,
+        "main_paths": 3
+      }
+    },
+    {
+      "seed": 271029,
+      "status": "PASS",
+      "exact_json_match": true,
+      "archive_path": "experiments/seed-study/output/seed-271029/map.json",
+      "archive_sha256": "4207c187141ac25407fcee15f2834292c0d3a2ec0d0497547cd554ec2a66326c",
+      "replay_sha256": "4207c187141ac25407fcee15f2834292c0d3a2ec0d0497547cd554ec2a66326c",
+      "summary": {
+        "instances": 43,
+        "connections": 61,
+        "cycles": 19,
+        "rewards": 6,
+        "main_paths": 3
+      }
+    },
+    {
+      "seed": 271030,
+      "status": "PASS",
+      "exact_json_match": true,
+      "archive_path": "experiments/seed-study/output/seed-271030/map.json",
+      "archive_sha256": "d222015c944b84a9c22b20051d498b058df4061f1945a451b0b6e62246bcac8f",
+      "replay_sha256": "d222015c944b84a9c22b20051d498b058df4061f1945a451b0b6e62246bcac8f",
+      "summary": {
+        "instances": 45,
+        "connections": 59,
+        "cycles": 15,
+        "rewards": 6,
+        "main_paths": 3
+      }
+    },
+    {
+      "seed": 271031,
+      "status": "FAIL",
+      "exact_json_match": true,
+      "archive_path": "experiments/seed-study/output/seed-271031/failed-candidate.json",
+      "archive_sha256": "b78b7d1fc0ea1b420d232a764263e588bb60eb31d45273d8ad15c4d563e289ae",
+      "replay_sha256": "b78b7d1fc0ea1b420d232a764263e588bb60eb31d45273d8ad15c4d563e289ae",
+      "summary": {}
+    },
+    {
+      "seed": 271032,
+      "status": "PASS",
+      "exact_json_match": true,
+      "archive_path": "experiments/seed-study/output/seed-271032/map.json",
+      "archive_sha256": "ada72a37e676a7564f44b0e60a336f973e2e6900f54230367cef61669359b02f",
+      "replay_sha256": "ada72a37e676a7564f44b0e60a336f973e2e6900f54230367cef61669359b02f",
+      "summary": {
+        "instances": 45,
+        "connections": 63,
+        "cycles": 19,
+        "rewards": 6,
+        "main_paths": 3
+      }
+    },
+    {
+      "seed": 271033,
+      "status": "PASS",
+      "exact_json_match": true,
+      "archive_path": "experiments/seed-study/output/seed-271033/map.json",
+      "archive_sha256": "93f8c538010c7a00356cdf3449fdeaf498dd3b9bfdbab2c87288e2533de78aeb",
+      "replay_sha256": "93f8c538010c7a00356cdf3449fdeaf498dd3b9bfdbab2c87288e2533de78aeb",
+      "summary": {
+        "instances": 47,
+        "connections": 65,
+        "cycles": 19,
+        "rewards": 6,
+        "main_paths": 3
+      }
+    },
+    {
+      "seed": 271034,
+      "status": "PASS",
+      "exact_json_match": true,
+      "archive_path": "experiments/seed-study/output/seed-271034/map.json",
+      "archive_sha256": "26e35a3a5ac18b1953b6ab1bff8a220a3461b86752e3848d4ea2e7d60cafc251",
+      "replay_sha256": "26e35a3a5ac18b1953b6ab1bff8a220a3461b86752e3848d4ea2e7d60cafc251",
+      "summary": {
+        "instances": 45,
+        "connections": 62,
+        "cycles": 18,
+        "rewards": 6,
+        "main_paths": 3
+      }
+    },
+    {
+      "seed": 271035,
+      "status": "PASS",
+      "exact_json_match": true,
+      "archive_path": "experiments/seed-study/output/seed-271035/map.json",
+      "archive_sha256": "b9d1b79de0bccfd4202ca3ae2f07743adf7554e586306ca3c1cd6d94f103b563",
+      "replay_sha256": "b9d1b79de0bccfd4202ca3ae2f07743adf7554e586306ca3c1cd6d94f103b563",
+      "summary": {
+        "instances": 44,
+        "connections": 61,
+        "cycles": 18,
+        "rewards": 6,
+        "main_paths": 3
+      }
+    },
+    {
+      "seed": 271036,
+      "status": "PASS",
+      "exact_json_match": true,
+      "archive_path": "experiments/seed-study/output/seed-271036/map.json",
+      "archive_sha256": "9d2d89b099a5f1e8f3446be6bf3fb433603b3a1aabe594fd2e2360dba7d95eb0",
+      "replay_sha256": "9d2d89b099a5f1e8f3446be6bf3fb433603b3a1aabe594fd2e2360dba7d95eb0",
+      "summary": {
+        "instances": 48,
+        "connections": 65,
+        "cycles": 18,
+        "rewards": 6,
+        "main_paths": 3
+      }
+    },
+    {
+      "seed": 271037,
+      "status": "PASS",
+      "exact_json_match": true,
+      "archive_path": "experiments/seed-study/output/seed-271037/map.json",
+      "archive_sha256": "d0536ea2711913a5b6558a37dd95fb20d469d4e4e2fffe8c112a24d3668cb9ab",
+      "replay_sha256": "d0536ea2711913a5b6558a37dd95fb20d469d4e4e2fffe8c112a24d3668cb9ab",
+      "summary": {
+        "instances": 45,
+        "connections": 62,
+        "cycles": 18,
+        "rewards": 6,
+        "main_paths": 3
+      }
+    },
+    {
+      "seed": 271038,
+      "status": "PASS",
+      "exact_json_match": true,
+      "archive_path": "experiments/seed-study/output/seed-271038/map.json",
+      "archive_sha256": "9f8a87f7826085b17f4351dbf5521e97b81e174893b8775bdefaaffe120ee0d3",
+      "replay_sha256": "9f8a87f7826085b17f4351dbf5521e97b81e174893b8775bdefaaffe120ee0d3",
+      "summary": {
+        "instances": 45,
+        "connections": 62,
+        "cycles": 18,
+        "rewards": 6,
+        "main_paths": 3
+      }
+    },
+    {
+      "seed": 271039,
+      "status": "FAIL",
+      "exact_json_match": true,
+      "archive_path": "experiments/seed-study/output/seed-271039/failed-candidate.json",
+      "archive_sha256": "7f4642444540aec648bde569986cebf98b67cbdd9dd1c402a4e1881bbfa79dd7",
+      "replay_sha256": "7f4642444540aec648bde569986cebf98b67cbdd9dd1c402a4e1881bbfa79dd7",
+      "summary": {}
+    },
+    {
+      "seed": 271040,
+      "status": "PASS",
+      "exact_json_match": true,
+      "archive_path": "experiments/seed-study/output/seed-271040/map.json",
+      "archive_sha256": "11edd60d7c9066f26b0cc42421d25ea7bc9267115b8eac487b84b4e8b7db4087",
+      "replay_sha256": "11edd60d7c9066f26b0cc42421d25ea7bc9267115b8eac487b84b4e8b7db4087",
+      "summary": {
+        "instances": 44,
+        "connections": 62,
+        "cycles": 19,
+        "rewards": 6,
+        "main_paths": 3
+      }
+    },
+    {
+      "seed": 271041,
+      "status": "PASS",
+      "exact_json_match": true,
+      "archive_path": "experiments/seed-study/output/seed-271041/map.json",
+      "archive_sha256": "d25555d090dffa3a3c2d08c0044e46aca3974764be885ec4569e84662a23d2c1",
+      "replay_sha256": "d25555d090dffa3a3c2d08c0044e46aca3974764be885ec4569e84662a23d2c1",
+      "summary": {
+        "instances": 48,
+        "connections": 67,
+        "cycles": 20,
+        "rewards": 6,
+        "main_paths": 3
+      }
+    },
+    {
+      "seed": 271042,
+      "status": "PASS",
+      "exact_json_match": true,
+      "archive_path": "experiments/seed-study/output/seed-271042/map.json",
+      "archive_sha256": "862f15d9b03bd01de9b127d1e10cc313234b59a25602efb5fdd546ec947aafc7",
+      "replay_sha256": "862f15d9b03bd01de9b127d1e10cc313234b59a25602efb5fdd546ec947aafc7",
+      "summary": {
+        "instances": 46,
+        "connections": 65,
+        "cycles": 20,
+        "rewards": 6,
+        "main_paths": 3
+      }
+    },
+    {
+      "seed": 271043,
+      "status": "FAIL",
+      "exact_json_match": true,
+      "archive_path": "experiments/seed-study/output/seed-271043/failed-candidate.json",
+      "archive_sha256": "3f7fd56881ff8c117aba0c00bed1ed579be9a407f8d3c04726c5ea0f2a3344b8",
+      "replay_sha256": "3f7fd56881ff8c117aba0c00bed1ed579be9a407f8d3c04726c5ea0f2a3344b8",
+      "summary": {}
+    },
+    {
+      "seed": 271044,
+      "status": "FAIL",
+      "exact_json_match": true,
+      "archive_path": "experiments/seed-study/output/seed-271044/failed-candidate.json",
+      "archive_sha256": "d598bd19f7cad0f07404ef74bbfa8f9729cc28411f6604682f9e5c111b02f790",
+      "replay_sha256": "d598bd19f7cad0f07404ef74bbfa8f9729cc28411f6604682f9e5c111b02f790",
+      "summary": {}
+    },
+    {
+      "seed": 271045,
+      "status": "PASS",
+      "exact_json_match": true,
+      "archive_path": "experiments/seed-study/output/seed-271045/map.json",
+      "archive_sha256": "7851d586cfc2ca110ac89135dcbd29fc0aa4164e5a2465fa7c71a904987f8215",
+      "replay_sha256": "7851d586cfc2ca110ac89135dcbd29fc0aa4164e5a2465fa7c71a904987f8215",
+      "summary": {
+        "instances": 46,
+        "connections": 63,
+        "cycles": 18,
+        "rewards": 6,
+        "main_paths": 3
+      }
+    },
+    {
+      "seed": 271046,
+      "status": "PASS",
+      "exact_json_match": true,
+      "archive_path": "experiments/seed-study/output/seed-271046/map.json",
+      "archive_sha256": "2680cd504ddc0b9ae34ac48a8a54b1928eb0d28b0595bbf78e7c19b3ee5fc28a",
+      "replay_sha256": "2680cd504ddc0b9ae34ac48a8a54b1928eb0d28b0595bbf78e7c19b3ee5fc28a",
+      "summary": {
+        "instances": 48,
+        "connections": 66,
+        "cycles": 19,
+        "rewards": 6,
+        "main_paths": 3
+      }
+    },
+    {
+      "seed": 271047,
+      "status": "PASS",
+      "exact_json_match": true,
+      "archive_path": "experiments/seed-study/output/seed-271047/map.json",
+      "archive_sha256": "709c277130547c417a812aa75c38d7d4115d33e040099378e7dcf78ad7181785",
+      "replay_sha256": "709c277130547c417a812aa75c38d7d4115d33e040099378e7dcf78ad7181785",
+      "summary": {
+        "instances": 45,
+        "connections": 65,
+        "cycles": 21,
+        "rewards": 6,
+        "main_paths": 3
+      }
+    }
+  ],
+  "real": [
+    {
+      "seed": 271028,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "boss_rewards_and_graph_validation",
+        "error": "RuntimeError: reward cannot fit"
+      },
+      "instances": 33,
+      "connections": 32,
+      "sealed_ports": 6,
+      "rewards": 0,
+      "air_connected": false,
+      "compatibility_issues": 54,
+      "seconds": 0.6263
+    },
+    {
+      "seed": 271029,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "boss_rewards_and_graph_validation",
+        "error": "RuntimeError: reward cannot fit"
+      },
+      "instances": 33,
+      "connections": 32,
+      "sealed_ports": 7,
+      "rewards": 0,
+      "air_connected": false,
+      "compatibility_issues": 69,
+      "seconds": 0.5062
+    },
+    {
+      "seed": 271030,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "boss_rewards_and_graph_validation",
+        "error": "RuntimeError: reward cannot fit"
+      },
+      "instances": 33,
+      "connections": 32,
+      "sealed_ports": 8,
+      "rewards": 0,
+      "air_connected": false,
+      "compatibility_issues": 74,
+      "seconds": 0.3374
+    },
+    {
+      "seed": 271031,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "boss_rewards_and_graph_validation",
+        "error": "RuntimeError: reward cannot fit"
+      },
+      "instances": 33,
+      "connections": 32,
+      "sealed_ports": 6,
+      "rewards": 0,
+      "air_connected": false,
+      "compatibility_issues": 52,
+      "seconds": 0.2252
+    },
+    {
+      "seed": 271032,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "boss_rewards_and_graph_validation",
+        "error": "RuntimeError: reward cannot fit"
+      },
+      "instances": 41,
+      "connections": 43,
+      "sealed_ports": 7,
+      "rewards": 0,
+      "air_connected": false,
+      "compatibility_issues": 90,
+      "seconds": 0.2798
+    },
+    {
+      "seed": 271033,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "boss_rewards_and_graph_validation",
+        "error": "RuntimeError: boss cannot fit"
+      },
+      "instances": 32,
+      "connections": 34,
+      "sealed_ports": 10,
+      "rewards": 0,
+      "air_connected": false,
+      "compatibility_issues": 96,
+      "seconds": 0.4386
+    },
+    {
+      "seed": 271034,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "boss_rewards_and_graph_validation",
+        "error": "RuntimeError: reward cannot fit"
+      },
+      "instances": 33,
+      "connections": 35,
+      "sealed_ports": 8,
+      "rewards": 0,
+      "air_connected": false,
+      "compatibility_issues": 80,
+      "seconds": 0.8581
+    },
+    {
+      "seed": 271035,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "boss_rewards_and_graph_validation",
+        "error": "RuntimeError: reward cannot fit"
+      },
+      "instances": 35,
+      "connections": 36,
+      "sealed_ports": 6,
+      "rewards": 0,
+      "air_connected": false,
+      "compatibility_issues": 73,
+      "seconds": 0.5315
+    },
+    {
+      "seed": 271036,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "boss_rewards_and_graph_validation",
+        "error": "RuntimeError: reward cannot fit"
+      },
+      "instances": 36,
+      "connections": 36,
+      "sealed_ports": 8,
+      "rewards": 0,
+      "air_connected": false,
+      "compatibility_issues": 77,
+      "seconds": 0.316
+    },
+    {
+      "seed": 271037,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "boss_rewards_and_graph_validation",
+        "error": "RuntimeError: boss cannot fit"
+      },
+      "instances": 32,
+      "connections": 32,
+      "sealed_ports": 8,
+      "rewards": 0,
+      "air_connected": false,
+      "compatibility_issues": 50,
+      "seconds": 0.5446
+    },
+    {
+      "seed": 271038,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "boss_rewards_and_graph_validation",
+        "error": "RuntimeError: reward cannot fit"
+      },
+      "instances": 40,
+      "connections": 42,
+      "sealed_ports": 18,
+      "rewards": 0,
+      "air_connected": false,
+      "compatibility_issues": 110,
+      "seconds": 0.5394
+    },
+    {
+      "seed": 271039,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "boss_rewards_and_graph_validation",
+        "error": "RuntimeError: reward cannot fit"
+      },
+      "instances": 39,
+      "connections": 40,
+      "sealed_ports": 8,
+      "rewards": 0,
+      "air_connected": false,
+      "compatibility_issues": 88,
+      "seconds": 0.6223
+    },
+    {
+      "seed": 271040,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "boss_rewards_and_graph_validation",
+        "error": "RuntimeError: reward cannot fit"
+      },
+      "instances": 33,
+      "connections": 35,
+      "sealed_ports": 8,
+      "rewards": 0,
+      "air_connected": false,
+      "compatibility_issues": 83,
+      "seconds": 0.6171
+    },
+    {
+      "seed": 271041,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "boss_rewards_and_graph_validation",
+        "error": "RuntimeError: reward cannot fit"
+      },
+      "instances": 40,
+      "connections": 42,
+      "sealed_ports": 15,
+      "rewards": 0,
+      "air_connected": false,
+      "compatibility_issues": 114,
+      "seconds": 0.4647
+    },
+    {
+      "seed": 271042,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "boss_rewards_and_graph_validation",
+        "error": "RuntimeError: reward cannot fit"
+      },
+      "instances": 42,
+      "connections": 44,
+      "sealed_ports": 9,
+      "rewards": 0,
+      "air_connected": false,
+      "compatibility_issues": 101,
+      "seconds": 0.4629
+    },
+    {
+      "seed": 271043,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "boss_rewards_and_graph_validation",
+        "error": "RuntimeError: reward cannot fit"
+      },
+      "instances": 36,
+      "connections": 43,
+      "sealed_ports": 12,
+      "rewards": 0,
+      "air_connected": false,
+      "compatibility_issues": 133,
+      "seconds": 0.928
+    },
+    {
+      "seed": 271044,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "boss_rewards_and_graph_validation",
+        "error": "RuntimeError: reward cannot fit"
+      },
+      "instances": 33,
+      "connections": 35,
+      "sealed_ports": 10,
+      "rewards": 0,
+      "air_connected": false,
+      "compatibility_issues": 102,
+      "seconds": 0.7814
+    },
+    {
+      "seed": 271045,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "boss_rewards_and_graph_validation",
+        "error": "RuntimeError: reward cannot fit"
+      },
+      "instances": 36,
+      "connections": 37,
+      "sealed_ports": 13,
+      "rewards": 0,
+      "air_connected": false,
+      "compatibility_issues": 88,
+      "seconds": 0.5034
+    },
+    {
+      "seed": 271046,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "boss_rewards_and_graph_validation",
+        "error": "RuntimeError: reward cannot fit"
+      },
+      "instances": 36,
+      "connections": 36,
+      "sealed_ports": 9,
+      "rewards": 0,
+      "air_connected": false,
+      "compatibility_issues": 85,
+      "seconds": 0.563
+    },
+    {
+      "seed": 271047,
+      "status": "REJECTED",
+      "generation": {
+        "status": "REJECTED",
+        "phase": "boss_rewards_and_graph_validation",
+        "error": "RuntimeError: boss cannot fit"
+      },
+      "instances": 32,
+      "connections": 32,
+      "sealed_ports": 10,
+      "rewards": 0,
+      "air_connected": false,
+      "compatibility_issues": 85,
+      "seconds": 0.5795
+    }
+  ]
+}

@@ -1,0 +1,1757 @@
+{
+  "seed": 271028,
+  "phase": "boss_rewards_and_graph_validation",
+  "instances": [
+    {
+      "id": "M01",
+      "module_id": "START",
+      "name": "风铃教学",
+      "origin": [
+        0,
+        0
+      ],
+      "size_blocks": [
+        4,
+        3
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            3
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            0,
+            3
+          ]
+        },
+        "R": {
+          "id": "R",
+          "source_port_id": "exit",
+          "local2": [
+            8,
+            3
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            8,
+            3
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M02",
+      "module_id": "T:game-challenge-long-gap",
+      "name": "长距离跨越",
+      "origin": [
+        4,
+        1
+      ],
+      "size_blocks": [
+        6,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            1
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            8,
+            3
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            12,
+            1
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            20,
+            3
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M03",
+      "module_id": "T:game-plains-skip-stones",
+      "name": "跳石",
+      "origin": [
+        -5,
+        1
+      ],
+      "size_blocks": [
+        5,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            3
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -10,
+            5
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            10,
+            1
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            0,
+            3
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M04",
+      "module_id": "T:game-plains-meadow-gap",
+      "name": "草甸缺口",
+      "origin": [
+        10,
+        1
+      ],
+      "size_blocks": [
+        3,
+        1
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            1
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            20,
+            3
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            6,
+            1
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            26,
+            3
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M05",
+      "module_id": "T:game-plains-gear-brook",
+      "name": "齿轮溪流",
+      "origin": [
+        13,
+        0
+      ],
+      "size_blocks": [
+        4,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            3
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            26,
+            3
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            8,
+            3
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            34,
+            3
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M06",
+      "module_id": "T:generated-011d0a163822daaeea61e2280dbe4b26f7f48fa38d57ac30d06110da0634723b",
+      "name": "窄道中段触发，两侧夹击",
+      "origin": [
+        17,
+        0
+      ],
+      "size_blocks": [
+        2,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            3
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            34,
+            3
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            4,
+            3
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            38,
+            3
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M07",
+      "module_id": "T:game-plains-micro-rise",
+      "name": "微型上升",
+      "origin": [
+        19,
+        0
+      ],
+      "size_blocks": [
+        2,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            3
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            38,
+            3
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            4,
+            1
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            42,
+            1
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M08",
+      "module_id": "T:game-plains-recoil-chasm",
+      "name": "反冲深沟",
+      "origin": [
+        21,
+        0
+      ],
+      "size_blocks": [
+        7,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            1
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            42,
+            1
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            14,
+            1
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            56,
+            1
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M09",
+      "module_id": "T:game-forest-air-chain-geometry-hook-hook",
+      "name": "双钩连续腾空",
+      "origin": [
+        -9,
+        1
+      ],
+      "size_blocks": [
+        4,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            3
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -18,
+            5
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            8,
+            3
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -10,
+            5
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M10",
+      "module_id": "T:game-plains-micro-landing",
+      "name": "微型落地点",
+      "origin": [
+        -10,
+        2
+      ],
+      "size_blocks": [
+        1,
+        1
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            1
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -20,
+            5
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            2,
+            1
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -18,
+            5
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M11",
+      "module_id": "T:block-demand-a3-bidirectional-map-traversal-0",
+      "name": "A3 短时风铃门 / 东岸地面口",
+      "origin": [
+        28,
+        -1
+      ],
+      "size_blocks": [
+        5,
+        3
+      ],
+      "mirror_x": false,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "local2": [
+            0,
+            3
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            56,
+            1
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "local2": [
+            10,
+            3
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            66,
+            1
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M12",
+      "module_id": "T:idea-plains-hq05-001",
+      "name": "击中炮台，让它替你开门",
+      "origin": [
+        33,
+        -1
+      ],
+      "size_blocks": [
+        4,
+        3
+      ],
+      "mirror_x": false,
+      "ports": {
+        "L": {
+          "id": "L",
+          "source_port_id": "L",
+          "local2": [
+            0,
+            3
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            66,
+            1
+          ]
+        },
+        "T": {
+          "id": "T",
+          "source_port_id": "T",
+          "local2": [
+            7,
+            0
+          ],
+          "face": "TOP",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            73,
+            -2
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M13",
+      "module_id": "T:game-forest-exploration-modules-backlook-fruit-cache",
+      "name": "回望果实宝藏",
+      "origin": [
+        -14,
+        1
+      ],
+      "size_blocks": [
+        4,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            3
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -28,
+            5
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            8,
+            3
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -20,
+            5
+          ]
+        },
+        "C": {
+          "id": "C",
+          "source_port_id": "C",
+          "local2": [
+            3,
+            0
+          ],
+          "face": "TOP",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -25,
+            2
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M14",
+      "module_id": "T:idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x1",
+      "name": "双台转角 · 2×1 · 左↔下",
+      "origin": [
+        -14,
+        0
+      ],
+      "size_blocks": [
+        2,
+        1
+      ],
+      "mirror_x": false,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "local2": [
+            0,
+            1
+          ],
+          "face": "LEFT",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -28,
+            1
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "local2": [
+            3,
+            2
+          ],
+          "face": "BOTTOM",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -25,
+            2
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M15",
+      "module_id": "T:game-plains-remote-bell",
+      "name": "远程风铃",
+      "origin": [
+        -19,
+        1
+      ],
+      "size_blocks": [
+        5,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            3
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -38,
+            5
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            10,
+            3
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -28,
+            5
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M16",
+      "module_id": "T:generated-5ec84823c9c2ca8da9bf7895512839fabdeccaed02d4c8c85d1f60cf34172994",
+      "name": "在避险岛换乘同台 / 接口1",
+      "origin": [
+        -30,
+        0
+      ],
+      "size_blocks": [
+        11,
+        3
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            5
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -60,
+            5
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            22,
+            5
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -38,
+            5
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M17",
+      "module_id": "T:game-plains-bellstrider-arena",
+      "name": "鸣铃巡游机战场",
+      "origin": [
+        -37,
+        1
+      ],
+      "size_blocks": [
+        7,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            3
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -74,
+            5
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            14,
+            3
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -60,
+            5
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M18",
+      "module_id": "T:idea-plains-hq07-001",
+      "name": "造出一块桥，也放出追兵",
+      "origin": [
+        -44,
+        0
+      ],
+      "size_blocks": [
+        7,
+        3
+      ],
+      "mirror_x": false,
+      "ports": {
+        "L": {
+          "id": "L",
+          "source_port_id": "L",
+          "local2": [
+            0,
+            5
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -88,
+            5
+          ]
+        },
+        "R": {
+          "id": "R",
+          "source_port_id": "R",
+          "local2": [
+            14,
+            5
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -74,
+            5
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M19",
+      "module_id": "T:block-demand-a1-bidirectional-risk-reward-1",
+      "name": "A1 尖刺窄通道 / 四格双向口",
+      "origin": [
+        -48,
+        1
+      ],
+      "size_blocks": [
+        4,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "local2": [
+            0,
+            3
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -96,
+            5
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "local2": [
+            8,
+            3
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -88,
+            5
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M20",
+      "module_id": "T:game-plains-remote-sequence",
+      "name": "远程双铃顺序",
+      "origin": [
+        -54,
+        0
+      ],
+      "size_blocks": [
+        6,
+        3
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            5
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -108,
+            5
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            12,
+            5
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -96,
+            5
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M21",
+      "module_id": "T:game-plains-thorn-slalom",
+      "name": "荆棘穿梭",
+      "origin": [
+        -61,
+        2
+      ],
+      "size_blocks": [
+        7,
+        1
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            1
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -122,
+            5
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            14,
+            1
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -108,
+            5
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M22",
+      "module_id": "T:generated-630ca6aff78c132669a9cf11e47448041319a2593c6506b86ca098b9a1b5a4ac",
+      "name": "穿过移动挡板的射击窗口 / 接口2",
+      "origin": [
+        -67,
+        0
+      ],
+      "size_blocks": [
+        6,
+        3
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            5
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -134,
+            5
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            12,
+            5
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -122,
+            5
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M23",
+      "module_id": "T:game-plains-thorn-wall",
+      "name": "刺墙翻越",
+      "origin": [
+        -72,
+        1
+      ],
+      "size_blocks": [
+        5,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            3
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -144,
+            5
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            10,
+            3
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -134,
+            5
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M24",
+      "module_id": "T:generated-3269642f7d82571d98a148a014f5c34c667ac5a7f805352c646f81d0d6733160",
+      "name": "绕柱下穿，转向落低岸",
+      "origin": [
+        -77,
+        -1
+      ],
+      "size_blocks": [
+        5,
+        4
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            1
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -154,
+            -1
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            10,
+            7
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -144,
+            5
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M25",
+      "module_id": "T:game-plains-perch-double",
+      "name": "双重高台",
+      "origin": [
+        -80,
+        -1
+      ],
+      "size_blocks": [
+        3,
+        3
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            5
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -160,
+            3
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            6,
+            1
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -154,
+            -1
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M26",
+      "module_id": "T:game-plains-low-arch",
+      "name": "低矮拱顶",
+      "origin": [
+        -85,
+        0
+      ],
+      "size_blocks": [
+        5,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            3
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -170,
+            3
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            10,
+            3
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -160,
+            3
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M27",
+      "module_id": "T:generated-59296f7c9ebdbbc68e0913efe12ce46af74300db662d08af14337f205f6dae85",
+      "name": "紧凑钟台：下射抬升穿门",
+      "origin": [
+        -88,
+        0
+      ],
+      "size_blocks": [
+        3,
+        3
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            5
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -176,
+            5
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            6,
+            3
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -170,
+            3
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M28",
+      "module_id": "T:workshop-macro-gate-brake-return-0",
+      "name": "四口错层中庭",
+      "origin": [
+        -94,
+        -1
+      ],
+      "size_blocks": [
+        6,
+        4
+      ],
+      "mirror_x": false,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "local2": [
+            0,
+            3
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -188,
+            1
+          ]
+        },
+        "C": {
+          "id": "C",
+          "source_port_id": "C",
+          "local2": [
+            12,
+            3
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -176,
+            1
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "local2": [
+            12,
+            7
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -176,
+            5
+          ]
+        },
+        "D": {
+          "id": "D",
+          "source_port_id": "D",
+          "local2": [
+            5,
+            0
+          ],
+          "face": "TOP",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -183,
+            -2
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M29",
+      "module_id": "T:idea-orbit-choice-001",
+      "name": "环岛分流：追台，再选择离岛时机",
+      "origin": [
+        -99,
+        -1
+      ],
+      "size_blocks": [
+        5,
+        4
+      ],
+      "mirror_x": false,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "local2": [
+            0,
+            5
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -198,
+            3
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "local2": [
+            10,
+            3
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -188,
+            1
+          ]
+        },
+        "C": {
+          "id": "C",
+          "source_port_id": "C",
+          "local2": [
+            5,
+            0
+          ],
+          "face": "TOP",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -193,
+            -2
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M30",
+      "module_id": "T:game-plains-windchime-rush",
+      "name": "风铃限时冲关",
+      "origin": [
+        -106,
+        0
+      ],
+      "size_blocks": [
+        7,
+        3
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            3
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -212,
+            3
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            14,
+            3
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -198,
+            3
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M31",
+      "module_id": "T:game-plains-windchime-sequence",
+      "name": "风铃顺序挑战",
+      "origin": [
+        -110,
+        0
+      ],
+      "size_blocks": [
+        4,
+        3
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            3
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -220,
+            3
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            8,
+            3
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -212,
+            3
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M32",
+      "module_id": "T:idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x1",
+      "name": "双台转角 · 2×1 · 左↔下",
+      "origin": [
+        35,
+        -2
+      ],
+      "size_blocks": [
+        2,
+        1
+      ],
+      "mirror_x": false,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "local2": [
+            0,
+            1
+          ],
+          "face": "LEFT",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            70,
+            -3
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "local2": [
+            3,
+            2
+          ],
+          "face": "BOTTOM",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            73,
+            -2
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M33",
+      "module_id": "BOSS",
+      "name": "平原 Boss 战场",
+      "origin": [
+        -119,
+        -2
+      ],
+      "size_blocks": [
+        9,
+        5
+      ],
+      "mirror_x": false,
+      "ports": {
+        "L": {
+          "id": "L",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            7
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -238,
+            3
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            18,
+            7
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -220,
+            3
+          ]
+        }
+      },
+      "reward": false
+    }
+  ]
+}

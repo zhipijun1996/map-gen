@@ -1,0 +1,39 @@
+{
+  "checks": [
+    {
+      "command": "python prototype/verify.py",
+      "result": "PASS"
+    },
+    {
+      "command": "python tools/verify_progress.py --replay",
+      "result": "PASS; all 20 archived maps or rejected candidates match exactly"
+    },
+    {
+      "command": "python tools/verify_progress.py",
+      "result": "PASS after adaptation"
+    },
+    {
+      "command": "python experiments/legacy-real-v1/test_adapter.py",
+      "result": "PASS; 8 tests, including all 20 real candidate and seal exact replays"
+    },
+    {
+      "command": "python experiments/legacy-real-v1/report.py",
+      "result": "PASS; all 20 independent geometry and seal coverage audits; directed failures retained"
+    },
+    {
+      "command": "Playwright Chromium local HTTP comparison-page check",
+      "result": "PASS; all 20 seed selections and SVG loads; no JavaScript errors"
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS"
+    }
+  ],
+  "not_run": [
+    "Godot",
+    "main-game integration",
+    "whole-map physics",
+    "gear-seal physics"
+  ],
+  "acceptance": "20 real candidates rejected; validation does not waive any generation target"
+}

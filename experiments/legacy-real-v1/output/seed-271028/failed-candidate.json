@@ -1,0 +1,3621 @@
+{
+  "schema": "mapgen/legacy-real-diagnostic/1",
+  "seed": 271028,
+  "status": "REJECTED_DIAGNOSTIC_ONLY",
+  "certified_for_game": false,
+  "package": {
+    "version": "1.0.0",
+    "url": "https://raw.githubusercontent.com/zhipijun1996/map-edit/1776e80bbcaaebad8ad69c23e0de5df38fcc5c95/releases/map-edit-modules-1.0.0.zip",
+    "sha256": "35a9fcec22bf9defcb93d3683e3b3aed4f928526fe099a72f6b5168a7bb20db3",
+    "catalog_sha256": "2d1aca9e91ba8a3e209f5484b69b045ae190ab8568bf419c6725f18068fd9809"
+  },
+  "bindings": {
+    "status": "PROPOSED_NOT_USER_CONFIRMED",
+    "START": {
+      "module_id": "game-plains-windchime-lesson",
+      "port_aliases": {
+        "exit": "R"
+      }
+    },
+    "BOSS": {
+      "module_id": "game-plains-boss-arena",
+      "port_aliases": {
+        "entry": "L"
+      }
+    }
+  },
+  "available_abilities": [
+    "double_jump",
+    "grapple",
+    "jump",
+    "recoil"
+  ],
+  "generation": {
+    "status": "REJECTED",
+    "phase": "boss_rewards_and_graph_validation",
+    "error": "RuntimeError: reward cannot fit"
+  },
+  "instances": [
+    {
+      "id": "M01",
+      "module_id": "START",
+      "name": "风铃教学",
+      "origin": [
+        0,
+        0
+      ],
+      "size_blocks": [
+        4,
+        3
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            3
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            0,
+            3
+          ]
+        },
+        "R": {
+          "id": "R",
+          "source_port_id": "exit",
+          "local2": [
+            8,
+            3
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            8,
+            3
+          ]
+        }
+      },
+      "reward": false,
+      "source_module_id": "game-plains-windchime-lesson",
+      "content_version": "sha256:b2ee44df5422a7b4dd9be1358a075c46cefb00992de802607389f6f94ecfa433",
+      "scene": "modules/game-plains-windchime-lesson/module.tscn",
+      "scene_origin_offset": [
+        0,
+        -76
+      ],
+      "connected_port_ids": [
+        "entry",
+        "R"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "entry-to-exit"
+      ]
+    },
+    {
+      "id": "M02",
+      "module_id": "T:game-challenge-long-gap",
+      "name": "长距离跨越",
+      "origin": [
+        4,
+        1
+      ],
+      "size_blocks": [
+        6,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            1
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            8,
+            3
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            12,
+            1
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            20,
+            3
+          ]
+        }
+      },
+      "reward": false,
+      "source_module_id": "game-challenge-long-gap",
+      "content_version": "sha256:8dfa24489c868cf58505ec98bdf604f7ddf86ee959663f01653009a5f447a07b",
+      "scene": "modules/game-challenge-long-gap/module.tscn",
+      "scene_origin_offset": [
+        -128,
+        -504
+      ],
+      "connected_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "entry-to-exit"
+      ]
+    },
+    {
+      "id": "M03",
+      "module_id": "T:game-plains-skip-stones",
+      "name": "跳石",
+      "origin": [
+        -5,
+        1
+      ],
+      "size_blocks": [
+        5,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            3
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -10,
+            5
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            10,
+            1
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            0,
+            3
+          ]
+        }
+      },
+      "reward": false,
+      "source_module_id": "game-plains-skip-stones",
+      "content_version": "sha256:ba22dfb805ab86827bce900d540e3153afc8dd0b9f7fe54badf780d7b1d1d94f",
+      "scene": "modules/game-plains-skip-stones/module.tscn",
+      "scene_origin_offset": [
+        0,
+        -76
+      ],
+      "connected_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "entry-to-exit"
+      ]
+    },
+    {
+      "id": "M04",
+      "module_id": "T:game-plains-meadow-gap",
+      "name": "草甸缺口",
+      "origin": [
+        10,
+        1
+      ],
+      "size_blocks": [
+        3,
+        1
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            1
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            20,
+            3
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            6,
+            1
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            26,
+            3
+          ]
+        }
+      },
+      "reward": false,
+      "source_module_id": "game-plains-meadow-gap",
+      "content_version": "sha256:981d874bdc9b9a0afb1e0d9437114c7aaadd626f637cac85bc66dd4b44f5b978",
+      "scene": "modules/game-plains-meadow-gap/module.tscn",
+      "scene_origin_offset": [
+        0,
+        -264
+      ],
+      "connected_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "entry-to-exit"
+      ]
+    },
+    {
+      "id": "M05",
+      "module_id": "T:game-plains-gear-brook",
+      "name": "齿轮溪流",
+      "origin": [
+        13,
+        0
+      ],
+      "size_blocks": [
+        4,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            3
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            26,
+            3
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            8,
+            3
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            34,
+            3
+          ]
+        }
+      },
+      "reward": false,
+      "source_module_id": "game-plains-gear-brook",
+      "content_version": "sha256:71655aa2b11a117c93ea4afe6e3462c54cf22763ef6efe66e75361a44b9e3386",
+      "scene": "modules/game-plains-gear-brook/module.tscn",
+      "scene_origin_offset": [
+        128,
+        -76
+      ],
+      "connected_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "entry-to-exit"
+      ]
+    },
+    {
+      "id": "M06",
+      "module_id": "T:generated-011d0a163822daaeea61e2280dbe4b26f7f48fa38d57ac30d06110da0634723b",
+      "name": "窄道中段触发，两侧夹击",
+      "origin": [
+        17,
+        0
+      ],
+      "size_blocks": [
+        2,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            3
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            34,
+            3
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            4,
+            3
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            38,
+            3
+          ]
+        }
+      },
+      "reward": false,
+      "source_module_id": "generated-011d0a163822daaeea61e2280dbe4b26f7f48fa38d57ac30d06110da0634723b",
+      "content_version": "sha256:c01133af98647af1ea3d2b09bc24bc4132f70f51574bf98f37648203e904a32b",
+      "scene": "modules/generated-011d0a163822daaeea61e2280dbe4b26f7f48fa38d57ac30d06110da0634723b/module.tscn",
+      "scene_origin_offset": [
+        -384,
+        -214
+      ],
+      "connected_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "entry-to-exit",
+        "exit-to-entry"
+      ]
+    },
+    {
+      "id": "M07",
+      "module_id": "T:game-plains-micro-rise",
+      "name": "微型上升",
+      "origin": [
+        19,
+        0
+      ],
+      "size_blocks": [
+        2,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            3
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            38,
+            3
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            4,
+            1
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            42,
+            1
+          ]
+        }
+      },
+      "reward": false,
+      "source_module_id": "game-plains-micro-rise",
+      "content_version": "sha256:b943cb54bf9a693d707ec99b2a2320c49293f2f2bd1ab36998aefa0d9e3fa959",
+      "scene": "modules/game-plains-micro-rise/module.tscn",
+      "scene_origin_offset": [
+        0,
+        -264
+      ],
+      "connected_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "entry-to-exit",
+        "exit-to-entry"
+      ]
+    },
+    {
+      "id": "M08",
+      "module_id": "T:game-plains-recoil-chasm",
+      "name": "反冲深沟",
+      "origin": [
+        21,
+        0
+      ],
+      "size_blocks": [
+        7,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            1
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            42,
+            1
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            14,
+            1
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            56,
+            1
+          ]
+        }
+      },
+      "reward": false,
+      "source_module_id": "game-plains-recoil-chasm",
+      "content_version": "sha256:416dbdc8fefda5a4197064164b85c8397afd75e3ac975084230176676f84ff9f",
+      "scene": "modules/game-plains-recoil-chasm/module.tscn",
+      "scene_origin_offset": [
+        -128,
+        -504
+      ],
+      "connected_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "entry-to-exit",
+        "exit-to-entry"
+      ]
+    },
+    {
+      "id": "M09",
+      "module_id": "T:game-forest-air-chain-geometry-hook-hook",
+      "name": "双钩连续腾空",
+      "origin": [
+        -9,
+        1
+      ],
+      "size_blocks": [
+        4,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            3
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -18,
+            5
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            8,
+            3
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -10,
+            5
+          ]
+        }
+      },
+      "reward": false,
+      "source_module_id": "game-forest-air-chain-geometry-hook-hook",
+      "content_version": "sha256:2506b1f85404bac640b2b6cb10b737a3a892c484f1c2fa51820b4abcce6badfc",
+      "scene": "modules/game-forest-air-chain-geometry-hook-hook/module.tscn",
+      "scene_origin_offset": [
+        0,
+        206
+      ],
+      "connected_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "entry-to-exit"
+      ]
+    },
+    {
+      "id": "M10",
+      "module_id": "T:game-plains-micro-landing",
+      "name": "微型落地点",
+      "origin": [
+        -10,
+        2
+      ],
+      "size_blocks": [
+        1,
+        1
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            1
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -20,
+            5
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            2,
+            1
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -18,
+            5
+          ]
+        }
+      },
+      "reward": false,
+      "source_module_id": "game-plains-micro-landing",
+      "content_version": "sha256:1f4a977dae14617e6cda013a0db623a62b70104c0496e2d86c9a4d438bd0dc52",
+      "scene": "modules/game-plains-micro-landing/module.tscn",
+      "scene_origin_offset": [
+        0,
+        -204
+      ],
+      "connected_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "main"
+      ]
+    },
+    {
+      "id": "M11",
+      "module_id": "T:block-demand-a3-bidirectional-map-traversal-0",
+      "name": "A3 短时风铃门 / 东岸地面口",
+      "origin": [
+        28,
+        -1
+      ],
+      "size_blocks": [
+        5,
+        3
+      ],
+      "mirror_x": false,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "local2": [
+            0,
+            3
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            56,
+            1
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "local2": [
+            10,
+            3
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            66,
+            1
+          ]
+        }
+      },
+      "reward": false,
+      "source_module_id": "block-demand-a3-bidirectional-map-traversal-0",
+      "content_version": "sha256:df6b2e84032bc79bd1769a1e91a791ae6ba07e87fda4f7f9966a65944e29f4ff",
+      "scene": "modules/block-demand-a3-bidirectional-map-traversal-0/module.tscn",
+      "scene_origin_offset": [
+        -128,
+        -128
+      ],
+      "connected_port_ids": [
+        "A",
+        "B"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "A-to-B",
+        "B-to-A"
+      ]
+    },
+    {
+      "id": "M12",
+      "module_id": "T:idea-plains-hq05-001",
+      "name": "击中炮台，让它替你开门",
+      "origin": [
+        33,
+        -1
+      ],
+      "size_blocks": [
+        4,
+        3
+      ],
+      "mirror_x": false,
+      "ports": {
+        "L": {
+          "id": "L",
+          "source_port_id": "L",
+          "local2": [
+            0,
+            3
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            66,
+            1
+          ]
+        },
+        "T": {
+          "id": "T",
+          "source_port_id": "T",
+          "local2": [
+            7,
+            0
+          ],
+          "face": "TOP",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            73,
+            -2
+          ]
+        }
+      },
+      "reward": false,
+      "source_module_id": "idea-plains-hq05-001",
+      "content_version": "sha256:61331c557ad31e38ecfa097f57c105f53368a244e82b594e13f63c208c5d04b5",
+      "scene": "modules/idea-plains-hq05-001/module.tscn",
+      "scene_origin_offset": [
+        0,
+        0
+      ],
+      "connected_port_ids": [
+        "L",
+        "T"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "L-to-T",
+        "T-to-L"
+      ]
+    },
+    {
+      "id": "M13",
+      "module_id": "T:game-forest-exploration-modules-backlook-fruit-cache",
+      "name": "回望果实宝藏",
+      "origin": [
+        -14,
+        1
+      ],
+      "size_blocks": [
+        4,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            3
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -28,
+            5
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            8,
+            3
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -20,
+            5
+          ]
+        },
+        "C": {
+          "id": "C",
+          "source_port_id": "C",
+          "local2": [
+            3,
+            0
+          ],
+          "face": "TOP",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -25,
+            2
+          ]
+        }
+      },
+      "reward": false,
+      "source_module_id": "game-forest-exploration-modules-backlook-fruit-cache",
+      "content_version": "sha256:670e89047187a3531c1e096e1820bf7a0f1ac74e1c43c91d8789f00c6abeaf10",
+      "scene": "modules/game-forest-exploration-modules-backlook-fruit-cache/module.tscn",
+      "scene_origin_offset": [
+        0,
+        224
+      ],
+      "connected_port_ids": [
+        "entry",
+        "exit",
+        "C"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "entry-to-exit",
+        "exit-to-entry",
+        "entry-to-C",
+        "C-to-entry",
+        "exit-to-C",
+        "C-to-exit"
+      ]
+    },
+    {
+      "id": "M14",
+      "module_id": "T:idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x1",
+      "name": "双台转角 · 2×1 · 左↔下",
+      "origin": [
+        -14,
+        0
+      ],
+      "size_blocks": [
+        2,
+        1
+      ],
+      "mirror_x": false,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "local2": [
+            0,
+            1
+          ],
+          "face": "LEFT",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -28,
+            1
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "local2": [
+            3,
+            2
+          ],
+          "face": "BOTTOM",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -25,
+            2
+          ]
+        }
+      },
+      "reward": false,
+      "source_module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x1",
+      "content_version": "sha256:af922edabaef3ded1bbec91ca0643930e736dd3a365514ab2077bc3fa8c57101",
+      "scene": "modules/idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x1/module.tscn",
+      "scene_origin_offset": [
+        0,
+        0
+      ],
+      "connected_port_ids": [
+        "B"
+      ],
+      "sealed_ports": [
+        {
+          "port_id": "A",
+          "component": "gear-seal/1",
+          "face": "LEFT",
+          "rect_pixels": [
+            0,
+            0,
+            32,
+            128
+          ],
+          "opening_pixels": 128,
+          "thickness_pixels": 32,
+          "certified": false,
+          "physical_validation": "NOT_RUN"
+        }
+      ],
+      "retained_route_ids": []
+    },
+    {
+      "id": "M15",
+      "module_id": "T:game-plains-remote-bell",
+      "name": "远程风铃",
+      "origin": [
+        -19,
+        1
+      ],
+      "size_blocks": [
+        5,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            3
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -38,
+            5
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            10,
+            3
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -28,
+            5
+          ]
+        }
+      },
+      "reward": false,
+      "source_module_id": "game-plains-remote-bell",
+      "content_version": "sha256:9e4035d99e024793c98767d4f5a42d5cf581b9750cd02f255a4bcf001c04a78f",
+      "scene": "modules/game-plains-remote-bell/module.tscn",
+      "scene_origin_offset": [
+        -384,
+        -76
+      ],
+      "connected_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "entry-to-exit"
+      ]
+    },
+    {
+      "id": "M16",
+      "module_id": "T:generated-5ec84823c9c2ca8da9bf7895512839fabdeccaed02d4c8c85d1f60cf34172994",
+      "name": "在避险岛换乘同台 / 接口1",
+      "origin": [
+        -30,
+        0
+      ],
+      "size_blocks": [
+        11,
+        3
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            5
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -60,
+            5
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            22,
+            5
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -38,
+            5
+          ]
+        }
+      },
+      "reward": false,
+      "source_module_id": "generated-5ec84823c9c2ca8da9bf7895512839fabdeccaed02d4c8c85d1f60cf34172994",
+      "content_version": "sha256:15334d54201d6ffc346b40364605b1d04dba25dae0c333a6145bfa8170e65adc",
+      "scene": "modules/generated-5ec84823c9c2ca8da9bf7895512839fabdeccaed02d4c8c85d1f60cf34172994/module.tscn",
+      "scene_origin_offset": [
+        -128,
+        -86
+      ],
+      "connected_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "entry-to-exit",
+        "exit-to-entry"
+      ]
+    },
+    {
+      "id": "M17",
+      "module_id": "T:game-plains-bellstrider-arena",
+      "name": "鸣铃巡游机战场",
+      "origin": [
+        -37,
+        1
+      ],
+      "size_blocks": [
+        7,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            3
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -74,
+            5
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            14,
+            3
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -60,
+            5
+          ]
+        }
+      },
+      "reward": false,
+      "source_module_id": "game-plains-bellstrider-arena",
+      "content_version": "sha256:fe9006d3bfa33877dbcfaeb663b9d0de56bfad48b6b6ef1d5759cf2a42ffaef7",
+      "scene": "modules/game-plains-bellstrider-arena/module.tscn",
+      "scene_origin_offset": [
+        -128,
+        -376
+      ],
+      "connected_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "entry-to-exit"
+      ]
+    },
+    {
+      "id": "M18",
+      "module_id": "T:idea-plains-hq07-001",
+      "name": "造出一块桥，也放出追兵",
+      "origin": [
+        -44,
+        0
+      ],
+      "size_blocks": [
+        7,
+        3
+      ],
+      "mirror_x": false,
+      "ports": {
+        "L": {
+          "id": "L",
+          "source_port_id": "L",
+          "local2": [
+            0,
+            5
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -88,
+            5
+          ]
+        },
+        "R": {
+          "id": "R",
+          "source_port_id": "R",
+          "local2": [
+            14,
+            5
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -74,
+            5
+          ]
+        }
+      },
+      "reward": false,
+      "source_module_id": "idea-plains-hq07-001",
+      "content_version": "sha256:856f3917055c5494b38f8db5507f427787dc9b0c97e4d30991d09b85bad05e70",
+      "scene": "modules/idea-plains-hq07-001/module.tscn",
+      "scene_origin_offset": [
+        0,
+        0
+      ],
+      "connected_port_ids": [
+        "L",
+        "R"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "L-to-R",
+        "R-to-L"
+      ]
+    },
+    {
+      "id": "M19",
+      "module_id": "T:block-demand-a1-bidirectional-risk-reward-1",
+      "name": "A1 尖刺窄通道 / 四格双向口",
+      "origin": [
+        -48,
+        1
+      ],
+      "size_blocks": [
+        4,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "local2": [
+            0,
+            3
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -96,
+            5
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "local2": [
+            8,
+            3
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -88,
+            5
+          ]
+        }
+      },
+      "reward": false,
+      "source_module_id": "block-demand-a1-bidirectional-risk-reward-1",
+      "content_version": "sha256:d25f3edcc3ed7b12db3a083775b2f0395c76491ddb8c5e09e655c4c254eeafb4",
+      "scene": "modules/block-demand-a1-bidirectional-risk-reward-1/module.tscn",
+      "scene_origin_offset": [
+        -128,
+        -128
+      ],
+      "connected_port_ids": [
+        "A",
+        "B"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "A-to-B",
+        "B-to-A"
+      ]
+    },
+    {
+      "id": "M20",
+      "module_id": "T:game-plains-remote-sequence",
+      "name": "远程双铃顺序",
+      "origin": [
+        -54,
+        0
+      ],
+      "size_blocks": [
+        6,
+        3
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            5
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -108,
+            5
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            12,
+            5
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -96,
+            5
+          ]
+        }
+      },
+      "reward": false,
+      "source_module_id": "game-plains-remote-sequence",
+      "content_version": "sha256:57cb9f41f3750dfcaf840e3612b278566678c8aafb9cdd8dc1d3d0ac38f7b2a2",
+      "scene": "modules/game-plains-remote-sequence/module.tscn",
+      "scene_origin_offset": [
+        0,
+        52
+      ],
+      "connected_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "entry-to-exit"
+      ]
+    },
+    {
+      "id": "M21",
+      "module_id": "T:game-plains-thorn-slalom",
+      "name": "荆棘穿梭",
+      "origin": [
+        -61,
+        2
+      ],
+      "size_blocks": [
+        7,
+        1
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            1
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -122,
+            5
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            14,
+            1
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -108,
+            5
+          ]
+        }
+      },
+      "reward": false,
+      "source_module_id": "game-plains-thorn-slalom",
+      "content_version": "sha256:e4fedb105c4afbde0be5f1305c0bb63637c7d80dcff36d107ab45e08d8b1f8a6",
+      "scene": "modules/game-plains-thorn-slalom/module.tscn",
+      "scene_origin_offset": [
+        0,
+        -204
+      ],
+      "connected_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "entry-to-exit"
+      ]
+    },
+    {
+      "id": "M22",
+      "module_id": "T:generated-630ca6aff78c132669a9cf11e47448041319a2593c6506b86ca098b9a1b5a4ac",
+      "name": "穿过移动挡板的射击窗口 / 接口2",
+      "origin": [
+        -67,
+        0
+      ],
+      "size_blocks": [
+        6,
+        3
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            5
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -134,
+            5
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            12,
+            5
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -122,
+            5
+          ]
+        }
+      },
+      "reward": false,
+      "source_module_id": "generated-630ca6aff78c132669a9cf11e47448041319a2593c6506b86ca098b9a1b5a4ac",
+      "content_version": "sha256:3a838c449ece7a1e1c5a296844f31ceb10f88c1274d54d914ea188f1f1526d8a",
+      "scene": "modules/generated-630ca6aff78c132669a9cf11e47448041319a2593c6506b86ca098b9a1b5a4ac/module.tscn",
+      "scene_origin_offset": [
+        0,
+        -86
+      ],
+      "connected_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "entry-to-exit"
+      ]
+    },
+    {
+      "id": "M23",
+      "module_id": "T:game-plains-thorn-wall",
+      "name": "刺墙翻越",
+      "origin": [
+        -72,
+        1
+      ],
+      "size_blocks": [
+        5,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            3
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -144,
+            5
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            10,
+            3
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -134,
+            5
+          ]
+        }
+      },
+      "reward": false,
+      "source_module_id": "game-plains-thorn-wall",
+      "content_version": "sha256:bbce288817ef134664390de9b8149da99c4355a6d9900bfec3655a9783b1f285",
+      "scene": "modules/game-plains-thorn-wall/module.tscn",
+      "scene_origin_offset": [
+        0,
+        -76
+      ],
+      "connected_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "entry-to-exit",
+        "exit-to-entry"
+      ]
+    },
+    {
+      "id": "M24",
+      "module_id": "T:generated-3269642f7d82571d98a148a014f5c34c667ac5a7f805352c646f81d0d6733160",
+      "name": "绕柱下穿，转向落低岸",
+      "origin": [
+        -77,
+        -1
+      ],
+      "size_blocks": [
+        5,
+        4
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            1
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -154,
+            -1
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            10,
+            7
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -144,
+            5
+          ]
+        }
+      },
+      "reward": false,
+      "source_module_id": "generated-3269642f7d82571d98a148a014f5c34c667ac5a7f805352c646f81d0d6733160",
+      "content_version": "sha256:567842ee78e0d7b4f67f11688504a305e2e6f195bd95bd9907e787790d5b48a3",
+      "scene": "modules/generated-3269642f7d82571d98a148a014f5c34c667ac5a7f805352c646f81d0d6733160/module.tscn",
+      "scene_origin_offset": [
+        0,
+        -90
+      ],
+      "connected_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "entry-to-exit"
+      ]
+    },
+    {
+      "id": "M25",
+      "module_id": "T:game-plains-perch-double",
+      "name": "双重高台",
+      "origin": [
+        -80,
+        -1
+      ],
+      "size_blocks": [
+        3,
+        3
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            5
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -160,
+            3
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            6,
+            1
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -154,
+            -1
+          ]
+        }
+      },
+      "reward": false,
+      "source_module_id": "game-plains-perch-double",
+      "content_version": "sha256:ce95de7824e1975f20b605912258bc255375c373134587842514f226a791e04c",
+      "scene": "modules/game-plains-perch-double/module.tscn",
+      "scene_origin_offset": [
+        0,
+        52
+      ],
+      "connected_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "entry-to-exit",
+        "exit-to-entry"
+      ]
+    },
+    {
+      "id": "M26",
+      "module_id": "T:game-plains-low-arch",
+      "name": "低矮拱顶",
+      "origin": [
+        -85,
+        0
+      ],
+      "size_blocks": [
+        5,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            3
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -170,
+            3
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            10,
+            3
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -160,
+            3
+          ]
+        }
+      },
+      "reward": false,
+      "source_module_id": "game-plains-low-arch",
+      "content_version": "sha256:7d210ba1e2cf7cfe227bad5f6ec6d476bd967176d0251ee5deadd825a1a94deb",
+      "scene": "modules/game-plains-low-arch/module.tscn",
+      "scene_origin_offset": [
+        0,
+        -76
+      ],
+      "connected_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "entry-to-exit"
+      ]
+    },
+    {
+      "id": "M27",
+      "module_id": "T:generated-59296f7c9ebdbbc68e0913efe12ce46af74300db662d08af14337f205f6dae85",
+      "name": "紧凑钟台：下射抬升穿门",
+      "origin": [
+        -88,
+        0
+      ],
+      "size_blocks": [
+        3,
+        3
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            5
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -176,
+            5
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            6,
+            3
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -170,
+            3
+          ]
+        }
+      },
+      "reward": false,
+      "source_module_id": "generated-59296f7c9ebdbbc68e0913efe12ce46af74300db662d08af14337f205f6dae85",
+      "content_version": "sha256:d8fc8e8d92f5d6bb84efbb389aa113eb518ff4064e7274760813258f60f09b09",
+      "scene": "modules/generated-59296f7c9ebdbbc68e0913efe12ce46af74300db662d08af14337f205f6dae85/module.tscn",
+      "scene_origin_offset": [
+        -128,
+        -114
+      ],
+      "connected_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "entry-to-exit"
+      ]
+    },
+    {
+      "id": "M28",
+      "module_id": "T:workshop-macro-gate-brake-return-0",
+      "name": "四口错层中庭",
+      "origin": [
+        -94,
+        -1
+      ],
+      "size_blocks": [
+        6,
+        4
+      ],
+      "mirror_x": false,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "local2": [
+            0,
+            3
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -188,
+            1
+          ]
+        },
+        "C": {
+          "id": "C",
+          "source_port_id": "C",
+          "local2": [
+            12,
+            3
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -176,
+            1
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "local2": [
+            12,
+            7
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -176,
+            5
+          ]
+        },
+        "D": {
+          "id": "D",
+          "source_port_id": "D",
+          "local2": [
+            5,
+            0
+          ],
+          "face": "TOP",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -183,
+            -2
+          ]
+        }
+      },
+      "reward": false,
+      "source_module_id": "workshop-macro-gate-brake-return-0",
+      "content_version": "sha256:f2c78c40ffb898db69ff256ef31358ad0cc25d90a1530dfc861d394be08a3b13",
+      "scene": "modules/workshop-macro-gate-brake-return-0/module.tscn",
+      "scene_origin_offset": [
+        0,
+        -214
+      ],
+      "connected_port_ids": [
+        "A",
+        "B"
+      ],
+      "sealed_ports": [
+        {
+          "port_id": "C",
+          "component": "gear-seal/1",
+          "face": "RIGHT",
+          "rect_pixels": [
+            736,
+            128,
+            32,
+            128
+          ],
+          "opening_pixels": 128,
+          "thickness_pixels": 32,
+          "certified": false,
+          "physical_validation": "NOT_RUN"
+        },
+        {
+          "port_id": "D",
+          "component": "gear-seal/1",
+          "face": "TOP",
+          "rect_pixels": [
+            256,
+            0,
+            128,
+            32
+          ],
+          "opening_pixels": 128,
+          "thickness_pixels": 32,
+          "certified": false,
+          "physical_validation": "NOT_RUN"
+        }
+      ],
+      "retained_route_ids": [
+        "A-to-B",
+        "B-to-A"
+      ]
+    },
+    {
+      "id": "M29",
+      "module_id": "T:idea-orbit-choice-001",
+      "name": "环岛分流：追台，再选择离岛时机",
+      "origin": [
+        -99,
+        -1
+      ],
+      "size_blocks": [
+        5,
+        4
+      ],
+      "mirror_x": false,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "local2": [
+            0,
+            5
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -198,
+            3
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "local2": [
+            10,
+            3
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -188,
+            1
+          ]
+        },
+        "C": {
+          "id": "C",
+          "source_port_id": "C",
+          "local2": [
+            5,
+            0
+          ],
+          "face": "TOP",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -193,
+            -2
+          ]
+        }
+      },
+      "reward": false,
+      "source_module_id": "idea-orbit-choice-001",
+      "content_version": "sha256:ee5cdeb5d7672eb1c9fbe9c502273114039a346817b8bf5ea7a7dd65045a1317",
+      "scene": "modules/idea-orbit-choice-001/module.tscn",
+      "scene_origin_offset": [
+        0,
+        0
+      ],
+      "connected_port_ids": [
+        "A",
+        "B"
+      ],
+      "sealed_ports": [
+        {
+          "port_id": "C",
+          "component": "gear-seal/1",
+          "face": "TOP",
+          "rect_pixels": [
+            256,
+            0,
+            128,
+            32
+          ],
+          "opening_pixels": 128,
+          "thickness_pixels": 32,
+          "certified": false,
+          "physical_validation": "NOT_RUN"
+        }
+      ],
+      "retained_route_ids": [
+        "A-to-B",
+        "B-to-A"
+      ]
+    },
+    {
+      "id": "M30",
+      "module_id": "T:game-plains-windchime-rush",
+      "name": "风铃限时冲关",
+      "origin": [
+        -106,
+        0
+      ],
+      "size_blocks": [
+        7,
+        3
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            3
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -212,
+            3
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            14,
+            3
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -198,
+            3
+          ]
+        }
+      },
+      "reward": false,
+      "source_module_id": "game-plains-windchime-rush",
+      "content_version": "sha256:b6da85db1d35238bf1f4eed5d1c4f4faa5f8908d059ad7b0793d76005988d31e",
+      "scene": "modules/game-plains-windchime-rush/module.tscn",
+      "scene_origin_offset": [
+        0,
+        -76
+      ],
+      "connected_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "entry-to-exit"
+      ]
+    },
+    {
+      "id": "M31",
+      "module_id": "T:game-plains-windchime-sequence",
+      "name": "风铃顺序挑战",
+      "origin": [
+        -110,
+        0
+      ],
+      "size_blocks": [
+        4,
+        3
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            3
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -220,
+            3
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            8,
+            3
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -212,
+            3
+          ]
+        }
+      },
+      "reward": false,
+      "source_module_id": "game-plains-windchime-sequence",
+      "content_version": "sha256:596ec638a29108572dfddd7ce3cbf73b70bf9e4fbda4895d5936150945c10635",
+      "scene": "modules/game-plains-windchime-sequence/module.tscn",
+      "scene_origin_offset": [
+        0,
+        -76
+      ],
+      "connected_port_ids": [
+        "entry",
+        "exit"
+      ],
+      "sealed_ports": [],
+      "retained_route_ids": [
+        "entry-to-exit"
+      ]
+    },
+    {
+      "id": "M32",
+      "module_id": "T:idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x1",
+      "name": "双台转角 · 2×1 · 左↔下",
+      "origin": [
+        35,
+        -2
+      ],
+      "size_blocks": [
+        2,
+        1
+      ],
+      "mirror_x": false,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "local2": [
+            0,
+            1
+          ],
+          "face": "LEFT",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            70,
+            -3
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "local2": [
+            3,
+            2
+          ],
+          "face": "BOTTOM",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            73,
+            -2
+          ]
+        }
+      },
+      "reward": false,
+      "source_module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x1",
+      "content_version": "sha256:af922edabaef3ded1bbec91ca0643930e736dd3a365514ab2077bc3fa8c57101",
+      "scene": "modules/idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x1/module.tscn",
+      "scene_origin_offset": [
+        0,
+        0
+      ],
+      "connected_port_ids": [
+        "B"
+      ],
+      "sealed_ports": [
+        {
+          "port_id": "A",
+          "component": "gear-seal/1",
+          "face": "LEFT",
+          "rect_pixels": [
+            0,
+            0,
+            32,
+            128
+          ],
+          "opening_pixels": 128,
+          "thickness_pixels": 32,
+          "certified": false,
+          "physical_validation": "NOT_RUN"
+        }
+      ],
+      "retained_route_ids": []
+    },
+    {
+      "id": "M33",
+      "module_id": "BOSS",
+      "name": "平原 Boss 战场",
+      "origin": [
+        -119,
+        -2
+      ],
+      "size_blocks": [
+        9,
+        5
+      ],
+      "mirror_x": false,
+      "ports": {
+        "L": {
+          "id": "L",
+          "source_port_id": "entry",
+          "local2": [
+            0,
+            7
+          ],
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -238,
+            3
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "local2": [
+            18,
+            7
+          ],
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "closure": "gear-seal/1",
+          "initial_permission_conditions": {},
+          "world2": [
+            -220,
+            3
+          ]
+        }
+      },
+      "reward": false,
+      "source_module_id": "game-plains-boss-arena",
+      "content_version": "sha256:b11d7715850df541281f897be00d547b34fce0ef09262ec24ffb505f1064a083",
+      "scene": "modules/game-plains-boss-arena/module.tscn",
+      "scene_origin_offset": [
+        0,
+        -120
+      ],
+      "connected_port_ids": [
+        "exit"
+      ],
+      "sealed_ports": [
+        {
+          "port_id": "L",
+          "component": "gear-seal/1",
+          "face": "LEFT",
+          "rect_pixels": [
+            0,
+            384,
+            32,
+            128
+          ],
+          "opening_pixels": 128,
+          "thickness_pixels": 32,
+          "certified": false,
+          "physical_validation": "NOT_RUN"
+        }
+      ],
+      "retained_route_ids": []
+    }
+  ],
+  "connections": [
+    {
+      "a": "M01.entry",
+      "b": "M03.exit",
+      "world2": [
+        0,
+        3
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M01.R",
+      "b": "M02.entry",
+      "world2": [
+        8,
+        3
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M02.exit",
+      "b": "M04.entry",
+      "world2": [
+        20,
+        3
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M03.entry",
+      "b": "M09.exit",
+      "world2": [
+        -10,
+        5
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M04.exit",
+      "b": "M05.entry",
+      "world2": [
+        26,
+        3
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M05.exit",
+      "b": "M06.entry",
+      "world2": [
+        34,
+        3
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M06.exit",
+      "b": "M07.entry",
+      "world2": [
+        38,
+        3
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M07.exit",
+      "b": "M08.entry",
+      "world2": [
+        42,
+        1
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M08.exit",
+      "b": "M11.A",
+      "world2": [
+        56,
+        1
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M09.entry",
+      "b": "M10.exit",
+      "world2": [
+        -18,
+        5
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M10.entry",
+      "b": "M13.exit",
+      "world2": [
+        -20,
+        5
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M11.B",
+      "b": "M12.L",
+      "world2": [
+        66,
+        1
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M12.T",
+      "b": "M32.B",
+      "world2": [
+        73,
+        -2
+      ],
+      "surface": "ONE_WAY_PLATFORM"
+    },
+    {
+      "a": "M13.entry",
+      "b": "M15.exit",
+      "world2": [
+        -28,
+        5
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M13.C",
+      "b": "M14.B",
+      "world2": [
+        -25,
+        2
+      ],
+      "surface": "ONE_WAY_PLATFORM"
+    },
+    {
+      "a": "M15.entry",
+      "b": "M16.exit",
+      "world2": [
+        -38,
+        5
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M16.entry",
+      "b": "M17.exit",
+      "world2": [
+        -60,
+        5
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M17.entry",
+      "b": "M18.R",
+      "world2": [
+        -74,
+        5
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M18.L",
+      "b": "M19.B",
+      "world2": [
+        -88,
+        5
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M19.A",
+      "b": "M20.exit",
+      "world2": [
+        -96,
+        5
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M20.entry",
+      "b": "M21.exit",
+      "world2": [
+        -108,
+        5
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M21.entry",
+      "b": "M22.exit",
+      "world2": [
+        -122,
+        5
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M22.entry",
+      "b": "M23.exit",
+      "world2": [
+        -134,
+        5
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M23.entry",
+      "b": "M24.exit",
+      "world2": [
+        -144,
+        5
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M24.entry",
+      "b": "M25.exit",
+      "world2": [
+        -154,
+        -1
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M25.entry",
+      "b": "M26.exit",
+      "world2": [
+        -160,
+        3
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M26.entry",
+      "b": "M27.exit",
+      "world2": [
+        -170,
+        3
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M27.entry",
+      "b": "M28.B",
+      "world2": [
+        -176,
+        5
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M28.A",
+      "b": "M29.B",
+      "world2": [
+        -188,
+        1
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M29.A",
+      "b": "M30.exit",
+      "world2": [
+        -198,
+        3
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M30.entry",
+      "b": "M31.exit",
+      "world2": [
+        -212,
+        3
+      ],
+      "surface": "ROCK"
+    },
+    {
+      "a": "M31.entry",
+      "b": "M33.exit",
+      "world2": [
+        -220,
+        3
+      ],
+      "surface": "ROCK"
+    }
+  ],
+  "air_connected": false,
+  "role_gaps": [
+    {
+      "role": "START",
+      "module_id": "game-plains-windchime-lesson",
+      "port_id": "exit",
+      "reason": "legacy_boundary_hook_has_no_interior_spawn_or_goal_route_contract"
+    },
+    {
+      "role": "BOSS",
+      "module_id": "game-plains-boss-arena",
+      "port_id": "entry",
+      "reason": "legacy_boundary_hook_has_no_interior_spawn_or_goal_route_contract"
+    },
+    {
+      "role": "AIR_A",
+      "reason": "no_matching_side_air_route",
+      "candidates": []
+    },
+    {
+      "role": "AIR_B",
+      "reason": "no_matching_side_air_route",
+      "candidates": []
+    },
+    {
+      "role": "Q",
+      "target_count": 6,
+      "available_templates": 0,
+      "reason": "no_single_port_reward_with_explicit_visit_and_return_binding"
+    }
+  ],
+  "compatibility_issues": [
+    {
+      "instance": "M01",
+      "module_id": "game-plains-windchime-lesson",
+      "route_id": "entry-to-exit",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M02",
+      "module_id": "game-challenge-long-gap",
+      "route_id": "entry-to-exit",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M02",
+      "module_id": "game-challenge-long-gap",
+      "reason": "legacy_has_no_native_player_profile_binding",
+      "initial_configuration": {
+        "nativeTuning": {
+          "id": "original-fixture-1j2s",
+          "overrides": {
+            "max_jumps": 1,
+            "max_air_shots": 2
+          },
+          "abilities": [
+            "move",
+            "jump",
+            "shot_recoil"
+          ],
+          "effectiveTuning": {
+            "max_jumps": 1,
+            "max_air_shots": 2
+          }
+        },
+        "nativeFixture": {
+          "provider": "original_fixture/v1",
+          "id": "original-fixture-1j2s",
+          "source": {
+            "path": "pcg/migration/source-resource-v9/challenge_recoil_tests.gd",
+            "sha256": "4bbc12808ba4f1a0863e661cd6224e3d28bb69a22f866944c45fbe7872c4834e"
+          },
+          "initializer": "ChallengeRecoilTests._fixture",
+          "max_jumps": 1,
+          "max_air_shots": 2
+        },
+        "requirementsByRoute": {
+          "entry-to-exit": {
+            "status": "UNKNOWN"
+          }
+        }
+      }
+    },
+    {
+      "instance": "M03",
+      "module_id": "game-plains-skip-stones",
+      "route_id": "entry-to-exit",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M04",
+      "module_id": "game-plains-meadow-gap",
+      "route_id": "entry-to-exit",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M05",
+      "module_id": "game-plains-gear-brook",
+      "route_id": "entry-to-exit",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M06",
+      "module_id": "generated-011d0a163822daaeea61e2280dbe4b26f7f48fa38d57ac30d06110da0634723b",
+      "route_id": "entry-to-exit",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M06",
+      "module_id": "generated-011d0a163822daaeea61e2280dbe4b26f7f48fa38d57ac30d06110da0634723b",
+      "route_id": "exit-to-entry",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M07",
+      "module_id": "game-plains-micro-rise",
+      "route_id": "entry-to-exit",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M07",
+      "module_id": "game-plains-micro-rise",
+      "route_id": "exit-to-entry",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M08",
+      "module_id": "game-plains-recoil-chasm",
+      "route_id": "entry-to-exit",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil",
+        "double_jump"
+      ]
+    },
+    {
+      "instance": "M08",
+      "module_id": "game-plains-recoil-chasm",
+      "route_id": "exit-to-entry",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil",
+        "double_jump"
+      ]
+    },
+    {
+      "instance": "M08",
+      "module_id": "game-plains-recoil-chasm",
+      "reason": "legacy_has_no_native_player_profile_binding",
+      "initial_configuration": {
+        "nativeTuning": {
+          "id": "original-fixture-2j2s",
+          "overrides": {
+            "max_jumps": 2,
+            "max_air_shots": 2
+          },
+          "abilities": [
+            "move",
+            "jump",
+            "shot_recoil",
+            "double_jump"
+          ],
+          "effectiveTuning": {
+            "max_jumps": 2,
+            "max_air_shots": 2
+          }
+        },
+        "nativeFixture": {
+          "provider": "original_fixture/v1",
+          "id": "original-fixture-2j2s",
+          "source": {
+            "path": "pcg/migration/source-resource-v9/branch_library_runner.gd",
+            "sha256": "55ad8ccbe06a72cc23ee86b026507df4f3a01172c4af7f2334ce137d394072ed"
+          },
+          "initializer": "BranchLibraryRunner.fixture",
+          "max_jumps": 2,
+          "max_air_shots": 2
+        },
+        "requirementsByRoute": {
+          "entry-to-exit": {
+            "status": "UNKNOWN"
+          },
+          "exit-to-entry": {
+            "status": "UNKNOWN"
+          }
+        }
+      }
+    },
+    {
+      "instance": "M09",
+      "module_id": "game-forest-air-chain-geometry-hook-hook",
+      "route_id": "entry-to-exit",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil",
+        "grapple"
+      ]
+    },
+    {
+      "instance": "M10",
+      "module_id": "game-plains-micro-landing",
+      "route_id": "main",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M11",
+      "module_id": "block-demand-a3-bidirectional-map-traversal-0",
+      "route_id": "A-to-B",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M11",
+      "module_id": "block-demand-a3-bidirectional-map-traversal-0",
+      "route_id": "B-to-A",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M12",
+      "module_id": "idea-plains-hq05-001",
+      "route_id": "L-to-T",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M12",
+      "module_id": "idea-plains-hq05-001",
+      "route_id": "T-to-L",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M13",
+      "module_id": "game-forest-exploration-modules-backlook-fruit-cache",
+      "route_id": "entry-to-exit",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil",
+        "grapple"
+      ]
+    },
+    {
+      "instance": "M13",
+      "module_id": "game-forest-exploration-modules-backlook-fruit-cache",
+      "route_id": "exit-to-entry",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil",
+        "grapple"
+      ]
+    },
+    {
+      "instance": "M13",
+      "module_id": "game-forest-exploration-modules-backlook-fruit-cache",
+      "route_id": "entry-to-C",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil",
+        "grapple"
+      ]
+    },
+    {
+      "instance": "M13",
+      "module_id": "game-forest-exploration-modules-backlook-fruit-cache",
+      "route_id": "C-to-entry",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil",
+        "grapple"
+      ]
+    },
+    {
+      "instance": "M13",
+      "module_id": "game-forest-exploration-modules-backlook-fruit-cache",
+      "route_id": "exit-to-C",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil",
+        "grapple"
+      ]
+    },
+    {
+      "instance": "M13",
+      "module_id": "game-forest-exploration-modules-backlook-fruit-cache",
+      "route_id": "C-to-exit",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil",
+        "grapple"
+      ]
+    },
+    {
+      "instance": "M14",
+      "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x1",
+      "reason": "gear_seal_subset_not_physically_certified",
+      "connected_ports": [
+        "B"
+      ],
+      "sealed_ports": [
+        "A"
+      ]
+    },
+    {
+      "instance": "M15",
+      "module_id": "game-plains-remote-bell",
+      "route_id": "entry-to-exit",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M16",
+      "module_id": "generated-5ec84823c9c2ca8da9bf7895512839fabdeccaed02d4c8c85d1f60cf34172994",
+      "route_id": "entry-to-exit",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M16",
+      "module_id": "generated-5ec84823c9c2ca8da9bf7895512839fabdeccaed02d4c8c85d1f60cf34172994",
+      "route_id": "exit-to-entry",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M17",
+      "module_id": "game-plains-bellstrider-arena",
+      "route_id": "entry-to-exit",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M18",
+      "module_id": "idea-plains-hq07-001",
+      "route_id": "L-to-R",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M18",
+      "module_id": "idea-plains-hq07-001",
+      "route_id": "R-to-L",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M19",
+      "module_id": "block-demand-a1-bidirectional-risk-reward-1",
+      "route_id": "A-to-B",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M19",
+      "module_id": "block-demand-a1-bidirectional-risk-reward-1",
+      "route_id": "B-to-A",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M20",
+      "module_id": "game-plains-remote-sequence",
+      "route_id": "entry-to-exit",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M21",
+      "module_id": "game-plains-thorn-slalom",
+      "route_id": "entry-to-exit",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M22",
+      "module_id": "generated-630ca6aff78c132669a9cf11e47448041319a2593c6506b86ca098b9a1b5a4ac",
+      "route_id": "entry-to-exit",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M23",
+      "module_id": "game-plains-thorn-wall",
+      "route_id": "entry-to-exit",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M23",
+      "module_id": "game-plains-thorn-wall",
+      "route_id": "exit-to-entry",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M24",
+      "module_id": "generated-3269642f7d82571d98a148a014f5c34c667ac5a7f805352c646f81d0d6733160",
+      "route_id": "entry-to-exit",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M25",
+      "module_id": "game-plains-perch-double",
+      "route_id": "entry-to-exit",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M25",
+      "module_id": "game-plains-perch-double",
+      "route_id": "exit-to-entry",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M26",
+      "module_id": "game-plains-low-arch",
+      "route_id": "entry-to-exit",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M27",
+      "module_id": "generated-59296f7c9ebdbbc68e0913efe12ce46af74300db662d08af14337f205f6dae85",
+      "route_id": "entry-to-exit",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M28",
+      "module_id": "workshop-macro-gate-brake-return-0",
+      "route_id": "A-to-B",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M28",
+      "module_id": "workshop-macro-gate-brake-return-0",
+      "route_id": "B-to-A",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M28",
+      "module_id": "workshop-macro-gate-brake-return-0",
+      "reason": "gear_seal_subset_not_physically_certified",
+      "connected_ports": [
+        "A",
+        "B"
+      ],
+      "sealed_ports": [
+        "C",
+        "D"
+      ]
+    },
+    {
+      "instance": "M29",
+      "module_id": "idea-orbit-choice-001",
+      "route_id": "A-to-B",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M29",
+      "module_id": "idea-orbit-choice-001",
+      "route_id": "B-to-A",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M29",
+      "module_id": "idea-orbit-choice-001",
+      "reason": "gear_seal_subset_not_physically_certified",
+      "connected_ports": [
+        "A",
+        "B"
+      ],
+      "sealed_ports": [
+        "C"
+      ]
+    },
+    {
+      "instance": "M30",
+      "module_id": "game-plains-windchime-rush",
+      "route_id": "entry-to-exit",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M31",
+      "module_id": "game-plains-windchime-sequence",
+      "route_id": "entry-to-exit",
+      "reason": "ability_set_not_witnessed",
+      "actual": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ],
+      "witnessed": [
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "instance": "M32",
+      "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x1",
+      "reason": "gear_seal_subset_not_physically_certified",
+      "connected_ports": [
+        "B"
+      ],
+      "sealed_ports": [
+        "A"
+      ]
+    },
+    {
+      "instance": "M33",
+      "module_id": "game-plains-boss-arena",
+      "reason": "gear_seal_subset_not_physically_certified",
+      "connected_ports": [
+        "exit"
+      ],
+      "sealed_ports": [
+        "L"
+      ]
+    }
+  ],
+  "legacy_map": null,
+  "validation": {
+    "whole_map_physics": "NOT_RUN",
+    "gear_seal_physics": "NOT_RUN",
+    "acceptance": "REJECTED",
+    "no_retry": true
+  }
+}

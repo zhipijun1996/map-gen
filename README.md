@@ -1,5 +1,7 @@
 # 《失序之钟》Map Generator
 
+新增独立实验：[旧算法读取真实模块包的同 seed 对照与缺口报告](experiments/legacy-real-v1/README.md)。基于 `c2ac2c3`，原算法、约束和默认参数不变；旧版 20 seed 精确复现，真实版 20 个失败候选及齿轮封口完整保留，尚无满足原目标的合格真实地图。本轮不含 Godot 移植或主游戏接入。
+
 以不重叠的矩形 Module、边界 Block 上的 Port 和显式有向 Route，生成连续二维探索地图。
 
 当前保存的是可复现的布局与静态图原型，以及 20 个 Seed 的完整评估。真实 Module 来自 [map-edit](https://github.com/zhipijun1996/map-edit)，该仓库正在迁移新格式；正式数据接入尚未实施。

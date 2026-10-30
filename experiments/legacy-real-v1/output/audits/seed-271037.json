@@ -1,0 +1,532 @@
+{
+  "rectangles": "PASS",
+  "boundary_block_ports": "PASS",
+  "seam_geometry_and_permissions": "PASS",
+  "complete_gear_seal_coverage": "PASS",
+  "declared_graph_only": true,
+  "boss_reachable": false,
+  "unreachable_instances": [
+    {
+      "instance": "M07",
+      "module_id": "generated-59296f7c9ebdbbc68e0913efe12ce46af74300db662d08af14337f205f6dae85"
+    },
+    {
+      "instance": "M08",
+      "module_id": "game-plains-thorn-wall"
+    },
+    {
+      "instance": "M09",
+      "module_id": "game-plains-micro-landing"
+    },
+    {
+      "instance": "M15",
+      "module_id": "generated-011d0a163822daaeea61e2280dbe4b26f7f48fa38d57ac30d06110da0634723b"
+    },
+    {
+      "instance": "M16",
+      "module_id": "game-plains-remote-sequence"
+    },
+    {
+      "instance": "M17",
+      "module_id": "game-plains-gear-brook"
+    },
+    {
+      "instance": "M18",
+      "module_id": "block-demand-a1-bidirectional-risk-reward-1"
+    },
+    {
+      "instance": "M19",
+      "module_id": "game-forest-exploration-modules-backlook-fruit-cache"
+    },
+    {
+      "instance": "M20",
+      "module_id": "idea-plains-hq07-001"
+    },
+    {
+      "instance": "M21",
+      "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-1x2"
+    },
+    {
+      "instance": "M23",
+      "module_id": "game-plains-thorn-slalom"
+    },
+    {
+      "instance": "M24",
+      "module_id": "game-forest-playful-module-variants-forked-bough-hh"
+    },
+    {
+      "instance": "M25",
+      "module_id": "game-route-junction"
+    },
+    {
+      "instance": "M26",
+      "module_id": "game-plains-bell-ferry-control"
+    },
+    {
+      "instance": "M27",
+      "module_id": "game-plains-micro-rise"
+    },
+    {
+      "instance": "M28",
+      "module_id": "game-plains-windchime-well"
+    },
+    {
+      "instance": "M29",
+      "module_id": "game-plains-low-arch"
+    },
+    {
+      "instance": "M30",
+      "module_id": "game-plains-bellstrider-arena"
+    },
+    {
+      "instance": "M31",
+      "module_id": "game-forest-directional-geometry-build-narrow"
+    },
+    {
+      "instance": "M32",
+      "module_id": "batch30-n11-e-e-width96"
+    }
+  ],
+  "boss_hook_connected": false,
+  "main_paths": "NOT_REACHED_BECAUSE_GENERATION_REJECTED",
+  "reward_target": 6,
+  "reward_instances": 0,
+  "edges": [
+    [
+      "M01.R:depart",
+      "M02.entry_left:arrive"
+    ],
+    [
+      "M01.entry:arrive",
+      "M01.R:depart"
+    ],
+    [
+      "M01.entry:depart",
+      "M07.exit:arrive"
+    ],
+    [
+      "M02.entry_left:arrive",
+      "M02.entry_right:depart"
+    ],
+    [
+      "M02.entry_left:depart",
+      "M01.R:arrive"
+    ],
+    [
+      "M02.entry_right:arrive",
+      "M02.entry_left:depart"
+    ],
+    [
+      "M02.entry_right:depart",
+      "M03.A:arrive"
+    ],
+    [
+      "M03.A:arrive",
+      "M03.B:depart"
+    ],
+    [
+      "M03.A:depart",
+      "M02.entry_right:arrive"
+    ],
+    [
+      "M03.B:arrive",
+      "M03.A:depart"
+    ],
+    [
+      "M03.B:depart",
+      "M04.entry:arrive"
+    ],
+    [
+      "M04.entry:arrive",
+      "M04.exit:depart"
+    ],
+    [
+      "M04.entry:depart",
+      "M03.B:arrive"
+    ],
+    [
+      "M04.exit:depart",
+      "M05.entry:arrive"
+    ],
+    [
+      "M05.entry:arrive",
+      "M05.exit:depart"
+    ],
+    [
+      "M05.entry:depart",
+      "M04.exit:arrive"
+    ],
+    [
+      "M05.exit:depart",
+      "M06.entry:arrive"
+    ],
+    [
+      "M06.entry:arrive",
+      "M06.exit:depart"
+    ],
+    [
+      "M06.entry:depart",
+      "M05.exit:arrive"
+    ],
+    [
+      "M06.exit:depart",
+      "M10.entry:arrive"
+    ],
+    [
+      "M07.entry:arrive",
+      "M07.exit:depart"
+    ],
+    [
+      "M07.entry:depart",
+      "M08.exit:arrive"
+    ],
+    [
+      "M07.exit:depart",
+      "M01.entry:arrive"
+    ],
+    [
+      "M08.entry:arrive",
+      "M08.exit:depart"
+    ],
+    [
+      "M08.entry:depart",
+      "M09.exit:arrive"
+    ],
+    [
+      "M08.exit:arrive",
+      "M08.entry:depart"
+    ],
+    [
+      "M08.exit:depart",
+      "M07.entry:arrive"
+    ],
+    [
+      "M09.entry:arrive",
+      "M09.exit:depart"
+    ],
+    [
+      "M09.entry:depart",
+      "M15.exit:arrive"
+    ],
+    [
+      "M09.exit:depart",
+      "M08.entry:arrive"
+    ],
+    [
+      "M10.entry:arrive",
+      "M10.exit:depart"
+    ],
+    [
+      "M10.entry:depart",
+      "M06.exit:arrive"
+    ],
+    [
+      "M10.exit:depart",
+      "M11.entry:arrive"
+    ],
+    [
+      "M11.entry:arrive",
+      "M11.exit:depart"
+    ],
+    [
+      "M11.entry:depart",
+      "M10.exit:arrive"
+    ],
+    [
+      "M11.exit:depart",
+      "M12.entry:arrive"
+    ],
+    [
+      "M12.entry:arrive",
+      "M12.exit:depart"
+    ],
+    [
+      "M12.entry:depart",
+      "M11.exit:arrive"
+    ],
+    [
+      "M12.exit:arrive",
+      "M12.entry:depart"
+    ],
+    [
+      "M12.exit:depart",
+      "M13.entry:arrive"
+    ],
+    [
+      "M13.entry:arrive",
+      "M13.exit:depart"
+    ],
+    [
+      "M13.entry:depart",
+      "M12.exit:arrive"
+    ],
+    [
+      "M13.exit:depart",
+      "M14.L:arrive"
+    ],
+    [
+      "M14.L:arrive",
+      "M14.T:depart"
+    ],
+    [
+      "M14.L:depart",
+      "M13.exit:arrive"
+    ],
+    [
+      "M14.T:arrive",
+      "M14.L:depart"
+    ],
+    [
+      "M14.T:depart",
+      "M22.B:arrive"
+    ],
+    [
+      "M15.entry:arrive",
+      "M15.exit:depart"
+    ],
+    [
+      "M15.entry:depart",
+      "M16.exit:arrive"
+    ],
+    [
+      "M15.exit:arrive",
+      "M15.entry:depart"
+    ],
+    [
+      "M15.exit:depart",
+      "M09.entry:arrive"
+    ],
+    [
+      "M16.entry:arrive",
+      "M16.exit:depart"
+    ],
+    [
+      "M16.entry:depart",
+      "M17.exit:arrive"
+    ],
+    [
+      "M16.exit:depart",
+      "M15.entry:arrive"
+    ],
+    [
+      "M17.entry:arrive",
+      "M17.exit:depart"
+    ],
+    [
+      "M17.entry:depart",
+      "M18.B:arrive"
+    ],
+    [
+      "M17.exit:depart",
+      "M16.entry:arrive"
+    ],
+    [
+      "M18.A:arrive",
+      "M18.B:depart"
+    ],
+    [
+      "M18.A:depart",
+      "M19.exit:arrive"
+    ],
+    [
+      "M18.B:arrive",
+      "M18.A:depart"
+    ],
+    [
+      "M18.B:depart",
+      "M17.entry:arrive"
+    ],
+    [
+      "M19.C:arrive",
+      "M19.entry:depart"
+    ],
+    [
+      "M19.C:arrive",
+      "M19.exit:depart"
+    ],
+    [
+      "M19.C:depart",
+      "M21.B:arrive"
+    ],
+    [
+      "M19.entry:arrive",
+      "M19.exit:depart"
+    ],
+    [
+      "M19.entry:arrive",
+      "M19.C:depart"
+    ],
+    [
+      "M19.entry:depart",
+      "M20.R:arrive"
+    ],
+    [
+      "M19.exit:arrive",
+      "M19.entry:depart"
+    ],
+    [
+      "M19.exit:arrive",
+      "M19.C:depart"
+    ],
+    [
+      "M19.exit:depart",
+      "M18.A:arrive"
+    ],
+    [
+      "M20.L:arrive",
+      "M20.R:depart"
+    ],
+    [
+      "M20.L:depart",
+      "M23.exit:arrive"
+    ],
+    [
+      "M20.R:arrive",
+      "M20.L:depart"
+    ],
+    [
+      "M20.R:depart",
+      "M19.entry:arrive"
+    ],
+    [
+      "M21.B:depart",
+      "M19.C:arrive"
+    ],
+    [
+      "M22.B:depart",
+      "M14.T:arrive"
+    ],
+    [
+      "M23.entry:arrive",
+      "M23.exit:depart"
+    ],
+    [
+      "M23.entry:depart",
+      "M24.basin:arrive"
+    ],
+    [
+      "M23.exit:depart",
+      "M20.L:arrive"
+    ],
+    [
+      "M24.basin:depart",
+      "M23.entry:arrive"
+    ],
+    [
+      "M24.crown:depart",
+      "M25.exit_upper_left:arrive"
+    ],
+    [
+      "M24.entry:arrive",
+      "M24.crown:depart"
+    ],
+    [
+      "M24.entry:depart",
+      "M26.exit:arrive"
+    ],
+    [
+      "M24.lower_exit:depart",
+      "M25.entry_left:arrive"
+    ],
+    [
+      "M25.entry_left:arrive",
+      "M25.exit_upper_left:depart"
+    ],
+    [
+      "M25.entry_left:depart",
+      "M24.lower_exit:arrive"
+    ],
+    [
+      "M25.exit_upper_left:arrive",
+      "M25.entry_left:depart"
+    ],
+    [
+      "M25.exit_upper_left:depart",
+      "M24.crown:arrive"
+    ],
+    [
+      "M26.entry:arrive",
+      "M26.exit:depart"
+    ],
+    [
+      "M26.entry:depart",
+      "M27.exit:arrive"
+    ],
+    [
+      "M26.exit:depart",
+      "M24.entry:arrive"
+    ],
+    [
+      "M27.entry:arrive",
+      "M27.exit:depart"
+    ],
+    [
+      "M27.entry:depart",
+      "M28.exit:arrive"
+    ],
+    [
+      "M27.exit:arrive",
+      "M27.entry:depart"
+    ],
+    [
+      "M27.exit:depart",
+      "M26.entry:arrive"
+    ],
+    [
+      "M28.entry:arrive",
+      "M28.exit:depart"
+    ],
+    [
+      "M28.entry:depart",
+      "M29.exit:arrive"
+    ],
+    [
+      "M28.exit:depart",
+      "M27.entry:arrive"
+    ],
+    [
+      "M29.entry:arrive",
+      "M29.exit:depart"
+    ],
+    [
+      "M29.entry:depart",
+      "M30.exit:arrive"
+    ],
+    [
+      "M29.exit:depart",
+      "M28.entry:arrive"
+    ],
+    [
+      "M30.entry:arrive",
+      "M30.exit:depart"
+    ],
+    [
+      "M30.entry:depart",
+      "M31.exit:arrive"
+    ],
+    [
+      "M30.exit:depart",
+      "M29.entry:arrive"
+    ],
+    [
+      "M31.entry:arrive",
+      "M31.exit:depart"
+    ],
+    [
+      "M31.entry:depart",
+      "M32.B:arrive"
+    ],
+    [
+      "M31.exit:depart",
+      "M30.entry:arrive"
+    ],
+    [
+      "M32.B:depart",
+      "M31.entry:arrive"
+    ],
+    [
+      "START",
+      "M01.R:depart"
+    ]
+  ]
+}

@@ -1,0 +1,4792 @@
+{
+  "package": {
+    "version": "1.0.0",
+    "url": "https://raw.githubusercontent.com/zhipijun1996/map-edit/1776e80bbcaaebad8ad69c23e0de5df38fcc5c95/releases/map-edit-modules-1.0.0.zip",
+    "sha256": "35a9fcec22bf9defcb93d3683e3b3aed4f928526fe099a72f6b5168a7bb20db3",
+    "catalog_sha256": "2d1aca9e91ba8a3e209f5484b69b045ae190ab8568bf419c6725f18068fd9809"
+  },
+  "verified_files": 656,
+  "source": {
+    "repository": "https://github.com/zhipijun1996/map-edit",
+    "commit": "e2276cc83852272e4520c0b7a450792031b587ee",
+    "recordSchema": "map-edit/module-record/v1"
+  },
+  "imported_modules": 115,
+  "adapted_templates": 115,
+  "role_gaps": [
+    {
+      "role": "START",
+      "module_id": "game-plains-windchime-lesson",
+      "port_id": "exit",
+      "reason": "legacy_boundary_hook_has_no_interior_spawn_or_goal_route_contract"
+    },
+    {
+      "role": "BOSS",
+      "module_id": "game-plains-boss-arena",
+      "port_id": "entry",
+      "reason": "legacy_boundary_hook_has_no_interior_spawn_or_goal_route_contract"
+    },
+    {
+      "role": "AIR_A",
+      "reason": "no_matching_side_air_route",
+      "candidates": []
+    },
+    {
+      "role": "AIR_B",
+      "reason": "no_matching_side_air_route",
+      "candidates": []
+    },
+    {
+      "role": "Q",
+      "target_count": 6,
+      "available_templates": 0,
+      "reason": "no_single_port_reward_with_explicit_visit_and_return_binding"
+    }
+  ],
+  "module_feedback": [
+    {
+      "module_id": "idea-plains-hq04-001",
+      "route_ids": [
+        "L-to-L"
+      ],
+      "port_ids": [
+        "L"
+      ],
+      "reward_sites": [
+        "reward"
+      ],
+      "reason": "single_port_reward_route_has_no_explicit_requiredRewards"
+    },
+    {
+      "module_id": "idea-spec02-s13-001",
+      "route_ids": [
+        "L-to-L"
+      ],
+      "port_ids": [
+        "L"
+      ],
+      "reward_sites": [
+        "reward"
+      ],
+      "reason": "single_port_reward_route_has_no_explicit_requiredRewards"
+    }
+  ],
+  "upstream_excluded": [
+    {
+      "id": "idea-plains-large-01-001",
+      "reason": [
+        "Current design version has not received KEEP; no native implementation.",
+        "互补桥门、时序、现有承载/敌行为的完整组合未实现。",
+        "反冲上井与相位、外部贴边/穿伤/隔墙开箱、失败重试均UNKNOWN。"
+      ]
+    },
+    {
+      "id": "idea-plains-large-02-001",
+      "reason": [
+        "Current design version has not received KEEP; no native implementation.",
+        "布局与P→Q动态会合、真实两条取宝路线均未实施。",
+        "短线若不命中也同样便宜，应修几何/资源而不是声明必须射怪。",
+        "敌死状态、身体凹口净空、回程、穿伤及操作容错UNKNOWN。"
+      ]
+    },
+    {
+      "id": "idea-plains-large-03-001",
+      "reason": [
+        "Current design version has not received KEEP; no native implementation.",
+        "重岩可推/承载/碰撞导轨和承重规则是新Cell及绑定，尚未实现。",
+        "玩家反冲碰撞推动是为解决杀怪恢复而新增的交互假设，不能声称原生已支持；若它使诱怪无价值须重设。",
+        "下路被腾空、实际遮弹、重量过滤、内侧重开及回程均需验证。"
+      ]
+    }
+  ],
+  "ability_witnesses": [
+    {
+      "module_id": "b31-n06-fourport-two-low-ingress",
+      "route_id": "A-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "b31-n06-fourport-two-low-ingress",
+      "route_id": "A-to-C",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "b31-n06-fourport-two-low-ingress",
+      "route_id": "D-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "b31-n06-fourport-two-low-ingress",
+      "route_id": "D-to-C",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "b31-n06-fourport-two-low-ingress",
+      "route_id": "A-to-D",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "b31-n06-fourport-two-low-ingress",
+      "route_id": "B-to-A",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "b31-n06-fourport-two-low-ingress",
+      "route_id": "B-to-C",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "b31-n06-fourport-two-low-ingress",
+      "route_id": "B-to-D",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "b31-n06-fourport-two-low-ingress",
+      "route_id": "C-to-A",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "b31-n06-fourport-two-low-ingress",
+      "route_id": "C-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "b31-n06-fourport-two-low-ingress",
+      "route_id": "C-to-D",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "b31-n06-fourport-two-low-ingress",
+      "route_id": "D-to-A",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "b31-n08-reward-return-interface0",
+      "route_id": "reward-outbound",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "b31-n08-reward-return-interface0",
+      "route_id": "lower-return",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "b31-n12-three-side-port-interface0",
+      "route_id": "high-investment",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "b31-n12-three-side-port-interface0",
+      "route_id": "far-low",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "b31-n14-static-three-sideports",
+      "route_id": "A-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "b31-n14-static-three-sideports",
+      "route_id": "A-to-C",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "b31-n14-static-three-sideports",
+      "route_id": "D-to-C",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "b31-n14-static-three-sideports",
+      "route_id": "D-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "b31-n16-west-low-east-high-interface0",
+      "route_id": "A-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "b31-n17-threeport-cross-shaft-v2",
+      "route_id": "A-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "b31-n17-threeport-cross-shaft-v2",
+      "route_id": "A-to-C",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "b31-n17-threeport-cross-shaft-v2",
+      "route_id": "B-to-C",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "b31-n17-threeport-cross-shaft-v2",
+      "route_id": "B-to-A",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "b31-n17-threeport-cross-shaft-v2",
+      "route_id": "C-to-A",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "b31-n17-threeport-cross-shaft-v2",
+      "route_id": "C-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "batch30-block-c02-0",
+      "route_id": "A-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "batch30-block-d05-0",
+      "route_id": "A-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "batch30-block-n04-0-2",
+      "route_id": "A-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "batch30-block-n04-0-2",
+      "route_id": "A-to-C",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "batch30-block-n04-0-2",
+      "route_id": "D-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "batch30-block-n04-0-2",
+      "route_id": "D-to-C",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "batch30-block-n04-0-2",
+      "route_id": "B-to-A",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "batch30-block-n04-0-2",
+      "route_id": "C-to-A",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "batch30-block-n04-0-2",
+      "route_id": "B-to-D",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "batch30-block-n04-0-2",
+      "route_id": "C-to-D",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "batch30-block-n04-0-2",
+      "route_id": "A-to-D",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "batch30-block-n04-0-2",
+      "route_id": "D-to-A",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "batch30-block-n04-0-2",
+      "route_id": "B-to-C",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "batch30-block-n04-0-2",
+      "route_id": "C-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "batch30-block-n04-0-2",
+      "route_id": "E-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "batch30-block-n04-0-2",
+      "route_id": "E-to-C",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "batch30-block-n04-0-2",
+      "route_id": "E-to-A",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "batch30-block-n04-0-2",
+      "route_id": "E-to-D",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "batch30-d04-0",
+      "route_id": "A-to-C",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "batch30-d04-0",
+      "route_id": "A-C-A-earned-return",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "batch30-n11-e-e-width96",
+      "route_id": "A-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "batch30-n11-e-e-width96",
+      "route_id": "A-to-C",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "batch30-n11-e-e-width96",
+      "route_id": "B-to-C",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "batch30-n19-west-high-east-low",
+      "route_id": "A-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "block-demand-a1-bidirectional-risk-reward-1",
+      "route_id": "A-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "block-demand-a1-bidirectional-risk-reward-1",
+      "route_id": "B-to-A",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "block-demand-a3-bidirectional-map-traversal-0",
+      "route_id": "A-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "block-demand-a3-bidirectional-map-traversal-0",
+      "route_id": "B-to-A",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "block-demand-c01-0",
+      "route_id": "A-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "block-demand-c07-horizontal",
+      "route_id": "A-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-boss-approach",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-boss-approach",
+      "route_id": "exit-to-entry",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-boss-approach",
+      "route_id": "C-to-entry",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-boss-approach",
+      "route_id": "C-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-boss-approach",
+      "route_id": "D-to-entry",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-boss-approach",
+      "route_id": "D-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-challenge-ferry-ascent",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-challenge-long-gap",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-challenge-recoil-climb",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-forest-air-chain-geometry-hook-hook",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil",
+        "grapple"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-forest-directional-geometry-build-narrow",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil",
+        "grapple"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-forest-exploration-modules-backlook-fruit-cache",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil",
+        "grapple"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-forest-exploration-modules-backlook-fruit-cache",
+      "route_id": "exit-to-entry",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil",
+        "grapple"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-forest-exploration-modules-backlook-fruit-cache",
+      "route_id": "entry-to-C",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil",
+        "grapple"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-forest-exploration-modules-backlook-fruit-cache",
+      "route_id": "C-to-entry",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil",
+        "grapple"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-forest-exploration-modules-backlook-fruit-cache",
+      "route_id": "exit-to-C",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil",
+        "grapple"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-forest-exploration-modules-backlook-fruit-cache",
+      "route_id": "C-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil",
+        "grapple"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-forest-hollow-trunk-geometry-aircatch",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil",
+        "grapple"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-forest-hollow-trunk-geometry-aircatch",
+      "route_id": "exit-to-entry",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil",
+        "grapple"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-forest-hollow-trunk-geometry-aircatch",
+      "route_id": "entry-to-C",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil",
+        "grapple"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-forest-hollow-trunk-geometry-aircatch",
+      "route_id": "exit-to-C",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil",
+        "grapple"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-forest-hollow-trunk-geometry-aircatch",
+      "route_id": "C-to-entry",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil",
+        "grapple"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-forest-hollow-trunk-geometry-aircatch",
+      "route_id": "C-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil",
+        "grapple"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-forest-hollow-trunk-geometry-cavity",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil",
+        "grapple"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-forest-hollow-trunk-geometry-cavity",
+      "route_id": "exit-to-entry",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil",
+        "grapple"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-forest-hollow-trunk-geometry-cavity-elbow",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil",
+        "grapple"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-forest-hollow-trunk-geometry-cavity-elbow",
+      "route_id": "exit-to-entry",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil",
+        "grapple"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-forest-hollow-upper-candidate-build",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil",
+        "grapple"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-forest-playful-module-variants-forked-bough-hh",
+      "route_id": "entry-to-crown",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil",
+        "grapple"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-forest-vertical-chain-geometry-default",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil",
+        "grapple"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-moving-transfer",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-moving-transfer",
+      "route_id": "exit-to-entry",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-bell-ferry-control",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-bellstrider-arena",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-boss-arena",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-bramble-causeway",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-bramble-ridge",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-ferry-gears",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-ferry-gears",
+      "route_id": "entry-to-C",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-ferry-gears",
+      "route_id": "exit-to-entry",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-ferry-gears",
+      "route_id": "exit-to-C",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-ferry-gears",
+      "route_id": "C-to-entry",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-ferry-gears",
+      "route_id": "C-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-ferry-one",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-fork-paths",
+      "route_id": "entry-to-fork_right",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-fork-paths",
+      "route_id": "fork_right-to-entry",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-fork-paths",
+      "route_id": "entry-to-fork_up",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-fork-paths",
+      "route_id": "fork_up-to-entry",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-fork-paths",
+      "route_id": "fork_right-to-fork_up",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-fork-paths",
+      "route_id": "fork_up-to-fork_right",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-fork-paths",
+      "route_id": "entry-to-C",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-fork-paths",
+      "route_id": "C-to-entry",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-fork-paths",
+      "route_id": "fork_right-to-C",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-fork-paths",
+      "route_id": "C-to-fork_right",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-fork-paths",
+      "route_id": "fork_up-to-C",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-fork-paths",
+      "route_id": "C-to-fork_up",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-gear-brook",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-high-perches",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-high-perches",
+      "route_id": "exit-to-entry",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-low-arch",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-meadow-gap",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-micro-landing",
+      "route_id": "main",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-micro-rise",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-micro-rise",
+      "route_id": "exit-to-entry",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-perch-double",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-perch-double",
+      "route_id": "exit-to-entry",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-recoil-chasm",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil",
+        "double_jump"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-recoil-chasm",
+      "route_id": "exit-to-entry",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil",
+        "double_jump"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-remote-bell",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-remote-sequence",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-skip-stones",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-switchback",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-thorn-slalom",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-thorn-wall",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-thorn-wall",
+      "route_id": "exit-to-entry",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-twin-gears",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-wind-spire",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-windchime-ferry",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-windchime-lesson",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-windchime-rush",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-windchime-sequence",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-plains-windchime-well",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-recoil-shaft",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-recoil-shaft",
+      "route_id": "exit-to-entry",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-route-junction",
+      "route_id": "entry_left-to-entry_right",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-route-junction",
+      "route_id": "entry_left-to-exit_upper_left",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-route-junction",
+      "route_id": "entry_left-to-exit_upper_right",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-route-junction",
+      "route_id": "entry_right-to-entry_left",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-route-junction",
+      "route_id": "entry_right-to-exit_upper_left",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-route-junction",
+      "route_id": "entry_right-to-exit_upper_right",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-route-junction",
+      "route_id": "exit_upper_left-to-entry_left",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-route-junction",
+      "route_id": "exit_upper_left-to-entry_right",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-route-junction",
+      "route_id": "exit_upper_left-to-exit_upper_right",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-route-junction",
+      "route_id": "exit_upper_right-to-entry_left",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-route-junction",
+      "route_id": "exit_upper_right-to-entry_right",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-route-junction",
+      "route_id": "exit_upper_right-to-exit_upper_left",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-spike-gap",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "game-spike-gap",
+      "route_id": "exit-to-entry",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "generated-011d0a163822daaeea61e2280dbe4b26f7f48fa38d57ac30d06110da0634723b",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "generated-011d0a163822daaeea61e2280dbe4b26f7f48fa38d57ac30d06110da0634723b",
+      "route_id": "exit-to-entry",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "generated-075be5b9171782cf385f2d8ea3c21e2f5fe876f688f2929ba61bc34487d2fe53",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "generated-075be5b9171782cf385f2d8ea3c21e2f5fe876f688f2929ba61bc34487d2fe53",
+      "route_id": "exit-to-entry",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "generated-09efd9583360ae3e414d7430c9b0e7e12a730b0fe8a5f19a90fc98c9b80c2ac2",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "shot_recoil",
+        "wall_climb"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "generated-1ff2da49936b180bfa76a3285e8392db0f5945aff17b746dac48511bfe9b23a9",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "generated-1ff82aadb96e72dded4adbddd14736000e1e71f70c6879c1101699921e2dc7d4",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "generated-3269642f7d82571d98a148a014f5c34c667ac5a7f805352c646f81d0d6733160",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "generated-59296f7c9ebdbbc68e0913efe12ce46af74300db662d08af14337f205f6dae85",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "generated-5ec84823c9c2ca8da9bf7895512839fabdeccaed02d4c8c85d1f60cf34172994",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "generated-5ec84823c9c2ca8da9bf7895512839fabdeccaed02d4c8c85d1f60cf34172994",
+      "route_id": "exit-to-entry",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "generated-630ca6aff78c132669a9cf11e47448041319a2593c6506b86ca098b9a1b5a4ac",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "generated-75b420621682d36fc3b7262784c347f0acea7e55422f7e0abaebbc285fa89198",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "wall_climb"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "generated-75b420621682d36fc3b7262784c347f0acea7e55422f7e0abaebbc285fa89198",
+      "route_id": "exit-to-entry",
+      "witnessed": [
+        "move",
+        "jump",
+        "wall_climb"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "generated-75b420621682d36fc3b7262784c347f0acea7e55422f7e0abaebbc285fa89198",
+      "route_id": "entry-to-bottom",
+      "witnessed": [
+        "move",
+        "jump",
+        "wall_climb"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "generated-75b420621682d36fc3b7262784c347f0acea7e55422f7e0abaebbc285fa89198",
+      "route_id": "bottom-to-entry",
+      "witnessed": [
+        "move",
+        "jump",
+        "wall_climb"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "generated-75b420621682d36fc3b7262784c347f0acea7e55422f7e0abaebbc285fa89198",
+      "route_id": "exit-to-bottom",
+      "witnessed": [
+        "move",
+        "jump",
+        "wall_climb"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "generated-75b420621682d36fc3b7262784c347f0acea7e55422f7e0abaebbc285fa89198",
+      "route_id": "bottom-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "wall_climb"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "generated-769066fe5fa1b2332bd7d35c56fa814f01db2b06eb8c65ef9ecf1e586db3ca0b",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "generated-777ce57682915e11719c9540e5c0f374c1aaef971321099e9459a34b1c3615a2",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "generated-8df5613256e70989f6ae5795803344bdc3e636fe3232c2e35175fae612f633ba",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "generated-8df5613256e70989f6ae5795803344bdc3e636fe3232c2e35175fae612f633ba",
+      "route_id": "exit-to-entry",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "generated-a8f918f1ee9e8e682a919cdbb67ba2015fcfe075d54e5f25147fbe04dd156d2a",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "generated-a8f918f1ee9e8e682a919cdbb67ba2015fcfe075d54e5f25147fbe04dd156d2a",
+      "route_id": "exit-to-entry",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "generated-b49032ba100b948c427c4eec92fded70bdfbf240659ea41b37991d2347483712",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "generated-c234da4022051a1194ce251aa0da25d06ee572aa2a1c58873f8843f6d934feb2",
+      "route_id": "entry-to-exit",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-0363f85c-16c0-4b5f-b3b0-461335608db7-enemies-2",
+      "route_id": "A-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-0363f85c-16c0-4b5f-b3b0-461335608db7-enemies-2",
+      "route_id": "B-to-A",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-0363f85c-16c0-4b5f-b3b0-461335608db7-enemies-2",
+      "route_id": "A-to-A-retry",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-0363f85c-16c0-4b5f-b3b0-461335608db7-enemies-3",
+      "route_id": "A-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-0363f85c-16c0-4b5f-b3b0-461335608db7-enemies-3",
+      "route_id": "A-to-A-retry",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-1x2",
+      "route_id": "A-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-1x2",
+      "route_id": "B-to-A",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x1",
+      "route_id": "A-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x1",
+      "route_id": "B-to-A",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x2",
+      "route_id": "A-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-bottom-2x2",
+      "route_id": "B-to-A",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-top-1x2",
+      "route_id": "A-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-top-1x2",
+      "route_id": "B-to-A",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-top-2x1",
+      "route_id": "A-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-top-2x1",
+      "route_id": "B-to-A",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-top-2x2",
+      "route_id": "A-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-31639e2c-1a4a-487c-b1ea-c52522549fa8-left-top-2x2",
+      "route_id": "B-to-A",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-96ba6bf1-9b60-470a-9128-54ae7ea44af3",
+      "route_id": "A-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-96ba6bf1-9b60-470a-9128-54ae7ea44af3",
+      "route_id": "A-to-A-retry",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-interface-s02-001",
+      "route_id": "B-to-T",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-interface-s02-001",
+      "route_id": "T-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-interface-s07-001",
+      "route_id": "L-to-T",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-interface-s07-001",
+      "route_id": "T-to-L",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-interface-s09-001",
+      "route_id": "L-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-interface-s09-001",
+      "route_id": "B-to-L",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-interface-s11-001",
+      "route_id": "L-to-R",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-interface-s11-001",
+      "route_id": "L-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-interface-s11-001",
+      "route_id": "R-to-L",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-interface-s11-001",
+      "route_id": "R-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-interface-s11-001",
+      "route_id": "B-to-L",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-interface-s11-001",
+      "route_id": "B-to-R",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-interface-s12-001",
+      "route_id": "L-to-R",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-interface-s12-001",
+      "route_id": "L-to-T",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-interface-s12-001",
+      "route_id": "L-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-interface-s12-001",
+      "route_id": "R-to-L",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-interface-s12-001",
+      "route_id": "R-to-T",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-interface-s12-001",
+      "route_id": "R-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-interface-s12-001",
+      "route_id": "T-to-L",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-interface-s12-001",
+      "route_id": "T-to-R",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-interface-s12-001",
+      "route_id": "T-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-interface-s12-001",
+      "route_id": "B-to-L",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-interface-s12-001",
+      "route_id": "B-to-R",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-interface-s12-001",
+      "route_id": "B-to-T",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-interface-s15-001",
+      "route_id": "L-to-R",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-interface-s15-001",
+      "route_id": "R-to-L",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-orbit-choice-001",
+      "route_id": "A-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-orbit-choice-001",
+      "route_id": "A-to-C",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-orbit-choice-001",
+      "route_id": "B-to-A",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-orbit-choice-001",
+      "route_id": "C-to-A",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-orbit-choice-001",
+      "route_id": "B-to-C",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-orbit-choice-001",
+      "route_id": "C-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-plains-hq01-001",
+      "route_id": "L-to-R",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-plains-hq01-001",
+      "route_id": "L-to-T",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-plains-hq01-001",
+      "route_id": "R-to-L",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-plains-hq01-001",
+      "route_id": "R-to-T",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-plains-hq01-001",
+      "route_id": "T-to-L",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-plains-hq01-001",
+      "route_id": "T-to-R",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-plains-hq02-001",
+      "route_id": "B-to-T",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-plains-hq02-001",
+      "route_id": "T-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-plains-hq03-001",
+      "route_id": "L-to-R",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-plains-hq03-001",
+      "route_id": "L-to-T",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-plains-hq03-001",
+      "route_id": "R-to-L",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-plains-hq03-001",
+      "route_id": "R-to-T",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-plains-hq03-001",
+      "route_id": "T-to-L",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-plains-hq03-001",
+      "route_id": "T-to-R",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-plains-hq04-001",
+      "route_id": "L-to-L",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-plains-hq05-001",
+      "route_id": "L-to-T",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-plains-hq05-001",
+      "route_id": "T-to-L",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-plains-hq07-001",
+      "route_id": "L-to-R",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-plains-hq07-001",
+      "route_id": "R-to-L",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-plains-hq08-001",
+      "route_id": "L-to-T",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-plains-hq08-001",
+      "route_id": "T-to-L",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-plains-hq09-001",
+      "route_id": "L-to-T",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-spec02-s02-001",
+      "route_id": "B-to-T",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-spec02-s02-001",
+      "route_id": "T-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-spec02-s04-001",
+      "route_id": "B-to-T",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-spec02-s04-001",
+      "route_id": "T-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-spec02-s06-001",
+      "route_id": "B-to-T",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-spec02-s06-001",
+      "route_id": "T-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-spec02-s07-001",
+      "route_id": "L-to-T",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-spec02-s07-001",
+      "route_id": "T-to-L",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-spec02-s08-001",
+      "route_id": "R-to-T",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-spec02-s08-001",
+      "route_id": "T-to-R",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-spec02-s09-001",
+      "route_id": "L-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-spec02-s09-001",
+      "route_id": "B-to-L",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-spec02-s10-001",
+      "route_id": "R-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-spec02-s10-001",
+      "route_id": "B-to-R",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-spec02-s11-001",
+      "route_id": "L-to-R",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-spec02-s11-001",
+      "route_id": "L-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-spec02-s11-001",
+      "route_id": "R-to-L",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-spec02-s11-001",
+      "route_id": "R-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-spec02-s11-001",
+      "route_id": "B-to-L",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-spec02-s11-001",
+      "route_id": "B-to-R",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-spec02-s12-001",
+      "route_id": "L-to-R",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-spec02-s12-001",
+      "route_id": "L-to-T",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-spec02-s12-001",
+      "route_id": "L-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-spec02-s12-001",
+      "route_id": "R-to-L",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-spec02-s12-001",
+      "route_id": "R-to-T",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-spec02-s12-001",
+      "route_id": "R-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-spec02-s12-001",
+      "route_id": "T-to-L",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-spec02-s12-001",
+      "route_id": "T-to-R",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-spec02-s12-001",
+      "route_id": "T-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-spec02-s12-001",
+      "route_id": "B-to-L",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-spec02-s12-001",
+      "route_id": "B-to-R",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-spec02-s12-001",
+      "route_id": "B-to-T",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "idea-spec02-s13-001",
+      "route_id": "L-to-L",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "junction-j06-0",
+      "route_id": "A-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "junction-j06-0",
+      "route_id": "A-to-C",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "junction-j06-0",
+      "route_id": "B-to-C",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "junction-j06-0",
+      "route_id": "C-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "junction-j06-0",
+      "route_id": "C-to-A",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "junction-j06-0",
+      "route_id": "B-to-A",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "workshop-macro-gate-brake-return-0",
+      "route_id": "A-to-C",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "workshop-macro-gate-brake-return-0",
+      "route_id": "C-to-A",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "workshop-macro-gate-brake-return-0",
+      "route_id": "A-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "workshop-macro-gate-brake-return-0",
+      "route_id": "B-to-A",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "workshop-macro-gate-brake-return-0",
+      "route_id": "C-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "workshop-macro-gate-brake-return-0",
+      "route_id": "B-to-C",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "workshop-macro-gate-brake-return-0",
+      "route_id": "A-to-D",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "workshop-macro-gate-brake-return-0",
+      "route_id": "D-to-A",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "workshop-macro-gate-brake-return-0",
+      "route_id": "C-to-D",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "workshop-macro-gate-brake-return-0",
+      "route_id": "D-to-C",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "workshop-macro-gate-brake-return-0",
+      "route_id": "B-to-D",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "workshop-macro-gate-brake-return-0",
+      "route_id": "D-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "workshop-one-shot-two-routes-1",
+      "route_id": "A-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "workshop-one-shot-two-routes-1",
+      "route_id": "B-to-A",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "workshop-one-shot-two-routes-1",
+      "route_id": "A-to-C",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "workshop-one-shot-two-routes-1",
+      "route_id": "C-to-A",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "workshop-one-shot-two-routes-1",
+      "route_id": "B-to-C",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    },
+    {
+      "module_id": "workshop-one-shot-two-routes-1",
+      "route_id": "C-to-B",
+      "witnessed": [
+        "move",
+        "jump",
+        "shot_recoil"
+      ],
+      "legacy_available": [
+        "double_jump",
+        "grapple",
+        "jump",
+        "recoil"
+      ]
+    }
+  ]
+}
