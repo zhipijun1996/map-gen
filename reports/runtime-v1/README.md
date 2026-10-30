@@ -4,7 +4,9 @@
 
 固定输入：map-edit modules 1.0.0，115 个交付模块（平原默认精确能力/配置池 102 个）。ZIP 和 Godot 可执行文件均校验 SHA256；主游戏原生依赖 1389 文件，保留独立包、模块内容、宿主和引擎版本锁。
 
-最终证据入口：`summary.json`、`data-08/data-suite.json`、`assembly-suite.json`、`physics-final/report.json`、`module-feedback.json`。原始开发失败/中断和旧统计分别保留在 data-02、data-03、data-06、data-attempt-*、physics-attempt-* 与对应日志；不是独立留出集，也不把后来修复的成功覆盖为原来成功。
+本次数据检查 302 项、固定组合生成 24/24、场景装配 24/24；最后的原生封口/连续回归 63 项检查通过。公开小包和录屏均已完整 HTTP 下载并逐字节校验 SHA，见 public-download-check.json。完整离线包保留在工作区 dist/，也可由锁定安装与打包脚本重建。
+
+最终证据入口：`summary.json`、`data-08/data-suite.json`、`assembly-suite.json`、`physics-final/report.json`、`module-feedback.json`、`physics-post/report.json`。历史开发原件压缩在 history.tar.gz，逐文件 SHA 在 history-sha256.json。原始开发失败/中断和旧统计分别保留在 data-02、data-03、data-06、data-attempt-*、physics-attempt-* 与对应日志；不是独立留出集，也不把后来修复的成功覆盖为原来成功。
 
 ## 当前验证范围
 
