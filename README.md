@@ -1,6 +1,8 @@
 # 《失序之钟》Map Generator
 
-最新优化：[真实模块生成优化实验 v1](experiments/optimization-v1/README.md)。不改 1.1.0 模块库，同 seed、同生长和奖励目标；静态通过由 0/20 提升到 19/20，其中 16/20 同时得到 3 条主路。完整累积对照、失败、地图与验证记录均已保留。
+最新迭代：[地图效果稳定性实验 v2](experiments/optimization-v2/README.md)。不改 1.1.0 模块库，固定形态评分、真实纵向扩展及奖励空间预留。历史 20 与未见验证 20 个 seed 均完整通过：三主路、六目标奖励、实际有向图与封口检查、长短边比≤3；40 个 seed 全部结构重放一致。[160 个案例的同 seed 对照页](experiments/optimization-v2/output/comparison.html)。这是有限样本静态验证，不是所有 seed 或 Godot 可玩性的保证。
+
+上一轮：[真实模块生成优化实验 v1](experiments/optimization-v1/README.md)。不改 1.1.0 模块库，同 seed、同生长和奖励目标；静态通过由 0/20 提升到 19/20，其中 16/20 同时得到 3 条主路。完整累积对照、失败、地图与验证记录均已保留。
 
 最新：[真实模块包 1.1.0 的旧算法对照实验](experiments/legacy-real-v2/README.md)。已接入真实奖励关联、Boss 入口、统一完整镜像和部分 Port 齿轮封口；原算法及默认目标保持不变，全部同 seed 结果与具体拒绝原因已归档。
 
@@ -8,7 +10,7 @@
 
 以不重叠的矩形 Module、边界 Block 上的 Port 和显式有向 Route，生成连续二维探索地图。
 
-当前保存的是可复现的布局与静态图原型，以及 20 个 Seed 的完整评估。真实 Module 来自 [map-edit](https://github.com/zhipijun1996/map-edit)，该仓库正在迁移新格式；正式数据接入尚未实施。
+下文原型章节保留初始 52 模板实验的说明与 20 个 Seed 评估；真实 [map-edit](https://github.com/zhipijun1996/map-edit) 数据接入及后续优化见上方独立版本目录。
 
 ## 当前进展
 

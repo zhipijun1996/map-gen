@@ -1,0 +1,3061 @@
+{
+  "seed": 930002,
+  "variant": "shape",
+  "phase": "boss_rewards",
+  "expanded": 106908,
+  "instances": [
+    {
+      "id": "M01",
+      "module_id": "START",
+      "name": "风铃教学",
+      "origin": [
+        0,
+        0
+      ],
+      "size_blocks": [
+        4,
+        3
+      ],
+      "mirror_x": false,
+      "ports": {
+        "R": {
+          "id": "R",
+          "source_port_id": "exit",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            8,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            8,
+            3
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M02",
+      "module_id": "T:game-plains-fork-paths",
+      "name": "分岔路径",
+      "origin": [
+        4,
+        -3
+      ],
+      "size_blocks": [
+        4,
+        5
+      ],
+      "mirror_x": true,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            8,
+            9
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            16,
+            3
+          ]
+        },
+        "fork_right": {
+          "id": "fork_right",
+          "source_port_id": "fork_right",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            9
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            8,
+            3
+          ]
+        },
+        "fork_up": {
+          "id": "fork_up",
+          "source_port_id": "fork_up",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            8,
+            -5
+          ]
+        },
+        "C": {
+          "id": "C",
+          "source_port_id": "C",
+          "face": "TOP",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            3,
+            0
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            11,
+            -6
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M03",
+      "module_id": "T:game-route-junction",
+      "name": "路线枢纽",
+      "origin": [
+        -2,
+        -4
+      ],
+      "size_blocks": [
+        6,
+        2
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry_left": {
+          "id": "entry_left",
+          "source_port_id": "entry_left",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -4,
+            -5
+          ]
+        },
+        "entry_right": {
+          "id": "entry_right",
+          "source_port_id": "entry_right",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            12,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            8,
+            -5
+          ]
+        },
+        "exit_upper_left": {
+          "id": "exit_upper_left",
+          "source_port_id": "exit_upper_left",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -4,
+            -7
+          ]
+        },
+        "exit_upper_right": {
+          "id": "exit_upper_right",
+          "source_port_id": "exit_upper_right",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            12,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            8,
+            -7
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M04",
+      "module_id": "T:b31-n06-fourport-two-low-ingress",
+      "name": "中庭双翼换桥",
+      "origin": [
+        -12,
+        -9
+      ],
+      "size_blocks": [
+        10,
+        6
+      ],
+      "mirror_x": true,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            20,
+            11
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -4,
+            -7
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            20,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -4,
+            -17
+          ]
+        },
+        "C": {
+          "id": "C",
+          "source_port_id": "C",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -24,
+            -17
+          ]
+        },
+        "D": {
+          "id": "D",
+          "source_port_id": "D",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            11
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -24,
+            -7
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M05",
+      "module_id": "T:idea-spec02-s12-001",
+      "name": "S12 · 横台稳住，再择高台去向",
+      "origin": [
+        4,
+        -7
+      ],
+      "size_blocks": [
+        5,
+        4
+      ],
+      "mirror_x": true,
+      "ports": {
+        "L": {
+          "id": "L",
+          "source_port_id": "L",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            10,
+            5
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            18,
+            -9
+          ]
+        },
+        "R": {
+          "id": "R",
+          "source_port_id": "R",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            8,
+            -13
+          ]
+        },
+        "T": {
+          "id": "T",
+          "source_port_id": "T",
+          "face": "TOP",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            7,
+            0
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            15,
+            -14
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "BOTTOM",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            3,
+            8
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            11,
+            -6
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M06",
+      "module_id": "T:batch30-block-n04-0-2",
+      "name": "穿过的门，回来接住你",
+      "origin": [
+        -2,
+        -12
+      ],
+      "size_blocks": [
+        10,
+        5
+      ],
+      "mirror_x": true,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            20,
+            7
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            16,
+            -17
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            20,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            16,
+            -23
+          ]
+        },
+        "C": {
+          "id": "C",
+          "source_port_id": "C",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -4,
+            -23
+          ]
+        },
+        "D": {
+          "id": "D",
+          "source_port_id": "D",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            7
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -4,
+            -17
+          ]
+        },
+        "E": {
+          "id": "E",
+          "source_port_id": "E",
+          "face": "TOP",
+          "surface": "AIR",
+          "permission": "INPUT",
+          "local2": [
+            9,
+            0
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            5,
+            -24
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M07",
+      "module_id": "T:batch30-block-n04-0-2",
+      "name": "穿过的门，回来接住你",
+      "origin": [
+        8,
+        -12
+      ],
+      "size_blocks": [
+        10,
+        5
+      ],
+      "mirror_x": false,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            7
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            16,
+            -17
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            16,
+            -23
+          ]
+        },
+        "C": {
+          "id": "C",
+          "source_port_id": "C",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            20,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            36,
+            -23
+          ]
+        },
+        "D": {
+          "id": "D",
+          "source_port_id": "D",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            20,
+            7
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            36,
+            -17
+          ]
+        },
+        "E": {
+          "id": "E",
+          "source_port_id": "E",
+          "face": "TOP",
+          "surface": "AIR",
+          "permission": "INPUT",
+          "local2": [
+            11,
+            0
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            27,
+            -24
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M08",
+      "module_id": "T:workshop-macro-gate-brake-return-0",
+      "name": "四口错层中庭",
+      "origin": [
+        9,
+        -6
+      ],
+      "size_blocks": [
+        6,
+        4
+      ],
+      "mirror_x": false,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            18,
+            -9
+          ]
+        },
+        "C": {
+          "id": "C",
+          "source_port_id": "C",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            12,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            30,
+            -9
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            12,
+            7
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            30,
+            -5
+          ]
+        },
+        "D": {
+          "id": "D",
+          "source_port_id": "D",
+          "face": "TOP",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            5,
+            0
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            23,
+            -12
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M09",
+      "module_id": "T:game-route-junction",
+      "name": "路线枢纽",
+      "origin": [
+        8,
+        1
+      ],
+      "size_blocks": [
+        6,
+        2
+      ],
+      "mirror_x": true,
+      "ports": {
+        "entry_left": {
+          "id": "entry_left",
+          "source_port_id": "entry_left",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            12,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            28,
+            5
+          ]
+        },
+        "entry_right": {
+          "id": "entry_right",
+          "source_port_id": "entry_right",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            16,
+            5
+          ]
+        },
+        "exit_upper_left": {
+          "id": "exit_upper_left",
+          "source_port_id": "exit_upper_left",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            12,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            28,
+            3
+          ]
+        },
+        "exit_upper_right": {
+          "id": "exit_upper_right",
+          "source_port_id": "exit_upper_right",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            16,
+            3
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M10",
+      "module_id": "T:game-route-junction",
+      "name": "路线枢纽",
+      "origin": [
+        14,
+        1
+      ],
+      "size_blocks": [
+        6,
+        2
+      ],
+      "mirror_x": true,
+      "ports": {
+        "entry_left": {
+          "id": "entry_left",
+          "source_port_id": "entry_left",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            12,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            40,
+            5
+          ]
+        },
+        "entry_right": {
+          "id": "entry_right",
+          "source_port_id": "entry_right",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            28,
+            5
+          ]
+        },
+        "exit_upper_left": {
+          "id": "exit_upper_left",
+          "source_port_id": "exit_upper_left",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            12,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            40,
+            3
+          ]
+        },
+        "exit_upper_right": {
+          "id": "exit_upper_right",
+          "source_port_id": "exit_upper_right",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            28,
+            3
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M11",
+      "module_id": "T:idea-interface-s12-001",
+      "name": "S12 · 错时交叉换乘：一趟车，四个去向",
+      "origin": [
+        15,
+        -5
+      ],
+      "size_blocks": [
+        5,
+        4
+      ],
+      "mirror_x": true,
+      "ports": {
+        "L": {
+          "id": "L",
+          "source_port_id": "L",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            10,
+            5
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            40,
+            -5
+          ]
+        },
+        "R": {
+          "id": "R",
+          "source_port_id": "R",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            30,
+            -9
+          ]
+        },
+        "T": {
+          "id": "T",
+          "source_port_id": "T",
+          "face": "TOP",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            7,
+            0
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            37,
+            -10
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "BOTTOM",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            3,
+            8
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            33,
+            -2
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M12",
+      "module_id": "T:workshop-macro-gate-brake-return-0",
+      "name": "四口错层中庭",
+      "origin": [
+        -8,
+        -15
+      ],
+      "size_blocks": [
+        6,
+        4
+      ],
+      "mirror_x": false,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -16,
+            -27
+          ]
+        },
+        "C": {
+          "id": "C",
+          "source_port_id": "C",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            12,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -4,
+            -27
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            12,
+            7
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -4,
+            -23
+          ]
+        },
+        "D": {
+          "id": "D",
+          "source_port_id": "D",
+          "face": "TOP",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            5,
+            0
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -11,
+            -30
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M13",
+      "module_id": "T:b31-n06-fourport-two-low-ingress",
+      "name": "中庭双翼换桥",
+      "origin": [
+        20,
+        -3
+      ],
+      "size_blocks": [
+        10,
+        6
+      ],
+      "mirror_x": false,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            11
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            40,
+            5
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            40,
+            -5
+          ]
+        },
+        "C": {
+          "id": "C",
+          "source_port_id": "C",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            20,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            60,
+            -5
+          ]
+        },
+        "D": {
+          "id": "D",
+          "source_port_id": "D",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            20,
+            11
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            60,
+            5
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M14",
+      "module_id": "T:batch30-block-n04-0-2",
+      "name": "穿过的门，回来接住你",
+      "origin": [
+        18,
+        -12
+      ],
+      "size_blocks": [
+        10,
+        5
+      ],
+      "mirror_x": true,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            20,
+            7
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            56,
+            -17
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            20,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            56,
+            -23
+          ]
+        },
+        "C": {
+          "id": "C",
+          "source_port_id": "C",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            36,
+            -23
+          ]
+        },
+        "D": {
+          "id": "D",
+          "source_port_id": "D",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            7
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            36,
+            -17
+          ]
+        },
+        "E": {
+          "id": "E",
+          "source_port_id": "E",
+          "face": "TOP",
+          "surface": "AIR",
+          "permission": "INPUT",
+          "local2": [
+            9,
+            0
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            45,
+            -24
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M15",
+      "module_id": "T:game-plains-fork-paths",
+      "name": "分岔路径",
+      "origin": [
+        -12,
+        -18
+      ],
+      "size_blocks": [
+        4,
+        5
+      ],
+      "mirror_x": true,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            8,
+            9
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -16,
+            -27
+          ]
+        },
+        "fork_right": {
+          "id": "fork_right",
+          "source_port_id": "fork_right",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            9
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -24,
+            -27
+          ]
+        },
+        "fork_up": {
+          "id": "fork_up",
+          "source_port_id": "fork_up",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -24,
+            -35
+          ]
+        },
+        "C": {
+          "id": "C",
+          "source_port_id": "C",
+          "face": "TOP",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            3,
+            0
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -21,
+            -36
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M16",
+      "module_id": "T:junction-j06-0",
+      "name": "双岸会合，空中命中续枪上返",
+      "origin": [
+        -2,
+        -18
+      ],
+      "size_blocks": [
+        7,
+        5
+      ],
+      "mirror_x": false,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -4,
+            -35
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            9
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -4,
+            -27
+          ]
+        },
+        "C": {
+          "id": "C",
+          "source_port_id": "C",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            14,
+            5
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            10,
+            -31
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M17",
+      "module_id": "T:idea-spec02-s12-001",
+      "name": "S12 · 横台稳住，再择高台去向",
+      "origin": [
+        -7,
+        -20
+      ],
+      "size_blocks": [
+        5,
+        4
+      ],
+      "mirror_x": true,
+      "ports": {
+        "L": {
+          "id": "L",
+          "source_port_id": "L",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            10,
+            5
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -4,
+            -35
+          ]
+        },
+        "R": {
+          "id": "R",
+          "source_port_id": "R",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -14,
+            -39
+          ]
+        },
+        "T": {
+          "id": "T",
+          "source_port_id": "T",
+          "face": "TOP",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            7,
+            0
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -7,
+            -40
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "BOTTOM",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            3,
+            8
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -11,
+            -32
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M18",
+      "module_id": "T:idea-spec02-s12-001",
+      "name": "S12 · 横台稳住，再择高台去向",
+      "origin": [
+        -12,
+        -22
+      ],
+      "size_blocks": [
+        5,
+        4
+      ],
+      "mirror_x": true,
+      "ports": {
+        "L": {
+          "id": "L",
+          "source_port_id": "L",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            10,
+            5
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -14,
+            -39
+          ]
+        },
+        "R": {
+          "id": "R",
+          "source_port_id": "R",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -24,
+            -43
+          ]
+        },
+        "T": {
+          "id": "T",
+          "source_port_id": "T",
+          "face": "TOP",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            7,
+            0
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -17,
+            -44
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "BOTTOM",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            3,
+            8
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -21,
+            -36
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M19",
+      "module_id": "T:b31-n06-fourport-two-low-ingress",
+      "name": "中庭双翼换桥",
+      "origin": [
+        30,
+        -3
+      ],
+      "size_blocks": [
+        10,
+        6
+      ],
+      "mirror_x": true,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            20,
+            11
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            80,
+            5
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            20,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            80,
+            -5
+          ]
+        },
+        "C": {
+          "id": "C",
+          "source_port_id": "C",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            60,
+            -5
+          ]
+        },
+        "D": {
+          "id": "D",
+          "source_port_id": "D",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            11
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            60,
+            5
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M20",
+      "module_id": "T:b31-n14-static-three-sideports",
+      "name": "越铃回身选路",
+      "origin": [
+        28,
+        -13
+      ],
+      "size_blocks": [
+        8,
+        5
+      ],
+      "mirror_x": true,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            16,
+            9
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            72,
+            -17
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            16,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            72,
+            -23
+          ]
+        },
+        "C": {
+          "id": "C",
+          "source_port_id": "C",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            56,
+            -23
+          ]
+        },
+        "D": {
+          "id": "D",
+          "source_port_id": "D",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            9
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            56,
+            -17
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M21",
+      "module_id": "T:game-plains-fork-paths",
+      "name": "分岔路径",
+      "origin": [
+        -16,
+        -18
+      ],
+      "size_blocks": [
+        4,
+        5
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            9
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -32,
+            -27
+          ]
+        },
+        "fork_right": {
+          "id": "fork_right",
+          "source_port_id": "fork_right",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            8,
+            9
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -24,
+            -27
+          ]
+        },
+        "fork_up": {
+          "id": "fork_up",
+          "source_port_id": "fork_up",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            8,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -24,
+            -35
+          ]
+        },
+        "C": {
+          "id": "C",
+          "source_port_id": "C",
+          "face": "TOP",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            5,
+            0
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -27,
+            -36
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M22",
+      "module_id": "T:idea-interface-s12-001",
+      "name": "S12 · 错时交叉换乘：一趟车，四个去向",
+      "origin": [
+        -10,
+        -26
+      ],
+      "size_blocks": [
+        5,
+        4
+      ],
+      "mirror_x": true,
+      "ports": {
+        "L": {
+          "id": "L",
+          "source_port_id": "L",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            10,
+            5
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -10,
+            -47
+          ]
+        },
+        "R": {
+          "id": "R",
+          "source_port_id": "R",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -20,
+            -51
+          ]
+        },
+        "T": {
+          "id": "T",
+          "source_port_id": "T",
+          "face": "TOP",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            7,
+            0
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -13,
+            -52
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "BOTTOM",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            3,
+            8
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -17,
+            -44
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M23",
+      "module_id": "T:idea-spec02-s11-001",
+      "name": "S11 · 偏心环岛，选离台高度",
+      "origin": [
+        -17,
+        -22
+      ],
+      "size_blocks": [
+        5,
+        4
+      ],
+      "mirror_x": false,
+      "ports": {
+        "L": {
+          "id": "L",
+          "source_port_id": "L",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            5
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -34,
+            -39
+          ]
+        },
+        "R": {
+          "id": "R",
+          "source_port_id": "R",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            10,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -24,
+            -43
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "BOTTOM",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            7,
+            8
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -27,
+            -36
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M24",
+      "module_id": "T:b31-n06-fourport-two-low-ingress",
+      "name": "中庭双翼换桥",
+      "origin": [
+        -22,
+        -9
+      ],
+      "size_blocks": [
+        10,
+        6
+      ],
+      "mirror_x": false,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            11
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -44,
+            -7
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -44,
+            -17
+          ]
+        },
+        "C": {
+          "id": "C",
+          "source_port_id": "C",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            20,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -24,
+            -17
+          ]
+        },
+        "D": {
+          "id": "D",
+          "source_port_id": "D",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            20,
+            11
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -24,
+            -7
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M25",
+      "module_id": "T:idea-spec02-s12-001",
+      "name": "S12 · 横台稳住，再择高台去向",
+      "origin": [
+        -5,
+        -24
+      ],
+      "size_blocks": [
+        5,
+        4
+      ],
+      "mirror_x": true,
+      "ports": {
+        "L": {
+          "id": "L",
+          "source_port_id": "L",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            10,
+            5
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            0,
+            -43
+          ]
+        },
+        "R": {
+          "id": "R",
+          "source_port_id": "R",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -10,
+            -47
+          ]
+        },
+        "T": {
+          "id": "T",
+          "source_port_id": "T",
+          "face": "TOP",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            7,
+            0
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -3,
+            -48
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "BOTTOM",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            3,
+            8
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -7,
+            -40
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M26",
+      "module_id": "T:idea-interface-s12-001",
+      "name": "S12 · 错时交叉换乘：一趟车，四个去向",
+      "origin": [
+        -15,
+        -28
+      ],
+      "size_blocks": [
+        5,
+        4
+      ],
+      "mirror_x": true,
+      "ports": {
+        "L": {
+          "id": "L",
+          "source_port_id": "L",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            10,
+            5
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -20,
+            -51
+          ]
+        },
+        "R": {
+          "id": "R",
+          "source_port_id": "R",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -30,
+            -55
+          ]
+        },
+        "T": {
+          "id": "T",
+          "source_port_id": "T",
+          "face": "TOP",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            7,
+            0
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -23,
+            -56
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "BOTTOM",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            3,
+            8
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -27,
+            -48
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M27",
+      "module_id": "T:idea-interface-s11-001",
+      "name": "S11 · 三口拨岔：开高路，还是留住下路",
+      "origin": [
+        0,
+        -24
+      ],
+      "size_blocks": [
+        5,
+        4
+      ],
+      "mirror_x": false,
+      "ports": {
+        "L": {
+          "id": "L",
+          "source_port_id": "L",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            5
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            0,
+            -43
+          ]
+        },
+        "R": {
+          "id": "R",
+          "source_port_id": "R",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            10,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            10,
+            -47
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "BOTTOM",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            7,
+            8
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            7,
+            -40
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M28",
+      "module_id": "T:b31-n17-threeport-cross-shaft-v2",
+      "name": "十字井：击铃收齿，三口互通",
+      "origin": [
+        5,
+        -28
+      ],
+      "size_blocks": [
+        8,
+        5
+      ],
+      "mirror_x": false,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            9
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            10,
+            -47
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            16,
+            5
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            26,
+            -51
+          ]
+        },
+        "C": {
+          "id": "C",
+          "source_port_id": "C",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            10,
+            -55
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M29",
+      "module_id": "T:game-forest-hollow-trunk-geometry-aircatch",
+      "name": "树腹空中接钩",
+      "origin": [
+        5,
+        -19
+      ],
+      "size_blocks": [
+        5,
+        7
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            7
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            10,
+            -31
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            10,
+            7
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            20,
+            -31
+          ]
+        },
+        "C": {
+          "id": "C",
+          "source_port_id": "C",
+          "face": "RIGHT",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            10,
+            13
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            20,
+            -25
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M30",
+      "module_id": "T:game-forest-hollow-trunk-geometry-aircatch",
+      "name": "树腹空中接钩",
+      "origin": [
+        10,
+        -19
+      ],
+      "size_blocks": [
+        5,
+        7
+      ],
+      "mirror_x": true,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            10,
+            7
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            30,
+            -31
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            7
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            20,
+            -31
+          ]
+        },
+        "C": {
+          "id": "C",
+          "source_port_id": "C",
+          "face": "LEFT",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            13
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            20,
+            -25
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M31",
+      "module_id": "T:game-forest-exploration-modules-backlook-fruit-cache",
+      "name": "回望果实宝藏",
+      "origin": [
+        36,
+        -13
+      ],
+      "size_blocks": [
+        4,
+        2
+      ],
+      "mirror_x": true,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            8,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            80,
+            -23
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            72,
+            -23
+          ]
+        },
+        "C": {
+          "id": "C",
+          "source_port_id": "C",
+          "face": "TOP",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            5,
+            0
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            77,
+            -26
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M32",
+      "module_id": "T:idea-plains-hq01-001",
+      "name": "把两台停成一段楼梯",
+      "origin": [
+        15,
+        -16
+      ],
+      "size_blocks": [
+        5,
+        4
+      ],
+      "mirror_x": true,
+      "ports": {
+        "L": {
+          "id": "L",
+          "source_port_id": "L",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            10,
+            5
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            40,
+            -27
+          ]
+        },
+        "R": {
+          "id": "R",
+          "source_port_id": "R",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            30,
+            -31
+          ]
+        },
+        "T": {
+          "id": "T",
+          "source_port_id": "T",
+          "face": "TOP",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            7,
+            0
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            37,
+            -32
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M33",
+      "module_id": "T:b31-n17-threeport-cross-shaft-v2",
+      "name": "十字井：击铃收齿，三口互通",
+      "origin": [
+        40,
+        -7
+      ],
+      "size_blocks": [
+        8,
+        5
+      ],
+      "mirror_x": false,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            9
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            80,
+            -5
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            16,
+            5
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            96,
+            -9
+          ]
+        },
+        "C": {
+          "id": "C",
+          "source_port_id": "C",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            80,
+            -13
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M34",
+      "module_id": "T:generated-a8f918f1ee9e8e682a919cdbb67ba2015fcfe075d54e5f25147fbe04dd156d2a",
+      "name": "射铃刹车，折入低檐宝箱",
+      "origin": [
+        36,
+        -9
+      ],
+      "size_blocks": [
+        4,
+        4
+      ],
+      "mirror_x": false,
+      "ports": {
+        "entry": {
+          "id": "entry",
+          "source_port_id": "entry",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            72,
+            -17
+          ]
+        },
+        "exit": {
+          "id": "exit",
+          "source_port_id": "exit",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            8,
+            5
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            80,
+            -13
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M35",
+      "module_id": "T:idea-interface-s09-001",
+      "name": "S09 · 下沉接岸：下去容易，回去要会刹车",
+      "origin": [
+        13,
+        -26
+      ],
+      "size_blocks": [
+        3,
+        4
+      ],
+      "mirror_x": false,
+      "ports": {
+        "L": {
+          "id": "L",
+          "source_port_id": "L",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            26,
+            -51
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "BOTTOM",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            5,
+            8
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            31,
+            -44
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M36",
+      "module_id": "T:idea-spec02-s06-001",
+      "name": "S06 · 离台绕射，让上升台追上你",
+      "origin": [
+        15,
+        -22
+      ],
+      "size_blocks": [
+        4,
+        6
+      ],
+      "mirror_x": false,
+      "ports": {
+        "T": {
+          "id": "T",
+          "source_port_id": "T",
+          "face": "TOP",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            1,
+            0
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            31,
+            -44
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "BOTTOM",
+          "surface": "ONE_WAY_PLATFORM",
+          "permission": "INOUT",
+          "local2": [
+            7,
+            12
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            37,
+            -32
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M37",
+      "module_id": "T:b31-n06-fourport-two-low-ingress",
+      "name": "中庭双翼换桥",
+      "origin": [
+        48,
+        -5
+      ],
+      "size_blocks": [
+        10,
+        6
+      ],
+      "mirror_x": false,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            11
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            96,
+            1
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            96,
+            -9
+          ]
+        },
+        "C": {
+          "id": "C",
+          "source_port_id": "C",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            20,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            116,
+            -9
+          ]
+        },
+        "D": {
+          "id": "D",
+          "source_port_id": "D",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            20,
+            11
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            116,
+            1
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M38",
+      "module_id": "T:b31-n17-threeport-cross-shaft-v2",
+      "name": "十字井：击铃收齿，三口互通",
+      "origin": [
+        40,
+        -2
+      ],
+      "size_blocks": [
+        8,
+        5
+      ],
+      "mirror_x": false,
+      "ports": {
+        "A": {
+          "id": "A",
+          "source_port_id": "A",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            9
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            80,
+            5
+          ]
+        },
+        "B": {
+          "id": "B",
+          "source_port_id": "B",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            16,
+            5
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            96,
+            1
+          ]
+        },
+        "C": {
+          "id": "C",
+          "source_port_id": "C",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            1
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            80,
+            -3
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M39",
+      "module_id": "BOSS",
+      "name": "平原 Boss 战场",
+      "origin": [
+        58,
+        -8
+      ],
+      "size_blocks": [
+        9,
+        5
+      ],
+      "mirror_x": false,
+      "ports": {
+        "L": {
+          "id": "L",
+          "source_port_id": "entry",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            7
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            116,
+            -9
+          ]
+        }
+      },
+      "reward": false
+    },
+    {
+      "id": "M40",
+      "module_id": "Q:idea-plains-hq04-001",
+      "name": "拿到宝箱后，熟悉的齿轮换了个用法",
+      "origin": [
+        -20,
+        -30
+      ],
+      "size_blocks": [
+        5,
+        4
+      ],
+      "mirror_x": true,
+      "ports": {
+        "L": {
+          "id": "L",
+          "source_port_id": "L",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            10,
+            5
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -30,
+            -55
+          ]
+        }
+      },
+      "reward": true
+    },
+    {
+      "id": "M41",
+      "module_id": "Q:idea-spec02-s13-001",
+      "name": "S13 · 贴檐取宝，回身刹在窄岸",
+      "origin": [
+        -19,
+        -15
+      ],
+      "size_blocks": [
+        3,
+        2
+      ],
+      "mirror_x": true,
+      "ports": {
+        "L": {
+          "id": "L",
+          "source_port_id": "L",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            6,
+            3
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -32,
+            -27
+          ]
+        }
+      },
+      "reward": true
+    },
+    {
+      "id": "M42",
+      "module_id": "Q:idea-plains-hq04-001",
+      "name": "拿到宝箱后，熟悉的齿轮换了个用法",
+      "origin": [
+        -27,
+        -11
+      ],
+      "size_blocks": [
+        5,
+        4
+      ],
+      "mirror_x": true,
+      "ports": {
+        "L": {
+          "id": "L",
+          "source_port_id": "L",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            10,
+            5
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            -44,
+            -17
+          ]
+        }
+      },
+      "reward": true
+    },
+    {
+      "id": "M43",
+      "module_id": "Q:idea-plains-hq04-001",
+      "name": "拿到宝箱后，熟悉的齿轮换了个用法",
+      "origin": [
+        20,
+        -16
+      ],
+      "size_blocks": [
+        5,
+        4
+      ],
+      "mirror_x": false,
+      "ports": {
+        "L": {
+          "id": "L",
+          "source_port_id": "L",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            5
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            40,
+            -27
+          ]
+        }
+      },
+      "reward": true
+    },
+    {
+      "id": "M44",
+      "module_id": "Q:idea-plains-hq04-001",
+      "name": "拿到宝箱后，熟悉的齿轮换了个用法",
+      "origin": [
+        0,
+        -30
+      ],
+      "size_blocks": [
+        5,
+        4
+      ],
+      "mirror_x": true,
+      "ports": {
+        "L": {
+          "id": "L",
+          "source_port_id": "L",
+          "face": "RIGHT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            10,
+            5
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            10,
+            -55
+          ]
+        }
+      },
+      "reward": true
+    },
+    {
+      "id": "M45",
+      "module_id": "Q:idea-plains-hq04-001",
+      "name": "拿到宝箱后，熟悉的齿轮换了个用法",
+      "origin": [
+        58,
+        -2
+      ],
+      "size_blocks": [
+        5,
+        4
+      ],
+      "mirror_x": false,
+      "ports": {
+        "L": {
+          "id": "L",
+          "source_port_id": "L",
+          "face": "LEFT",
+          "surface": "ROCK",
+          "permission": "INOUT",
+          "local2": [
+            0,
+            5
+          ],
+          "closure": "gear-seal/1",
+          "world2": [
+            116,
+            1
+          ]
+        }
+      },
+      "reward": true
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "cohorts": {
+    "pilot": {
+      "baseline": {
+        "trials": 3,
+        "passed": 0,
+        "static_pass": 3,
+        "targets_pass": 3,
+        "rejected": 3,
+        "errors": 0,
+        "timeouts": 0,
+        "wilson_95": [
+          0.0,
+          0.5615060804490177
+        ],
+        "target_map_aspect_p50": 5.9523809523809526,
+        "target_map_aspect_p95": 7.0588235294117645,
+        "target_map_aspect_max": 7.0588235294117645,
+        "generation_seconds_p50": 2.419337,
+        "generation_seconds_p95": 6.176267,
+        "expansions_p95": 157174,
+        "expansions_max": 157174,
+        "failures": [
+          {
+            "seed": 920001,
+            "status": "REJECTED",
+            "error": null,
+            "reasons": [
+              "shape_envelope_exceeded"
+            ]
+          },
+          {
+            "seed": 920002,
+            "status": "REJECTED",
+            "error": null,
+            "reasons": [
+              "shape_envelope_exceeded"
+            ]
+          },
+          {
+            "seed": 920003,
+            "status": "REJECTED",
+            "error": null,
+            "reasons": [
+              "shape_envelope_exceeded"
+            ]
+          }
+        ]
+      },
+      "shape": {
+        "trials": 3,
+        "passed": 2,
+        "static_pass": 3,
+        "targets_pass": 2,
+        "rejected": 1,
+        "errors": 0,
+        "timeouts": 0,
+        "wilson_95": [
+          0.2076549551264879,
+          0.9385096847238394
+        ],
+        "target_map_aspect_p50": 2.2222222222222223,
+        "target_map_aspect_p95": 2.25,
+        "target_map_aspect_max": 2.25,
+        "generation_seconds_p50": 3.392864,
+        "generation_seconds_p95": 6.048002,
+        "expansions_p95": 128830,
+        "expansions_max": 128830,
+        "failures": [
+          {
+            "seed": 920003,
+            "status": "REJECTED",
+            "error": null,
+            "reasons": [
+              "three_main_path_target_not_met"
+            ]
+          }
+        ]
+      },
+      "spatial": {
+        "trials": 3,
+        "passed": 3,
+        "static_pass": 3,
+        "targets_pass": 3,
+        "rejected": 0,
+        "errors": 0,
+        "timeouts": 0,
+        "wilson_95": [
+          0.43849391955098227,
+          1.0
+        ],
+        "target_map_aspect_p50": 2.2903225806451615,
+        "target_map_aspect_p95": 2.6333333333333333,
+        "target_map_aspect_max": 2.6333333333333333,
+        "generation_seconds_p50": 2.598506,
+        "generation_seconds_p95": 4.535606,
+        "expansions_p95": 102815,
+        "expansions_max": 102815,
+        "failures": []
+      },
+      "stable": {
+        "trials": 3,
+        "passed": 3,
+        "static_pass": 3,
+        "targets_pass": 3,
+        "rejected": 0,
+        "errors": 0,
+        "timeouts": 0,
+        "wilson_95": [
+          0.43849391955098227,
+          1.0
+        ],
+        "target_map_aspect_p50": 2.2903225806451615,
+        "target_map_aspect_p95": 2.6333333333333333,
+        "target_map_aspect_max": 2.6333333333333333,
+        "generation_seconds_p50": 2.859089,
+        "generation_seconds_p95": 4.955851,
+        "expansions_p95": 104103,
+        "expansions_max": 104103,
+        "failures": []
+      }
+    }
+  },
+  "recommended_profile": "stable",
+  "statistical_gate_passed": false,
+  "release_gate": {
+    "min_calibration_passes": 19,
+    "min_validation_passes": 19,
+    "sample_count_per_cohort": 20,
+    "max_errors": 0,
+    "max_timeouts": 0,
+    "required_replays": 6
+  },
+  "replay_gate": "see validation test receipt; statistical gate alone is not release approval",
+  "whole_map_physics": "NOT_RUN",
+  "module_content_changed": false
+}
