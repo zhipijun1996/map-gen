@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:mapgen:generation-result:v1",
+  "title": "Existing GenerationResult.to_dict protocol",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "status", "request_fingerprint", "map", "content_store", "metrics", "diagnostics"],
+  "properties": {
+    "schema": {"const": "mapgen/generation-result/v1"},
+    "status": {"enum": ["PASS", "INVALID_INPUT", "SEARCH_EXHAUSTED", "BUDGET_EXHAUSTED", "CANCELLED", "REJECTED", "ERROR"]},
+    "request_fingerprint": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+    "map": {"type": ["object", "null"]},
+    "content_store": {"type": "object", "additionalProperties": {"type": "object"}},
+    "metrics": {"type": "object"},
+    "diagnostics": {"type": "object"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"status": {"const": "PASS"}}},
+      "then": {"properties": {"request_fingerprint": {"type": "string"}, "map": {"$ref": "urn:mapgen:runtime-map:v2"}, "content_store": {"minProperties": 1}}},
+      "else": {"properties": {"map": {"type": "null"}, "content_store": {"maxProperties": 0}}}
+    }
+  ]
+}
