@@ -1,0 +1,312 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:mapgen:config:v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "algorithm",
+    "random",
+    "goals",
+    "shape",
+    "scoring",
+    "search",
+    "seals"
+  ],
+  "properties": {
+    "schema": {
+      "const": "mapgen/generator-config/v1"
+    },
+    "algorithm": {
+      "const": "stable-v2"
+    },
+    "random": {
+      "const": {
+        "algorithm": "python-mt19937-v1",
+        "selection": "uniform_top_k"
+      }
+    },
+    "goals": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "growth_target",
+        "reward_target",
+        "main_paths_required"
+      ],
+      "properties": {
+        "growth_target": {
+          "type": "integer",
+          "minimum": 2
+        },
+        "reward_target": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "main_paths_required": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "shape": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "target_ratio",
+        "soft_tolerance",
+        "max_aspect"
+      ],
+      "properties": {
+        "target_ratio": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "soft_tolerance": {
+          "type": "number",
+          "minimum": 1
+        },
+        "max_aspect": {
+          "type": "number",
+          "minimum": 1
+        }
+      }
+    },
+    "scoring": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "auto_connection",
+        "repeat_module",
+        "growth_noise",
+        "perimeter",
+        "aspect",
+        "left_bias",
+        "height_bias",
+        "usable_exit",
+        "bidirectional_exit",
+        "terminal_slot",
+        "dead_end",
+        "vertical_exit",
+        "distinct_direction",
+        "reward_reserve",
+        "reservation_repeat",
+        "reservation_area",
+        "reward_noise",
+        "reward_near_radius",
+        "reward_near_penalty",
+        "closure_noise",
+        "boss_distance"
+      ],
+      "properties": {
+        "auto_connection": {
+          "type": "number",
+          "minimum": 0
+        },
+        "repeat_module": {
+          "type": "number",
+          "minimum": 0
+        },
+        "growth_noise": {
+          "type": "number",
+          "minimum": 0
+        },
+        "perimeter": {
+          "type": "number",
+          "minimum": 0
+        },
+        "aspect": {
+          "type": "number",
+          "minimum": 0
+        },
+        "left_bias": {
+          "type": "number",
+          "minimum": 0
+        },
+        "height_bias": {
+          "type": "number",
+          "minimum": 0
+        },
+        "usable_exit": {
+          "type": "number",
+          "minimum": 0
+        },
+        "bidirectional_exit": {
+          "type": "number",
+          "minimum": 0
+        },
+        "terminal_slot": {
+          "type": "number",
+          "minimum": 0
+        },
+        "dead_end": {
+          "type": "number",
+          "maximum": 0
+        },
+        "vertical_exit": {
+          "type": "number",
+          "minimum": 0
+        },
+        "distinct_direction": {
+          "type": "number",
+          "minimum": 0
+        },
+        "reward_reserve": {
+          "type": "number",
+          "minimum": 0
+        },
+        "reservation_repeat": {
+          "type": "number",
+          "minimum": 0
+        },
+        "reservation_area": {
+          "type": "number",
+          "minimum": 0
+        },
+        "reward_noise": {
+          "type": "number",
+          "minimum": 0
+        },
+        "reward_near_radius": {
+          "type": "number",
+          "minimum": 0
+        },
+        "reward_near_penalty": {
+          "type": "number",
+          "minimum": 0
+        },
+        "closure_noise": {
+          "type": "number",
+          "minimum": 0
+        },
+        "boss_distance": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "search": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "growth_frontier_limit",
+        "growth_choice_count",
+        "close_attempts",
+        "close_depth",
+        "closure_beam_width",
+        "candidate_expansion_budget",
+        "per_seed_timeout_seconds",
+        "max_growth_backtracks",
+        "max_rewind_depth",
+        "max_terminal_states",
+        "max_layout_repairs",
+        "growth_shortlist",
+        "closure_source_limit",
+        "closure_target_distance2",
+        "closure_distance_limit2",
+        "boss_choice_count",
+        "reward_choice_count",
+        "budget_check_interval",
+        "reserve_from_growth_count"
+      ],
+      "properties": {
+        "growth_frontier_limit": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "growth_choice_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "close_attempts": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "close_depth": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "closure_beam_width": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "candidate_expansion_budget": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "per_seed_timeout_seconds": {
+          "anyOf": [
+            {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "max_growth_backtracks": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "max_rewind_depth": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_terminal_states": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_layout_repairs": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "growth_shortlist": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "closure_source_limit": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "closure_target_distance2": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "closure_distance_limit2": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "boss_choice_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "reward_choice_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "budget_check_interval": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "reserve_from_growth_count": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "seals": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "thickness_pixels"
+      ],
+      "properties": {
+        "thickness_pixels": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      }
+    }
+  }
+}

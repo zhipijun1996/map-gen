@@ -1,0 +1,134 @@
+{
+  "status": "PASS",
+  "request": {
+    "air_loop": {
+      "enabled": true,
+      "entry_module_ids": [],
+      "return_module_ids": []
+    },
+    "module_filter": {
+      "exclude_ids": [],
+      "include_ids": [],
+      "regions": []
+    },
+    "player": {
+      "abilities": [
+        "jump",
+        "double_jump",
+        "shot_recoil",
+        "grapple"
+      ],
+      "clearance_half_extents_pixels": [
+        12,
+        18
+      ]
+    },
+    "schema": "mapgen/generation-request/v1",
+    "seed": 930001,
+    "start_origin_blocks": [
+      0,
+      0
+    ],
+    "terminals": {
+      "boss": {
+        "module_id": "game-plains-boss-arena",
+        "port_id": "entry"
+      },
+      "start": {
+        "module_id": "game-plains-windchime-lesson",
+        "port_id": "exit"
+      }
+    }
+  },
+  "config": {
+    "schema": "mapgen/generator-config/v1",
+    "algorithm": "stable-v2",
+    "random": {
+      "algorithm": "python-mt19937-v1",
+      "selection": "uniform_top_k"
+    },
+    "goals": {
+      "growth_target": 32,
+      "reward_target": 2,
+      "main_paths_required": 4
+    },
+    "shape": {
+      "target_ratio": 1.5,
+      "soft_tolerance": 1.35,
+      "max_aspect": 3.0
+    },
+    "scoring": {
+      "auto_connection": 24,
+      "repeat_module": 5,
+      "growth_noise": 3,
+      "perimeter": 0.35,
+      "aspect": 60,
+      "left_bias": 0,
+      "height_bias": 0,
+      "usable_exit": 8,
+      "bidirectional_exit": 3,
+      "terminal_slot": 2,
+      "dead_end": -24,
+      "vertical_exit": 8,
+      "distinct_direction": 4,
+      "reward_reserve": 5,
+      "reservation_repeat": 5,
+      "reservation_area": 0.1,
+      "reward_noise": 4,
+      "reward_near_radius": 8,
+      "reward_near_penalty": 5,
+      "closure_noise": 2,
+      "boss_distance": 1
+    },
+    "search": {
+      "growth_frontier_limit": 22,
+      "growth_choice_count": 5,
+      "close_attempts": 3,
+      "close_depth": 3,
+      "closure_beam_width": 18,
+      "candidate_expansion_budget": 500000,
+      "per_seed_timeout_seconds": 90,
+      "max_growth_backtracks": 128,
+      "max_rewind_depth": 3,
+      "max_terminal_states": 128,
+      "max_layout_repairs": 8,
+      "growth_shortlist": 18,
+      "closure_source_limit": 24,
+      "closure_target_distance2": 40,
+      "closure_distance_limit2": 32,
+      "boss_choice_count": 5,
+      "reward_choice_count": 5,
+      "budget_check_interval": 256,
+      "reserve_from_growth_count": 24
+    },
+    "seals": {
+      "thickness_pixels": 32
+    }
+  },
+  "library_sha256": "5ad5a7871941b2c1ffa759b18f7b1e80f2fe7e571b72f95d1e0ef26031f08723",
+  "request_fingerprint": "bf9d4da42c48971ef9fc12b2a8754a7dea26de45f4caff12f1160ada86b549d8",
+  "actual_quality": {
+    "bounds_blocks": [
+      -37,
+      -26,
+      42,
+      15
+    ],
+    "width": 79,
+    "height": 41,
+    "aspect": 1.9268292682926829,
+    "occupancy": 0.3059586292065452,
+    "static_pass": true,
+    "targets_pass": true,
+    "shape_pass": true,
+    "effect_pass": true,
+    "main_paths": 4,
+    "target_rewards": 2
+  },
+  "actual_target_instances": [
+    "M41",
+    "M42"
+  ],
+  "actual_main_paths": 4,
+  "whole_map_physics": "NOT_RUN"
+}

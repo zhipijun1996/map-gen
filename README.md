@@ -1,5 +1,7 @@
 # 《失序之钟》Map Generator
 
+最新生成接口：[独立 Python 生成核心](mapgen/README.md)，通过 `generate(request, library, config)` 显式传入模块库、能力、起终点、目标、评分和搜索预算。[默认参数](profiles/stable-v2.json)与[请求样例](examples/request-930001.json)独立维护；默认 40 个 seed 的布局、实际图及搜索计数与 `stable-v2` 完全一致。新接口可生成任意 seed 的 runtime-map/v2，不依赖实验目录，尚未移植到 Godot。
+
 主游戏首版交付：[固定地图交付包 0.1.0](delivery/README.md)，包含 seed `930001`、真实模块包、完整物化内容、契约、参考图、独立校验器和[主仓库 Codex 接入 prompt](delivery/templates/MAIN_GAME_PROMPT.md)。供主游戏装配与实机验证，尚未执行 Godot 接入。
 
 最新迭代：[地图效果稳定性实验 v2](experiments/optimization-v2/README.md)。不改 1.1.0 模块库，固定形态评分、真实纵向扩展及奖励空间预留。历史 20 与未见验证 20 个 seed 均完整通过：三主路、六目标奖励、实际有向图与封口检查、长短边比≤3；40 个 seed 全部结构重放一致。[160 个案例的同 seed 对照页](experiments/optimization-v2/output/comparison.html)。这是有限样本静态验证，不是所有 seed 或 Godot 可玩性的保证。
