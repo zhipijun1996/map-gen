@@ -1,0 +1,242 @@
+{
+  "status": "PASS",
+  "archive": "mapgen-python-reference-0.2.0.zip",
+  "archive_sha256": "25f05861b68a99eee1e9d588eb2cab761e30c85b7cc109b0536292fcc98867f6",
+  "source_commit": "1b20031c60ee0269d03c1e89eb52f0a0f0fc70bf",
+  "runtime_target": "python-reference",
+  "readiness": {
+    "stage": "reference-only",
+    "godot_runtime": "NOT_IMPLEMENTED",
+    "web_runtime": "NOT_IMPLEMENTED",
+    "desktop_game_runtime": "NOT_IMPLEMENTED",
+    "host_integration": "NOT_VALIDATED",
+    "whole_map_physics": "NOT_RUN"
+  },
+  "checks": [
+    {
+      "check": "isolated_file_content_graph_validation",
+      "result": {
+        "status": "PASS",
+        "runtime_target": "python-reference",
+        "readiness": {
+          "stage": "reference-only",
+          "godot_runtime": "NOT_IMPLEMENTED",
+          "web_runtime": "NOT_IMPLEMENTED",
+          "desktop_game_runtime": "NOT_IMPLEMENTED",
+          "host_integration": "NOT_VALIDATED",
+          "whole_map_physics": "NOT_RUN"
+        },
+        "command": "verify",
+        "samples": [
+          {
+            "case": "success",
+            "status": "PASS",
+            "generation_status": "PASS",
+            "usable_map": true,
+            "instances": 46,
+            "content_refs": 46,
+            "whole_map_physics": "NOT_RUN",
+            "deterministic_result_sha256": "b879cef87bae22354d6f11c2db73cf729ff2d3d52c05a6a8a362bbd170219ac0",
+            "map_content_sha256": "682c82d8cd53c3803175641b50de9acf2729d5febf6ba9f59a040f2c143756b4"
+          },
+          {
+            "case": "failure",
+            "status": "PASS",
+            "generation_status": "SEARCH_EXHAUSTED",
+            "usable_map": false
+          }
+        ],
+        "vectors_sha256": "a8d75e956f6864877fbaf1e0d4785d6858fc5d5e7cdbbd8cda0029ab0a302de4"
+      }
+    },
+    {
+      "check": "isolated_frozen_success_and_failure_replay",
+      "result": {
+        "status": "PASS",
+        "runtime_target": "python-reference",
+        "readiness": {
+          "stage": "reference-only",
+          "godot_runtime": "NOT_IMPLEMENTED",
+          "web_runtime": "NOT_IMPLEMENTED",
+          "desktop_game_runtime": "NOT_IMPLEMENTED",
+          "host_integration": "NOT_VALIDATED",
+          "whole_map_physics": "NOT_RUN"
+        },
+        "command": "replay",
+        "samples": [
+          {
+            "case": "success",
+            "status": "PASS",
+            "generation_status": "PASS",
+            "deterministic_result_sha256": "b879cef87bae22354d6f11c2db73cf729ff2d3d52c05a6a8a362bbd170219ac0",
+            "map_content_sha256": "682c82d8cd53c3803175641b50de9acf2729d5febf6ba9f59a040f2c143756b4"
+          },
+          {
+            "case": "failure",
+            "status": "PASS",
+            "generation_status": "SEARCH_EXHAUSTED",
+            "deterministic_result_sha256": "5a8e67914ee8be129598aea73c42acac551d4ff784a9250671828e00de3aa3ca",
+            "map_content_sha256": "9168c5fba4c01aacb821abd387d2f47fc4f7d03f6116e663d60f267cba664b08"
+          }
+        ],
+        "vectors_sha256": "a8d75e956f6864877fbaf1e0d4785d6858fc5d5e7cdbbd8cda0029ab0a302de4"
+      }
+    },
+    {
+      "check": "isolated_generate_success",
+      "result": {
+        "status": "PASS",
+        "request_fingerprint": "ffc781684ea67dc383a842034f95e5aa07118a8d89c65ac6821ab8099df55410"
+      },
+      "exit_code": 0,
+      "hashes": {
+        "deterministic_result_sha256": "b879cef87bae22354d6f11c2db73cf729ff2d3d52c05a6a8a362bbd170219ac0",
+        "map_content_sha256": "682c82d8cd53c3803175641b50de9acf2729d5febf6ba9f59a040f2c143756b4"
+      }
+    },
+    {
+      "check": "isolated_generate_failure",
+      "result": {
+        "status": "SEARCH_EXHAUSTED",
+        "request_fingerprint": "2bb452fb433c0d0085b08852ee33a8c9c763d75512bf4a9849eef842b1c16b91"
+      },
+      "exit_code": 2,
+      "hashes": {
+        "deterministic_result_sha256": "5a8e67914ee8be129598aea73c42acac551d4ff784a9250671828e00de3aa3ca",
+        "map_content_sha256": "9168c5fba4c01aacb821abd387d2f47fc4f7d03f6116e663d60f267cba664b08"
+      }
+    },
+    {
+      "check": "real_call_example",
+      "result": {
+        "status": "PASS",
+        "validation": {
+          "status": "PASS",
+          "generation_status": "PASS",
+          "usable_map": true,
+          "instances": 46,
+          "content_refs": 46,
+          "whole_map_physics": "NOT_RUN",
+          "deterministic_result_sha256": "b879cef87bae22354d6f11c2db73cf729ff2d3d52c05a6a8a362bbd170219ac0",
+          "map_content_sha256": "682c82d8cd53c3803175641b50de9acf2729d5febf6ba9f59a040f2c143756b4"
+        },
+        "fingerprints": {
+          "request_sha256": "e08b4937f9106730a75ba2ec55c4d76538f9c9ed5be15a186831647d41240160",
+          "config_sha256": "32204dcd16656c694031447c295be950947b669cd7dd892bee91f51754eb6d59",
+          "library_sha256": "5ad5a7871941b2c1ffa759b18f7b1e80f2fe7e571b72f95d1e0ef26031f08723",
+          "request_fingerprint": "ffc781684ea67dc383a842034f95e5aa07118a8d89c65ac6821ab8099df55410"
+        }
+      }
+    },
+    {
+      "check": "reject_missing_content",
+      "result": {
+        "status": "REJECTED",
+        "error": {
+          "type": "FileNotFoundError",
+          "message": "[Errno 2] No such file or directory: '/tmp/mapgen-reference-isolated-5gq0z844/damaged-missing_content/samples/success/content/M01.json'"
+        }
+      }
+    },
+    {
+      "check": "reject_false_readiness",
+      "result": {
+        "status": "REJECTED",
+        "error": {
+          "type": "ValueError",
+          "message": "package identity/readiness mismatch"
+        }
+      }
+    },
+    {
+      "check": "reject_failed_map",
+      "result": {
+        "status": "REJECTED",
+        "error": {
+          "type": "InputError",
+          "message": "failed result exposes a usable map/content"
+        }
+      }
+    },
+    {
+      "check": "reject_rng_vector",
+      "result": {
+        "status": "REJECTED",
+        "error": {
+          "type": "ValueError",
+          "message": "RNG/numeric compatibility vectors differ"
+        }
+      }
+    },
+    {
+      "check": "reject_unlocked_module_zip",
+      "result": {
+        "status": "REJECTED",
+        "error": {
+          "type": "InputError",
+          "message": "library: archive SHA-256 mismatch"
+        }
+      }
+    },
+    {
+      "check": "deterministic_zip_rebuild",
+      "result": {
+        "status": "PASS",
+        "archive": "mapgen-python-reference-0.2.0.zip",
+        "archive_sha256": "25f05861b68a99eee1e9d588eb2cab761e30c85b7cc109b0536292fcc98867f6",
+        "bytes": 1869684,
+        "source_commit": "1b20031c60ee0269d03c1e89eb52f0a0f0fc70bf",
+        "runtime_target": "python-reference",
+        "readiness": {
+          "stage": "reference-only",
+          "godot_runtime": "NOT_IMPLEMENTED",
+          "web_runtime": "NOT_IMPLEMENTED",
+          "desktop_game_runtime": "NOT_IMPLEMENTED",
+          "host_integration": "NOT_VALIDATED",
+          "whole_map_physics": "NOT_RUN"
+        },
+        "verification": {
+          "status": "PASS",
+          "runtime_target": "python-reference",
+          "readiness": {
+            "stage": "reference-only",
+            "godot_runtime": "NOT_IMPLEMENTED",
+            "web_runtime": "NOT_IMPLEMENTED",
+            "desktop_game_runtime": "NOT_IMPLEMENTED",
+            "host_integration": "NOT_VALIDATED",
+            "whole_map_physics": "NOT_RUN"
+          },
+          "command": "verify",
+          "samples": [
+            {
+              "case": "success",
+              "status": "PASS",
+              "generation_status": "PASS",
+              "usable_map": true,
+              "instances": 46,
+              "content_refs": 46,
+              "whole_map_physics": "NOT_RUN",
+              "deterministic_result_sha256": "b879cef87bae22354d6f11c2db73cf729ff2d3d52c05a6a8a362bbd170219ac0",
+              "map_content_sha256": "682c82d8cd53c3803175641b50de9acf2729d5febf6ba9f59a040f2c143756b4"
+            },
+            {
+              "case": "failure",
+              "status": "PASS",
+              "generation_status": "SEARCH_EXHAUSTED",
+              "usable_map": false
+            }
+          ],
+          "vectors_sha256": "a8d75e956f6864877fbaf1e0d4785d6858fc5d5e7cdbbd8cda0029ab0a302de4"
+        }
+      }
+    }
+  ],
+  "isolation": {
+    "site_packages": false,
+    "original_repository_on_child_path": false,
+    "unrelated_cwd": true,
+    "implicit_experiment_paths": false
+  },
+  "godot_execution": "NOT_RUN",
+  "web_execution": "NOT_RUN"
+}

@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "archive": "mapgen-python-reference-0.2.0.zip",
+  "archive_sha256": "25f05861b68a99eee1e9d588eb2cab761e30c85b7cc109b0536292fcc98867f6",
+  "bytes": 1869684,
+  "source_commit": "1b20031c60ee0269d03c1e89eb52f0a0f0fc70bf",
+  "runtime_target": "python-reference",
+  "readiness": {
+    "stage": "reference-only",
+    "godot_runtime": "NOT_IMPLEMENTED",
+    "web_runtime": "NOT_IMPLEMENTED",
+    "desktop_game_runtime": "NOT_IMPLEMENTED",
+    "host_integration": "NOT_VALIDATED",
+    "whole_map_physics": "NOT_RUN"
+  },
+  "verification": {
+    "status": "PASS",
+    "runtime_target": "python-reference",
+    "readiness": {
+      "stage": "reference-only",
+      "godot_runtime": "NOT_IMPLEMENTED",
+      "web_runtime": "NOT_IMPLEMENTED",
+      "desktop_game_runtime": "NOT_IMPLEMENTED",
+      "host_integration": "NOT_VALIDATED",
+      "whole_map_physics": "NOT_RUN"
+    },
+    "command": "verify",
+    "samples": [
+      {
+        "case": "success",
+        "status": "PASS",
+        "generation_status": "PASS",
+        "usable_map": true,
+        "instances": 46,
+        "content_refs": 46,
+        "whole_map_physics": "NOT_RUN",
+        "deterministic_result_sha256": "b879cef87bae22354d6f11c2db73cf729ff2d3d52c05a6a8a362bbd170219ac0",
+        "map_content_sha256": "682c82d8cd53c3803175641b50de9acf2729d5febf6ba9f59a040f2c143756b4"
+      },
+      {
+        "case": "failure",
+        "status": "PASS",
+        "generation_status": "SEARCH_EXHAUSTED",
+        "usable_map": false
+      }
+    ],
+    "vectors_sha256": "a8d75e956f6864877fbaf1e0d4785d6858fc5d5e7cdbbd8cda0029ab0a302de4"
+  }
+}
