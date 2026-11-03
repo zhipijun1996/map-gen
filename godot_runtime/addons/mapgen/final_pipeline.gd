@@ -1,4 +1,5 @@
 extends RefCounted
+const REWARD = preload("reward_clearance.gd")
 const GEO = preload("geometry.gd")
 const TRANSFORM = preload("content_transform.gd")
 const NUM = preload("numeric.gd")
@@ -211,6 +212,11 @@ static func audit(items: Array, solver) -> Dictionary:
 				invariants.append("Port vertical boundary")
 			if port.surface == "ROCK" and not face in ["LEFT", "RIGHT"] or port.surface == "AIR" and face == "BOTTOM" and GEO.permitted(port, "in"):
 				invariants.append("Port surface/permission")
+		for site in item.reward_sites:
+			var proof: Dictionary = await REWARD.check(site.get("region",[]),item.sealed_ports,solver.request.player.clearance_half_extents_pixels,solver)
+			if solver.aborted():return {}
+			if proof.verdict == "PROVEN_EXCLUDED_BY_SEALS":
+				blockers.append({"reason":"reward_claim_region_excluded_by_seals","instance":item.id,"module_id":item.source_module_id,"reward_id":site.id,"proof":proof})
 		var closed: Dictionary = {}
 		for seal in item.sealed_ports:
 			closed[seal.port_id] = true
