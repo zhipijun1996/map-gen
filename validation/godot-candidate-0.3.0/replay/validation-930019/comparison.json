@@ -1,0 +1,52 @@
+{
+  "case": "validation-930019",
+  "seed": 930019,
+  "status": "PASS",
+  "generation_status": "PASS",
+  "checks": {
+    "identity_separately_declared": true,
+    "status": true,
+    "layout_graph_routes_seals_anchors_inputs": true,
+    "complete_content_store": true,
+    "search_counts": true,
+    "decisions": true,
+    "independent_semantic_validation": true,
+    "operation_bound": true
+  },
+  "actual_identity": "3734711cd11c2eb76b499794554380692d209c714b1276b97235f6276d8c2fd3",
+  "reference_identity": "0d2dbcbb44d412dc885bd6478409c2954828d6523925def542dfd8082deff2ab",
+  "semantic_map_sha256": "6a15ec78671cbd3b218594fd0a07ce8942c61cee59732b7a60914883e84ec100",
+  "content_store_sha256": "e2c3400f35c629d0630e469e01f176dffd383cf270c8c929d3ab6fa6489f4562",
+  "scheduling": {
+    "budget": 128,
+    "calls": 800,
+    "max_advance_usec": 318841,
+    "operation_bound_pass": true,
+    "progress": {
+      "done": true,
+      "expanded": 102179,
+      "implementation": "mapgen/gdscript-candidate-0.3.0",
+      "instances": 46,
+      "operations": 102296,
+      "phase": "goal_aware_terminals",
+      "request_fingerprint": "3734711cd11c2eb76b499794554380692d209c714b1276b97235f6276d8c2fd3"
+    },
+    "samples": [],
+    "total_advance_usec": 11028835
+  },
+  "metrics": {
+    "backtracks": 0,
+    "closed_loops_across_search": 3,
+    "expansions": 102179,
+    "generation_seconds": 10.942479,
+    "layout_repairs": 0,
+    "pruning": {
+      "boss_main_path_diversity": 2,
+      "entry_has_no_reward_route": 570,
+      "no_onward_route_from_actual_entry": 360,
+      "no_route_from_actual_entry": 9894
+    },
+    "recorded_failures": 0,
+    "terminal_states": 6
+  }
+}
