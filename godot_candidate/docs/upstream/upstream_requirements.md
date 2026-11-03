@@ -54,4 +54,3 @@
 3. 宿主接原lifetime、进度、错误与退回流程；测试退出/换图/重复结果/旧fingerprint，失败不偷偷fallback旧生成器或换seed。
 4. 完整记录需绑定request/config/library/content/实现、能力快照及宿主spawn/Boss binding；当前map_hash仅mapSHA+选择ID，不足以证明完整重放。先补真实record/restore消费者，再讨论持久保存，避免顺带改存档schema。
 5. 原生通过后再做Web有限导出、实际PCK/浏览器与实体手机验证；未经用户后续发布授权不部署。本轮已提供可评审代码和证据，不等待上游算法完成而复制平行实现。
-

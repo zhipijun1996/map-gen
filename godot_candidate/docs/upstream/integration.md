@@ -75,4 +75,3 @@ python3 tools/harness.py --check runtime-map-v2-host --jobs 1 --release
 ```
 
 第一条为原生编辑工程入口；箭头/A,D移动、原输入提供跳跃/射击、ESC按原音频排空后退出。CI为真实60Hz物理（headless），没有签 GUI/浏览器或手机。正常主游戏不选择此 Provider。若撤出本轮，以 main基点 `30e36c9abe223f26e666ceaf796e3fe9cb58e10f` 为回退；将本轮新增入口/Provider/Resource/fixture/runner及对应CI注册作为一组撤销，不动正常地图或旧实现。
-
