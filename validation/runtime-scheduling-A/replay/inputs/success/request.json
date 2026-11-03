@@ -1,0 +1,40 @@
+{
+  "schema": "mapgen/generation-request/v1",
+  "seed": 930001,
+  "player": {
+    "abilities": [
+      "jump",
+      "double_jump",
+      "shot_recoil",
+      "grapple"
+    ],
+    "clearance_half_extents_pixels": [
+      12,
+      18
+    ]
+  },
+  "terminals": {
+    "start": {
+      "module_id": "game-plains-windchime-lesson",
+      "port_id": "exit"
+    },
+    "boss": {
+      "module_id": "game-plains-boss-arena",
+      "port_id": "entry"
+    }
+  },
+  "start_origin_blocks": [
+    0,
+    0
+  ],
+  "module_filter": {
+    "regions": [],
+    "include_ids": [],
+    "exclude_ids": []
+  },
+  "air_loop": {
+    "enabled": true,
+    "entry_module_ids": [],
+    "return_module_ids": []
+  }
+}

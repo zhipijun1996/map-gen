@@ -1,0 +1,380 @@
+{
+  "stage": "A",
+  "version": "0.3.1",
+  "status": "PASS",
+  "meaning": "result invariance and cancellation conformance; NOT performance-target PASS",
+  "unchanged_results": 42,
+  "cases": 47,
+  "comparison": "entire 0.3.0 result except implementation/fingerprint/map_id and generation_seconds",
+  "performance_target": {
+    "advance1_p99_usec": 4000,
+    "advance1_max_usec": 8000,
+    "web_host_frame_target_usec": 8000,
+    "met": false,
+    "unmet": "Web default advance(1) max32100us; several phase p99 >4000us; native/outlier atomic calls remain"
+  },
+  "web": {
+    "default-1": {
+      "wall_usec": 78915800,
+      "advance_max_usec": 32100,
+      "phases": {
+        "closure_search": {
+          "calls": 3715,
+          "max_usec": 20900,
+          "p50_usec": 0,
+          "p95_usec": 1900,
+          "p99_usec": 6100,
+          "total_usec": 1737500
+        },
+        "created": {
+          "calls": 1,
+          "max_usec": 2900,
+          "p50_usec": 2900,
+          "p95_usec": 2900,
+          "p99_usec": 2900,
+          "total_usec": 2900
+        },
+        "export": {
+          "calls": 3,
+          "max_usec": 11700,
+          "p50_usec": 5900,
+          "p95_usec": 5900,
+          "p99_usec": 5900,
+          "total_usec": 18900
+        },
+        "final_audit": {
+          "calls": 253,
+          "max_usec": 5500,
+          "p50_usec": 0,
+          "p95_usec": 200,
+          "p99_usec": 2500,
+          "total_usec": 30300
+        },
+        "final_decorate": {
+          "calls": 27,
+          "max_usec": 5300,
+          "p50_usec": 1100,
+          "p95_usec": 4800,
+          "p99_usec": 5100,
+          "total_usec": 45500
+        },
+        "final_gate": {
+          "calls": 122,
+          "max_usec": 11200,
+          "p50_usec": 0,
+          "p95_usec": 300,
+          "p99_usec": 2100,
+          "total_usec": 31600
+        },
+        "goal_aware_terminals": {
+          "calls": 53976,
+          "max_usec": 27500,
+          "p50_usec": 100,
+          "p95_usec": 1400,
+          "p99_usec": 5300,
+          "total_usec": 18087100
+        },
+        "growth": {
+          "calls": 39366,
+          "max_usec": 32100,
+          "p50_usec": 0,
+          "p95_usec": 1300,
+          "p99_usec": 5200,
+          "total_usec": 12530100
+        },
+        "init": {
+          "calls": 8,
+          "max_usec": 1300,
+          "p50_usec": 1000,
+          "p95_usec": 1200,
+          "p99_usec": 1200,
+          "total_usec": 7700
+        },
+        "prepare": {
+          "calls": 7,
+          "max_usec": 7300,
+          "p50_usec": 4500,
+          "p95_usec": 6900,
+          "p99_usec": 6900,
+          "total_usec": 28500
+        }
+      },
+      "frame_max_usec": 35500,
+      "result_snapshot_usec": 5600,
+      "input_to_done_ms": null
+    },
+    "default-17": {
+      "wall_usec": 42384300,
+      "advance_max_usec": 384800,
+      "phases": {
+        "closure_search": {
+          "calls": 219,
+          "max_usec": 37100,
+          "p50_usec": 500,
+          "p95_usec": 26300,
+          "p99_usec": 31600,
+          "total_usec": 1350000
+        },
+        "created": {
+          "calls": 1,
+          "max_usec": 24300,
+          "p50_usec": 24300,
+          "p95_usec": 24300,
+          "p99_usec": 24300,
+          "total_usec": 24300
+        },
+        "final_audit": {
+          "calls": 15,
+          "max_usec": 17400,
+          "p50_usec": 900,
+          "p95_usec": 7500,
+          "p99_usec": 7500,
+          "total_usec": 41100
+        },
+        "final_decorate": {
+          "calls": 1,
+          "max_usec": 27700,
+          "p50_usec": 27700,
+          "p95_usec": 27700,
+          "p99_usec": 27700,
+          "total_usec": 27700
+        },
+        "final_gate": {
+          "calls": 7,
+          "max_usec": 19200,
+          "p50_usec": 1200,
+          "p95_usec": 13300,
+          "p99_usec": 13300,
+          "total_usec": 38900
+        },
+        "goal_aware_terminals": {
+          "calls": 3175,
+          "max_usec": 112900,
+          "p50_usec": 1100,
+          "p95_usec": 17200,
+          "p99_usec": 27700,
+          "total_usec": 14309500
+        },
+        "growth": {
+          "calls": 2316,
+          "max_usec": 384800,
+          "p50_usec": 600,
+          "p95_usec": 23000,
+          "p99_usec": 33400,
+          "total_usec": 10608200
+        }
+      },
+      "frame_max_usec": 385000,
+      "result_snapshot_usec": 7100,
+      "input_to_done_ms": null
+    },
+    "failure": {
+      "wall_usec": 139200,
+      "advance_max_usec": 15000,
+      "phases": {
+        "created": {
+          "calls": 1,
+          "max_usec": 15000,
+          "p50_usec": 15000,
+          "p95_usec": 15000,
+          "p99_usec": 15000,
+          "total_usec": 15000
+        },
+        "growth": {
+          "calls": 13,
+          "max_usec": 2900,
+          "p50_usec": 300,
+          "p95_usec": 700,
+          "p99_usec": 700,
+          "total_usec": 7100
+        },
+        "init": {
+          "calls": 8,
+          "max_usec": 4800,
+          "p50_usec": 600,
+          "p95_usec": 2200,
+          "p99_usec": 2200,
+          "total_usec": 11000
+        },
+        "prepare": {
+          "calls": 7,
+          "max_usec": 9900,
+          "p50_usec": 5300,
+          "p95_usec": 9400,
+          "p99_usec": 9400,
+          "total_usec": 42800
+        }
+      },
+      "frame_max_usec": 15000,
+      "result_snapshot_usec": 0,
+      "input_to_done_ms": null
+    },
+    "generation-cancel": {
+      "wall_usec": 236600,
+      "advance_max_usec": 28000,
+      "phases": {
+        "created": {
+          "calls": 1,
+          "max_usec": 28000,
+          "p50_usec": 28000,
+          "p95_usec": 28000,
+          "p99_usec": 28000,
+          "total_usec": 28000
+        },
+        "growth": {
+          "calls": 8,
+          "max_usec": 6100,
+          "p50_usec": 1100,
+          "p95_usec": 5100,
+          "p99_usec": 5100,
+          "total_usec": 20100
+        },
+        "init": {
+          "calls": 8,
+          "max_usec": 4900,
+          "p50_usec": 1300,
+          "p95_usec": 2800,
+          "p99_usec": 2800,
+          "total_usec": 14800
+        },
+        "prepare": {
+          "calls": 7,
+          "max_usec": 9100,
+          "p50_usec": 3500,
+          "p95_usec": 6100,
+          "p99_usec": 6100,
+          "total_usec": 30400
+        }
+      },
+      "frame_max_usec": 28400,
+      "result_snapshot_usec": 100,
+      "input_to_done_ms": 8.399999998509884
+    },
+    "preload": {
+      "wall_usec": 27449000,
+      "advance_max_usec": 26100,
+      "phases": {
+        "catalog_json": {
+          "calls": 5503,
+          "max_usec": 25100,
+          "p50_usec": 300,
+          "p95_usec": 2300,
+          "p99_usec": 5300,
+          "total_usec": 3166000
+        },
+        "created": {
+          "calls": 1,
+          "max_usec": 1200,
+          "p50_usec": 1200,
+          "p95_usec": 1200,
+          "p99_usec": 1200,
+          "total_usec": 1200
+        },
+        "file_hashes": {
+          "calls": 1149,
+          "max_usec": 13700,
+          "p50_usec": 100,
+          "p95_usec": 200,
+          "p99_usec": 3200,
+          "total_usec": 200600
+        },
+        "manifest_json": {
+          "calls": 43,
+          "max_usec": 18200,
+          "p50_usec": 400,
+          "p95_usec": 900,
+          "p99_usec": 4100,
+          "total_usec": 44200
+        },
+        "module_json": {
+          "calls": 11589,
+          "max_usec": 26100,
+          "p50_usec": 300,
+          "p95_usec": 2500,
+          "p99_usec": 6400,
+          "total_usec": 6761000
+        },
+        "zip_entries": {
+          "calls": 658,
+          "max_usec": 21800,
+          "p50_usec": 700,
+          "p95_usec": 4700,
+          "p99_usec": 10800,
+          "total_usec": 852200
+        },
+        "zip_hash": {
+          "calls": 6,
+          "max_usec": 6100,
+          "p50_usec": 1000,
+          "p95_usec": 5700,
+          "p99_usec": 5700,
+          "total_usec": 15900
+        }
+      },
+      "frame_max_usec": 31100,
+      "result_snapshot_usec": 0,
+      "input_to_done_ms": null
+    },
+    "preload-cancel": {
+      "wall_usec": 3291000,
+      "advance_max_usec": 30700,
+      "phases": {
+        "catalog_json": {
+          "calls": 31,
+          "max_usec": 3700,
+          "p50_usec": 300,
+          "p95_usec": 500,
+          "p99_usec": 500,
+          "total_usec": 13000
+        },
+        "created": {
+          "calls": 1,
+          "max_usec": 3000,
+          "p50_usec": 3000,
+          "p95_usec": 3000,
+          "p99_usec": 3000,
+          "total_usec": 3000
+        },
+        "file_hashes": {
+          "calls": 1149,
+          "max_usec": 30700,
+          "p50_usec": 100,
+          "p95_usec": 300,
+          "p99_usec": 3700,
+          "total_usec": 279700
+        },
+        "manifest_json": {
+          "calls": 43,
+          "max_usec": 4900,
+          "p50_usec": 700,
+          "p95_usec": 900,
+          "p99_usec": 3400,
+          "total_usec": 36400
+        },
+        "zip_entries": {
+          "calls": 658,
+          "max_usec": 23400,
+          "p50_usec": 800,
+          "p95_usec": 5200,
+          "p99_usec": 9100,
+          "total_usec": 917700
+        },
+        "zip_hash": {
+          "calls": 6,
+          "max_usec": 6100,
+          "p50_usec": 2000,
+          "p95_usec": 2900,
+          "p99_usec": 2900,
+          "total_usec": 15300
+        }
+      },
+      "frame_max_usec": 32700,
+      "result_snapshot_usec": 0,
+      "input_to_done_ms": 15.199999999254942
+    }
+  },
+  "known_defect": "0.3.0 reward/seal conflict intentionally preserved in A; B is independent",
+  "host_pr127_head": "e7d703f47c97f09bd5c5d48e24f0a400c958ad40",
+  "module_package": "1.1.0",
+  "module_sha256": "5ad5a7871941b2c1ffa759b18f7b1e80f2fe7e571b72f95d1e0ef26031f08723"
+}
