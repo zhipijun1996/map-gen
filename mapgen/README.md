@@ -2,6 +2,8 @@
 
 本目录是可独立复制/安装的 Python 生成组件，使用标准库，保留 `stable-v2` 的默认搜索行为。运行时不导入任何 `experiments/`、`prototype/` 或 `delivery/` 文件，不修改 `sys.path`，没有全局模块库/玩家能力，也不下载模块或读取默认配置。
 
+版本化分发、完整 runtime-map/v2 样例与主游戏交接见 [Python 参考算法包 0.2.0](../reference_package/README.md)。它补充外层包 manifest、现有结果 Schema 和 `mapgen.artifacts` 的完整结果/引用校验；算法、默认配置和生成指纹规则不变，Godot 运行时仍待实现。
+
 算法、请求和默认参数分别维护：
 
 - [调用 API](api.py)：`generate(request, library, config, hooks=...)`。

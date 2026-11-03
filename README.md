@@ -1,5 +1,7 @@
 # 《失序之钟》Map Generator
 
+三仓第一轮参考交付：[Python 参考算法包 0.2.0](reference_package/README.md)，复用现有 API/Schema/runtime-map/v2，包含完整真实成功/失败样例、独立校验/重放入口、版本与依赖锁，以及基于主游戏实际接口的交接和 Godot Standard/Web/桌面迁移验收建议。明确为 `python-reference`，尚非 Godot 游戏内算法包。
+
 最新生成接口：[独立 Python 生成核心](mapgen/README.md)，通过 `generate(request, library, config)` 显式传入模块库、能力、起终点、目标、评分和搜索预算。[默认参数](profiles/stable-v2.json)与[请求样例](examples/request-930001.json)独立维护；默认 40 个 seed 的布局、实际图及搜索计数与 `stable-v2` 完全一致。新接口可生成任意 seed 的 runtime-map/v2，不依赖实验目录，尚未移植到 Godot。
 
 主游戏首版交付：[固定地图交付包 0.1.0](delivery/README.md)，包含 seed `930001`、真实模块包、完整物化内容、契约、参考图、独立校验器和[主仓库 Codex 接入 prompt](delivery/templates/MAIN_GAME_PROMPT.md)。供主游戏装配与实机验证，尚未执行 Godot 接入。
