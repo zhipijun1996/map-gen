@@ -28,7 +28,7 @@ def main():
                              ('examples/request-930001.json', 'tests/request.json'),
                              ('profiles/stable-v2.json', 'tests/config.json')]:
         assert (ROOT/original).read_bytes() == (project/copied).read_bytes(), original
-    for suite in ['foundation', 'library', 'numbers']:
+    for suite in ['foundation', 'library', 'numbers', 'integer_hypot_probe']:
         command = [args.godot, '--headless', '--path', str(project), '--script', f'res://tests/{suite}.gd', '--', str(args.module_zip.resolve()), str((args.out/'library.json').resolve())]
         run = subprocess.run(command, text=True, capture_output=True, timeout=120)
         (args.out/f'{suite}.log').write_text(run.stdout+run.stderr)
@@ -48,6 +48,7 @@ def main():
     report = dict(status='PASS', comparison='all fields; numeric JSON equality (not byte hashes)',
                   source_sha256=source.sha256, modules=len(prepared.entries), templates=len(prepared.templates),
                   materialized_contents=len(prepared.templates)*2,
+                  integer_hypot_vectors=1005,
                   gdscript_library_data_sha256=hashlib.sha256(raw).hexdigest(),
                   oracle='Python reference 0.2.0; GDScript runs in actual Godot Standard')
     (args.out/'report.json').write_text(json.dumps(report, indent=2)+'\n')

@@ -35,7 +35,7 @@ if job.is_done():
 
 操作预算与算法候选预算分开：前者包括预处理/调度检查点，后者保持参考版的候选几何求值计数（包括lookahead和预留）。候选预算先递增后检查`>limit`，limit=1在第2次求值拒绝；墙钟仍使用原显式配置和检查间隔。墙钟包含宿主暂停，机器负载及暂停可能改变预算失败时点；确定性比较基于未触发墙钟/外部取消的输入及候选预算。调度批次不会抽随机数。
 
-固定种子范围±(2^53−1)，整数原点范围±10^9。用 DataJSON 先读取原始JSON；若宿主已经把seed舍入成float，组件将拒绝它，无法替宿主恢复原值。当前Godot4.6.3 Standard为测试版本，不要求.NET或GDExtension。
+固定种子范围±(2^53−1)，整数原点范围±10^9；距离计算每轴差值支持±2×10^9，超出返回INVALID_INPUT。距离使用精确整数平方和的正确舍入平方根，避免先转double造成与CPython hypot的一ULP差异。用 DataJSON 先读取原始JSON；若宿主已经把seed舍入成float，组件将拒绝它，无法替宿主恢复原值。当前Godot4.6.3 Standard为测试版本，不要求.NET或GDExtension。
 
 输出仍为 `mapgen/generation-result/v1`、`mapgen/runtime-map/v2`，模块仍1.1.0。新增实现身份由现有generator.implementation表达，Schema只增加允许值，不升级或另造地图协议。Python参考及0.1.0历史产物保持原样。
 
@@ -46,3 +46,7 @@ if job.is_done():
 宿主仍拥有能力快照、LevelPlan转换、调度token、主线程节点创建及服务绑定。player_spawn/boss_completion继续UNRESOLVED，boss_encounter继续HOST_BINDING_REQUIRED；不打开封住的Boss出口，不猜玩家出生，不随机替换怪物或奖励。
 
 本轮不需要map-edit为算法读取新增字段。后续玩法需要具体安全出生候选及departure净空/路径、Boss空间及终端约束、机制叶级语义与源证据；这些缺口不等于要求模块包升级。实际BossFactory/胜负/结算与能力授权属于宿主。移动齿轮仍是后续地图级附加危险，本轮没有布置或新增未使用字段。
+
+具体源锚点缺口没有被镜像/封口适配掩盖：默认M01 `game-plains-windchime-lesson`的编译helper entry_port为[24,206]，位于未用entry齿轮矩形[0,128,32,128]内，不能当玩家出生；需要封口配置下的安全候选及通向真实exit的净空资料。M40 `game-plains-boss-arena`未用exit仍封在[0,384,32,128]，不能拿helper exit当通关点；需要可供宿主绑定Boss/终端的空间约束，实际完成条件仍由宿主定义。当前不增加猜测字段或修改1.1.0包。
+
+PR127的现有`RuntimeMapV2Provider.load_level(request,map,content_store,selected_ids,spawn,source_sha256)`已经按v2消费数据、读取generator实现身份，无需在主仓复制算法。接入点是新的生成来源/调度层；旧冻结文件的SHA锁原样保留，不把新结果冒充旧map_id。M16/M18/M21的已验装载可继续作为协议切片回归。完整46模块还含宿主未适配内容，不能删除未知内容后绕过拒绝；正式整图、敌人奖励、spawn/Boss及节点装配预算仍由宿主另轮验证。

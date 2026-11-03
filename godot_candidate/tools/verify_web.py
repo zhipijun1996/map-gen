@@ -62,7 +62,7 @@ def main():
         req=GenerationRequest.from_dict(json.loads((fixture/'request.json').read_text()))
         expected=json.loads((fixture/'result.json').read_text())
         checks[name]=compare(report['results'][name],expected,req,cfg,library)
-    for name in ['request','config','reference-vectors','number-vectors']:
+    for name in ['request','config','reference-vectors','number-vectors','hypot-vectors']:
         assert report['input_sha256'][name]==hashlib.sha256((ROOT/f'godot_candidate/tests/{name}.json').read_bytes()).hexdigest()
     cancellation=report['results']['cancel']
     checks['cancel']={'status':cancellation['status']=='CANCELLED','no_map':cancellation['map'] is None and cancellation['content_store']=={},'expanded_17':cancellation['metrics']['expansions']==17}
@@ -70,6 +70,7 @@ def main():
     ok=not errors and not report['foundation_failures'] and all(all(c.values()) for c in checks.values())
     summary=dict(status='PASS' if ok else 'FAIL',runtime='actual Godot Web single-thread export in Chromium',environment=environment,
                  errors=errors,foundation_failures=report['foundation_failures'],checks=checks,timing=report['timing'],cancel_usec=report['cancel_usec'],input_sha256=report['input_sha256'],
+                 component_source_sha256={f.name:hashlib.sha256(f.read_bytes()).hexdigest() for f in sorted((ROOT/'godot_candidate/addons/mapgen').glob('*.gd'))},
                  export_sha256={f.name:hashlib.sha256(f.read_bytes()).hexdigest() for f in sorted(export.iterdir()) if f.is_file()},
                  mobile_device='NOT_RUN',whole_map_playable='NOT_RUN')
     (args.out/'summary.json').write_text(json.dumps(summary,indent=2)+'\n')

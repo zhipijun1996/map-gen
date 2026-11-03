@@ -1,8 +1,10 @@
 # 《失序之钟》Map Generator
 
+Godot运行时迁移候选：[纯数据GDScript组件0.3.0](godot_candidate/README.md)，保留stable-v2、runtime-map/v2及模块包1.1.0，提供真实求解、完整内容和增量取消接口。原生与实际Web导出证据、候选包和主仓调用方法见该入口；仍须区分静态生成、调度性能和主游戏可玩性，候选不标为生产就绪。
+
 三仓第一轮参考交付：[Python 参考算法包 0.2.0](reference_package/README.md)，复用现有 API/Schema/runtime-map/v2，包含完整真实成功/失败样例、独立校验/重放入口、版本与依赖锁，以及基于主游戏实际接口的交接和 Godot Standard/Web/桌面迁移验收建议。明确为 `python-reference`，尚非 Godot 游戏内算法包。
 
-最新生成接口：[独立 Python 生成核心](mapgen/README.md)，通过 `generate(request, library, config)` 显式传入模块库、能力、起终点、目标、评分和搜索预算。[默认参数](profiles/stable-v2.json)与[请求样例](examples/request-930001.json)独立维护；默认 40 个 seed 的布局、实际图及搜索计数与 `stable-v2` 完全一致。新接口可生成任意 seed 的 runtime-map/v2，不依赖实验目录，尚未移植到 Godot。
+Python参考接口：[独立 Python 生成核心](mapgen/README.md)，通过 `generate(request, library, config)` 显式传入模块库、能力、起终点、目标、评分和搜索预算。[默认参数](profiles/stable-v2.json)与[请求样例](examples/request-930001.json)独立维护；默认 40 个 seed 的布局、实际图及搜索计数与 `stable-v2` 完全一致。Python核心不依赖实验目录，Godot使用上方的独立GDScript实现。
 
 主游戏首版交付：[固定地图交付包 0.1.0](delivery/README.md)，包含 seed `930001`、真实模块包、完整物化内容、契约、参考图、独立校验器和[主仓库 Codex 接入 prompt](delivery/templates/MAIN_GAME_PROMPT.md)。供主游戏装配与实机验证，尚未执行 Godot 接入。
 

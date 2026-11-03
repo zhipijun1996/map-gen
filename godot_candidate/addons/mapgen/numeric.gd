@@ -13,6 +13,46 @@ static func binary64_be(value: float) -> String:
 	bytes.reverse()
 	return bytes.hex_encode()
 
+static func _bit(value: int, index: int) -> int:
+	return (value >> index)&1 if index >= 0 and index < 63 else 0
+
+static func integer_hypot(x: int, y: int) -> float:
+	# Correctly rounded sqrt(x*x+y*y) of the EXACT integer sum, compatible with
+	# CPython hypot for integer search coordinates. float(x*x+y*y) can round the
+	# sum first and produce a different ULP. Longhand square root keeps the
+	# scaled square implicit; its remainder/root intermediates fit int64.
+	if absi(x) > 2000000000 or absi(y) > 2000000000:
+		return NAN
+	var square: int = x*x+y*y
+	if square == 0:
+		return 0.0
+	var bits := 0
+	var n := square
+	while n:
+		bits += 1
+		n >>= 1
+	var exponent: int = (bits-1)/2
+	var shift: int = 2*(52-exponent)
+	var root := 0
+	var remainder := 0
+	for pair in range(52,-1,-1):
+		var index := pair*2-shift
+		remainder = remainder*4+2*_bit(square,index+1)+_bit(square,index)
+		var trial := 4*root+1
+		root *= 2
+		if remainder >= trial:
+			remainder -= trial
+			root += 1
+	if remainder*4 > root*4+1:
+		root += 1
+	if root >= 1 << 53:
+		root >>= 1
+		exponent += 1
+	var bytes := PackedByteArray()
+	bytes.resize(8)
+	bytes.encode_s64(0,((exponent+1023)<<52)|(root&((1<<52)-1)))
+	return bytes.decode_double(0)
+
 static func stable_sort(rows: Array, less: Callable) -> Array:
 	if rows.size() < 2:
 		return rows.duplicate()

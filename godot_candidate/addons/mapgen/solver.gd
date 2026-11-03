@@ -712,12 +712,13 @@ func reward_options() -> Array:
 		result.append(row[1])
 	return result
 
-static func origin_distance(a: Array, b: Array = [0, 0]) -> float:
-	# Exact integer squares in the supported coordinate domain; CPython hypot is
-	# independently compared before this candidate can claim terminal parity.
-	var dx: float = float(a[0]-b[0])
-	var dy: float = float(a[1]-b[1])
-	return sqrt(dx*dx+dy*dy)
+func origin_distance(a: Array, b: Array = [0, 0]) -> float:
+	var result := NUM.integer_hypot(a[0]-b[0],a[1]-b[1])
+	if not is_finite(result):
+		error_status = "INVALID_INPUT"
+		error_message = "coordinate distance exceeds candidate +/-2000000000 integer domain"
+		return 0.0
+	return result
 
 func place_rewards(n: int) -> bool:
 	if n == config.goals.reward_target:

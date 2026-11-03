@@ -23,7 +23,7 @@ var cancelled_usec := 0
 
 func _ready() -> void:
 	started_usec = Time.get_ticks_usec()
-	for name in ["request", "config", "reference-vectors", "number-vectors"]:
+	for name in ["request", "config", "reference-vectors", "number-vectors", "hypot-vectors"]:
 		input_sha[name] = FileAccess.get_sha256("res://tests/"+name+".json")
 	var archive := ARCHIVE.open_zip("res://tests/dependencies/modules.zip", PROTOCOL.PACKAGE_SHA)
 	if not archive.ok:
@@ -81,6 +81,10 @@ func _ready() -> void:
 		if rng.getstate() != vector.state:
 			foundation_failures.append("boundary state:"+vector.seed)
 	timing.preload_and_vectors_usec = Time.get_ticks_usec()-started_usec
+	var hypot_vectors = DATA.parse(FileAccess.get_file_as_string("res://tests/hypot-vectors.json")).value
+	for row in hypot_vectors:
+		if NUM.binary64_be(NUM.integer_hypot(row.x,row.y)) != row.bits:
+			foundation_failures.append("hypot:"+str(row))
 	_start_case()
 
 func _start_case() -> void:
