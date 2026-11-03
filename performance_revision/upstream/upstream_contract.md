@@ -1,0 +1,47 @@
+# 0.4明确升级与上游接入边界
+
+0.3回归基线固定在PR128/3790ee9f0809fd65e08a39e4ff9b9401f2ce94aa，生产字节仍为原受验7f65；0.4SDK升级为a60828ed6bfdb595ba8fd7abdb97d007b0f3f485。PR127/e7d及原172成功不变。本文不把旧Web、旧M35或旧覆盖表转签新布局。
+
+## 已实测的来源和调用
+
+0.4 PR5 release6bf07ab5a655ea056461b935ae4354e15ef83482，manifest实际sourceb21c889077ec97eb11a210d0ceab4fbddd862e48，ZIP7aa3f0e573675c3bb41e2a2a5b23254c4005bb8eaef9756535e3a6480988d778；原18GD全部字节核对，module仍1.1.0/5ad5a7871941b2c1ffa759b18f7b1e80f2fe7e571b72f95d1e0ef26031f08723。锁中gears930007原输入来自同releasehead的独立叶，明确不属于该ZIP；不以修改seed或隐藏reroll代替来源。
+
+主游戏固定Godot4.7.2 custom gunman_sd1已实际执行包原verify、foundation、preload、reward_geometry、budget，并在主游戏project内运行原suite生成930001与930007，两者map/store均与对应上游样例相等。此部分是算法调用事实；实际SceneTree/Web/退出证据由本工作线后续收据限定，不由上游4.6.3或样例代签。
+
+## 同一宿主装载路径
+
+冻结文件继续由原RuntimeMapFrozenSource逐字节SHA核验。生成来源使用RuntimeMapGenerationProfile读取原typed请求/配置，捕获同一seed启动既有RunSession和LevelRequest；原RuntimeMapGenerationJob使用原SDK合作预载和生成，结果直接进入同一个RuntimeMapV2Provider内部转换器、LevelPlan、Stage、LevelRuntime。没有Python运行依赖、第二套RunSession/钱包/伤害/奖励权威或主仓库求解器。
+
+运行时绑定先从模板/content_version/role与真实连接邻域解析，再按实际已物化平台、origin和真实身体尺寸推导出生点。两受控recipe不预置M编号或世界坐标；实际物理身体和三脚底安全准入后才提交。原入口文件名runtime_map_m35_slice保留可审查路径，但机制选择依据是game-plains-ferry-gears及版本/角色，名称不代表固定实例。清单必须分别注明两请求的真实seed、连接、世界原点、镜像状态、出生和新身份。
+
+输入指纹仍由上游Protocol.fingerprint原表达式产生，不覆盖或重写。原result/provenance保留；地图内容身份绑定实际map和content_store，宿主装载身份再绑定完整来源/实际选择和宿主recipe+解析结果/能力快照/转换器。旧0.3真实记录须明确拒绝，永久保存schema不变。内存来源没有map.json原字节SHA声明。
+
+## 调度与生命周期
+
+现有owner弱引用、独立opaque ticket、run/stage/actor实际lifetime对象和token共同守门；旧、重复、已退出结果不能take/commit。生成阶段不创建节点，SceneTree创建与physics准入仍在主线程。
+
+原SDK advance(1)是16检查点单位。宿主每tick有显式配置的单位上限，默认128、原API范围1..4096，并在完成一个原单位后达到软8ms目标则交还；这是软目标，不是硬4/8/16ms保证。记录完整单位count/max/total、每tick耗时、超目标单位和原SDK phase profile。进度按tick/终态采样，避免每个微单位深拷贝大字典。取消只会在主线程得到调度后发生；排队输入延迟、取消处理耗时与SDK自身cancel耗时必须区别，不能以直接函数调用耗时冒充手机响应。
+
+## Web输入与导出约束
+
+只安装23个受锁定叶及正常引擎UID：18原GD、唯一moduleZIP、两个原请求、同一配置和锁。游戏精确导出实际JSON/ZIP依赖，SDK使用Godot FileAccess/ZIPReader而不是Python或操作系统文件路径。原Webbootstrap/入口准入/COOP与COEP服务方式沿用。开发参考ZIP、Python、测试包和证据仍不入PCK；“无任何ZIP”的旧切片假设明确被唯一锁定模块ZIP替代。
+
+Web守门复用安装器原pins和两个实际consumer的binding路径/SHA，不维护平行hash表。纯测试75通过只证明守门正反逻辑；实际PCK读回、18正常转换脚本和两个真实浏览器入口仍须以本次构建/运行收据为准。
+
+## map-edit覆盖与第二轮要求
+
+旧覆盖表绑定0.3/e7d，只保留回归。对原PR78 producer的显式actual-profile开发补丁先经非作者独审；43原输入及两ZIP完整重放，10输出与旧PR78原件逐字一致，缺件/篡改原新各拒绝。新profile必须读取同次真实host result、provenance、原GDScript canonical协议字节、实际resolved bindings、Provider源、运行前后源向量和验证收据，不能从官方样例填充宿主事实。完整compiled结构/字段/数组和refs须核对，避免删机制后少计；不会复制坐标镜像算法。新机制行默认UNVERIFIED_CURRENT_HOST，实际有限运行结论另引证，不把静态inventory当物理覆盖。
+
+建议map-gen后续交付正式包继续保持现协议和原source/archive/module/input锁、失败结果为空、不变更上游指纹。需继续提供能力快照未覆盖项、实际身体/武器/动态能力的语义契约，以及长单位/最终验证与快照成本；不能把奖励空间局部排除修正扩述为物理路线可玩。
+
+建议map-edit接纳显式profile补丁后以实际新结果重新生成覆盖清单；沿module_id+content_version+role+连接邻域关联，不沿M编号映射。未接纳的外部补丁须作为开发候选交接，不称官方已有能力。
+
+整图开放仍缺完整机制、敌人、奖励/Boss与唯一现有服务的消费者迁移、出生/终点及跨模块真实Motor验证、多请求/种子失败策略和能力真实授予约束。运行时算法调用已接在既有路径上，并不自动完成这些内容；普通出发不替换，不合并或发布。
+
+
+实际Web首个4ms运行已REJECT（通用非PASS，具体SDK状态未知），不回签为预算耗尽。后续宿主8ms软调度/真实错误转发在f6提交，原90秒/候选预算/配置不改；主原12检查fresh通过。Web最终结果须引用f6当前实际包与浏览器原证据，不能借上游8ms报告或本地native签Web/手机。
+
+
+实际8ms默认第一会话Web已生成/装载/移动/退出，gen约72.44秒；原双fresh总300秒consumer在第二次预载超时，原预算内完整guards与generate取消未完成，整体FAILED。一次相同脚本复验同样失败，之后不重试/不放宽预算。完整原failure与预算外只读custody分开，不以附加分项诊断代签原整段绿。当前具体集成阻塞是该完整consumer预算；同时preload约27秒、genSDKwall约72秒（单一软件浏览器）也是交上游的真实成本。移动端、硬帧预算及一般seed稳定时延仍未知。
+
+静态预检另提示930001下一座junction（本图M29）的旧authored helper exit身体[12,188,24,36]与当前未连端口封口[0,128,32,128]相交。此为当前宿主Definition固定helper准入与新多端口封口组合的适配缺口预测，未实际装四模块、不把合法关闭端口宣判上游地图无效；不能删封口/移动平台凑Resource通过。整图下一轮需按真实连接/使用端口处理身体锚点，避免把所有旧Manifest辅助字段强加v2。

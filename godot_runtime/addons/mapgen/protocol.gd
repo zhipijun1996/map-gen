@@ -1,7 +1,7 @@
 extends RefCounted
 const SCHEMA = preload("schema_data.gd")
 const DATA = preload("data_json.gd")
-const IMPLEMENTATION := "mapgen/gdscript-candidate-0.4.0"
+const IMPLEMENTATION := "mapgen/gdscript-candidate-0.4.1"
 const ALGORITHM := "stable-v3-reward-space"
 const MAX_SEED := 9007199254740991
 const PACKAGE_SHA := "5ad5a7871941b2c1ffa759b18f7b1e80f2fe7e571b72f95d1e0ef26031f08723"

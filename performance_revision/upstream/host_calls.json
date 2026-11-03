@@ -1,0 +1,115 @@
+{
+  "head": "46eb3960a592374b5fb99d7df588962a3680f86b",
+  "scope": "read-only source inspection; no host execution",
+  "rows": [
+    {
+      "path": "game/world/levels/providers/runtime_map_v2_provider.gd",
+      "git_blob": "a1894dbc3c8c66d17f51c2b488bfe5be1d299672",
+      "url": "https://github.com/zhipijun1996/gunman-rush/blob/46eb3960a592374b5fb99d7df588962a3680f86b/game/world/levels/providers/runtime_map_v2_provider.gd",
+      "reviewed_lines": [
+        {
+          "line": 143,
+          "text": "\tif source.get(\"implementation\") != \"mapgen/gdscript-candidate-0.4.0\" or source.get(\"algorithm\") != \"stable-v3-reward-space\" or map.generator.get(\"implementation\") != source.implementation or map.generator.get(\"algorithm\") != source.algorithm: return \"result.generator: unsupported/mismatched implementation or algorithm\""
+        },
+        {
+          "line": 151,
+          "text": "\tif package.get(\"version\") != \"0.4.0\" or not _hash(package.get(\"zip_sha256\")) or not _commit_hash(package.get(\"release_head\")) or not _commit_hash(package.get(\"source_commit\")): return \"provenance.algorithm_package: invalid release identity\""
+        }
+      ]
+    },
+    {
+      "path": "experiments/generation/runtime_map_generation_job.gd",
+      "git_blob": "3e54dad31580f1bbe7a80471a35449a33a10a790",
+      "url": "https://github.com/zhipijun1996/gunman-rush/blob/46eb3960a592374b5fb99d7df588962a3680f86b/experiments/generation/runtime_map_generation_job.gd",
+      "reviewed_lines": [
+        {
+          "line": 12,
+          "text": "const SOFT_TICK_MS := 8.0"
+        },
+        {
+          "line": 69,
+          "text": "\tticket.metrics[\"soft_tick_ms\"] = SOFT_TICK_MS"
+        },
+        {
+          "line": 238,
+          "text": "\t\tvar advanced: Dictionary = ticket.preloader.advance(1)"
+        },
+        {
+          "line": 241,
+          "text": "\t\tif duration>SOFT_TICK_MS: ticket.metrics.preload_unit_overruns.append({\"ms\":duration,\"phase_after\":ticket.preloader.phase_name()})"
+        },
+        {
+          "line": 248,
+          "text": "\t\tif _elapsed_ms(started)>=SOFT_TICK_MS: break"
+        },
+        {
+          "line": 278,
+          "text": "\t\tvar advanced: Dictionary = ticket.job.advance(1)"
+        },
+        {
+          "line": 281,
+          "text": "\t\tif duration>SOFT_TICK_MS: ticket.metrics.advance_unit_overruns.append({\"ms\":duration,\"phase_after\":ticket.job.phase_name()})"
+        },
+        {
+          "line": 288,
+          "text": "\t\tif _elapsed_ms(started)>=SOFT_TICK_MS: break"
+        },
+        {
+          "line": 295,
+          "text": "\t\tticket.actual = ticket.job.result().duplicate(true)"
+        },
+        {
+          "line": 340,
+          "text": "\tif lock.get(\"version\") != \"0.4.0\" or lock.get(\"implementation\") != PROTOCOL.IMPLEMENTATION or lock.get(\"algorithm\") != PROTOCOL.ALGORITHM:"
+        }
+      ]
+    },
+    {
+      "path": "tools/install_mapgen_candidate.py",
+      "git_blob": "d327d8e645da2487ff91654e0b83c6c61e55ac5a",
+      "url": "https://github.com/zhipijun1996/gunman-rush/blob/46eb3960a592374b5fb99d7df588962a3680f86b/tools/install_mapgen_candidate.py",
+      "reviewed_lines": [
+        {
+          "line": 16,
+          "text": "ARCHIVE_URL = 'https://raw.githubusercontent.com/zhipijun1996/map-gen/6bf07ab5a655ea056461b935ae4354e15ef83482/runtime_packages/releases/0.4.0/mapgen-godot-candidate-0.4.0.zip'"
+        },
+        {
+          "line": 21,
+          "text": "IMPLEMENTATION = 'mapgen/gdscript-candidate-0.4.0'"
+        },
+        {
+          "line": 26,
+          "text": "ADDON_SHA256 = {"
+        },
+        {
+          "line": 49,
+          "text": "LEGACY_ADDON_SHA256 = {"
+        },
+        {
+          "line": 103,
+          "text": "        require(manifest[\"package\"] == {\"version\":\"0.4.0\", \"algorithm\":\"stable-v3-reward-space\","
+        },
+        {
+          "line": 111,
+          "text": "        addon_files = {\"addons/mapgen/\" + name:sha for name,sha in ADDON_SHA256.items()}"
+        },
+        {
+          "line": 132,
+          "text": "            \"version\":\"0.4.0\", \"algorithm\":\"stable-v3-reward-space\", \"implementation\":IMPLEMENTATION,"
+        },
+        {
+          "line": 150,
+          "text": "    return {**{\"addons/mapgen/\" + name:sha for name,sha in ADDON_SHA256.items()},"
+        },
+        {
+          "line": 159,
+          "text": "    return {**{\"addons/mapgen/\" + name:sha for name,sha in LEGACY_ADDON_SHA256.items()},"
+        },
+        {
+          "line": 167,
+          "text": "    \"\"\"Explicit 0.3.0 -> 0.4.0 only; check every old/new path before writes.\"\"\""
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+{
+  "status": "FAIL",
+  "engine_sha256": "eeaec2b65dc3234168be1e1cbcc89731514bbb78dfb2c1b502920c50830a0638",
+  "checks": [
+    {
+      "check": "foundation",
+      "exit_code": 0,
+      "seconds": 4.106159654998919,
+      "status": "PASS",
+      "argv": [
+        "/workspace/map-gen/.cache/gunman-4.7.2/editor/godot-linux-x86_64",
+        "--headless",
+        "--path",
+        ".cache/bench041-final",
+        "--script",
+        "res://tests/foundation.gd",
+        "--",
+        "/workspace/map-gen/.cache/legacy-real-v2/modules.zip",
+        "/workspace/map-gen/validation/performance-0.4.1/final/checks/foundation.json"
+      ],
+      "log_sha256": "36c4a9dd4569b841916bbbb8a7e8717c12c60ce62c4abc6b097167bbc8e2caac"
+    },
+    {
+      "check": "numbers",
+      "exit_code": 0,
+      "seconds": 0.4353241810022155,
+      "status": "PASS",
+      "argv": [
+        "/workspace/map-gen/.cache/gunman-4.7.2/editor/godot-linux-x86_64",
+        "--headless",
+        "--path",
+        ".cache/bench041-final",
+        "--script",
+        "res://tests/numbers.gd",
+        "--",
+        "/workspace/map-gen/.cache/legacy-real-v2/modules.zip",
+        "/workspace/map-gen/validation/performance-0.4.1/final/checks/numbers.json"
+      ],
+      "log_sha256": "24ff7adc16ce57a74dba3156269ed578ed92b41b2033d37d962d8c747ae86111"
+    },
+    {
+      "check": "integer_hypot_probe",
+      "exit_code": 0,
+      "seconds": 0.2459544170051231,
+      "status": "PASS",
+      "argv": [
+        "/workspace/map-gen/.cache/gunman-4.7.2/editor/godot-linux-x86_64",
+        "--headless",
+        "--path",
+        ".cache/bench041-final",
+        "--script",
+        "res://tests/integer_hypot_probe.gd",
+        "--",
+        "/workspace/map-gen/.cache/legacy-real-v2/modules.zip",
+        "/workspace/map-gen/validation/performance-0.4.1/final/checks/integer_hypot_probe.json"
+      ],
+      "log_sha256": "f47defdbf7cf8efc6630f91b03b9e18280447f56ce86fa89e5ebbb4bf3cce2a6"
+    },
+    {
+      "check": "reward_geometry",
+      "exit_code": 0,
+      "seconds": 1.1980621160037117,
+      "status": "PASS",
+      "argv": [
+        "/workspace/map-gen/.cache/gunman-4.7.2/editor/godot-linux-x86_64",
+        "--headless",
+        "--path",
+        ".cache/bench041-final",
+        "--script",
+        "res://tests/reward_geometry.gd",
+        "--",
+        "/workspace/map-gen/.cache/legacy-real-v2/modules.zip",
+        "/workspace/map-gen/validation/performance-0.4.1/final/checks/reward_geometry.json"
+      ],
+      "log_sha256": "fdd96c0cc6ddba0c13f947af116b91490aad649887ef28c83f5427ae07bd22b4"
+    },
+    {
+      "check": "budget",
+      "exit_code": 0,
+      "seconds": 1.187699686997803,
+      "status": "PASS",
+      "argv": [
+        "/workspace/map-gen/.cache/gunman-4.7.2/editor/godot-linux-x86_64",
+        "--headless",
+        "--path",
+        ".cache/bench041-final",
+        "--script",
+        "res://tests/budget.gd",
+        "--",
+        "/workspace/map-gen/.cache/legacy-real-v2/modules.zip",
+        "/workspace/map-gen/validation/performance-0.4.1/final/checks/budget.json"
+      ],
+      "log_sha256": "8c1a41657e3574907be2c893b0a9b90e8bfbf8cf7ebc427f267aba4a51787d05"
+    },
+    {
+      "check": "performance_contract",
+      "exit_code": 0,
+      "seconds": 12.272384164003597,
+      "status": "PASS",
+      "argv": [
+        "/workspace/map-gen/.cache/gunman-4.7.2/editor/godot-linux-x86_64",
+        "--headless",
+        "--path",
+        ".cache/bench041-final",
+        "--script",
+        "res://tests/performance_contract.gd",
+        "--",
+        "/workspace/map-gen/.cache/legacy-real-v2/modules.zip",
+        "/workspace/map-gen/validation/performance-0.4.1/final/checks/performance_contract.json"
+      ],
+      "log_sha256": "728685ed3016d0d99bbc51eb4afd8c77ef1a6074e468e2e50e07316debec7e2b"
+    },
+    {
+      "check": "jobs",
+      "exit_code": 1,
+      "seconds": 33.74986972799525,
+      "status": "FAIL",
+      "argv": [
+        "/workspace/map-gen/.cache/gunman-4.7.2/editor/godot-linux-x86_64",
+        "--headless",
+        "--path",
+        ".cache/bench041-final",
+        "--script",
+        "res://tests/jobs.gd",
+        "--",
+        "/workspace/map-gen/.cache/legacy-real-v2/modules.zip",
+        "/workspace/map-gen/validation/performance-0.4.1/final/checks/jobs.json"
+      ],
+      "log_sha256": "41a85334811ca9ceb32fb442fb178599b59d1ecc668ba6ead11eb064d5857616"
+    },
+    {
+      "check": "interface",
+      "exit_code": 0,
+      "status": "PASS",
+      "seconds": 17.62481019400002,
+      "argv": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests/interface",
+        "-v"
+      ],
+      "log_sha256": "bf4507d31d82f323148434b9378f9a69badaa27304126149a7f90e29648d09fb"
+    },
+    {
+      "check": "reference",
+      "exit_code": 5,
+      "status": "FAIL",
+      "seconds": 0.08150031200057128,
+      "argv": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests/reference",
+        "-v"
+      ],
+      "log_sha256": "21f7761ebb0997a0fb6391368056476f2cc6c1630a3d83189d0a35816f833d1d"
+    },
+    {
+      "check": "prototype",
+      "exit_code": 0,
+      "status": "PASS",
+      "seconds": 1.2638489149976522,
+      "argv": [
+        "python",
+        "prototype/verify.py"
+      ],
+      "log_sha256": "ea30f4ef7d8de2ab85bf9a7323a214850ddc28c9552dc13044c47658ebfc4198"
+    },
+    {
+      "check": "progress-replay",
+      "exit_code": 0,
+      "status": "PASS",
+      "seconds": 25.017739679999067,
+      "argv": [
+        "python",
+        "tools/verify_progress.py",
+        "--replay"
+      ],
+      "log_sha256": "7c358d28a0efaebfc39a45b6e46b3f96bcc078e1207d802e9578955414031812"
+    }
+  ]
+}

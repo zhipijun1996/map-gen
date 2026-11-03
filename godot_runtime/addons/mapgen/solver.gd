@@ -33,7 +33,11 @@ var config_cache: Dictionary = {}
 var reward_sites_cache: Dictionary = {}
 var reward_seal_conflicts: Array = []
 var graph_cache: Dictionary = {}
-var reach_cache: Dictionary = {}
+var reach_entries: Array = []
+var last_reach_graph: Dictionary = {}
+var last_reach_entry: Dictionary = {}
+var local_graph_cache: Dictionary = {}
+var graph_intern: Dictionary = {}
 var return_rooms: Dictionary = {}
 var tids: Dictionary = {}
 var qids: Dictionary = {}
@@ -114,27 +118,17 @@ func checkpoint() -> bool:
 	return true
 
 func sort_rows(rows: Array, less: Callable) -> Array:
-	# Bottom-up stable merge, same equal-key order; no RNG calls.
-	var result := rows.duplicate()
-	var width := 1
-	while width < result.size():
-		var merged: Array = []
-		for start in range(0,result.size(),width*2):
-			var i := start
-			var j := mini(start+width,result.size())
-			var end := mini(start+2*width,result.size())
-			var left_end := j
-			while i < left_end or j < end:
-				if not await checkpoint():
-					return []
-				if i >= left_end or j < end and less.call(result[j],result[i]):
-					merged.append(result[j])
-					j += 1
-				else:
-					merged.append(result[i])
-					i += 1
-		result = merged
-		width *= 2
+	# Stable total tie-break by original insertion index. Comparator is pure in
+	# this solver. Native sorting avoids an interpreter merge allocation per node.
+	if not await checkpoint():return []
+	var decorated: Array=[]
+	for i in range(rows.size()):decorated.append([i,rows[i]])
+	decorated.sort_custom(func(a,b):
+		if less.call(a[1],b[1]):return true
+		if less.call(b[1],a[1]):return false
+		return a[0]<b[0])
+	var result: Array=[]
+	for row in decorated:result.append(row[1])
 	return result
 
 func tick() -> bool:
@@ -217,8 +211,8 @@ static func edge(graph: Dictionary, a: String, b: String) -> void:
 func graph(occupied: Array, potential := false) -> Array:
 	var state: Array = ["potential" if potential else "actual"]
 	for item in occupied:
-		state.append([item.id,item.module_id,item.mirror_x,item.origin])
-	var cache_key := JSON.stringify(state)
+		state.append([item.id,item.module_id,item.mirror_x,item.origin[0],item.origin[1]])
+	var cache_key: Array = state # immutable value key; Dictionary checks equality on collisions
 	if graph_cache.has(cache_key):
 		await checkpoint()
 		return graph_cache[cache_key]
@@ -239,78 +233,56 @@ func graph(occupied: Array, potential := false) -> Array:
 		if GEO.permitted(b[2], "out") and GEO.permitted(a[2], "in"):
 			edge(g, b[0].id+"."+b[1]+":depart", a[0].id+"."+a[1]+":arrive")
 	for item in occupied:
-		if not await checkpoint():
-			return [{},[],connected]
-		for route in routes[local_key(item.module_id, item.mirror_x)]:
-			var a: String = route.from_port
-			var b: String = route.to_port
-			var selected: Dictionary = connected[item.id]
-			if not potential and (not selected.has(a) or not selected.has(b)):
-				continue
-			var trial := selected.duplicate()
-			trial[a] = true
-			trial[b] = true
-			if potential and not (await configuration_ok(item, trial)):
-				continue
-			var chain: Array = [item.id+"."+a+":arrive"]
-			if item.reward and not route.reward_ids.is_empty():
-				var node: String = item.id+":reward:"+route.id
-				chain.append(node)
-				rewards.append([item.id, node])
-			chain.append(item.id+"."+b+":depart")
-			for i in range(chain.size()-1):
-				edge(g, chain[i], chain[i+1])
-	# StableSolver expands incidental treasure edges in a second pass.
-	for item in occupied:
-		if item.reward:
-			continue
-		for route in routes[local_key(item.module_id, item.mirror_x)]:
-			if route.reward_ids.is_empty():
-				continue
-			var a: String = item.id+"."+route.from_port+":arrive"
-			var b: String = item.id+"."+route.to_port+":depart"
-			if not b in g.get(a, []):
-				continue
-			g[a].erase(b)
-			var chain: Array = [a]
-			for rid in route.reward_ids:
-				chain.append(item.id+":reward:"+route.id+":"+rid)
-			chain.append(b)
-			for i in range(chain.size()-1):
-				edge(g, chain[i], chain[i+1])
+		if not await checkpoint():return [{},[],connected]
+		var local_graph: Array = await module_graph(item,connected[item.id],potential)
+		if aborted():return [{},[],connected]
+		for pair in local_graph[0]:edge(g,item.id+pair[0],item.id+pair[1])
+		for suffix in local_graph[1]:rewards.append([item.id,item.id+suffix])
 	edge(g, "START", "M01.R:depart")
 	for item in occupied:
 		if item.module_id == "BOSS":
 			edge(g, item.id+".L:arrive", "BOSS")
 			break
-	var value: Array = [g,rewards,connected]
+	var signature := hash(g)
+	var canonical: Dictionary = g
+	for prior in graph_intern.get(signature,[]):
+		if prior==g:
+			canonical=prior
+			break
+	if is_same(canonical,g):
+		if graph_intern.size()>=128:graph_intern.erase(graph_intern.keys()[0])
+		if not graph_intern.has(signature):graph_intern[signature]=[]
+		graph_intern[signature].append(g)
+	var value: Array = [canonical,rewards,connected]
 	if graph_cache.size() >= 64:
 		graph_cache.erase(graph_cache.keys()[0])
 	graph_cache[cache_key] = value
 	return value
 
 func reachable(g: Dictionary, start: String) -> Dictionary:
-	var key := hash(g)
-	if reach_cache.has(key) and reach_cache[key].graph == g and reach_cache[key].starts.has(start):
+	# Graphs are immutable after publication. Identity is exact; no recursive
+	# hash/equality of hundreds of graph nodes on each reachability cache hit.
+	var entry: Dictionary = last_reach_entry if is_same(g,last_reach_graph) else {}
+	if entry.is_empty():
+		for candidate in reach_entries:
+			if is_same(candidate.graph,g):entry=candidate;break
+	if entry.is_empty():
+		entry={"graph":g,"starts":{}}
+		if reach_entries.size()>=64:reach_entries.pop_front()
+		reach_entries.append(entry)
+	last_reach_graph=g;last_reach_entry=entry
+	if entry.starts.has(start):
 		await checkpoint()
-		return reach_cache[key].starts[start]
-	var seen: Dictionary = {start: true}
-	var queue: Array = [start]
-	var head := 0
-	while head < queue.size():
-		if not await checkpoint():
-			return {}
-		var at: String = queue[head]
-		head += 1
-		for node in g.get(at, []):
-			if not seen.has(node):
-				seen[node] = true
-				queue.append(node)
-	if not reach_cache.has(key) or reach_cache[key].graph != g:
-		if reach_cache.size() >= 64:
-			reach_cache.erase(reach_cache.keys()[0])
-		reach_cache[key] = {"graph":g,"starts":{}}
-	reach_cache[key].starts[start] = seen
+		return entry.starts[start]
+	var seen: Dictionary={start:true}
+	var queue: Array=[start]
+	var head:=0
+	while head<queue.size():
+		if head%8==0 and not await checkpoint():return {}
+		var at: String=queue[head];head+=1
+		for node in g.get(at,[]):
+			if not seen.has(node):seen[node]=true;queue.append(node)
+	entry.starts[start]=seen
 	return seen
 
 func reachable_frontier(occupied: Array) -> Array:
@@ -940,3 +912,35 @@ func metrics() -> Dictionary:
 
 func diagnostics() -> Dictionary:
 	return {"solver_state": {"seed": request.seed, "phase": phase, "instances": items}, "decisions": decisions, "failures": failures, "rng_state": rng.getstate(), "reward_seal_conflicts":reward_seal_conflicts, "reward_check_scope":"full strict seal-AABB union exclusion only; other claim/grounding/path physics UNKNOWN"}
+
+func module_graph(item: Dictionary, selected: Dictionary, potential: bool) -> Array:
+	var selected_ids: Array=selected.keys();selected_ids.sort()
+	var key: Array=[item.module_id,item.mirror_x,selected_ids,potential]
+	if local_graph_cache.has(key):return local_graph_cache[key]
+	var g: Dictionary={}
+	var rewards: Array=[]
+	for route in routes[local_key(item.module_id,item.mirror_x)]:
+		var a: String=route.from_port;var b: String=route.to_port
+		if not potential and (not selected.has(a) or not selected.has(b)):continue
+		var trial:=selected.duplicate();trial[a]=true;trial[b]=true
+		if potential and not await configuration_ok(item,trial):continue
+		if aborted():return [[],[]]
+		var chain: Array=["."+a+":arrive"]
+		if item.reward and not route.reward_ids.is_empty():
+			var node: String=":reward:"+route.id;chain.append(node);rewards.append(node)
+		chain.append("."+b+":depart")
+		for i in range(chain.size()-1):edge(g,chain[i],chain[i+1])
+	if not item.reward:
+		for route in routes[local_key(item.module_id,item.mirror_x)]:
+			if route.reward_ids.is_empty():continue
+			var a: String="."+route.from_port+":arrive";var b: String="."+route.to_port+":depart"
+			if not b in g.get(a,[]):continue
+			g[a].erase(b);var chain: Array=[a]
+			for rid in route.reward_ids:chain.append(":reward:"+route.id+":"+rid)
+			chain.append(b)
+			for i in range(chain.size()-1):edge(g,chain[i],chain[i+1])
+	var edges: Array=[]
+	for a in g:
+		for b in g[a]:edges.append([a,b])
+	var result: Array=[edges,rewards];local_graph_cache[key]=result
+	return result
