@@ -1,5 +1,7 @@
 # 《失序之钟》Map Generator
 
+主线当前交付为 **Godot 算法候选 0.4.1**（candidate，stable-v3-reward-space）。[主线合入记录、不可变下载来源及主游戏换锁交接](docs/MAIN_HANDOFF.md)；旧版本与下方历史工作线原件保留。后续转入按需维护，不主动展开新算法或性能专项。
+
 后续独立候选：[阶段A 0.3.1调度优化、阶段B 0.4.0封口—奖励兼容](runtime_packages/README.md)。分开版本、提交和证据；A保持旧结果，B建立新预期。两阶段均实际原生/Web运行，仍不保证硬帧预算或主游戏整图可玩性。
 
 Godot运行时迁移候选：[纯数据GDScript组件0.3.0](godot_candidate/README.md)，保留stable-v2、runtime-map/v2及模块包1.1.0，提供真实求解、完整内容和增量取消接口。原生与实际Web导出证据、候选包和主仓调用方法见该入口；仍须区分静态生成、调度性能和主游戏可玩性，候选不标为生产就绪。

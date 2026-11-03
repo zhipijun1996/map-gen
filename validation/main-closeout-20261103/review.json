@@ -1,0 +1,198 @@
+{
+  "status": "PASS",
+  "main_before": "178c40164c2f7371ce1c8a56cde658e84a4f42c2",
+  "reviewed_delivery_head": "c35871446cc0a3939e1a38171435f42cdc64a359",
+  "dependency_ancestry": [
+    {
+      "pr": 2,
+      "head": "0d338c2309d4e17bd8e9b128f745eb93938e99b2",
+      "parent_head": "178c40164c2f7371ce1c8a56cde658e84a4f42c2",
+      "ancestry": true,
+      "workflow_files": []
+    },
+    {
+      "pr": 3,
+      "head": "93c5221a9708d079c2864f3c14b415e81bb5de07",
+      "parent_head": "0d338c2309d4e17bd8e9b128f745eb93938e99b2",
+      "ancestry": true,
+      "workflow_files": []
+    },
+    {
+      "pr": 4,
+      "head": "a8efe1db0a5557fdbc4956f95f3bc7763c29e3ff",
+      "parent_head": "93c5221a9708d079c2864f3c14b415e81bb5de07",
+      "ancestry": true,
+      "workflow_files": []
+    },
+    {
+      "pr": 5,
+      "head": "6bf07ab5a655ea056461b935ae4354e15ef83482",
+      "parent_head": "a8efe1db0a5557fdbc4956f95f3bc7763c29e3ff",
+      "ancestry": true,
+      "workflow_files": []
+    },
+    {
+      "pr": 6,
+      "head": "c35871446cc0a3939e1a38171435f42cdc64a359",
+      "parent_head": "6bf07ab5a655ea056461b935ae4354e15ef83482",
+      "ancestry": true,
+      "workflow_files": []
+    }
+  ],
+  "packages": [
+    {
+      "path": "reference_package/releases/0.2.0/mapgen-python-reference-0.2.0.zip",
+      "sha256": "25f05861b68a99eee1e9d588eb2cab761e30c85b7cc109b0536292fcc98867f6",
+      "manifest_sha256": "657782d210880131f88ee47526672f9b3fbb0920346e1c5e217485d528f2c7fb",
+      "source_commit": "1b20031c60ee0269d03c1e89eb52f0a0f0fc70bf",
+      "manifest_files": 90,
+      "all_file_hashes": true,
+      "runtime_target": "python-reference"
+    },
+    {
+      "path": "godot_candidate/releases/0.3.0/mapgen-godot-candidate-0.3.0.zip",
+      "sha256": "9ea87854c96cf7c2189b4c6ad25a8056454a3150721bead79c335aca8678acd0",
+      "manifest_sha256": "3d0c9551a89ad2b7936c4e6ec90d7b3730f1ba3979034dcf860b2f6508bea5f5",
+      "source_commit": "508b558e8a9925862e8a26c20fea008b9a772007",
+      "manifest_files": 75,
+      "all_file_hashes": true,
+      "runtime_target": "godot-standard-gdscript"
+    },
+    {
+      "path": "runtime_packages/releases/0.3.1/mapgen-godot-candidate-0.3.1.zip",
+      "sha256": "68b9d5efe5e6e1b38998a84d1a8bac1d0cf2830b8740aaa669c36eb053d76252",
+      "manifest_sha256": "cdedf7397084b10eef59368c84d3c41934221af93bb9d620b0558b7c4340b88b",
+      "source_commit": "24ae03e8b3c0b80dbc22d8ec0b68ac973466e6be",
+      "manifest_files": 99,
+      "all_file_hashes": true,
+      "runtime_target": "godot-standard-gdscript"
+    },
+    {
+      "path": "runtime_packages/releases/0.4.0/mapgen-godot-candidate-0.4.0.zip",
+      "sha256": "7aa3f0e573675c3bb41e2a2a5b23254c4005bb8eaef9756535e3a6480988d778",
+      "manifest_sha256": "f1d6d1c03c7c8e87a399dd71ff4811546eb6958886602312f24a3ff345af5ecc",
+      "source_commit": "b21c889077ec97eb11a210d0ceab4fbddd862e48",
+      "manifest_files": 105,
+      "all_file_hashes": true,
+      "runtime_target": "godot-standard-gdscript"
+    },
+    {
+      "path": "runtime_packages/releases/0.4.1/mapgen-godot-candidate-0.4.1.zip",
+      "sha256": "f5c84e5e51dff01d16429783b957c0d5214056b9d2fea47a830baac12ecedb4e",
+      "manifest_sha256": "4dd28a296cb069dba5b625c5b0692906321a6556c73c4c39ad3fefe375743958",
+      "source_commit": "8eefdbd140ce10defe1570ab8eefb6729382f8b3",
+      "manifest_files": 173,
+      "all_file_hashes": true,
+      "runtime_target": "godot-standard-gdscript"
+    }
+  ],
+  "latest": {
+    "manifest_source_matches_tested_and_delivered_19_files": true,
+    "module_lock": {
+      "compatibility": "exact SHA; source ZIP required even with derived data",
+      "sha256": "5ad5a7871941b2c1ffa759b18f7b1e80f2fe7e571b72f95d1e0ef26031f08723",
+      "version": "1.1.0"
+    },
+    "protocol": {
+      "config": "mapgen/generator-config/v1",
+      "map": "mapgen/runtime-map/v2",
+      "request": "mapgen/generation-request/v1",
+      "result": "mapgen/generation-result/v1"
+    },
+    "readiness": {
+      "hard_frame_budget": "NOT_GUARANTEED",
+      "host_default_double_fresh_300_seconds": "NOT_RUN",
+      "production_ready": false,
+      "status": "candidate",
+      "whole_map_physics": "NOT_RUN"
+    },
+    "sample_content_refs": 89,
+    "independent_reverification": {
+      "status": "PASS",
+      "checks": 179,
+      "seconds": 14.30970234599954,
+      "engine_version": "4.7.2.stable.custom_build.gunman_sd1.ed1daf0bf",
+      "engine_sha256": "eeaec2b65dc3234168be1e1cbcc89731514bbb78dfb2c1b502920c50830a0638",
+      "log_sha256": "4620626f8f96145448464baa80016f3283387b8a5ad130c0c185bfebb9113047",
+      "cwd_outside_repository": true,
+      "argv": [
+        "/workspace/map-gen/.cache/gunman-4.7.2/editor/godot-linux-x86_64",
+        "--headless",
+        "--path",
+        "/tmp/mapgen-main-closeout-independent-ebiuno42/mapgen-godot-candidate-0.4.1",
+        "--script",
+        "res://tests/verify_bundle.gd",
+        "--",
+        "/tmp/mapgen-main-closeout-independent-ebiuno42/mapgen-godot-candidate-0.4.1/tests/dependencies/modules.zip"
+      ]
+    }
+  },
+  "review_scope": [
+    "public protocol/result/reference resolution and no Python algorithm change in PR2",
+    "GDScript pure data boundary/RNG+numeric+failure+snapshot contracts and recorded full native/Web evidence in PR3",
+    "cooperative preload/job caches/cancel/publication contracts and unchanged behavior evidence in PR4",
+    "strict sufficient reward-space exclusion for ordinary and target sites; partial intersection remains UNKNOWN in PR5",
+    "source-JSON cache binding/full archive+member checks, pure candidate allocation skip, stable sort/topology/reach caches, immutable result evidence in PR6"
+  ],
+  "review_conclusion": "No new merge blocker found within documented candidate support; existing timing/physics/host limits retained",
+  "full_regression_policy": "Reuse unchanged reviewed source evidence; no new algorithm/performance version or full performance rerun",
+  "main_after_dependency_merges": "a369ff87df282a74a2a0948a9233eb761fd7e7cb",
+  "main_delivery_tree": "cf9ed089540d804d13e4dd4ec6cf443a440a0eed",
+  "reviewed_pr6_tree": "cf9ed089540d804d13e4dd4ec6cf443a440a0eed",
+  "preserved_history": [
+    {
+      "baseline": "178c40164c2f7371ce1c8a56cde658e84a4f42c2",
+      "unchanged_paths": [
+        "delivery",
+        "experiments/seed-study/source",
+        "experiments/seed-study/output"
+      ]
+    },
+    {
+      "baseline": "0d338c2309d4e17bd8e9b128f745eb93938e99b2",
+      "unchanged_paths": [
+        "reference_package/releases",
+        "reference_package/fixtures",
+        "validation/reference-package-0.2.0"
+      ]
+    },
+    {
+      "baseline": "93c5221a9708d079c2864f3c14b415e81bb5de07",
+      "unchanged_paths": [
+        "godot_candidate/releases",
+        "validation/godot-candidate-0.3.0"
+      ]
+    },
+    {
+      "baseline": "a8efe1db0a5557fdbc4956f95f3bc7763c29e3ff",
+      "unchanged_paths": [
+        "runtime_packages/releases/0.3.1",
+        "validation/runtime-scheduling-A"
+      ]
+    },
+    {
+      "baseline": "6bf07ab5a655ea056461b935ae4354e15ef83482",
+      "unchanged_paths": [
+        "runtime_packages/releases/0.4.0",
+        "validation/runtime-reward-B"
+      ]
+    },
+    {
+      "baseline": "c35871446cc0a3939e1a38171435f42cdc64a359",
+      "unchanged_paths": [
+        "runtime_packages/releases/0.4.1",
+        "validation/performance-0.4.1"
+      ]
+    }
+  ],
+  "local_guards": {
+    "prototype": {
+      "status": "PASS",
+      "log_sha256": "ea30f4ef7d8de2ab85bf9a7323a214850ddc28c9552dc13044c47658ebfc4198"
+    },
+    "progress": {
+      "status": "PASS",
+      "log_sha256": "2c5db5224a27f4b65e1035690aff1617876c5f956d936c2c3ae695cf403a3417"
+    }
+  }
+}
