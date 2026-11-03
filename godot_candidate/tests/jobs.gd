@@ -73,6 +73,27 @@ func _initialize() -> void:
 	invalid.run_token = "outside request"
 	checks.host_token_rejected = JOB.create(invalid,archive.library,config).result().status == "INVALID_INPUT"
 	checks.missing_library = JOB.create(request,null,config).result().status == "INVALID_INPUT"
+	checks.wrong_library_type = JOB.create(request,"not an archive",config).result().status == "INVALID_INPUT"
+	var export_job = JOB.create(request,archive.library,config)
+	while not export_job.is_done() and export_job.progress().phase != "export":
+		export_job.advance(1)
+	checks.export_is_pending = not export_job.is_done() and export_job.result().is_empty()
+	export_job.cancel()
+	checks.cancel_export = export_job.result().status == "CANCELLED" and export_job.result().map == null and export_job.result().content_store.is_empty()
+	var left = JOB.create(request,archive.library,config)
+	var right = JOB.create(request,archive.library,config)
+	while left.progress().expanded < 17 or right.progress().expanded < 17:
+		if left.progress().expanded < 17:
+			left.advance(1)
+		if right.progress().expanded < 17:
+			right.advance(1)
+	left.cancel()
+	right.cancel()
+	var left_result: Dictionary = left.result()
+	var right_result: Dictionary = right.result()
+	left_result.metrics.erase("generation_seconds")
+	right_result.metrics.erase("generation_seconds")
+	checks.interleaved_jobs_isolated = left_result == right_result
 	var detached_request = request.duplicate(true)
 	var snapshot = JOB.create(detached_request,archive.library,config)
 	detached_request.seed += 1

@@ -54,6 +54,17 @@ func _ready() -> void:
 				foundation_failures.append("uniform:"+vector.seed)
 		if rng.getstate() != vector.saved_state:
 			foundation_failures.append("state:"+vector.seed)
+		if not rng.setstate(vector.saved_state):
+			foundation_failures.append("restore:"+vector.seed)
+		var branch: Array = [rng.randrange(5),rng.random(),rng.getrandbits(32)]
+		if branch != vector.restored_branch:
+			foundation_failures.append("restored branch:"+vector.seed)
+	if NUM.stable_sort(vectors.stable_sort.input,func(a,b):return a[1]>b[1]) != vectors.stable_sort.descending:
+		foundation_failures.append("stable ties")
+	for seed_value in [-9007199254740992,9007199254740992]:
+		var rng = RNG.new()
+		if rng.seed_integer(seed_value):
+			foundation_failures.append("out of range seed accepted")
 	for vector in vectors.shape_cost:
 		if NUM.binary64_be(NUM.shape_cost(vector.bounds, config)) != vector.cost.binary64_be:
 			foundation_failures.append("shape:"+str(vector.bounds))
@@ -61,6 +72,14 @@ func _ready() -> void:
 	for vector in numbers.numbers:
 		if NUM.binary64_be(DATA.parse(vector.token).value) != vector.binary64_be:
 			foundation_failures.append("decimal:"+vector.token)
+	for vector in numbers.seeds:
+		var rng = RNG.new()
+		rng.seed_integer(vector.seed.to_int())
+		for expected in vector.random_bits:
+			if NUM.binary64_be(rng.random()) != expected:
+				foundation_failures.append("boundary seed:"+vector.seed)
+		if rng.getstate() != vector.state:
+			foundation_failures.append("boundary state:"+vector.seed)
 	timing.preload_and_vectors_usec = Time.get_ticks_usec()-started_usec
 	_start_case()
 

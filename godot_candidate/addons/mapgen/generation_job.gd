@@ -4,6 +4,7 @@ const PROTOCOL = preload("protocol.gd")
 const PREPARED = preload("prepared_library.gd")
 const SOLVER = preload("solver.gd")
 const EXPORT = preload("runtime_export.gd")
+const ARCHIVE = preload("module_archive.gd")
 signal _resume
 var _request: Dictionary
 var _config: Dictionary
@@ -22,7 +23,7 @@ var _phase := "created"
 static func create(request, library, config):
 	var job = load("res://addons/mapgen/generation_job.gd").new()
 	var error := PROTOCOL.validate(request, config)
-	if not error.is_empty() or library == null or library.sha256 != PROTOCOL.PACKAGE_SHA:
+	if not error.is_empty() or not library is ARCHIVE or library.sha256 != PROTOCOL.PACKAGE_SHA:
 		job._result = PROTOCOL.failure("INVALID_INPUT", null, error if not error.is_empty() else "library: expected locked ModuleArchive", "input")
 		return job
 	job._request = request.duplicate(true)
@@ -48,7 +49,7 @@ func advance(operation_budget: int = 128) -> Dictionary:
 	return {"ok": true, "progress": progress()}
 
 func progress() -> Dictionary:
-	return {"done": is_done(), "phase": _solver.phase if _solver != null else _phase, "operations": _operations, "expanded": _solver.expanded if _solver != null else 0, "instances": _solver.items.size() if _solver != null else 0, "request_fingerprint": _fingerprint, "implementation": PROTOCOL.IMPLEMENTATION}
+	return {"done": is_done(), "phase": _phase if _phase == "export" else _solver.phase if _solver != null else _phase, "operations": _operations, "expanded": _solver.expanded if _solver != null else 0, "instances": _solver.items.size() if _solver != null else 0, "request_fingerprint": _fingerprint, "implementation": PROTOCOL.IMPLEMENTATION}
 
 func is_done() -> bool:
 	return not _result.is_empty()
@@ -97,10 +98,16 @@ func _run() -> void:
 	_solver = SOLVER.new(self, _request, _prepared, _config)
 	var accepted: bool = await _solver.build()
 	_phase = _solver.phase
-	_result = PROTOCOL.failure(_solver.error_status if not _solver.error_status.is_empty() else "ERROR", _fingerprint, _solver.error_message if not _solver.error_message.is_empty() else "IMPLEMENTATION_INCOMPLETE", _phase, _solver.metrics(), _solver.diagnostics())
-	# This staged candidate never publishes a partial map. Full export is gated.
+	var exported: Array = []
 	if accepted:
-		var exported: Array = EXPORT.export_map(_solver.final_source, _solver, _fingerprint)
+		_phase = "export"
+		exported = await EXPORT.export_map(_solver.final_source, _solver, _fingerprint)
+	if _solver.aborted():
+		# Python API records the escaping exception in addition to search-local
+		# failures. Preserve that final diagnostic and its operation count.
+		_solver.record_failure(_solver.error_message)
+	_result = PROTOCOL.failure(_solver.error_status if not _solver.error_status.is_empty() else "ERROR", _fingerprint, _solver.error_message if not _solver.error_message.is_empty() else "IMPLEMENTATION_INCOMPLETE", _phase, _solver.metrics(), _solver.diagnostics())
+	if accepted and not _solver.aborted() and exported.size() == 2:
 		_result.status = "PASS"
 		_result.map = exported[0]
 		_result.content_store = exported[1]

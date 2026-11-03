@@ -22,6 +22,8 @@ static func export_map(source: Dictionary, solver, fingerprint: String) -> Array
 	var boss: Dictionary = {}
 	var rewards: Array = []
 	for original in source.instances:
+		if not await solver.checkpoint():
+			return []
 		var alias: Dictionary = aliases[original.id]
 		var entry: Dictionary = solver.library.entries[original.source_module_id]
 		var role := "start" if original.module_id == "START" else "boss" if original.module_id == "BOSS" else "target_reward" if original.reward else "traversal"

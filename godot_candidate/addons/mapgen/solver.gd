@@ -93,11 +93,16 @@ func aborted() -> bool:
 func reject(reason: String) -> void:
 	rejections[reason] = rejections.get(reason, 0)+1
 
-func tick() -> bool:
+func checkpoint() -> bool:
 	var job = owner.get_ref()
 	if job == null or not await job.consume():
 		error_status = "CANCELLED"
 		error_message = "cancelled"
+		return false
+	return true
+
+func tick() -> bool:
+	if not await checkpoint():
 		return false
 	expanded += 1
 	if expanded > config.search.candidate_expansion_budget:
@@ -720,7 +725,7 @@ func place_rewards(n: int) -> bool:
 			record_failure("final_shape_envelope")
 			return false
 		# The final independent assembly/audit/export gate is supplied separately.
-		return final_accept()
+		return await final_accept()
 	var choices: Array = await reward_options()
 	if aborted():
 		return false
@@ -794,12 +799,18 @@ func finish() -> bool:
 	return false
 
 func final_accept() -> bool:
+	if not await checkpoint():
+		return false
 	if not PIPELINE.assembly_gate(self):
 		record_failure("original_assembly_rejected")
 		return false
 	var decorated := items.duplicate(true)
-	var feedback: Array = PIPELINE.decorate(decorated, self)
-	var checked: Dictionary = PIPELINE.audit(decorated, self)
+	var feedback: Array = await PIPELINE.decorate(decorated, self)
+	if aborted():
+		return false
+	var checked: Dictionary = await PIPELINE.audit(decorated, self)
+	if aborted():
+		return false
 	var paths := actual_paths(checked.edges, config.goals.main_paths_required)
 	if not feedback[1].is_empty() or not checked.blockers.is_empty() or paths.size() < config.goals.main_paths_required:
 		record_failure("final_independent_goal_check")

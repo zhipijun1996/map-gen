@@ -79,6 +79,8 @@ static func decorate(items: Array, solver) -> Array:
 	var notes: Array = []
 	var blockers: Array = []
 	for item in items:
+		if not await solver.checkpoint():
+			return []
 		var template: Dictionary = solver.templates[item.module_id]
 		var entry: Dictionary = library.entries[template.source_module_id]
 		item.solver_port_ids = item.ports.keys()
@@ -176,6 +178,8 @@ static func audit(items: Array, solver) -> Dictionary:
 	var library = solver.library
 	var invariants: Array = []
 	for item in items:
+		if not await solver.checkpoint():
+			return {}
 		var x: int = item.origin[0]
 		var y: int = item.origin[1]
 		var width: int = item.size_blocks[0]
@@ -229,6 +233,8 @@ static func audit(items: Array, solver) -> Dictionary:
 			for k in range(chain.size()-1):
 				solver.edge(g, chain[k], chain[k+1])
 	for group in configured_connections(items):
+		if not await solver.checkpoint():
+			return {}
 		for row in group:
 			var key: String = row[0].id+"."+row[1]
 			if used.has(key):
