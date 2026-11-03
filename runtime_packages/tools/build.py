@@ -12,7 +12,7 @@ def main():
  project=ROOT/'godot_runtime'
  for x in (project/'addons/mapgen').glob('*.gd'):add('addons/mapgen/'+x.name,x)
  tests=['foundation.gd','numbers.gd','integer_hypot_probe.gd','suite.gd','preload.gd','web.gd','web.tscn','verify_bundle.gd','request.json','config.json','reference-vectors.json','number-vectors.json','hypot-vectors.json']
- if a.stage=='B':tests+=['reward_geometry.gd']
+ if a.stage=='B':tests+=['reward_geometry.gd','budget.gd']
  for n in tests:add('tests/'+n,project/'tests'/n)
  for n in ['project.godot','export_presets.cfg']:add(n,project/n)
  for x in (ROOT/'schemas').glob('*.json'):add('schemas/'+x.name,x)
@@ -23,6 +23,10 @@ def main():
  for folder in ['replay','web']:
   add('evidence/'+folder+'/summary.json',evidence/folder/'summary.json')
  add('evidence/report.json',evidence/'report.json')
+ if a.stage=='B':
+  add('evidence/validity.json',evidence/'validity.json')
+  add('evidence/geometry.json',evidence/'geometry/report.json')
+  add('evidence/budget.json',evidence/'budget/report.json')
  for name in ['success','failure']:
   folder='samples/'+name
   add(folder+'/request.json',evidence/'replay'/'inputs'/name/'request.json')

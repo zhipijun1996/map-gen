@@ -1,0 +1,449 @@
+{
+  "status": "PASS",
+  "stage": "B",
+  "checks": {
+    "preload-cancel": true,
+    "generation-cancel": true,
+    "preload-reuse": true,
+    "batches": true,
+    "default-1": true,
+    "failure": true,
+    "failure-no-map": true,
+    "generation-cancel-no-map": true
+  },
+  "cases": {
+    "default-1": {
+      "cancel": {},
+      "frame_max_usec": 32400,
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "closure_search": {
+            "calls": 2338,
+            "max_usec": 22900,
+            "p50_usec": 100,
+            "p95_usec": 3600,
+            "p99_usec": 6200,
+            "total_usec": 1597200
+          },
+          "created": {
+            "calls": 1,
+            "max_usec": 6400,
+            "p50_usec": 6400,
+            "p95_usec": 6400,
+            "p99_usec": 6400,
+            "total_usec": 6400
+          },
+          "export": {
+            "calls": 3,
+            "max_usec": 8200,
+            "p50_usec": 1900,
+            "p95_usec": 1900,
+            "p99_usec": 1900,
+            "total_usec": 11900
+          },
+          "final_audit": {
+            "calls": 461,
+            "max_usec": 21700,
+            "p50_usec": 100,
+            "p95_usec": 200,
+            "p99_usec": 3300,
+            "total_usec": 75500
+          },
+          "final_decorate": {
+            "calls": 28,
+            "max_usec": 3700,
+            "p50_usec": 600,
+            "p95_usec": 3400,
+            "p99_usec": 3600,
+            "total_usec": 30000
+          },
+          "final_gate": {
+            "calls": 129,
+            "max_usec": 5400,
+            "p50_usec": 0,
+            "p95_usec": 300,
+            "p99_usec": 1300,
+            "total_usec": 16000
+          },
+          "goal_aware_terminals": {
+            "calls": 51030,
+            "max_usec": 26200,
+            "p50_usec": 100,
+            "p95_usec": 1300,
+            "p99_usec": 5300,
+            "total_usec": 15636700
+          },
+          "growth": {
+            "calls": 40673,
+            "max_usec": 25400,
+            "p50_usec": 0,
+            "p95_usec": 1200,
+            "p99_usec": 5200,
+            "total_usec": 11723700
+          },
+          "init": {
+            "calls": 8,
+            "max_usec": 5300,
+            "p50_usec": 800,
+            "p95_usec": 3900,
+            "p99_usec": 3900,
+            "total_usec": 14900
+          },
+          "prepare": {
+            "calls": 7,
+            "max_usec": 16000,
+            "p50_usec": 2300,
+            "p95_usec": 5900,
+            "p99_usec": 5900,
+            "total_usec": 34400
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 64059100
+      },
+      "result_snapshot_usec": 6600
+    },
+    "default-17": {
+      "cancel": {},
+      "frame_max_usec": 41400,
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "closure_search": {
+            "calls": 137,
+            "max_usec": 33500,
+            "p50_usec": 2200,
+            "p95_usec": 22300,
+            "p99_usec": 29900,
+            "total_usec": 1062700
+          },
+          "created": {
+            "calls": 1,
+            "max_usec": 27300,
+            "p50_usec": 27300,
+            "p95_usec": 27300,
+            "p99_usec": 27300,
+            "total_usec": 27300
+          },
+          "final_audit": {
+            "calls": 28,
+            "max_usec": 28500,
+            "p50_usec": 600,
+            "p95_usec": 4000,
+            "p99_usec": 13100,
+            "total_usec": 59900
+          },
+          "final_decorate": {
+            "calls": 1,
+            "max_usec": 20900,
+            "p50_usec": 20900,
+            "p95_usec": 20900,
+            "p99_usec": 20900,
+            "total_usec": 20900
+          },
+          "final_gate": {
+            "calls": 8,
+            "max_usec": 30100,
+            "p50_usec": 700,
+            "p95_usec": 12100,
+            "p99_usec": 12100,
+            "total_usec": 48900
+          },
+          "goal_aware_terminals": {
+            "calls": 3002,
+            "max_usec": 35700,
+            "p50_usec": 1000,
+            "p95_usec": 16100,
+            "p99_usec": 25800,
+            "total_usec": 12099500
+          },
+          "growth": {
+            "calls": 2393,
+            "max_usec": 37400,
+            "p50_usec": 600,
+            "p95_usec": 18800,
+            "p99_usec": 29500,
+            "total_usec": 8417900
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 34698800
+      },
+      "result_snapshot_usec": 6400
+    },
+    "failure": {
+      "cancel": {},
+      "frame_max_usec": 8400,
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "created": {
+            "calls": 1,
+            "max_usec": 4300,
+            "p50_usec": 4300,
+            "p95_usec": 4300,
+            "p99_usec": 4300,
+            "total_usec": 4300
+          },
+          "growth": {
+            "calls": 13,
+            "max_usec": 700,
+            "p50_usec": 500,
+            "p95_usec": 600,
+            "p99_usec": 600,
+            "total_usec": 6200
+          },
+          "init": {
+            "calls": 8,
+            "max_usec": 1200,
+            "p50_usec": 900,
+            "p95_usec": 1000,
+            "p99_usec": 1000,
+            "total_usec": 7100
+          },
+          "prepare": {
+            "calls": 7,
+            "max_usec": 2400,
+            "p50_usec": 2000,
+            "p95_usec": 2100,
+            "p99_usec": 2100,
+            "total_usec": 14300
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 75200
+      },
+      "result_snapshot_usec": 100
+    },
+    "generation-cancel": {
+      "cancel": {
+        "case_id": "generation-cancel",
+        "finished_ms": 30133,
+        "handler_ms": 30131.099999999627,
+        "host_observed_ms": 30131.599999999627,
+        "input_to_done_ms": 21.90000000037253,
+        "intent_ms": 30111.099999999627,
+        "queue_ms": 20.5,
+        "trusted": true
+      },
+      "frame_max_usec": 24900,
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "created": {
+            "calls": 1,
+            "max_usec": 15500,
+            "p50_usec": 15500,
+            "p95_usec": 15500,
+            "p99_usec": 15500,
+            "total_usec": 15500
+          },
+          "growth": {
+            "calls": 86,
+            "max_usec": 17300,
+            "p50_usec": 0,
+            "p95_usec": 1000,
+            "p99_usec": 3600,
+            "total_usec": 37200
+          },
+          "init": {
+            "calls": 8,
+            "max_usec": 5100,
+            "p50_usec": 1200,
+            "p95_usec": 5100,
+            "p99_usec": 5100,
+            "total_usec": 16500
+          },
+          "prepare": {
+            "calls": 7,
+            "max_usec": 6800,
+            "p50_usec": 2900,
+            "p95_usec": 4700,
+            "p99_usec": 4700,
+            "total_usec": 24700
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 219000
+      },
+      "result_snapshot_usec": 0
+    },
+    "preload": {
+      "cancel": {},
+      "frame_max_usec": 29600,
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "catalog_json": {
+            "calls": 5503,
+            "max_usec": 22000,
+            "p50_usec": 300,
+            "p95_usec": 2500,
+            "p99_usec": 5700,
+            "total_usec": 3106300
+          },
+          "created": {
+            "calls": 1,
+            "max_usec": 1100,
+            "p50_usec": 1100,
+            "p95_usec": 1100,
+            "p99_usec": 1100,
+            "total_usec": 1100
+          },
+          "file_hashes": {
+            "calls": 1149,
+            "max_usec": 18900,
+            "p50_usec": 100,
+            "p95_usec": 200,
+            "p99_usec": 3100,
+            "total_usec": 219100
+          },
+          "manifest_json": {
+            "calls": 43,
+            "max_usec": 18500,
+            "p50_usec": 700,
+            "p95_usec": 5100,
+            "p99_usec": 7600,
+            "total_usec": 81600
+          },
+          "module_json": {
+            "calls": 11589,
+            "max_usec": 23500,
+            "p50_usec": 300,
+            "p95_usec": 2800,
+            "p99_usec": 5700,
+            "total_usec": 6835200
+          },
+          "zip_entries": {
+            "calls": 658,
+            "max_usec": 20800,
+            "p50_usec": 800,
+            "p95_usec": 5400,
+            "p99_usec": 17200,
+            "total_usec": 1021000
+          },
+          "zip_hash": {
+            "calls": 6,
+            "max_usec": 6900,
+            "p50_usec": 2100,
+            "p95_usec": 5900,
+            "p99_usec": 5900,
+            "total_usec": 23400
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 24531800
+      },
+      "result_snapshot_usec": 0
+    },
+    "preload-cancel": {
+      "cancel": {
+        "case_id": "preload-cancel",
+        "finished_ms": 5379.799999998882,
+        "handler_ms": 5369.89999999851,
+        "host_observed_ms": 5378.799999998882,
+        "input_to_done_ms": 27.5,
+        "intent_ms": 5352.299999998882,
+        "queue_ms": 26.5,
+        "trusted": true
+      },
+      "frame_max_usec": 26600,
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "catalog_json": {
+            "calls": 26,
+            "max_usec": 3400,
+            "p50_usec": 300,
+            "p95_usec": 2600,
+            "p99_usec": 3100,
+            "total_usec": 16400
+          },
+          "created": {
+            "calls": 1,
+            "max_usec": 2800,
+            "p50_usec": 2800,
+            "p95_usec": 2800,
+            "p99_usec": 2800,
+            "total_usec": 2800
+          },
+          "file_hashes": {
+            "calls": 1149,
+            "max_usec": 14700,
+            "p50_usec": 100,
+            "p95_usec": 300,
+            "p99_usec": 2800,
+            "total_usec": 210700
+          },
+          "manifest_json": {
+            "calls": 43,
+            "max_usec": 6400,
+            "p50_usec": 900,
+            "p95_usec": 4000,
+            "p99_usec": 4800,
+            "total_usec": 59800
+          },
+          "zip_entries": {
+            "calls": 658,
+            "max_usec": 22500,
+            "p50_usec": 1000,
+            "p95_usec": 5300,
+            "p99_usec": 14500,
+            "total_usec": 1065700
+          },
+          "zip_hash": {
+            "calls": 6,
+            "max_usec": 8600,
+            "p50_usec": 2800,
+            "p95_usec": 3700,
+            "p99_usec": 3700,
+            "total_usec": 22700
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 3301900
+      },
+      "result_snapshot_usec": 100
+    }
+  },
+  "actual_web": true,
+  "engine": "4.6.3-stable (official)",
+  "frame_target_usec": 8000,
+  "module_sha256": "5ad5a7871941b2c1ffa759b18f7b1e80f2fe7e571b72f95d1e0ef26031f08723",
+  "source_sha256": {
+    "module_archive.gd": "44c075d69db506ced4a2241e8205775a226861234786d43272633c1e7ba46742",
+    "preload_job.gd": "64c129d7bca5c894db3d76e5f73141bd2406f6df7812290d71c6d1535d37ca1f",
+    "protocol.gd": "87629cf89bd5d34fc1bea8a4d43de1d2a19348b6104d29f0ae01d36c937c6ad4",
+    "content_transform.gd": "80ab9f4e58ceedb754c6062996e0e4a4f36a9542e7c54206639d7760ce92e2f2",
+    "data_json.gd": "cef6a962ae33d5d03aa29b57ca35fcef104a07f7a2de636122e3b32cb8d0ea9c",
+    "solver.gd": "96e1ea947ed7864843ac0b72765d2957b75357f6677472513667fe9e142b401f",
+    "decimal64.gd": "a1c39dc62d62f8191a6d306942b2f549e674e09212970f8bd4a44153ed8e8109",
+    "runtime_export.gd": "5be6d8fd72389acb60efb5651a945e9200a0bc7a15a4a1bff152ab2647311a5c",
+    "generation_job.gd": "522d9cfa4a56ca08d3e721a1ba58b40974be2e27e983f2381f63ec3e3250d5ac",
+    "candidate_cursor.gd": "1a8ce925ab0d0e35232950618a83af334e9e780e6b61a49600277f6d38280fca",
+    "prepared_library.gd": "f572fe0f4811b1b116140e108a7a9dbc4d6e3b509df220feea66b8af2146cbaa",
+    "schema_data.gd": "5afce308ab7a030f120973cd7ba948580b5f8a29e6ef7ff8f012e98360a19f62",
+    "work_gate.gd": "fec67bc46e091be2d7919003aa0e525c0112772beab12ac82e6da1fcf41e4079",
+    "final_pipeline.gd": "c44fe36078a4cea5b20541f38c564e143ba4eaafbf6eb6edcf5bbb67d2ceb587",
+    "numeric.gd": "af1d58403d38687de902e4ded6770aa9972e91a9ea75e2ab5e92f98d41f90f7e",
+    "python_rng.gd": "6b70397a8f8f7dbfd2ba9f2c49101c9e5174e22fc4b761e1e97c07c6a61964d4",
+    "reward_clearance.gd": "f1946c2e0bb5fc7c3b6d6229030cd548bc5540a3160a652a5121bd35baf24a02",
+    "geometry.gd": "a86179cffc4820d774b398362098a4cc4158edaaffc55eda6992817672850a9e"
+  },
+  "export_sha256": {
+    "index.pck": "5c61346ac957f425d6787c2c5c350d14979794a2d907ad83e6a41c9f4ae18144",
+    "index.audio.worklet.js": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3",
+    "index.js": "e3f56ee40e6f84371053db06692cfac15e2c8659547b11c6b2dfa1996dabd981",
+    "index.apple-touch-icon.png.import": "6a0daab30c32e3ee34e6a86574a74bd5053b2892438c5719eb68abe28c1ba7ff",
+    "index.png": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e",
+    "index.apple-touch-icon.png": "9b374ecbc8558f480421e646f38aaa8a69d5b1d65ff7b48d0735da214c46773a",
+    "index.icon.png": "08808dd5397e9a502cb3624944151f87a9705b5b66b5c365c5ca4c6ab51525f5",
+    "index.audio.position.worklet.js": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8",
+    "index.png.import": "647cc0380be15587222a9670f9d0fb17f38fc79565a7efe3bc9fda1b28ea3e31",
+    "index.wasm": "26b61ce95247012ab3dca3ff51e96d1cdbff44ee91a8c20a83e150afca83f1b6",
+    "index.icon.png.import": "e67ac72ce5889d47708e58b60fa9c2da5e109bb52560f4cdefb7e1bdd4676258",
+    "index.html": "b2a8b0e94c29d876abe0e31f96f2a1151a6d7c7d36ac9e1f8b3dfc2399a120f6"
+  },
+  "whole_map_physics": "NOT_RUN"
+}

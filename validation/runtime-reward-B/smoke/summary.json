@@ -1,0 +1,709 @@
+{
+  "stage": "B",
+  "status": "PASS",
+  "cases": 7,
+  "original_seed_and_frozen_cases": 2,
+  "records": [
+    {
+      "case": "success",
+      "status": "PASS",
+      "checks": {
+        "identity_separate": true,
+        "protocol_failure_has_no_map": true
+      },
+      "metrics": {
+        "backtracks": 0,
+        "closed_loops_across_search": 3,
+        "expansions": 87175,
+        "generation_seconds": 10.273606,
+        "layout_repairs": 0,
+        "pruning": {
+          "entry_has_no_reward_route": 525,
+          "no_onward_route_from_actual_entry": 618,
+          "no_route_from_actual_entry": 9389,
+          "reward_claim_region_excluded_by_seals": 8,
+          "seal_or_route_configuration": 38
+        },
+        "recorded_failures": 0,
+        "terminal_states": 6
+      },
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "closure_search": {
+            "calls": 2338,
+            "max_usec": 4354,
+            "p50_usec": 24,
+            "p95_usec": 744,
+            "p99_usec": 1068,
+            "total_usec": 531963
+          },
+          "created": {
+            "calls": 1,
+            "max_usec": 3596,
+            "p50_usec": 3596,
+            "p95_usec": 3596,
+            "p99_usec": 3596,
+            "total_usec": 3596
+          },
+          "export": {
+            "calls": 3,
+            "max_usec": 6117,
+            "p50_usec": 2405,
+            "p95_usec": 2405,
+            "p99_usec": 2405,
+            "total_usec": 9646
+          },
+          "final_audit": {
+            "calls": 461,
+            "max_usec": 2628,
+            "p50_usec": 25,
+            "p95_usec": 65,
+            "p99_usec": 599,
+            "total_usec": 21275
+          },
+          "final_decorate": {
+            "calls": 28,
+            "max_usec": 1545,
+            "p50_usec": 520,
+            "p95_usec": 898,
+            "p99_usec": 912,
+            "total_usec": 16354
+          },
+          "final_gate": {
+            "calls": 129,
+            "max_usec": 3504,
+            "p50_usec": 24,
+            "p95_usec": 111,
+            "p99_usec": 1360,
+            "total_usec": 11970
+          },
+          "goal_aware_terminals": {
+            "calls": 51030,
+            "max_usec": 2988,
+            "p50_usec": 25,
+            "p95_usec": 538,
+            "p99_usec": 1198,
+            "total_usec": 5142981
+          },
+          "growth": {
+            "calls": 40673,
+            "max_usec": 5956,
+            "p50_usec": 21,
+            "p95_usec": 623,
+            "p99_usec": 876,
+            "total_usec": 4031232
+          },
+          "init": {
+            "calls": 8,
+            "max_usec": 1231,
+            "p50_usec": 726,
+            "p95_usec": 1060,
+            "p99_usec": 1060,
+            "total_usec": 6734
+          },
+          "prepare": {
+            "calls": 7,
+            "max_usec": 2216,
+            "p50_usec": 1429,
+            "p95_usec": 1854,
+            "p99_usec": 1854,
+            "total_usec": 10816
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 10312859
+      },
+      "result_snapshot_usec": 7459,
+      "cancel": {
+        "finished_usec": -1,
+        "intent_usec": -1,
+        "kind": "scheduled external input deadline; includes advance until host observes",
+        "latency_usec": null,
+        "observed_usec": -1
+      }
+    },
+    {
+      "case": "failure",
+      "status": "SEARCH_EXHAUSTED",
+      "checks": {
+        "identity_separate": true,
+        "protocol_failure_has_no_map": true
+      },
+      "metrics": {
+        "backtracks": 0,
+        "closed_loops_across_search": 0,
+        "expansions": 196,
+        "generation_seconds": 0.007571,
+        "layout_repairs": 0,
+        "pruning": {
+          "no_route_from_actual_entry": 196
+        },
+        "recorded_failures": 2,
+        "terminal_states": 0
+      },
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "created": {
+            "calls": 1,
+            "max_usec": 3849,
+            "p50_usec": 3849,
+            "p95_usec": 3849,
+            "p99_usec": 3849,
+            "total_usec": 3849
+          },
+          "growth": {
+            "calls": 13,
+            "max_usec": 333,
+            "p50_usec": 229,
+            "p95_usec": 305,
+            "p99_usec": 305,
+            "total_usec": 3234
+          },
+          "init": {
+            "calls": 8,
+            "max_usec": 587,
+            "p50_usec": 466,
+            "p95_usec": 556,
+            "p99_usec": 556,
+            "total_usec": 3868
+          },
+          "prepare": {
+            "calls": 7,
+            "max_usec": 1598,
+            "p50_usec": 1273,
+            "p95_usec": 1438,
+            "p99_usec": 1438,
+            "total_usec": 9031
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 62915
+      },
+      "result_snapshot_usec": 23,
+      "cancel": {
+        "finished_usec": -1,
+        "intent_usec": -1,
+        "kind": "scheduled external input deadline; includes advance until host observes",
+        "latency_usec": null,
+        "observed_usec": -1
+      }
+    },
+    {
+      "case": "success-batch17",
+      "status": "PASS",
+      "checks": {
+        "identity_separate": true,
+        "protocol_failure_has_no_map": true
+      },
+      "metrics": {
+        "backtracks": 0,
+        "closed_loops_across_search": 3,
+        "expansions": 87175,
+        "generation_seconds": 9.113163,
+        "layout_repairs": 0,
+        "pruning": {
+          "entry_has_no_reward_route": 525,
+          "no_onward_route_from_actual_entry": 618,
+          "no_route_from_actual_entry": 9389,
+          "reward_claim_region_excluded_by_seals": 8,
+          "seal_or_route_configuration": 38
+        },
+        "recorded_failures": 0,
+        "terminal_states": 6
+      },
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "closure_search": {
+            "calls": 137,
+            "max_usec": 14308,
+            "p50_usec": 728,
+            "p95_usec": 10953,
+            "p99_usec": 12608,
+            "total_usec": 513678
+          },
+          "created": {
+            "calls": 1,
+            "max_usec": 16703,
+            "p50_usec": 16703,
+            "p95_usec": 16703,
+            "p99_usec": 16703,
+            "total_usec": 16703
+          },
+          "final_audit": {
+            "calls": 28,
+            "max_usec": 9755,
+            "p50_usec": 424,
+            "p95_usec": 957,
+            "p99_usec": 3505,
+            "total_usec": 25072
+          },
+          "final_decorate": {
+            "calls": 1,
+            "max_usec": 11044,
+            "p50_usec": 11044,
+            "p95_usec": 11044,
+            "p99_usec": 11044,
+            "total_usec": 11044
+          },
+          "final_gate": {
+            "calls": 8,
+            "max_usec": 10160,
+            "p50_usec": 456,
+            "p95_usec": 4827,
+            "p99_usec": 4827,
+            "total_usec": 17736
+          },
+          "goal_aware_terminals": {
+            "calls": 3002,
+            "max_usec": 10655,
+            "p50_usec": 518,
+            "p95_usec": 6122,
+            "p99_usec": 7993,
+            "total_usec": 4781434
+          },
+          "growth": {
+            "calls": 2393,
+            "max_usec": 17370,
+            "p50_usec": 356,
+            "p95_usec": 9377,
+            "p99_usec": 12733,
+            "total_usec": 3715090
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 9138035
+      },
+      "result_snapshot_usec": 6016,
+      "cancel": {
+        "finished_usec": -1,
+        "intent_usec": -1,
+        "kind": "scheduled external input deadline; includes advance until host observes",
+        "latency_usec": null,
+        "observed_usec": -1
+      }
+    },
+    {
+      "case": "success-batch128",
+      "status": "PASS",
+      "checks": {
+        "identity_separate": true,
+        "protocol_failure_has_no_map": true
+      },
+      "metrics": {
+        "backtracks": 0,
+        "closed_loops_across_search": 3,
+        "expansions": 87175,
+        "generation_seconds": 9.125358,
+        "layout_repairs": 0,
+        "pruning": {
+          "entry_has_no_reward_route": 525,
+          "no_onward_route_from_actual_entry": 618,
+          "no_route_from_actual_entry": 9389,
+          "reward_claim_region_excluded_by_seals": 8,
+          "seal_or_route_configuration": 38
+        },
+        "recorded_failures": 0,
+        "terminal_states": 6
+      },
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "closure_search": {
+            "calls": 19,
+            "max_usec": 81360,
+            "p50_usec": 26988,
+            "p95_usec": 64598,
+            "p99_usec": 64598,
+            "total_usec": 527079
+          },
+          "created": {
+            "calls": 1,
+            "max_usec": 39253,
+            "p50_usec": 39253,
+            "p95_usec": 39253,
+            "p99_usec": 39253,
+            "total_usec": 39253
+          },
+          "final_audit": {
+            "calls": 3,
+            "max_usec": 14681,
+            "p50_usec": 3417,
+            "p95_usec": 3417,
+            "p99_usec": 3417,
+            "total_usec": 20618
+          },
+          "final_decorate": {
+            "calls": 1,
+            "max_usec": 10604,
+            "p50_usec": 10604,
+            "p95_usec": 10604,
+            "p99_usec": 10604,
+            "total_usec": 10604
+          },
+          "final_gate": {
+            "calls": 1,
+            "max_usec": 20391,
+            "p50_usec": 20391,
+            "p95_usec": 20391,
+            "p99_usec": 20391,
+            "total_usec": 20391
+          },
+          "goal_aware_terminals": {
+            "calls": 398,
+            "max_usec": 39891,
+            "p50_usec": 8773,
+            "p95_usec": 28443,
+            "p99_usec": 33236,
+            "total_usec": 4704628
+          },
+          "growth": {
+            "calls": 317,
+            "max_usec": 107997,
+            "p50_usec": 3240,
+            "p95_usec": 58744,
+            "p99_usec": 76579,
+            "total_usec": 3808425
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 9193598
+      },
+      "result_snapshot_usec": 6324,
+      "cancel": {
+        "finished_usec": -1,
+        "intent_usec": -1,
+        "kind": "scheduled external input deadline; includes advance until host observes",
+        "latency_usec": null,
+        "observed_usec": -1
+      }
+    },
+    {
+      "case": "cancel-growth",
+      "status": "CANCELLED",
+      "checks": {
+        "cancelled": true,
+        "no_map": true,
+        "input_latency_measured": true
+      },
+      "metrics": {
+        "backtracks": 0,
+        "closed_loops_across_search": 0,
+        "expansions": 29,
+        "generation_seconds": 0.007567,
+        "layout_repairs": 0,
+        "pruning": {
+          "no_route_from_actual_entry": 8
+        },
+        "recorded_failures": 1,
+        "terminal_states": 0
+      },
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "created": {
+            "calls": 1,
+            "max_usec": 3980,
+            "p50_usec": 3980,
+            "p95_usec": 3980,
+            "p99_usec": 3980,
+            "total_usec": 3980
+          },
+          "growth": {
+            "calls": 2,
+            "max_usec": 621,
+            "p50_usec": 545,
+            "p95_usec": 545,
+            "p99_usec": 545,
+            "total_usec": 1166
+          },
+          "init": {
+            "calls": 8,
+            "max_usec": 864,
+            "p50_usec": 662,
+            "p95_usec": 849,
+            "p99_usec": 849,
+            "total_usec": 5713
+          },
+          "prepare": {
+            "calls": 7,
+            "max_usec": 1655,
+            "p50_usec": 1350,
+            "p95_usec": 1465,
+            "p99_usec": 1465,
+            "total_usec": 9640
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 67600
+      },
+      "result_snapshot_usec": 98,
+      "cancel": {
+        "finished_usec": 34679451,
+        "intent_usec": 34679147,
+        "kind": "scheduled external input deadline; includes advance until host observes",
+        "latency_usec": 304,
+        "observed_usec": 34679328
+      }
+    },
+    {
+      "case": "cancel-final_audit",
+      "status": "CANCELLED",
+      "checks": {
+        "cancelled": true,
+        "no_map": true,
+        "input_latency_measured": true
+      },
+      "metrics": {
+        "backtracks": 0,
+        "closed_loops_across_search": 3,
+        "expansions": 87175,
+        "generation_seconds": 10.335197,
+        "layout_repairs": 0,
+        "pruning": {
+          "entry_has_no_reward_route": 525,
+          "no_onward_route_from_actual_entry": 618,
+          "no_route_from_actual_entry": 9389,
+          "reward_claim_region_excluded_by_seals": 8,
+          "seal_or_route_configuration": 38
+        },
+        "recorded_failures": 1,
+        "terminal_states": 6
+      },
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "closure_search": {
+            "calls": 2338,
+            "max_usec": 4448,
+            "p50_usec": 24,
+            "p95_usec": 735,
+            "p99_usec": 1013,
+            "total_usec": 533552
+          },
+          "created": {
+            "calls": 1,
+            "max_usec": 2672,
+            "p50_usec": 2672,
+            "p95_usec": 2672,
+            "p99_usec": 2672,
+            "total_usec": 2672
+          },
+          "final_audit": {
+            "calls": 1,
+            "max_usec": 993,
+            "p50_usec": 993,
+            "p95_usec": 993,
+            "p99_usec": 993,
+            "total_usec": 993
+          },
+          "final_decorate": {
+            "calls": 28,
+            "max_usec": 1059,
+            "p50_usec": 569,
+            "p95_usec": 921,
+            "p99_usec": 950,
+            "total_usec": 17095
+          },
+          "final_gate": {
+            "calls": 129,
+            "max_usec": 4267,
+            "p50_usec": 25,
+            "p95_usec": 249,
+            "p99_usec": 1540,
+            "total_usec": 14443
+          },
+          "goal_aware_terminals": {
+            "calls": 51030,
+            "max_usec": 3124,
+            "p50_usec": 25,
+            "p95_usec": 547,
+            "p99_usec": 1218,
+            "total_usec": 5200802
+          },
+          "growth": {
+            "calls": 40673,
+            "max_usec": 6629,
+            "p50_usec": 21,
+            "p95_usec": 625,
+            "p99_usec": 887,
+            "total_usec": 4020413
+          },
+          "init": {
+            "calls": 8,
+            "max_usec": 797,
+            "p50_usec": 634,
+            "p95_usec": 761,
+            "p99_usec": 761,
+            "total_usec": 5139
+          },
+          "prepare": {
+            "calls": 7,
+            "max_usec": 1441,
+            "p50_usec": 1176,
+            "p95_usec": 1332,
+            "p99_usec": 1332,
+            "total_usec": 8537
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 10379775
+      },
+      "result_snapshot_usec": 7749,
+      "cancel": {
+        "finished_usec": 45043875,
+        "intent_usec": 45031422,
+        "kind": "scheduled external input deadline; includes advance until host observes",
+        "latency_usec": 12453,
+        "observed_usec": 45031423
+      }
+    },
+    {
+      "case": "cancel-export",
+      "status": "CANCELLED",
+      "checks": {
+        "cancelled": true,
+        "no_map": true,
+        "input_latency_measured": true
+      },
+      "metrics": {
+        "backtracks": 0,
+        "closed_loops_across_search": 3,
+        "expansions": 87175,
+        "generation_seconds": 10.489286,
+        "layout_repairs": 0,
+        "pruning": {
+          "entry_has_no_reward_route": 525,
+          "no_onward_route_from_actual_entry": 618,
+          "no_route_from_actual_entry": 9389,
+          "reward_claim_region_excluded_by_seals": 8,
+          "seal_or_route_configuration": 38
+        },
+        "recorded_failures": 1,
+        "terminal_states": 6
+      },
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "closure_search": {
+            "calls": 2338,
+            "max_usec": 4297,
+            "p50_usec": 24,
+            "p95_usec": 772,
+            "p99_usec": 1092,
+            "total_usec": 541088
+          },
+          "created": {
+            "calls": 1,
+            "max_usec": 3857,
+            "p50_usec": 3857,
+            "p95_usec": 3857,
+            "p99_usec": 3857,
+            "total_usec": 3857
+          },
+          "export": {
+            "calls": 1,
+            "max_usec": 1536,
+            "p50_usec": 1536,
+            "p95_usec": 1536,
+            "p99_usec": 1536,
+            "total_usec": 1536
+          },
+          "final_audit": {
+            "calls": 461,
+            "max_usec": 2980,
+            "p50_usec": 24,
+            "p95_usec": 54,
+            "p99_usec": 513,
+            "total_usec": 20101
+          },
+          "final_decorate": {
+            "calls": 28,
+            "max_usec": 1367,
+            "p50_usec": 605,
+            "p95_usec": 955,
+            "p99_usec": 1013,
+            "total_usec": 18914
+          },
+          "final_gate": {
+            "calls": 129,
+            "max_usec": 3882,
+            "p50_usec": 25,
+            "p95_usec": 307,
+            "p99_usec": 1401,
+            "total_usec": 14166
+          },
+          "goal_aware_terminals": {
+            "calls": 51030,
+            "max_usec": 2925,
+            "p50_usec": 25,
+            "p95_usec": 549,
+            "p99_usec": 1240,
+            "total_usec": 5239455
+          },
+          "growth": {
+            "calls": 40673,
+            "max_usec": 6394,
+            "p50_usec": 21,
+            "p95_usec": 633,
+            "p99_usec": 900,
+            "total_usec": 4101894
+          },
+          "init": {
+            "calls": 8,
+            "max_usec": 1147,
+            "p50_usec": 667,
+            "p95_usec": 838,
+            "p99_usec": 838,
+            "total_usec": 5936
+          },
+          "prepare": {
+            "calls": 7,
+            "max_usec": 1653,
+            "p50_usec": 1314,
+            "p95_usec": 1513,
+            "p99_usec": 1513,
+            "total_usec": 9595
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 10571098
+      },
+      "result_snapshot_usec": 5150,
+      "cancel": {
+        "finished_usec": 55678407,
+        "intent_usec": 55669708,
+        "kind": "scheduled external input deadline; includes advance until host observes",
+        "latency_usec": 8699,
+        "observed_usec": 55670257
+      }
+    }
+  ],
+  "batch_checks": {
+    "success-batch17": true,
+    "success-batch128": true
+  },
+  "source_sha256": {
+    "module_archive.gd": "44c075d69db506ced4a2241e8205775a226861234786d43272633c1e7ba46742",
+    "preload_job.gd": "64c129d7bca5c894db3d76e5f73141bd2406f6df7812290d71c6d1535d37ca1f",
+    "protocol.gd": "942c9dc4cc685638cb467dc6071c4d19ad654548d6caf5cd2b7e2bda0b9a20c2",
+    "content_transform.gd": "80ab9f4e58ceedb754c6062996e0e4a4f36a9542e7c54206639d7760ce92e2f2",
+    "data_json.gd": "cef6a962ae33d5d03aa29b57ca35fcef104a07f7a2de636122e3b32cb8d0ea9c",
+    "solver.gd": "96e1ea947ed7864843ac0b72765d2957b75357f6677472513667fe9e142b401f",
+    "decimal64.gd": "a1c39dc62d62f8191a6d306942b2f549e674e09212970f8bd4a44153ed8e8109",
+    "runtime_export.gd": "5be6d8fd72389acb60efb5651a945e9200a0bc7a15a4a1bff152ab2647311a5c",
+    "generation_job.gd": "522d9cfa4a56ca08d3e721a1ba58b40974be2e27e983f2381f63ec3e3250d5ac",
+    "candidate_cursor.gd": "1a8ce925ab0d0e35232950618a83af334e9e780e6b61a49600277f6d38280fca",
+    "prepared_library.gd": "f572fe0f4811b1b116140e108a7a9dbc4d6e3b509df220feea66b8af2146cbaa",
+    "schema_data.gd": "ceebb5c627ff33c3a49c5fa667664481abde88720db85ca3e880eb4dd26281b8",
+    "work_gate.gd": "fec67bc46e091be2d7919003aa0e525c0112772beab12ac82e6da1fcf41e4079",
+    "final_pipeline.gd": "c44fe36078a4cea5b20541f38c564e143ba4eaafbf6eb6edcf5bbb67d2ceb587",
+    "numeric.gd": "af1d58403d38687de902e4ded6770aa9972e91a9ea75e2ab5e92f98d41f90f7e",
+    "python_rng.gd": "6b70397a8f8f7dbfd2ba9f2c49101c9e5174e22fc4b761e1e97c07c6a61964d4",
+    "reward_clearance.gd": "f1946c2e0bb5fc7c3b6d6229030cd548bc5540a3160a652a5121bd35baf24a02",
+    "geometry.gd": "a86179cffc4820d774b398362098a4cc4158edaaffc55eda6992817672850a9e"
+  },
+  "target": "advance(1) p99 <= 4000us and max <= 8000us on test machine; observed limits, not time guarantee"
+}

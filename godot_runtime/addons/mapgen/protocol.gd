@@ -1,8 +1,8 @@
 extends RefCounted
 const SCHEMA = preload("schema_data.gd")
 const DATA = preload("data_json.gd")
-const IMPLEMENTATION := "mapgen/gdscript-candidate-0.3.1"
-const ALGORITHM := "stable-v2"
+const IMPLEMENTATION := "mapgen/gdscript-candidate-0.4.0"
+const ALGORITHM := "stable-v3-reward-space"
 const MAX_SEED := 9007199254740991
 const PACKAGE_SHA := "5ad5a7871941b2c1ffa759b18f7b1e80f2fe7e571b72f95d1e0ef26031f08723"
 
@@ -13,6 +13,8 @@ static func validate(request, config) -> String:
 	error = schema_error(config, SCHEMA.CONFIG, "config")
 	if not error.is_empty():
 		return error
+	if config.algorithm != ALGORITHM:
+		return "config.algorithm: this package supports only "+ALGORITHM
 	if request.seed < -MAX_SEED or request.seed > MAX_SEED:
 		return "request.seed: supported range is [-9007199254740991,9007199254740991]; no truncation"
 	if "recoil" in request.player.abilities:
@@ -38,6 +40,8 @@ static func schema_error(value, schema: Dictionary, path: String) -> String:
 			if schema_error(value, branch, path).is_empty():
 				return ""
 		return path + ": no supported alternative"
+	if schema.has("enum") and not value in schema["enum"]:
+		return path + ": unsupported enum"
 	if schema.has("const") and value != schema["const"]:
 		return path + ": unsupported constant"
 	var kind: String = schema.get("type", "")

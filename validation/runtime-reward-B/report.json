@@ -1,0 +1,443 @@
+{
+  "stage": "B",
+  "version": "0.4.0",
+  "algorithm": "stable-v3-reward-space",
+  "implementation": "mapgen/gdscript-candidate-0.4.0",
+  "status": "PASS",
+  "new_expected_cases": 47,
+  "historical_seed_maps_pass": 40,
+  "historical_seed_maps_changed": 40,
+  "old_maps_with_proven_excluded_sites": 33,
+  "new_all_sites_checked": 493,
+  "new_ordinary_sites_checked": 249,
+  "new_target_sites_checked": 244,
+  "new_fully_excluded_sites": 0,
+  "geometry_checks": 13,
+  "budget_checks": {
+    "cancel_before_load": true,
+    "candidate_limit_1_rejects_at_2": true,
+    "no_algorithm_fallback": true,
+    "no_maps": true,
+    "wall_clock_original_interval": true
+  },
+  "default_changes": {
+    "old_instances": 46,
+    "new_instances": 46,
+    "old_connections": 55,
+    "new_connections": 58,
+    "old_expansions": 90831,
+    "new_expansions": 87175,
+    "old_reward_sites": 11,
+    "new_reward_sites": 12,
+    "target_rewards": 6,
+    "main_paths": 3
+  },
+  "difference_cause": "all prospective/current seal configurations now protect every original site, even when no Route requiredRewards names it; pruning changes lookahead/candidate choices and subsequent RNG use without changing RNG itself or goals",
+  "web_performance": {
+    "default-1": {
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "closure_search": {
+            "calls": 2338,
+            "max_usec": 22900,
+            "p50_usec": 100,
+            "p95_usec": 3600,
+            "p99_usec": 6200,
+            "total_usec": 1597200
+          },
+          "created": {
+            "calls": 1,
+            "max_usec": 6400,
+            "p50_usec": 6400,
+            "p95_usec": 6400,
+            "p99_usec": 6400,
+            "total_usec": 6400
+          },
+          "export": {
+            "calls": 3,
+            "max_usec": 8200,
+            "p50_usec": 1900,
+            "p95_usec": 1900,
+            "p99_usec": 1900,
+            "total_usec": 11900
+          },
+          "final_audit": {
+            "calls": 461,
+            "max_usec": 21700,
+            "p50_usec": 100,
+            "p95_usec": 200,
+            "p99_usec": 3300,
+            "total_usec": 75500
+          },
+          "final_decorate": {
+            "calls": 28,
+            "max_usec": 3700,
+            "p50_usec": 600,
+            "p95_usec": 3400,
+            "p99_usec": 3600,
+            "total_usec": 30000
+          },
+          "final_gate": {
+            "calls": 129,
+            "max_usec": 5400,
+            "p50_usec": 0,
+            "p95_usec": 300,
+            "p99_usec": 1300,
+            "total_usec": 16000
+          },
+          "goal_aware_terminals": {
+            "calls": 51030,
+            "max_usec": 26200,
+            "p50_usec": 100,
+            "p95_usec": 1300,
+            "p99_usec": 5300,
+            "total_usec": 15636700
+          },
+          "growth": {
+            "calls": 40673,
+            "max_usec": 25400,
+            "p50_usec": 0,
+            "p95_usec": 1200,
+            "p99_usec": 5200,
+            "total_usec": 11723700
+          },
+          "init": {
+            "calls": 8,
+            "max_usec": 5300,
+            "p50_usec": 800,
+            "p95_usec": 3900,
+            "p99_usec": 3900,
+            "total_usec": 14900
+          },
+          "prepare": {
+            "calls": 7,
+            "max_usec": 16000,
+            "p50_usec": 2300,
+            "p95_usec": 5900,
+            "p99_usec": 5900,
+            "total_usec": 34400
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 64059100
+      },
+      "frame_max_usec": 32400,
+      "result_snapshot_usec": 6600,
+      "cancel": {}
+    },
+    "default-17": {
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "closure_search": {
+            "calls": 137,
+            "max_usec": 33500,
+            "p50_usec": 2200,
+            "p95_usec": 22300,
+            "p99_usec": 29900,
+            "total_usec": 1062700
+          },
+          "created": {
+            "calls": 1,
+            "max_usec": 27300,
+            "p50_usec": 27300,
+            "p95_usec": 27300,
+            "p99_usec": 27300,
+            "total_usec": 27300
+          },
+          "final_audit": {
+            "calls": 28,
+            "max_usec": 28500,
+            "p50_usec": 600,
+            "p95_usec": 4000,
+            "p99_usec": 13100,
+            "total_usec": 59900
+          },
+          "final_decorate": {
+            "calls": 1,
+            "max_usec": 20900,
+            "p50_usec": 20900,
+            "p95_usec": 20900,
+            "p99_usec": 20900,
+            "total_usec": 20900
+          },
+          "final_gate": {
+            "calls": 8,
+            "max_usec": 30100,
+            "p50_usec": 700,
+            "p95_usec": 12100,
+            "p99_usec": 12100,
+            "total_usec": 48900
+          },
+          "goal_aware_terminals": {
+            "calls": 3002,
+            "max_usec": 35700,
+            "p50_usec": 1000,
+            "p95_usec": 16100,
+            "p99_usec": 25800,
+            "total_usec": 12099500
+          },
+          "growth": {
+            "calls": 2393,
+            "max_usec": 37400,
+            "p50_usec": 600,
+            "p95_usec": 18800,
+            "p99_usec": 29500,
+            "total_usec": 8417900
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 34698800
+      },
+      "frame_max_usec": 41400,
+      "result_snapshot_usec": 6400,
+      "cancel": {}
+    },
+    "failure": {
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "created": {
+            "calls": 1,
+            "max_usec": 4300,
+            "p50_usec": 4300,
+            "p95_usec": 4300,
+            "p99_usec": 4300,
+            "total_usec": 4300
+          },
+          "growth": {
+            "calls": 13,
+            "max_usec": 700,
+            "p50_usec": 500,
+            "p95_usec": 600,
+            "p99_usec": 600,
+            "total_usec": 6200
+          },
+          "init": {
+            "calls": 8,
+            "max_usec": 1200,
+            "p50_usec": 900,
+            "p95_usec": 1000,
+            "p99_usec": 1000,
+            "total_usec": 7100
+          },
+          "prepare": {
+            "calls": 7,
+            "max_usec": 2400,
+            "p50_usec": 2000,
+            "p95_usec": 2100,
+            "p99_usec": 2100,
+            "total_usec": 14300
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 75200
+      },
+      "frame_max_usec": 8400,
+      "result_snapshot_usec": 100,
+      "cancel": {}
+    },
+    "generation-cancel": {
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "created": {
+            "calls": 1,
+            "max_usec": 15500,
+            "p50_usec": 15500,
+            "p95_usec": 15500,
+            "p99_usec": 15500,
+            "total_usec": 15500
+          },
+          "growth": {
+            "calls": 86,
+            "max_usec": 17300,
+            "p50_usec": 0,
+            "p95_usec": 1000,
+            "p99_usec": 3600,
+            "total_usec": 37200
+          },
+          "init": {
+            "calls": 8,
+            "max_usec": 5100,
+            "p50_usec": 1200,
+            "p95_usec": 5100,
+            "p99_usec": 5100,
+            "total_usec": 16500
+          },
+          "prepare": {
+            "calls": 7,
+            "max_usec": 6800,
+            "p50_usec": 2900,
+            "p95_usec": 4700,
+            "p99_usec": 4700,
+            "total_usec": 24700
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 219000
+      },
+      "frame_max_usec": 24900,
+      "result_snapshot_usec": 0,
+      "cancel": {
+        "case_id": "generation-cancel",
+        "finished_ms": 30133,
+        "handler_ms": 30131.099999999627,
+        "host_observed_ms": 30131.599999999627,
+        "input_to_done_ms": 21.90000000037253,
+        "intent_ms": 30111.099999999627,
+        "queue_ms": 20.5,
+        "trusted": true
+      }
+    },
+    "preload": {
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "catalog_json": {
+            "calls": 5503,
+            "max_usec": 22000,
+            "p50_usec": 300,
+            "p95_usec": 2500,
+            "p99_usec": 5700,
+            "total_usec": 3106300
+          },
+          "created": {
+            "calls": 1,
+            "max_usec": 1100,
+            "p50_usec": 1100,
+            "p95_usec": 1100,
+            "p99_usec": 1100,
+            "total_usec": 1100
+          },
+          "file_hashes": {
+            "calls": 1149,
+            "max_usec": 18900,
+            "p50_usec": 100,
+            "p95_usec": 200,
+            "p99_usec": 3100,
+            "total_usec": 219100
+          },
+          "manifest_json": {
+            "calls": 43,
+            "max_usec": 18500,
+            "p50_usec": 700,
+            "p95_usec": 5100,
+            "p99_usec": 7600,
+            "total_usec": 81600
+          },
+          "module_json": {
+            "calls": 11589,
+            "max_usec": 23500,
+            "p50_usec": 300,
+            "p95_usec": 2800,
+            "p99_usec": 5700,
+            "total_usec": 6835200
+          },
+          "zip_entries": {
+            "calls": 658,
+            "max_usec": 20800,
+            "p50_usec": 800,
+            "p95_usec": 5400,
+            "p99_usec": 17200,
+            "total_usec": 1021000
+          },
+          "zip_hash": {
+            "calls": 6,
+            "max_usec": 6900,
+            "p50_usec": 2100,
+            "p95_usec": 5900,
+            "p99_usec": 5900,
+            "total_usec": 23400
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 24531800
+      },
+      "frame_max_usec": 29600,
+      "result_snapshot_usec": 0,
+      "cancel": {}
+    },
+    "preload-cancel": {
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "catalog_json": {
+            "calls": 26,
+            "max_usec": 3400,
+            "p50_usec": 300,
+            "p95_usec": 2600,
+            "p99_usec": 3100,
+            "total_usec": 16400
+          },
+          "created": {
+            "calls": 1,
+            "max_usec": 2800,
+            "p50_usec": 2800,
+            "p95_usec": 2800,
+            "p99_usec": 2800,
+            "total_usec": 2800
+          },
+          "file_hashes": {
+            "calls": 1149,
+            "max_usec": 14700,
+            "p50_usec": 100,
+            "p95_usec": 300,
+            "p99_usec": 2800,
+            "total_usec": 210700
+          },
+          "manifest_json": {
+            "calls": 43,
+            "max_usec": 6400,
+            "p50_usec": 900,
+            "p95_usec": 4000,
+            "p99_usec": 4800,
+            "total_usec": 59800
+          },
+          "zip_entries": {
+            "calls": 658,
+            "max_usec": 22500,
+            "p50_usec": 1000,
+            "p95_usec": 5300,
+            "p99_usec": 14500,
+            "total_usec": 1065700
+          },
+          "zip_hash": {
+            "calls": 6,
+            "max_usec": 8600,
+            "p50_usec": 2800,
+            "p95_usec": 3700,
+            "p99_usec": 3700,
+            "total_usec": 22700
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 3301900
+      },
+      "frame_max_usec": 26600,
+      "result_snapshot_usec": 100,
+      "cancel": {
+        "case_id": "preload-cancel",
+        "finished_ms": 5379.799999998882,
+        "handler_ms": 5369.89999999851,
+        "host_observed_ms": 5378.799999998882,
+        "input_to_done_ms": 27.5,
+        "intent_ms": 5352.299999998882,
+        "queue_ms": 26.5,
+        "trusted": true
+      }
+    }
+  },
+  "performance_targets_met": false,
+  "unverified": [
+    "hard frame guarantee",
+    "claim grounding/path feasibility when not fully excluded",
+    "whole-map physics",
+    "host playability",
+    "mobile"
+  ],
+  "module_package": "1.1.0",
+  "host_pr127_head": "e7d703f47c97f09bd5c5d48e24f0a400c958ad40",
+  "old_expected_results_unchanged": true
+}

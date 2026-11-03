@@ -3,6 +3,8 @@ const GEO = preload("geometry.gd")
 const NUM = preload("numeric.gd")
 const RNG = preload("python_rng.gd")
 const CURSOR = preload("candidate_cursor.gd")
+const REWARD = preload("reward_clearance.gd")
+const TRANSFORM = preload("content_transform.gd")
 const PIPELINE = preload("final_pipeline.gd")
 var owner: WeakRef
 var library
@@ -28,6 +30,8 @@ var index: Dictionary = {}
 var routes: Dictionary = {}
 var transit: Dictionary = {}
 var config_cache: Dictionary = {}
+var reward_sites_cache: Dictionary = {}
+var reward_seal_conflicts: Array = []
 var graph_cache: Dictionary = {}
 var reach_cache: Dictionary = {}
 var return_rooms: Dictionary = {}
@@ -172,6 +176,19 @@ func configuration_ok(item: Dictionary, connected: Dictionary) -> bool:
 	for pid in full:
 		if not connected.has(pid):
 			seals.append(library.gear_seal(full[pid], template.size_blocks))
+	var site_key := local_key(item.module_id,item.mirror_x)
+	if not reward_sites_cache.has(site_key):
+		reward_sites_cache[site_key] = TRANSFORM.visit(template.compiled_content.get("reward_sites",[]),template.size_blocks[0]*library.block_pixels,[template.source_bounds.x,template.source_bounds.y],item.mirror_x,"reward_sites")
+	for site in reward_sites_cache[site_key]:
+		var proof: Dictionary = await REWARD.check(site.get("region",[]),seals,request.player.clearance_half_extents_pixels,self)
+		if aborted():return false
+		if proof.verdict == "PROVEN_EXCLUDED_BY_SEALS":
+			var seal_ids: Array=[]
+			for seal in seals:seal_ids.append(seal.port_id)
+			reward_seal_conflicts.append({"reason":"reward_claim_region_excluded_by_seals","module_id":template.source_module_id,"content_version":template.content_version,"template_id":item.module_id,"reward_id":site.id,"target_reward":item.reward,"mirror_x":item.mirror_x,"connected_port_ids":ids,"sealed_port_ids":seal_ids,"claim_semantics":"grounded and actor center in region","proof":proof})
+			reject("reward_claim_region_excluded_by_seals")
+			config_cache[key]=false
+			return false
 	for route in template.all_routes:
 		if not connected.has(route.from_port) or not connected.has(route.to_port) or not has_abilities(route.required_abilities):
 			continue
@@ -922,4 +939,4 @@ func metrics() -> Dictionary:
 	return {"expansions": expanded, "backtracks": backtracks, "layout_repairs": repairs, "terminal_states": terminal_states, "recorded_failures": failures.size(), "closed_loops_across_search": closed_loops, "pruning": rejections.duplicate(true), "generation_seconds": float(Time.get_ticks_usec()-started_usec)/1000000.0}
 
 func diagnostics() -> Dictionary:
-	return {"solver_state": {"seed": request.seed, "phase": phase, "instances": items}, "decisions": decisions, "failures": failures, "rng_state": rng.getstate()}
+	return {"solver_state": {"seed": request.seed, "phase": phase, "instances": items}, "decisions": decisions, "failures": failures, "rng_state": rng.getstate(), "reward_seal_conflicts":reward_seal_conflicts, "reward_check_scope":"full strict seal-AABB union exclusion only; other claim/grounding/path physics UNKNOWN"}
