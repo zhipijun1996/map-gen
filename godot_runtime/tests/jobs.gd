@@ -57,10 +57,12 @@ func _initialize() -> void:
 	var cancelled = JOB.create(request,archive.library,config)
 	while cancelled.progress().expanded < 17:
 		cancelled.advance(1)
+	var observed_expansions: int = cancelled.progress().expanded
 	var start := Time.get_ticks_usec()
 	cancelled.cancel()
 	timings.cancel_usec = Time.get_ticks_usec()-start
-	checks.cancel_search = cancelled.result().status == "CANCELLED" and cancelled.result().metrics.expansions == 17 and cancelled.result().map == null and cancelled.result().content_store.is_empty()
+	timings.cancel_observed_expansions = observed_expansions # Checkpoints may change; cancel must not expand further.
+	checks.cancel_search = cancelled.result().status == "CANCELLED" and observed_expansions >= 17 and cancelled.result().metrics.expansions == observed_expansions and cancelled.result().map == null and cancelled.result().content_store.is_empty()
 	var budget = config.duplicate(true)
 	budget.search.candidate_expansion_budget = 1
 	var limited: Dictionary = drain(JOB.create(request,archive.library,budget),17,"candidate_budget")

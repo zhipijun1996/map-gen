@@ -9,11 +9,14 @@ var _expected := ""
 var _archive
 var _zip: ZIPReader
 var _file: FileAccess
+var use_derived := true
+var cache_status := "not_attempted"
 
-static func create(path: String, expected_sha256: String):
+static func create(path: String, expected_sha256: String, allow_derived := true):
 	var job = load("res://addons/mapgen/preload_job.gd").new()
 	job._path = path
 	job._expected = expected_sha256
+	job.use_derived = allow_derived
 	return job
 
 func _close() -> void:
@@ -74,7 +77,11 @@ func _run() -> void:
 			_archive._files[name] = _zip.read_file(name)
 	_close()
 	_phase = "manifest_json"
-	var manifest: Dictionary = await DATA.parse_incremental(_archive._files["manifest.json"].get_string_from_utf8(),self)
+	var cached: Dictionary = await _derived() if use_derived else {}
+	if _cancelled:
+		_fail("cancelled")
+		return
+	var manifest: Dictionary = {"ok":true,"value":cached.manifest} if cached.has("manifest") else await DATA.parse_incremental(_archive._files["manifest.json"].get_string_from_utf8(),self)
 	if not manifest.ok or manifest.value.get("schema") != "map-edit/module-package/v1" or manifest.value.get("version") != "1.1.0":
 		_fail("invalid manifest or cancelled")
 		return
@@ -94,6 +101,14 @@ func _run() -> void:
 		if hash.finish().hex_encode() != manifest.value.files[name]:
 			_fail("file checksum mismatch:"+name)
 			return
+	if cached.has("json"):
+		_archive._json = cached.json
+		if not await consume():
+			_fail("cancelled")
+			return
+		_phase = "ready"
+		_result = {"status":"PASS","library":_archive,"checked_files":manifest.value.files.size(),"cache_status":cache_status}
+		return
 	_phase = "catalog_json"
 	var catalog: Dictionary = await DATA.parse_incremental(_archive._files["catalog.json"].get_string_from_utf8(),self)
 	if not catalog.ok or catalog.value.get("schema") != "map-edit/delivery-catalog/v1":
@@ -118,7 +133,53 @@ func _run() -> void:
 		_fail("cancelled")
 		return
 	_phase = "ready"
-	_result = {"status": "PASS", "library": _archive, "checked_files": manifest.value.files.size()}
+	_result = {"status": "PASS", "library": _archive, "checked_files": manifest.value.files.size(),"cache_status":cache_status}
+
+func _derived() -> Dictionary:
+	# Source ZIP and EVERY manifest member are still verified. This reconstructs
+	# only source JSON values, not requests, prepared templates, RNG, or maps.
+	_phase = "derived_json"
+	var path := "res://addons/mapgen/derived_library.gd"
+	if not ResourceLoader.exists(path):
+		cache_status="missing_rebuilt"
+		return {}
+	var cache = load(path)
+	return await _decode_derived(cache.SCHEMA,cache.MODULE_SHA,cache.IMPLEMENTATION,cache.ROWS)
+
+func _decode_derived(schema: String,module_sha: String,implementation: String,rows: Array) -> Dictionary:
+	if schema!="mapgen/derived-library/v1" or module_sha!=_expected or implementation!=PROTOCOL.IMPLEMENTATION:
+		cache_status="binding_rejected_rebuilt"
+		return {}
+	var json: Dictionary={}
+	var catalog: Dictionary={}
+	var modules: Array=[]
+	var manifest: Dictionary={}
+	for row in rows:
+		if not await consume_heavy():return {}
+		var packed:=Marshalls.base64_to_raw(row[3])
+		var hash:=HashingContext.new();hash.start(HashingContext.HASH_SHA256);hash.update(packed)
+		if hash.finish().hex_encode()!=row[2] or row[1]<1 or row[1]>16777216:
+			cache_status="payload_rejected_rebuilt"
+			return {}
+		var raw:=packed.decompress(row[1],FileAccess.COMPRESSION_DEFLATE)
+		if raw.size()!=row[1]:
+			cache_status="payload_rejected_rebuilt"
+			return {}
+		var value=bytes_to_var(raw) # No object decoding/execution.
+		if not value is Dictionary:
+			cache_status="payload_rejected_rebuilt"
+			return {}
+		if row[0]=="manifest":manifest=value
+		elif row[0]=="catalog_header":catalog=value
+		elif row[0]=="catalog_module":modules.append(value)
+		elif row[0].begins_with("json:"):json[row[0].substr(5)]=value
+	if manifest.is_empty() or catalog.is_empty() or modules.size()!=115:
+		cache_status="structure_rejected_rebuilt"
+		return {}
+	catalog.modules=modules
+	json["catalog.json"]=catalog
+	cache_status="bound_source_json"
+	return {"manifest":manifest,"json":json}
 
 func consume_heavy() -> bool:
 	for _i in range(QUANTUM):

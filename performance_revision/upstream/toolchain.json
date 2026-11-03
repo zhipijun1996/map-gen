@@ -1,0 +1,94 @@
+{
+  "godot": {
+    "build_id": "godot-4.7.2-gunman-sd1",
+    "data_subdirectory": "user-data/godot-4.7.2-gunman-sd1",
+    "distribution": "fixed-upstream-backport",
+    "edition": "Standard",
+    "linux_x86_64": {
+      "binary": "godot-linux-x86_64",
+      "binary_sha256": "eeaec2b65dc3234168be1e1cbcc89731514bbb78dfb2c1b502920c50830a0638",
+      "sha256": "39f662a932eaacd949111659be3f2cc465edd4cd5822e8f632a724b605a8da2b",
+      "url": "https://github.com/zhipijun1996/gunman-rush/releases/download/toolchain-godot-4.7.2-gunman-sd1/godot-4.7.2-gunman-sd1-linux-x86_64.zip"
+    },
+    "patches": [
+      {
+        "file": "tools/engine/patches/117991-clear-base.patch",
+        "sha256": "e590780136e86fce5f3dbdf8ffaa484fa2d9fb7e52c2c2a4a36345805ffe8573",
+        "upstream": "https://github.com/godotengine/godot/pull/117991"
+      },
+      {
+        "file": "tools/engine/patches/120976-language-shutdown.patch",
+        "sha256": "aad81aca9c55e7d79117b94647a0b9363bae918ceacc3581e8e3cedc07772f85",
+        "upstream": "https://github.com/godotengine/godot/pull/120976"
+      }
+    ],
+    "provenance": {
+      "sha256": "3671f8cb38e0ed66fa25a06ecbf4b0ea8672a45fd4ba8af99cd55d79044bd225",
+      "url": "https://github.com/zhipijun1996/gunman-rush/releases/download/toolchain-godot-4.7.2-gunman-sd1/build-provenance.json"
+    },
+    "recipe_sha256": "3d335346c8d7ac5eeb4b4ba0042e7b55d66b0ca704c213e029f2be3a34ea7161",
+    "source": {
+      "archive_bytes": 47744300,
+      "sha256": "a18ce0ccec3ecc40b0dd6c4f5132ca934e9fb7c2979717940ff32aee1eb35481",
+      "source_commit": "ed1daf0bf001b61586d9930840f2f1394092c079",
+      "unpacked_bytes": 345891735,
+      "url": "https://github.com/godotengine/godot/releases/download/4.7.2-stable/godot-4.7.2-stable.tar.xz"
+    },
+    "templates": {
+      "files": {
+        "D3D12Core.x86_64.dll": "560f9574372a52ab66ad95ee1222f1eb4c9f6161d8f6b7b025d89f684b07246c",
+        "android_debug.apk": "7bd81bf064faedd8f6e5968ce3f54382f6c5b137986a270840bc56105fe31b8c",
+        "android_release.apk": "ee5d7d04de550add802499ad29f0dc8b3decd75879f1d7301c415589f18f6420",
+        "android_source.zip": "709b6fd3569a6e50f3e5fe6d0bb6049aebb104ad3c21af21f202d1bf46ab0ed7",
+        "d3d12SDKLayers.x86_64.dll": "bcec9e1315fb4dbc767371926fb5eb8281de1b3ab1fb530a636b3c193a9a2bbd",
+        "engine-identity.json": "0c94c4f492795430aa4087c18e9fddffa16e48629752a1ed49284485440bd19e",
+        "icudt_godot.dat": "64e407b570a21a4b740531a14cd95f0cefc46cef3d8224fd09a0dd386fb7016a",
+        "linux_debug.x86_64": "e5e39ec272b6d95c845c482ddb885184fa965622b1ecfb62627f0209d6df3848",
+        "linux_release.x86_64": "6a280c82dfaf94efc1a7e268c69cb536ecb841d303478068333df14ffb192493",
+        "version.txt": "38885c88f75abbc797a1db7559719800279a00cfb9fa8b2e2868a7f6f84bad2e",
+        "web_debug.zip": "863aad1746107bafee9d8e3f0983c77cdcb9aa9e14579251a2d9cfc48be4b645",
+        "web_nothreads_debug.zip": "f5cfcc6c0055d8108a7fc0667359933ea7377e73f42e80ca4343328293f3d2e0",
+        "web_nothreads_release.zip": "d86058a9483d7c6ebe3c20448614c1f1cb98ba7157ca48b527fcb8f7e82cd4a4",
+        "web_release.zip": "a834a36841e93591a8c834caf2bb1f827c253b4025d52911dc9064aba3cffb01",
+        "windows_debug_x86_64.exe": "6c48a8c46e4956934d11fea8e058c2cdcfd7529b04c4adc08c16edd557e5c392",
+        "windows_debug_x86_64_console.exe": "b27e070c68d3f836e7db36858eb8a16b679c23ccceaf8d2a8342de5d6c7c6633",
+        "windows_release_x86_64.exe": "1118f7998b99e6e2c5fd83667ce77e29ce35bd4acd849ed9a8dbaf78489d697e",
+        "windows_release_x86_64_console.exe": "31a74ac713ed28ea666f99911f829a8322cc8138bd9765378f108b6a08297682"
+      },
+      "sha256": "5acfd7377c2cd5967a3fa8267c8eb4d6a02a1cfd0ad88a56dd8ce165ad142670",
+      "url": "https://github.com/zhipijun1996/gunman-rush/releases/download/toolchain-godot-4.7.2-gunman-sd1/godot-4.7.2-gunman-sd1-export-templates.tpz",
+      "version": "4.7.2.stable"
+    },
+    "version": "4.7.2",
+    "version_exact": "4.7.2.stable.custom_build.gunman_sd1.ed1daf0bf"
+  },
+  "git_minimum": "2.30",
+  "python_minimum": "3.12",
+  "android": {
+    "documentation": "https://docs.godotengine.org/en/4.7/tutorials/export/exporting_for_android.html",
+    "jdk_recommended": 17,
+    "sdk_packages": [
+      "platform-tools",
+      "build-tools;35.0.1",
+      "platforms;android-35",
+      "cmdline-tools;latest",
+      "cmake;3.10.2.4988404",
+      "ndk;28.1.13356709"
+    ],
+    "command_line_tools": {
+      "url": "https://dl.google.com/android/repository/commandlinetools-linux-15859902_latest.zip",
+      "sha256": "4e4c464f145a7512b57d088ac6c278c03c9eea610886b35a5e0804e74eedf583"
+    },
+    "jdk_linux_x86_64": {
+      "url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jdk_x64_linux_hotspot_17.0.20.1_1.tar.gz",
+      "sha256": "3808d1d15e3ec6bd5b84057fb5d84c33d8a1536a258146bcea2e603fc726e08e"
+    }
+  },
+  "windows": {
+    "architecture": "x86_64",
+    "templates": [
+      "windows_debug_x86_64.exe",
+      "windows_release_x86_64.exe"
+    ]
+  }
+}

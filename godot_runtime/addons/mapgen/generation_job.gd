@@ -29,9 +29,7 @@ func phase_name() -> String:
 	return work_phase if not work_phase.is_empty() else _phase if _phase == "export" else _solver.phase if _solver != null else _phase
 
 func progress() -> Dictionary:
-	var data: Dictionary = super.progress()
-	data.merge({"expanded":_solver.expanded if _solver != null else 0,"instances":_solver.items.size() if _solver != null else 0,"request_fingerprint":_fingerprint,"implementation":PROTOCOL.IMPLEMENTATION})
-	return data
+	return {"done":is_done(),"phase":phase_name(),"operations":(_microsteps+QUANTUM-1)/QUANTUM,"microsteps":_microsteps,"expanded":_solver.expanded if _solver!=null else 0,"instances":_solver.items.size() if _solver!=null else 0,"request_fingerprint":_fingerprint,"implementation":PROTOCOL.IMPLEMENTATION}
 
 func _cancel_created() -> void:
 	_result = PROTOCOL.failure("CANCELLED",_fingerprint,"cancelled","created")

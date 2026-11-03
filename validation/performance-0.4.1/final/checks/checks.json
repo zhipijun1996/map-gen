@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "engine_sha256": "eeaec2b65dc3234168be1e1cbcc89731514bbb78dfb2c1b502920c50830a0638",
+  "checks": [
+    {
+      "check": "jobs",
+      "exit_code": 0,
+      "seconds": 34.395908692000376,
+      "status": "PASS",
+      "argv": [
+        "/workspace/map-gen/.cache/gunman-4.7.2/editor/godot-linux-x86_64",
+        "--headless",
+        "--path",
+        ".cache/bench041-final",
+        "--script",
+        "res://tests/jobs.gd",
+        "--",
+        "/workspace/map-gen/.cache/legacy-real-v2/modules.zip",
+        "/workspace/map-gen/validation/performance-0.4.1/final/checks/jobs.json"
+      ],
+      "log_sha256": "29efd7bf2e9fb6509416e66ffbf2ef5f328ff71806e01d2f8762a5a136cb2a0d"
+    },
+    {
+      "check": "reference",
+      "exit_code": 0,
+      "status": "PASS",
+      "seconds": 1.075128897005925,
+      "argv": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests/reference",
+        "-v"
+      ],
+      "log_sha256": "e4758eb704e3cd951ce5a994d742ee4b8bad3220620da560278475ea82e49d63"
+    }
+  ]
+}
