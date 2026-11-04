@@ -1,5 +1,6 @@
 extends RefCounted
 const GEO = preload("geometry.gd")
+const BRANCH = preload("reward_branch_planner.gd")
 const NUM = preload("numeric.gd")
 const RNG = preload("python_rng.gd")
 const CURSOR = preload("candidate_cursor.gd")
@@ -48,6 +49,9 @@ var air_connected := false
 var terminal_slice_failed := false
 var last_search_failure := ""
 var final_source: Dictionary = {}
+var reward_core: Dictionary = {}
+var reward_core_rank: Dictionary = {}
+var reward_branches: Array = []
 
 func _init(job, req: Dictionary, prepared, cfg: Dictionary):
 	owner = weakref(job)
@@ -793,42 +797,7 @@ static func aspect(occupied: Array) -> float:
 	return maxf(float(width)/height, float(height)/width)
 
 func reward_options() -> Array:
-	var placed := 0
-	for item in items:
-		if item.reward:
-			placed += 1
-	var remaining: int = config.goals.reward_target-placed-1
-	var seen: Dictionary = {}
-	var options: Array = []
-	for source in (await reachable_frontier(items)):
-		if source[0].reward or source[0].module_id in ["START", "BOSS"]:
-			continue
-		var cursor = candidates(source, qids, items)
-		var row = await cursor.next()
-		while row != null:
-			var item: Dictionary = row[0]
-			var key := local_key(item.module_id, item.mirror_x)+GEO.coordinate_key(item.origin)
-			if not seen.has(key):
-				seen[key] = true
-				item.id = "M%02d" % (items.size()+1)
-				var trial: Array = items+[item]
-				if (await valid_reward_state(trial)):
-					if (await reservation(trial, remaining, true)).size() < remaining:
-						reject("insufficient_remaining_reward_reservation")
-					else:
-						var near := 0
-						for other in items:
-							if other.reward and origin_distance(item.origin, other.origin) < config.scoring.reward_near_radius:
-								near += 1
-						options.append([rng.random()*config.scoring.reward_noise-near*config.scoring.reward_near_penalty, item])
-			row = await cursor.next()
-		if aborted():
-			return []
-	options = (await sort_rows(options, func(a, b): return a[0] > b[0]))
-	var result: Array = []
-	for row in options.slice(0, config.search.reward_choice_count):
-		result.append(row[1])
-	return result
+	return await BRANCH.new(self).options()
 
 func origin_distance(a: Array, b: Array = [0, 0]) -> float:
 	var result := NUM.integer_hypot(a[0]-b[0],a[1]-b[1])
@@ -852,6 +821,7 @@ func place_rewards(n: int) -> bool:
 		record_failure("reward_exhausted")
 		return false
 	var before := items.duplicate(true)
+	var branches_before := reward_branches.duplicate(true)
 	var state: Array = rng.getstate()
 	for choice in choices:
 		terminal_states += 1
@@ -866,13 +836,16 @@ func place_rewards(n: int) -> bool:
 			last_search_failure = "terminal_slice_exhausted"
 			return false
 		items = before.duplicate(true)
+		reward_branches = branches_before.duplicate(true)
 		rng.setstate(state)
-		add(choice.duplicate(true))
+		for item in choice.chain: add(item.duplicate(true))
+		reward_branches.append(choice.proof.duplicate(true))
 		if await place_rewards(n+1):
 			return true
 		if aborted() or terminal_slice_failed:
 			return false
 	items = before
+	reward_branches = branches_before
 	return false
 
 func finish() -> bool:
@@ -890,12 +863,13 @@ func finish() -> bool:
 			item.id = "M%02d" % (items.size()+1)
 			var trial: Array = items+[item]
 			if (await valid_reward_state(trial)) and aspect(trial) <= config.shape.max_aspect:
-				if (await actual_paths(graph_edges((await graph(trial))[0]), config.goals.main_paths_required)).size() < config.goals.main_paths_required:
+				var paths: Array = await actual_paths(graph_edges((await graph(trial))[0]), config.goals.main_paths_required)
+				if paths.size() < config.goals.main_paths_required:
 					reject("boss_main_path_diversity")
 				elif (await reservation(trial, config.goals.reward_target, true)).size() < config.goals.reward_target:
 					reject("boss_reward_space_reservation")
 				else:
-					options.append([config.scoring.boss_distance*origin_distance(item.origin), item])
+					options.append([config.scoring.boss_distance*origin_distance(item.origin), item, paths])
 			row = await cursor.next()
 		if aborted():
 			return false
@@ -910,6 +884,12 @@ func finish() -> bool:
 		items = before.duplicate(true)
 		rng.setstate(state)
 		add(row[1].duplicate(true))
+		reward_core = {}; reward_core_rank = {}; reward_branches = []
+		for item in items: reward_core[item.id] = true
+		# "Forward" is ordered on this actual directed START->BOSS witness.
+		for index in range(row[2][0].size()):
+			var iid: String = row[2][0][index].split(".")[0].split(":")[0]
+			if reward_core.has(iid) and not reward_core_rank.has(iid): reward_core_rank[iid]=index
 		if await place_rewards(0):
 			return true
 		if aborted() or terminal_slice_failed:
@@ -920,6 +900,17 @@ func finish() -> bool:
 func final_accept() -> bool:
 	if not await checkpoint():
 		return false
+	var by_id: Dictionary = {}
+	for item in items: by_id[item.id]=item
+	var planner = BRANCH.new(self)
+	for branch in reward_branches:
+		var chain: Array = []
+		for iid in branch.instance_ids: chain.append(by_id[iid])
+		var root: Dictionary = by_id[branch.entry_instance_id]
+		var fresh: Dictionary = await planner.prove(chain,[root,branch.entry_port_id,root.ports[branch.entry_port_id]],items)
+		if fresh.is_empty():
+			record_failure("final_reward_branch_witness_invalidated"); return false
+		branch.merge(fresh,true)
 	owner.get_ref().work_phase = "final_gate"
 	if not await PIPELINE.assembly_gate(self):
 		record_failure("original_assembly_rejected")
@@ -976,7 +967,7 @@ func metrics() -> Dictionary:
 	return {"expansions": expanded, "backtracks": backtracks, "layout_repairs": repairs, "terminal_states": terminal_states, "recorded_failures": failures.size(), "closed_loops_across_search": closed_loops, "pruning": rejections.duplicate(true), "generation_seconds": float(Time.get_ticks_usec()-started_usec)/1000000.0}
 
 func diagnostics() -> Dictionary:
-	return {"solver_state": {"seed": request.seed, "phase": phase, "instances": items}, "decisions": decisions, "failures": failures, "rng_state": rng.getstate(), "reward_seal_conflicts":reward_seal_conflicts, "reward_check_scope":"full strict seal-AABB union exclusion only; other claim/grounding/path physics UNKNOWN"}
+	return {"solver_state": {"seed": request.seed, "phase": phase, "instances": items}, "decisions": decisions, "failures": failures, "rng_state": rng.getstate(), "reward_branches":reward_branches.duplicate(true), "reward_core_ids":reward_core.keys(), "reward_core_rank":reward_core_rank.duplicate(true), "reward_seal_conflicts":reward_seal_conflicts, "reward_check_scope":"full strict seal-AABB union exclusion only; other claim/grounding/path physics UNKNOWN"}
 
 func module_graph(item: Dictionary, selected: Dictionary, potential: bool) -> Array:
 	var selected_ids: Array=selected.keys();selected_ids.sort()

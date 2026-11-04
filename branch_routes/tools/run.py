@@ -52,6 +52,12 @@ def main():
     (args.out / "cases.json").write_text(json.dumps(cases, indent=2) + "\n")
     lock = json.loads((args.project / "source-lock.json").read_text())
     (args.out / "source-lock.json").write_text(json.dumps(lock, indent=2) + "\n")
+    snapshot = args.out / "runtime-source"
+    snapshot.mkdir()
+    for name in ("solver.gd", "protocol.gd", "schema_data.gd", "reward_branch_planner.gd"):
+        source = args.project / "addons/mapgen" / name
+        if source.exists():
+            (snapshot / (name + ".gz")).write_bytes(gzip.compress(source.read_bytes(), mtime=0))
     module = ROOT / ".cache/legacy-real-v2/modules.zip"
     compile_result = subprocess.run([str(args.godot.resolve()), "--headless", "--path", str(args.project), "--check-only", "--script", "res://suite.gd"], capture_output=True, text=True, timeout=30)
     (args.out / "compile.log").write_text(compile_result.stdout + compile_result.stderr)

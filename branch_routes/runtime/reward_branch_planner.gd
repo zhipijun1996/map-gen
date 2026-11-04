@@ -75,6 +75,23 @@ func options() -> Array:
 		beam.append({"chain":[],"front":source,"root":source,"collected":false,"returnable":true})
 	var completed: Array = []
 	var completed_keys: Dictionary = {}
+	# Single-room returns are explicit base cases of this planner, not an old
+	# generator fallback. Keep simultaneously placeable witnesses represented
+	# even when speculative multi-room beams have many attractive dead ends.
+	var placed: int = reward_counts.values().reduce(func(a,b):return a+b,0)
+	var reserve: Array = await s.reservation(s.items,s.config.goals.reward_target-placed,true)
+	var base_cases: Array = []
+	for original in reserve:
+		var item: Dictionary = original.duplicate(true)
+		item.id = "M%02d" % (s.items.size()+1)
+		for source in await s.reachable_frontier(s.items):
+			if not core.has(source[0].id): continue
+			var matches := false
+			for port in item.ports.values():
+				if GEO.matching(port,source[2]): matches=true
+			if matches:
+				base_cases.append({"chain":[item],"root":source,"score":chain_score([item])})
+				break
 	for depth in range(policy.branch_depth):
 		var pending: Array = []
 		for state in beam:
@@ -133,14 +150,20 @@ func options() -> Array:
 	completed = await s.sort_rows(completed,func(a,b):return a.score>b.score)
 	var choices: Array = []
 	var signatures: Dictionary = {}
-	for option in completed.slice(0,policy.branch_completion_limit):
+	var considered: Array = completed.slice(0,maxi(0,policy.branch_completion_limit-base_cases.size()))+base_cases
+	var checked: Dictionary = {}
+	for option in considered:
+		var key := signature(option.chain)
+		if checked.has(key): continue
+		checked[key]=true
 		var trial: Array = s.items+option.chain
 		if s.aspect(trial)>s.config.shape.max_aspect: continue
-		if not await s.valid_reward_state(trial): continue
+		if not await s.valid_reward_state(trial):
+			s.reject("branch_candidate_invalid_state"); continue
 		var proof: Dictionary = await prove(option.chain,option.root,trial)
 		if proof.is_empty():
 			s.reject("reward_branch_no_independent_core_path"); continue
-		var remaining: int = s.config.goals.reward_target-reward_counts.values().reduce(func(a,b):return a+b,0)-1
+		var remaining: int = s.config.goals.reward_target-placed-1
 		# Conservative feasible reserve, not a claim every remaining branch must fold.
 		if (await s.reservation(trial,remaining,true)).size()<remaining:
 			s.reject("insufficient_remaining_reward_reservation"); continue
@@ -151,9 +174,11 @@ func options() -> Array:
 		if signatures.has(diversity_key): continue
 		signatures[diversity_key]=true
 		option.proof=proof
+		# Re-sort by proved kind; physical auto-contact alone is not a merge proof.
+		option.score=chain_score(option.chain)+(policy.merge_bonus if proof.kind=="forward_merge" else policy.merge_bonus*0.75 if proof.kind=="core_merge" else policy.multi_return_bonus if proof.kind=="multi_return" else 0.0)
 		choices.append(option)
 		if choices.size()>=s.config.search.reward_choice_count: break
-	return choices
+	return await s.sort_rows(choices,func(a,b):return a.score>b.score)
 
 func path(g: Dictionary, start: String, allowed: Dictionary, goals: Dictionary) -> Array:
 	var queue: Array = [start]
