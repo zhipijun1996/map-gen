@@ -10,12 +10,18 @@ var rank: Dictionary
 var counts: Dictionary = {}
 var reward_counts: Dictionary = {}
 var targets: Array = []
+var port_lookup: Dictionary={}
+var target_lookup: Dictionary={}
+var distance_cache: Dictionary={}
+var core_size:=0
 
 func _init(solver):
 	s = solver
 	policy = s.config.diversity
 	core = s.reward_core
 	rank = s.reward_core_rank
+	core_size=s.items.size()
+	port_lookup=GEO.groups(s.items)
 	for item in s.items:
 		var mid: String = s.templates[item.module_id].source_module_id
 		counts[mid] = counts.get(mid,0)+1
@@ -23,6 +29,8 @@ func _init(solver):
 	for port in GEO.frontier(s.items):
 		if core.has(port[0].id) and GEO.permitted(port[2],"in"):
 			targets.append(port)
+			if not target_lookup.has(port[2].world2):target_lookup[port[2].world2]=[]
+			target_lookup[port[2].world2].append(port)
 
 func signature(chain: Array) -> String:
 	var rows: Array = []
@@ -47,24 +55,31 @@ func chain_score(chain: Array) -> float:
 
 func actual_connected(item: Dictionary, occupied: Array) -> Dictionary:
 	var selected: Dictionary = {}
-	for other in occupied:
-		for pid in item.ports:
-			for port in other.ports.values():
-				if GEO.matching(item.ports[pid],port): selected[pid] = true
+	for pid in item.ports:
+		var port: Dictionary=item.ports[pid]
+		for other in port_lookup.get(port.world2,[]):
+			if GEO.matching(port,other[2]):selected[pid]=true
+		for index in range(core_size,occupied.size()):
+			for other in occupied[index].ports.values():
+				if GEO.matching(port,other):selected[pid]=true
 	return selected
 
 func core_join(item: Dictionary, source_id: String) -> bool:
 	for port in item.ports.values():
 		if not GEO.permitted(port,"out"): continue
-		for target in targets:
+		for target in target_lookup.get(port.world2,[]):
 			if target[0].id != source_id and GEO.matching(port,target[2]): return true
 	return false
 
 func distance_to_core(port: Dictionary, source_id: String) -> int:
+	var key: Array=[source_id,port.surface,port.world2[0],port.world2[1]]
+	if distance_cache.has(key):return distance_cache[key]
 	var nearest := 1000000
 	for target in targets:
 		if target[0].id != source_id and port.surface == target[2].surface:
 			nearest = mini(nearest,s.distance2(port,target[2]))
+	if distance_cache.size()>=2048:distance_cache.erase(distance_cache.keys()[0])
+	distance_cache[key]=nearest
 	return nearest
 
 func seed_returns(states: Array) -> Array:
