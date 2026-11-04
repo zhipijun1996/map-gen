@@ -55,6 +55,7 @@ var reward_core_rank: Dictionary = {}
 var reward_branches: Array = []
 var joint_stats: Dictionary = {"pools":0,"pool_candidates":0,"pair_conflicts":0,"search_nodes":0,"capacity_prunes":0}
 var capacity_cache: Dictionary={}
+var pool_evidence: Array=[]
 
 func _init(job, req: Dictionary, prepared, cfg: Dictionary):
 	owner = weakref(job)
@@ -583,7 +584,7 @@ func growth_options() -> Array:
 		var scored: Array = []
 		for row in unique:
 			var capacity: int = await known_capacity(items+[row[1]])
-			var desired: int=ceili(float(config.goals.reward_target)*(items.size()+1)/config.goals.growth_target)
+			var desired: int=config.goals.reward_target
 			var missing: int=maxi(0,desired-old_capacity)
 			var gain: int=mini(capacity,desired)-mini(old_capacity,desired)
 			scored.append([row[0]+score.reward_reserve*(1+missing)*gain, row[1]])
@@ -985,7 +986,7 @@ func metrics() -> Dictionary:
 	return {"expansions": expanded, "backtracks": backtracks, "layout_repairs": repairs, "terminal_states": terminal_states, "recorded_failures": failures.size(), "closed_loops_across_search": closed_loops, "pruning": rejections.duplicate(true), "generation_seconds": float(Time.get_ticks_usec()-started_usec)/1000000.0}
 
 func diagnostics() -> Dictionary:
-	return {"solver_state": {"seed": request.seed, "phase": phase, "instances": items}, "decisions": decisions, "failures": failures, "rng_state": rng.getstate(), "reward_branches":reward_branches.duplicate(true), "reward_core_ids":reward_core.keys(), "reward_core_rank":reward_core_rank.duplicate(true), "joint_planning":joint_stats.duplicate(true), "reward_seal_conflicts":reward_seal_conflicts, "reward_check_scope":"full strict seal-AABB union exclusion only; other claim/grounding/path physics UNKNOWN"}
+	return {"solver_state": {"seed": request.seed, "phase": phase, "instances": items}, "decisions": decisions, "failures": failures, "rng_state": rng.getstate(), "reward_branches":reward_branches.duplicate(true), "reward_core_ids":reward_core.keys(), "reward_core_rank":reward_core_rank.duplicate(true), "joint_planning":joint_stats.duplicate(true), "joint_pools":pool_evidence.duplicate(true), "reward_seal_conflicts":reward_seal_conflicts, "reward_check_scope":"full strict seal-AABB union exclusion only; other claim/grounding/path physics UNKNOWN"}
 
 func module_graph(item: Dictionary, selected: Dictionary, potential: bool) -> Array:
 	var selected_ids: Array=selected.keys();selected_ids.sort()

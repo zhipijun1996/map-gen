@@ -40,6 +40,12 @@ func solve() -> bool:
 				row[j]=true;conflicts[j][i]=true;s.joint_stats.pair_conflicts+=1
 		conflicts.append(row)
 	var available: Array=range(pool.size())
+	var kinds: Dictionary={}
+	var roots: Dictionary={}
+	for option in pool:
+		kinds[option.proof.kind]=kinds.get(option.proof.kind,0)+1
+		roots[option.proof.entry_instance_id+"."+option.proof.entry_port_id]=true
+	s.pool_evidence.append({"candidates":pool.size(),"kinds":kinds,"root_ports":roots.keys(),"compatible_upper_bound":capacity_upper_bound(available),"expanded":s.expanded,"boss":s.items[-1].origin.duplicate()})
 	var success: bool=await search(available,0)
 	if not success and not s.aborted():s.record_failure("joint_reward_plan_exhausted")
 	return success
