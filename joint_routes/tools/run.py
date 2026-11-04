@@ -28,6 +28,7 @@ def main():
     parser.add_argument("--failure", action="store_true")
     parser.add_argument("--contract", action="store_true")
     parser.add_argument("--baseline", type=Path)
+    parser.add_argument("--baseline-failure", type=Path)
     args = parser.parse_args()
     args.out.mkdir(parents=True, exist_ok=False)
     request_path = ROOT / ("runtime_iteration/upstream/controller-request.json" if args.controller else "godot_runtime/tests/request.json")
@@ -114,13 +115,15 @@ def main():
         if primary is None: primary = normalized
         if case["id"].startswith("batch-"): checks["batch_equal"] = normalized == primary
         if args.baseline and not case["id"].startswith(("batch-","cancel-")):
-            previous=json.loads(gzip.decompress((args.baseline/path.with_suffix(".json.gz").name).read_bytes()))["result"]
+            baseline_path=args.baseline_failure if case["id"]=="failure" and args.baseline_failure else args.baseline/path.with_suffix(".json.gz").name
+            previous=json.loads(gzip.decompress(baseline_path.read_bytes()))["result"]
             def behavior(value):
                 value=copy.deepcopy(value);value['metrics'].pop('generation_seconds',None);value.pop('request_fingerprint');value['diagnostics'].pop('implementation',None)
                 if value['map']:
                     value['map'].pop('map_id');value['map']['generator'].pop('implementation');value['map']['generator'].pop('request_fingerprint')
                 return value
             checks['complete_baseline_behavior']=behavior(previous)==behavior(actual)
+            checks['expected_status']=actual['status']==previous['status']
         rows.append(dict(case=case["id"], status=actual["status"], checks=checks, metrics=actual["metrics"], profile=record["profile"], cancel=record["cancel"], audit=audit, branch_audit=branch_audit))
         path.with_suffix(".json.gz").write_bytes(gzip.compress(path.read_bytes(), mtime=0))
         path.unlink()

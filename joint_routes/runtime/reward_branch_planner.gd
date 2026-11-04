@@ -45,13 +45,20 @@ func chain_score(chain: Array) -> float:
 		if item.reward:
 			total -= policy.reward_repeat_penalty*reward_counts.get(mid,0)
 			for other in s.items:
-				if other.reward and s.origin_distance(item.origin,other.origin)<s.config.scoring.reward_near_radius:
+				if other.reward and near_reward(item.origin,other.origin):
 					total -= s.config.scoring.reward_near_penalty
 		else:
 			total -= policy.connector_repeat_penalty*(counts.get(mid,0)+local.get(mid,0))
 		total -= s.config.scoring.reservation_area*item.size_blocks[0]*item.size_blocks[1]
 		local[mid] = local.get(mid,0)+1
 	return total+policy.branch_length_bonus*chain.size()
+
+func near_reward(a: Array,b: Array) -> bool:
+	var dx: int=absi(a[0]-b[0]);var dy: int=absi(a[1]-b[1])
+	var radius: float=s.config.scoring.reward_near_radius
+	if dx>2000000000 or dy>2000000000:return s.origin_distance(a,b)<radius
+	if dx>=radius or dy>=radius:return false
+	return s.origin_distance(a,b)<radius
 
 func actual_connected(item: Dictionary, occupied: Array) -> Dictionary:
 	var selected: Dictionary = {}
@@ -86,7 +93,7 @@ func seed_returns(states: Array) -> Array:
 	# Merge beams should approach another core Port. Return arms instead need
 	# room to extend away from the core; do not rank both by merge distance.
 	var prefixes: Array=states.filter(func(state):return not state.collected and state.returnable)
-	prefixes=await s.sort_rows(prefixes,func(a,b):return chain_score(a.chain)>chain_score(b.chain))
+	prefixes=await s.sort_rows(prefixes,func(a,b):return a.base_score>b.base_score)
 	var result: Array=[]
 	var seen: Dictionary={}
 	var examined:=0
@@ -153,7 +160,7 @@ func options(pool_mode := false) -> Array:
 	# even when speculative multi-room beams have many attractive dead ends.
 	var placed: int = reward_counts.values().reduce(func(a,b):return a+b,0)
 	var reserve: Array = [] if pool_mode else await s.reservation(s.items,s.config.goals.reward_target-placed,true)
-	var base_cases: Array = await direct_returns(fronts) if pool_mode and not s.preparing_reward_closure else []
+	var base_cases: Array = await direct_returns(fronts) if pool_mode else []
 	if pool_mode:
 		var witnessed: Array=[]
 		for original in s.reward_witness:
@@ -229,7 +236,7 @@ func options(pool_mode := false) -> Array:
 					for route in s.transit[s.port_key(item.module_id,item.mirror_x,pid)]:
 						if route.to_port == pin: reverse = true
 					var heuristic: float = value-0.25*distance_to_core(item.ports[pid],state.root[0].id)+(policy.multi_return_bonus if state.returnable and reverse else 0.0)
-					pending.append({"chain":chain,"front":[item,pid,item.ports[pid]],"root":state.root,"collected":collected,"returnable":state.returnable and reverse,"score":heuristic})
+					pending.append({"chain":chain,"front":[item,pid,item.ports[pid]],"root":state.root,"collected":collected,"returnable":state.returnable and reverse,"score":heuristic,"base_score":value})
 				row = await cursor.next()
 			if s.aborted(): return []
 		pending = await s.sort_rows(pending,func(a,b):return a.score>b.score)
@@ -271,12 +278,11 @@ func options(pool_mode := false) -> Array:
 		checked[key]=true
 		var trial: Array = s.items+option.chain
 		if s.aspect(trial)>s.config.shape.max_aspect: continue
-		if not (await s.safe_state(trial) if s.preparing_reward_closure else await s.valid_reward_state(trial)):
+		if not await s.valid_reward_state(trial):
 			s.reject("branch_candidate_invalid_state"); continue
 		var proof: Dictionary = await prove(option.chain,option.root,trial)
 		if proof.is_empty():
 			s.reject("reward_branch_no_independent_core_path"); continue
-		if s.preparing_reward_closure and proof.kind not in ["core_merge","forward_merge"]:continue
 		var remaining: int = s.config.goals.reward_target-placed-1
 		# Conservative feasible reserve, not a claim every remaining branch must fold.
 		if not pool_mode and (await s.reservation(trial,remaining,true)).size()<remaining:
@@ -323,11 +329,7 @@ func prove(chain: Array, root: Array, trial: Array) -> Dictionary:
 		if pair[0]==reward_id: reward_nodes[pair[1]]=true
 	var outbound: Array=await path(g,root[0].id+"."+root[1]+":depart",allowed,reward_nodes)
 	if outbound.is_empty(): return {}
-	var can_finish: Dictionary={}
-	if s.get("preparing_reward_closure"):
-		for node in g:
-			if core.has(node.split(".")[0].split(":")[0]) and node.ends_with(":arrive"):can_finish[node]=true
-	else:can_finish=await s.reverse_reachable(g,"BOSS")
+	var can_finish: Dictionary=await s.reverse_reachable(g,"BOSS")
 	var forward: Dictionary={}
 	var merged: Dictionary={}
 	var returned: Dictionary={}
