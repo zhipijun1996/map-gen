@@ -99,5 +99,12 @@ def inspect(result):
         check_named_path(branch["onward_path"])
         assert branch["kind"] != "single_return" or len(allowed) == 1
         assert branch["kind"] != "multi_return" or len(allowed) > 1
+        if branch["kind"] in ("single_return","multi_return"):
+            external = set()
+            for connection in data["connections"]:
+                a,b = connection["a"]["instance_id"],connection["b"]["instance_id"]
+                if a in allowed and b not in allowed: external.add(b)
+                if b in allowed and a not in allowed: external.add(a)
+            assert external == {entry_id}, ("return branch must attach only to its root",external,branch)
         proofs.append(dict(kind=branch["kind"], instance_ids=branch["instance_ids"], reward_instance_id=reward_id, exported_outbound_path=outward, exported_onward_path=onward, scope="actual exported directed graph, core-boundary constrained; no physics or irreversibility proof"))
     return {"status":"PASS", "branches":proofs}

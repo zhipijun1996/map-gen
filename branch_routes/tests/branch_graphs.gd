@@ -41,6 +41,9 @@ func _initialize():
 	fake.g["A.return:arrive"]=["BOSS"]
 	var folded: Dictionary=await planner.prove([x,q],root,[])
 	checks.two_room_return=folded.get("kind")=="multi_return"
+	fake.g["B.extra:depart"]=["X.unused:arrive"]
+	checks.return_has_single_core_attachment=(await planner.prove([x,q],root,[])).is_empty()
+	fake.g.erase("B.extra:depart")
 	checks.unused_padding_rejected=(await planner.prove([x,q,y],root,[])).is_empty()
 	fake.g["A.exit:depart"]=["B.transit:arrive"]
 	fake.g["B.transit:arrive"]=["Q.in:arrive"]

@@ -35,6 +35,9 @@ func chain_score(chain: Array) -> float:
 		var mid: String = s.templates[item.module_id].source_module_id
 		if item.reward:
 			total -= policy.reward_repeat_penalty*reward_counts.get(mid,0)
+			for other in s.items:
+				if other.reward and s.origin_distance(item.origin,other.origin)<s.config.scoring.reward_near_radius:
+					total -= s.config.scoring.reward_near_penalty
 		else:
 			total -= policy.connector_repeat_penalty*(counts.get(mid,0)+local.get(mid,0))
 		total -= s.config.scoring.reservation_area*item.size_blocks[0]*item.size_blocks[1]
@@ -62,6 +65,32 @@ func distance_to_core(port: Dictionary, source_id: String) -> int:
 		if target[0].id != source_id and port.surface == target[2].surface:
 			nearest = mini(nearest,s.distance2(port,target[2]))
 	return nearest
+
+func seed_returns(states: Array) -> Array:
+	# Merge beams should approach another core Port. Return arms instead need
+	# room to extend away from the core; do not rank both by merge distance.
+	var prefixes: Array=states.filter(func(state):return not state.collected and state.returnable)
+	prefixes=await s.sort_rows(prefixes,func(a,b):return chain_score(a.chain)>chain_score(b.chain))
+	var result: Array=[]
+	var seen: Dictionary={}
+	var examined:=0
+	for state in prefixes:
+		var source_mid: String=s.templates[state.front[0].module_id].source_module_id
+		if seen.get(source_mid,0)>=2:continue
+		seen[source_mid]=seen.get(source_mid,0)+1
+		examined+=1
+		var cursor=s.candidates(state.front,s.return_rooms,s.items+state.chain)
+		var row=await cursor.next()
+		var choices:=0
+		while row!=null and choices<s.config.search.reward_choice_count:
+			var item: Dictionary=row[0]
+			item.id="M%02d" % (s.items.size()+state.chain.size()+1)
+			var chain: Array=state.chain+[item]
+			result.append({"chain":chain,"root":state.root,"hint":"multi_return","score":chain_score(chain)+policy.multi_return_bonus})
+			choices+=1
+			row=await cursor.next()
+		if examined>=policy.branch_beam_width or s.aborted():break
+	return result
 
 func options() -> Array:
 	s.phase = "reward_branches"
@@ -136,6 +165,11 @@ func options() -> Array:
 				row = await cursor.next()
 			if s.aborted(): return []
 		pending = await s.sort_rows(pending,func(a,b):return a.score>b.score)
+		if depth+1<policy.branch_depth:
+			for option in await seed_returns(pending):
+				var key:=signature(option.chain)
+				if not completed_keys.has(key):
+					completed_keys[key]=true;completed.append(option)
 		beam=[]
 		var groups: Dictionary = {}
 		var phases: Dictionary = {}
@@ -154,6 +188,9 @@ func options() -> Array:
 	var remaining_slots: int = maxi(0,policy.branch_completion_limit-base_cases.size())
 	var hints: Dictionary = {}
 	for option in completed:
+		# Verified base cases already represent single-room returns. They must
+		# not also occupy the speculative slots reserved for longer branches.
+		if option.hint=="single_return": continue
 		if hints.get(option.hint,0)>=maxi(1,remaining_slots/2): continue
 		hints[option.hint]=hints.get(option.hint,0)+1
 		considered.append(option)
@@ -221,6 +258,13 @@ func prove(chain: Array, root: Array, trial: Array) -> Dictionary:
 	var forward: Dictionary={}
 	var merged: Dictionary={}
 	var returned: Dictionary={}
+	var independent_return := true
+	for a in g:
+		var aid: String=a.split(".")[0].split(":")[0]
+		for b in g[a]:
+			var bid: String=b.split(".")[0].split(":")[0]
+			if allowed.has(aid) and not allowed.has(bid) and bid!=root[0].id: independent_return=false
+			if allowed.has(bid) and not allowed.has(aid) and aid!=root[0].id: independent_return=false
 	for node in g:
 		var iid: String=node.split(".")[0].split(":")[0]
 		if not core.has(iid) or not node.ends_with(":arrive") or not can_finish.has(node): continue
@@ -229,6 +273,7 @@ func prove(chain: Array, root: Array, trial: Array) -> Dictionary:
 			merged[node]=true
 			if rank.has(iid) and rank.has(root[0].id) and rank[iid]>rank[root[0].id]: forward[node]=true
 	for category in [["forward_merge",forward],["core_merge",merged],["multi_return" if chain.size()>1 else "single_return",returned]]:
+		if category[0] in ["multi_return","single_return"] and not independent_return: continue
 		var onward: Array=await path(g,outbound[-1],allowed,category[1])
 		if not onward.is_empty():
 			var used: Dictionary={}
