@@ -1,0 +1,1368 @@
+{
+  "status": "FAIL",
+  "engine_sha256": "eeaec2b65dc3234168be1e1cbcc89731514bbb78dfb2c1b502920c50830a0638",
+  "source_sha256": {
+    "candidate_cursor.gd": "b692da22a4b42be6c2c65b44ea04fca88d5c9cd50bf4aaa3bf29bf526cb50d08",
+    "content_transform.gd": "80ab9f4e58ceedb754c6062996e0e4a4f36a9542e7c54206639d7760ce92e2f2",
+    "data_json.gd": "cef6a962ae33d5d03aa29b57ca35fcef104a07f7a2de636122e3b32cb8d0ea9c",
+    "decimal64.gd": "a1c39dc62d62f8191a6d306942b2f549e674e09212970f8bd4a44153ed8e8109",
+    "derived_library.gd": "f75127f238dbf1092af88ed996548b8f1f8296f94734b94eee11f6da7b4c40c2",
+    "final_pipeline.gd": "c44fe36078a4cea5b20541f38c564e143ba4eaafbf6eb6edcf5bbb67d2ceb587",
+    "generation_job.gd": "effe3467aced7b978dbc9e2ccfc1492da5e7f8fd0087df066b30264cf12e3e8e",
+    "geometry.gd": "e1bed0c1abcf61ab9194f676cf94cc7b39d31560b54ed2fcaca232a6adf3443c",
+    "module_archive.gd": "44c075d69db506ced4a2241e8205775a226861234786d43272633c1e7ba46742",
+    "numeric.gd": "af1d58403d38687de902e4ded6770aa9972e91a9ea75e2ab5e92f98d41f90f7e",
+    "preload_job.gd": "3ea6be476d84262c83c536c943c170a80dd0884bfc441e60bb5fe43b6fc34e68",
+    "prepared_library.gd": "f572fe0f4811b1b116140e108a7a9dbc4d6e3b509df220feea66b8af2146cbaa",
+    "protocol.gd": "3c5af741cc620b53b5b7fc029d9841cb0e0817f527ab274714122451bee45790",
+    "python_rng.gd": "6b70397a8f8f7dbfd2ba9f2c49101c9e5174e22fc4b761e1e97c07c6a61964d4",
+    "reward_clearance.gd": "f1946c2e0bb5fc7c3b6d6229030cd548bc5540a3160a652a5121bd35baf24a02",
+    "runtime_export.gd": "5be6d8fd72389acb60efb5651a945e9200a0bc7a15a4a1bff152ab2647311a5c",
+    "schema_data.gd": "9bb996a7533a49038a3c8aee13a8332dfda86e7dcc16f712439fca5e153bfa09",
+    "solver.gd": "ea28def2d1d520c5c7cea3fa41ed6b752fef40a513d9ca530585be051f3dff6b",
+    "work_gate.gd": "fec67bc46e091be2d7919003aa0e525c0112772beab12ac82e6da1fcf41e4079"
+  },
+  "rows": [
+    {
+      "case": "seed-271028",
+      "status": "SEARCH_EXHAUSTED",
+      "checks": {
+        "expected_status": false,
+        "failure_empty": true
+      },
+      "metrics": {
+        "backtracks": 9,
+        "closed_loops_across_search": 26,
+        "expansions": 469662,
+        "generation_seconds": 10.478833,
+        "layout_repairs": 8,
+        "pruning": {
+          "boss_reward_space_reservation": 21,
+          "entry_has_no_reward_route": 87,
+          "no_onward_route_from_actual_entry": 1490,
+          "no_route_from_actual_entry": 44056,
+          "reward_claim_region_excluded_by_seals": 6,
+          "seal_or_route_configuration": 49
+        },
+        "recorded_failures": 10,
+        "terminal_states": 0
+      },
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "closure_search": {
+            "calls": 27204,
+            "max_usec": 31810,
+            "p50_usec": 205,
+            "p95_usec": 589,
+            "p99_usec": 883,
+            "total_usec": 8406773
+          },
+          "created": {
+            "calls": 1,
+            "max_usec": 2177,
+            "p50_usec": 2177,
+            "p95_usec": 2177,
+            "p99_usec": 2177,
+            "total_usec": 2177
+          },
+          "goal_aware_terminals": {
+            "calls": 1018,
+            "max_usec": 5131,
+            "p50_usec": 32,
+            "p95_usec": 645,
+            "p99_usec": 1585,
+            "total_usec": 169761
+          },
+          "growth": {
+            "calls": 4970,
+            "max_usec": 5020,
+            "p50_usec": 283,
+            "p95_usec": 669,
+            "p99_usec": 2116,
+            "total_usec": 1723533
+          },
+          "init": {
+            "calls": 8,
+            "max_usec": 1753,
+            "p50_usec": 1254,
+            "p95_usec": 1488,
+            "p99_usec": 1488,
+            "total_usec": 10542
+          },
+          "prepare": {
+            "calls": 7,
+            "max_usec": 2321,
+            "p50_usec": 1648,
+            "p95_usec": 2289,
+            "p99_usec": 2289,
+            "total_usec": 13117
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 10505050
+      },
+      "cancel": {
+        "finished_usec": -1,
+        "intent_usec": -1,
+        "kind": "scheduled external input deadline; includes advance until host observes",
+        "latency_usec": null,
+        "observed_usec": -1
+      },
+      "audit": null
+    },
+    {
+      "case": "seed-271029",
+      "status": "BUDGET_EXHAUSTED",
+      "checks": {
+        "expected_status": false,
+        "failure_empty": true
+      },
+      "metrics": {
+        "backtracks": 7,
+        "closed_loops_across_search": 9,
+        "expansions": 500001,
+        "generation_seconds": 11.687479,
+        "layout_repairs": 6,
+        "pruning": {
+          "boss_reward_space_reservation": 5,
+          "entry_has_no_reward_route": 109,
+          "no_onward_route_from_actual_entry": 1790,
+          "no_route_from_actual_entry": 51293,
+          "reward_claim_region_excluded_by_seals": 6,
+          "seal_or_route_configuration": 43
+        },
+        "recorded_failures": 7,
+        "terminal_states": 0
+      },
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "closure_search": {
+            "calls": 28346,
+            "max_usec": 26595,
+            "p50_usec": 299,
+            "p95_usec": 629,
+            "p99_usec": 874,
+            "total_usec": 9910407
+          },
+          "created": {
+            "calls": 1,
+            "max_usec": 3053,
+            "p50_usec": 3053,
+            "p95_usec": 3053,
+            "p99_usec": 3053,
+            "total_usec": 3053
+          },
+          "goal_aware_terminals": {
+            "calls": 302,
+            "max_usec": 3597,
+            "p50_usec": 28,
+            "p95_usec": 561,
+            "p99_usec": 2226,
+            "total_usec": 50134
+          },
+          "growth": {
+            "calls": 5689,
+            "max_usec": 14057,
+            "p50_usec": 173,
+            "p95_usec": 585,
+            "p99_usec": 1757,
+            "total_usec": 1548233
+          },
+          "init": {
+            "calls": 8,
+            "max_usec": 700,
+            "p50_usec": 555,
+            "p95_usec": 674,
+            "p99_usec": 674,
+            "total_usec": 4555
+          },
+          "prepare": {
+            "calls": 7,
+            "max_usec": 1304,
+            "p50_usec": 1046,
+            "p95_usec": 1241,
+            "p99_usec": 1241,
+            "total_usec": 7642
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 11745576
+      },
+      "cancel": {
+        "finished_usec": -1,
+        "intent_usec": -1,
+        "kind": "scheduled external input deadline; includes advance until host observes",
+        "latency_usec": null,
+        "observed_usec": -1
+      },
+      "audit": null
+    },
+    {
+      "case": "seed-271038",
+      "status": "BUDGET_EXHAUSTED",
+      "checks": {
+        "expected_status": false,
+        "failure_empty": true
+      },
+      "metrics": {
+        "backtracks": 9,
+        "closed_loops_across_search": 23,
+        "expansions": 500001,
+        "generation_seconds": 9.882119,
+        "layout_repairs": 8,
+        "pruning": {
+          "boss_reward_space_reservation": 8,
+          "entry_has_no_reward_route": 125,
+          "no_onward_route_from_actual_entry": 1978,
+          "no_route_from_actual_entry": 40751,
+          "reward_claim_region_excluded_by_seals": 6,
+          "seal_or_route_configuration": 52
+        },
+        "recorded_failures": 9,
+        "terminal_states": 0
+      },
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "closure_search": {
+            "calls": 29020,
+            "max_usec": 24219,
+            "p50_usec": 186,
+            "p95_usec": 569,
+            "p99_usec": 797,
+            "total_usec": 8067121
+          },
+          "created": {
+            "calls": 1,
+            "max_usec": 2531,
+            "p50_usec": 2531,
+            "p95_usec": 2531,
+            "p99_usec": 2531,
+            "total_usec": 2531
+          },
+          "goal_aware_terminals": {
+            "calls": 467,
+            "max_usec": 3060,
+            "p50_usec": 32,
+            "p95_usec": 669,
+            "p99_usec": 2016,
+            "total_usec": 87219
+          },
+          "growth": {
+            "calls": 5394,
+            "max_usec": 4300,
+            "p50_usec": 192,
+            "p95_usec": 611,
+            "p99_usec": 1794,
+            "total_usec": 1552175
+          },
+          "init": {
+            "calls": 8,
+            "max_usec": 986,
+            "p50_usec": 539,
+            "p95_usec": 697,
+            "p99_usec": 697,
+            "total_usec": 4979
+          },
+          "prepare": {
+            "calls": 7,
+            "max_usec": 1709,
+            "p50_usec": 1172,
+            "p95_usec": 1506,
+            "p99_usec": 1506,
+            "total_usec": 8963
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 9944130
+      },
+      "cancel": {
+        "finished_usec": -1,
+        "intent_usec": -1,
+        "kind": "scheduled external input deadline; includes advance until host observes",
+        "latency_usec": null,
+        "observed_usec": -1
+      },
+      "audit": null
+    },
+    {
+      "case": "seed-271047",
+      "status": "PASS",
+      "checks": {
+        "expected_status": true,
+        "failure_empty": true,
+        "independent_source_graph_all_rewards": true,
+        "identity": true,
+        "snapshot_inputs": true
+      },
+      "metrics": {
+        "backtracks": 0,
+        "closed_loops_across_search": 3,
+        "expansions": 90448,
+        "generation_seconds": 3.289785,
+        "layout_repairs": 0,
+        "pruning": {
+          "boss_main_path_diversity": 3,
+          "boss_reward_space_reservation": 2,
+          "entry_has_no_reward_route": 255,
+          "no_onward_route_from_actual_entry": 498,
+          "no_route_from_actual_entry": 7530,
+          "reward_claim_region_excluded_by_seals": 8,
+          "seal_or_route_configuration": 23
+        },
+        "recorded_failures": 0,
+        "terminal_states": 6
+      },
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "closure_search": {
+            "calls": 2299,
+            "max_usec": 28657,
+            "p50_usec": 130,
+            "p95_usec": 612,
+            "p99_usec": 857,
+            "total_usec": 580324
+          },
+          "created": {
+            "calls": 1,
+            "max_usec": 2885,
+            "p50_usec": 2885,
+            "p95_usec": 2885,
+            "p99_usec": 2885,
+            "total_usec": 2885
+          },
+          "export": {
+            "calls": 3,
+            "max_usec": 4359,
+            "p50_usec": 1581,
+            "p95_usec": 1581,
+            "p99_usec": 1581,
+            "total_usec": 6762
+          },
+          "final_audit": {
+            "calls": 83,
+            "max_usec": 1812,
+            "p50_usec": 28,
+            "p95_usec": 427,
+            "p99_usec": 640,
+            "total_usec": 8541
+          },
+          "final_decorate": {
+            "calls": 20,
+            "max_usec": 1125,
+            "p50_usec": 518,
+            "p95_usec": 895,
+            "p99_usec": 895,
+            "total_usec": 12020
+          },
+          "final_gate": {
+            "calls": 17,
+            "max_usec": 2487,
+            "p50_usec": 141,
+            "p95_usec": 814,
+            "p99_usec": 814,
+            "total_usec": 5938
+          },
+          "goal_aware_terminals": {
+            "calls": 4854,
+            "max_usec": 2584,
+            "p50_usec": 106,
+            "p95_usec": 629,
+            "p99_usec": 832,
+            "total_usec": 980102
+          },
+          "growth": {
+            "calls": 5531,
+            "max_usec": 5519,
+            "p50_usec": 211,
+            "p95_usec": 600,
+            "p99_usec": 1807,
+            "total_usec": 1628632
+          },
+          "init": {
+            "calls": 8,
+            "max_usec": 873,
+            "p50_usec": 636,
+            "p95_usec": 670,
+            "p99_usec": 670,
+            "total_usec": 5107
+          },
+          "prepare": {
+            "calls": 7,
+            "max_usec": 1370,
+            "p50_usec": 1112,
+            "p95_usec": 1309,
+            "p99_usec": 1309,
+            "total_usec": 7919
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 3351961
+      },
+      "cancel": {
+        "finished_usec": -1,
+        "intent_usec": -1,
+        "kind": "scheduled external input deadline; includes advance until host observes",
+        "latency_usec": null,
+        "observed_usec": -1
+      },
+      "audit": {
+        "status": "PASS",
+        "usable_map": true,
+        "sites_checked": 13,
+        "ordinary_sites": 7,
+        "target_sites": 6,
+        "sites": [
+          {
+            "instance": "M14",
+            "module_id": "batch30-n11-e-e-width96",
+            "role": "traversal",
+            "reward_id": "visible-cache",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M17",
+            "module_id": "idea-0363f85c-16c0-4b5f-b3b0-461335608db7-enemies-2",
+            "role": "traversal",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M22",
+            "module_id": "idea-orbit-choice-001",
+            "role": "traversal",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M25",
+            "module_id": "batch30-block-n04-0-2",
+            "role": "traversal",
+            "reward_id": "high-B",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M25",
+            "module_id": "batch30-block-n04-0-2",
+            "role": "traversal",
+            "reward_id": "high-C",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M35",
+            "module_id": "batch30-block-n04-0-2",
+            "role": "traversal",
+            "reward_id": "high-B",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M35",
+            "module_id": "batch30-block-n04-0-2",
+            "role": "traversal",
+            "reward_id": "high-C",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M40",
+            "module_id": "idea-spec02-s13-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M41",
+            "module_id": "idea-plains-hq04-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M42",
+            "module_id": "idea-spec02-s13-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M43",
+            "module_id": "idea-plains-hq04-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M44",
+            "module_id": "idea-plains-hq04-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M45",
+            "module_id": "idea-spec02-s13-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          }
+        ],
+        "source_payload_validation": "PASS",
+        "physics": "NOT_RUN"
+      }
+    },
+    {
+      "case": "seed-930001",
+      "status": "PASS",
+      "checks": {
+        "expected_status": true,
+        "failure_empty": true,
+        "independent_source_graph_all_rewards": true,
+        "identity": true,
+        "snapshot_inputs": true
+      },
+      "metrics": {
+        "backtracks": 0,
+        "closed_loops_across_search": 3,
+        "expansions": 90606,
+        "generation_seconds": 3.236966,
+        "layout_repairs": 0,
+        "pruning": {
+          "boss_main_path_diversity": 1,
+          "boss_reward_space_reservation": 2,
+          "entry_has_no_reward_route": 232,
+          "no_onward_route_from_actual_entry": 654,
+          "no_route_from_actual_entry": 7044,
+          "reward_claim_region_excluded_by_seals": 8,
+          "seal_or_route_configuration": 36
+        },
+        "recorded_failures": 0,
+        "terminal_states": 6
+      },
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "closure_search": {
+            "calls": 2038,
+            "max_usec": 22925,
+            "p50_usec": 164,
+            "p95_usec": 579,
+            "p99_usec": 821,
+            "total_usec": 551976
+          },
+          "created": {
+            "calls": 1,
+            "max_usec": 2858,
+            "p50_usec": 2858,
+            "p95_usec": 2858,
+            "p99_usec": 2858,
+            "total_usec": 2858
+          },
+          "export": {
+            "calls": 3,
+            "max_usec": 4490,
+            "p50_usec": 1686,
+            "p95_usec": 1686,
+            "p99_usec": 1686,
+            "total_usec": 7013
+          },
+          "final_audit": {
+            "calls": 115,
+            "max_usec": 2205,
+            "p50_usec": 27,
+            "p95_usec": 353,
+            "p99_usec": 614,
+            "total_usec": 10150
+          },
+          "final_decorate": {
+            "calls": 20,
+            "max_usec": 1092,
+            "p50_usec": 594,
+            "p95_usec": 845,
+            "p99_usec": 845,
+            "total_usec": 12171
+          },
+          "final_gate": {
+            "calls": 17,
+            "max_usec": 2618,
+            "p50_usec": 99,
+            "p95_usec": 989,
+            "p99_usec": 989,
+            "total_usec": 6490
+          },
+          "goal_aware_terminals": {
+            "calls": 4455,
+            "max_usec": 1991,
+            "p50_usec": 110,
+            "p95_usec": 634,
+            "p99_usec": 807,
+            "total_usec": 950894
+          },
+          "growth": {
+            "calls": 5690,
+            "max_usec": 5004,
+            "p50_usec": 211,
+            "p95_usec": 595,
+            "p99_usec": 1689,
+            "total_usec": 1631799
+          },
+          "init": {
+            "calls": 8,
+            "max_usec": 695,
+            "p50_usec": 563,
+            "p95_usec": 690,
+            "p99_usec": 690,
+            "total_usec": 4638
+          },
+          "prepare": {
+            "calls": 7,
+            "max_usec": 1297,
+            "p50_usec": 1103,
+            "p95_usec": 1168,
+            "p99_usec": 1168,
+            "total_usec": 7803
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 3290694
+      },
+      "cancel": {
+        "finished_usec": -1,
+        "intent_usec": -1,
+        "kind": "scheduled external input deadline; includes advance until host observes",
+        "latency_usec": null,
+        "observed_usec": -1
+      },
+      "audit": {
+        "status": "PASS",
+        "usable_map": true,
+        "sites_checked": 13,
+        "ordinary_sites": 7,
+        "target_sites": 6,
+        "sites": [
+          {
+            "instance": "M13",
+            "module_id": "batch30-n11-e-e-width96",
+            "role": "traversal",
+            "reward_id": "visible-cache",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M20",
+            "module_id": "idea-0363f85c-16c0-4b5f-b3b0-461335608db7-enemies-2",
+            "role": "traversal",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M23",
+            "module_id": "batch30-block-n04-0-2",
+            "role": "traversal",
+            "reward_id": "high-B",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M23",
+            "module_id": "batch30-block-n04-0-2",
+            "role": "traversal",
+            "reward_id": "high-C",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M25",
+            "module_id": "batch30-block-n04-0-2",
+            "role": "traversal",
+            "reward_id": "high-B",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M25",
+            "module_id": "batch30-block-n04-0-2",
+            "role": "traversal",
+            "reward_id": "high-C",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M28",
+            "module_id": "idea-orbit-choice-001",
+            "role": "traversal",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M41",
+            "module_id": "idea-plains-hq04-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M42",
+            "module_id": "idea-spec02-s13-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M43",
+            "module_id": "idea-plains-hq04-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M44",
+            "module_id": "idea-plains-hq04-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M45",
+            "module_id": "idea-spec02-s13-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M46",
+            "module_id": "idea-spec02-s13-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          }
+        ],
+        "source_payload_validation": "PASS",
+        "physics": "NOT_RUN"
+      }
+    },
+    {
+      "case": "seed-930007",
+      "status": "PASS",
+      "checks": {
+        "expected_status": true,
+        "failure_empty": true,
+        "independent_source_graph_all_rewards": true,
+        "identity": true,
+        "snapshot_inputs": true
+      },
+      "metrics": {
+        "backtracks": 0,
+        "closed_loops_across_search": 3,
+        "expansions": 80507,
+        "generation_seconds": 3.194924,
+        "layout_repairs": 0,
+        "pruning": {
+          "boss_reward_space_reservation": 3,
+          "entry_has_no_reward_route": 203,
+          "no_onward_route_from_actual_entry": 514,
+          "no_route_from_actual_entry": 7963,
+          "reward_claim_region_excluded_by_seals": 8,
+          "seal_or_route_configuration": 40
+        },
+        "recorded_failures": 0,
+        "terminal_states": 6
+      },
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "closure_search": {
+            "calls": 1495,
+            "max_usec": 25077,
+            "p50_usec": 124,
+            "p95_usec": 622,
+            "p99_usec": 923,
+            "total_usec": 415970
+          },
+          "created": {
+            "calls": 1,
+            "max_usec": 3012,
+            "p50_usec": 3012,
+            "p95_usec": 3012,
+            "p99_usec": 3012,
+            "total_usec": 3012
+          },
+          "export": {
+            "calls": 2,
+            "max_usec": 4235,
+            "p50_usec": 1353,
+            "p95_usec": 1353,
+            "p99_usec": 1353,
+            "total_usec": 5588
+          },
+          "final_audit": {
+            "calls": 58,
+            "max_usec": 2226,
+            "p50_usec": 31,
+            "p95_usec": 477,
+            "p99_usec": 750,
+            "total_usec": 7984
+          },
+          "final_decorate": {
+            "calls": 19,
+            "max_usec": 859,
+            "p50_usec": 535,
+            "p95_usec": 818,
+            "p99_usec": 818,
+            "total_usec": 11255
+          },
+          "final_gate": {
+            "calls": 19,
+            "max_usec": 2498,
+            "p50_usec": 127,
+            "p95_usec": 1088,
+            "p99_usec": 1088,
+            "total_usec": 6200
+          },
+          "goal_aware_terminals": {
+            "calls": 4186,
+            "max_usec": 2239,
+            "p50_usec": 109,
+            "p95_usec": 619,
+            "p99_usec": 823,
+            "total_usec": 871362
+          },
+          "growth": {
+            "calls": 5724,
+            "max_usec": 5651,
+            "p50_usec": 236,
+            "p95_usec": 612,
+            "p99_usec": 2165,
+            "total_usec": 1813653
+          },
+          "init": {
+            "calls": 8,
+            "max_usec": 726,
+            "p50_usec": 640,
+            "p95_usec": 702,
+            "p99_usec": 702,
+            "total_usec": 5045
+          },
+          "prepare": {
+            "calls": 7,
+            "max_usec": 1276,
+            "p50_usec": 1137,
+            "p95_usec": 1209,
+            "p99_usec": 1209,
+            "total_usec": 7847
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 3248564
+      },
+      "cancel": {
+        "finished_usec": -1,
+        "intent_usec": -1,
+        "kind": "scheduled external input deadline; includes advance until host observes",
+        "latency_usec": null,
+        "observed_usec": -1
+      },
+      "audit": {
+        "status": "PASS",
+        "usable_map": true,
+        "sites_checked": 11,
+        "ordinary_sites": 5,
+        "target_sites": 6,
+        "sites": [
+          {
+            "instance": "M19",
+            "module_id": "idea-0363f85c-16c0-4b5f-b3b0-461335608db7-enemies-2",
+            "role": "traversal",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M30",
+            "module_id": "batch30-n11-e-e-width96",
+            "role": "traversal",
+            "reward_id": "visible-cache",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M32",
+            "module_id": "b31-n12-three-side-port-interface0",
+            "role": "traversal",
+            "reward_id": "upper-cache",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M36",
+            "module_id": "batch30-block-n04-0-2",
+            "role": "traversal",
+            "reward_id": "high-B",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M36",
+            "module_id": "batch30-block-n04-0-2",
+            "role": "traversal",
+            "reward_id": "high-C",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M42",
+            "module_id": "idea-plains-hq04-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M43",
+            "module_id": "idea-plains-hq04-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M44",
+            "module_id": "idea-spec02-s13-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M45",
+            "module_id": "idea-plains-hq04-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M46",
+            "module_id": "idea-spec02-s13-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M47",
+            "module_id": "idea-spec02-s13-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          }
+        ],
+        "source_payload_validation": "PASS",
+        "physics": "NOT_RUN"
+      }
+    },
+    {
+      "case": "seed-930018",
+      "status": "SEARCH_EXHAUSTED",
+      "checks": {
+        "expected_status": false,
+        "failure_empty": true
+      },
+      "metrics": {
+        "backtracks": 9,
+        "closed_loops_across_search": 27,
+        "expansions": 236540,
+        "generation_seconds": 4.199442,
+        "layout_repairs": 8,
+        "pruning": {
+          "boss_main_path_diversity": 3,
+          "boss_reward_space_reservation": 25,
+          "entry_has_no_reward_route": 95,
+          "no_onward_route_from_actual_entry": 584,
+          "no_route_from_actual_entry": 11873,
+          "reward_claim_region_excluded_by_seals": 6,
+          "seal_or_route_configuration": 28
+        },
+        "recorded_failures": 10,
+        "terminal_states": 0
+      },
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "closure_search": {
+            "calls": 11932,
+            "max_usec": 16054,
+            "p50_usec": 99,
+            "p95_usec": 511,
+            "p99_usec": 763,
+            "total_usec": 2115126
+          },
+          "created": {
+            "calls": 1,
+            "max_usec": 2826,
+            "p50_usec": 2826,
+            "p95_usec": 2826,
+            "p99_usec": 2826,
+            "total_usec": 2826
+          },
+          "goal_aware_terminals": {
+            "calls": 1946,
+            "max_usec": 4220,
+            "p50_usec": 29,
+            "p95_usec": 604,
+            "p99_usec": 1296,
+            "total_usec": 265520
+          },
+          "growth": {
+            "calls": 5854,
+            "max_usec": 5032,
+            "p50_usec": 217,
+            "p95_usec": 602,
+            "p99_usec": 1742,
+            "total_usec": 1724400
+          },
+          "init": {
+            "calls": 8,
+            "max_usec": 822,
+            "p50_usec": 606,
+            "p95_usec": 798,
+            "p99_usec": 798,
+            "total_usec": 5097
+          },
+          "prepare": {
+            "calls": 7,
+            "max_usec": 1635,
+            "p50_usec": 1242,
+            "p95_usec": 1360,
+            "p99_usec": 1360,
+            "total_usec": 8531
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 4252484
+      },
+      "cancel": {
+        "finished_usec": -1,
+        "intent_usec": -1,
+        "kind": "scheduled external input deadline; includes advance until host observes",
+        "latency_usec": null,
+        "observed_usec": -1
+      },
+      "audit": null
+    },
+    {
+      "case": "seed-930020",
+      "status": "PASS",
+      "checks": {
+        "expected_status": true,
+        "failure_empty": true,
+        "independent_source_graph_all_rewards": true,
+        "identity": true,
+        "snapshot_inputs": true
+      },
+      "metrics": {
+        "backtracks": 1,
+        "closed_loops_across_search": 6,
+        "expansions": 118001,
+        "generation_seconds": 3.646382,
+        "layout_repairs": 1,
+        "pruning": {
+          "boss_main_path_diversity": 2,
+          "boss_reward_space_reservation": 3,
+          "entry_has_no_reward_route": 210,
+          "no_onward_route_from_actual_entry": 776,
+          "no_route_from_actual_entry": 9314,
+          "reward_claim_region_excluded_by_seals": 8,
+          "seal_or_route_configuration": 39
+        },
+        "recorded_failures": 1,
+        "terminal_states": 6
+      },
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "closure_search": {
+            "calls": 3619,
+            "max_usec": 31569,
+            "p50_usec": 200,
+            "p95_usec": 619,
+            "p99_usec": 910,
+            "total_usec": 1088014
+          },
+          "created": {
+            "calls": 1,
+            "max_usec": 2985,
+            "p50_usec": 2985,
+            "p95_usec": 2985,
+            "p99_usec": 2985,
+            "total_usec": 2985
+          },
+          "export": {
+            "calls": 3,
+            "max_usec": 4184,
+            "p50_usec": 1937,
+            "p95_usec": 1937,
+            "p99_usec": 1937,
+            "total_usec": 6896
+          },
+          "final_audit": {
+            "calls": 118,
+            "max_usec": 1571,
+            "p50_usec": 27,
+            "p95_usec": 281,
+            "p99_usec": 564,
+            "total_usec": 8416
+          },
+          "final_decorate": {
+            "calls": 18,
+            "max_usec": 1056,
+            "p50_usec": 622,
+            "p95_usec": 936,
+            "p99_usec": 936,
+            "total_usec": 12054
+          },
+          "final_gate": {
+            "calls": 18,
+            "max_usec": 2281,
+            "p50_usec": 113,
+            "p95_usec": 873,
+            "p99_usec": 873,
+            "total_usec": 5892
+          },
+          "goal_aware_terminals": {
+            "calls": 4340,
+            "max_usec": 2200,
+            "p50_usec": 99,
+            "p95_usec": 626,
+            "p99_usec": 830,
+            "total_usec": 838056
+          },
+          "growth": {
+            "calls": 5777,
+            "max_usec": 5329,
+            "p50_usec": 173,
+            "p95_usec": 591,
+            "p99_usec": 1857,
+            "total_usec": 1614302
+          },
+          "init": {
+            "calls": 8,
+            "max_usec": 823,
+            "p50_usec": 592,
+            "p95_usec": 694,
+            "p99_usec": 694,
+            "total_usec": 4852
+          },
+          "prepare": {
+            "calls": 7,
+            "max_usec": 1694,
+            "p50_usec": 1122,
+            "p95_usec": 1259,
+            "p99_usec": 1259,
+            "total_usec": 8334
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 3698457
+      },
+      "cancel": {
+        "finished_usec": -1,
+        "intent_usec": -1,
+        "kind": "scheduled external input deadline; includes advance until host observes",
+        "latency_usec": null,
+        "observed_usec": -1
+      },
+      "audit": {
+        "status": "PASS",
+        "usable_map": true,
+        "sites_checked": 11,
+        "ordinary_sites": 5,
+        "target_sites": 6,
+        "sites": [
+          {
+            "instance": "M14",
+            "module_id": "idea-0363f85c-16c0-4b5f-b3b0-461335608db7-enemies-2",
+            "role": "traversal",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M17",
+            "module_id": "batch30-n11-e-e-width96",
+            "role": "traversal",
+            "reward_id": "visible-cache",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M21",
+            "module_id": "generated-c234da4022051a1194ce251aa0da25d06ee572aa2a1c58873f8843f6d934feb2",
+            "role": "traversal",
+            "reward_id": "visible-cache",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M31",
+            "module_id": "batch30-block-n04-0-2",
+            "role": "traversal",
+            "reward_id": "high-B",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M31",
+            "module_id": "batch30-block-n04-0-2",
+            "role": "traversal",
+            "reward_id": "high-C",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M41",
+            "module_id": "idea-plains-hq04-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M42",
+            "module_id": "idea-plains-hq04-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M43",
+            "module_id": "idea-spec02-s13-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M44",
+            "module_id": "idea-spec02-s13-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M45",
+            "module_id": "idea-spec02-s13-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M46",
+            "module_id": "idea-plains-hq04-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          }
+        ],
+        "source_payload_validation": "PASS",
+        "physics": "NOT_RUN"
+      }
+    },
+    {
+      "case": "failure",
+      "status": "SEARCH_EXHAUSTED",
+      "checks": {
+        "expected_status": true,
+        "failure_empty": true
+      },
+      "metrics": {
+        "backtracks": 0,
+        "closed_loops_across_search": 0,
+        "expansions": 196,
+        "generation_seconds": 0.00683,
+        "layout_repairs": 0,
+        "pruning": {
+          "no_route_from_actual_entry": 196
+        },
+        "recorded_failures": 2,
+        "terminal_states": 0
+      },
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "created": {
+            "calls": 1,
+            "max_usec": 2948,
+            "p50_usec": 2948,
+            "p95_usec": 2948,
+            "p99_usec": 2948,
+            "total_usec": 2948
+          },
+          "growth": {
+            "calls": 13,
+            "max_usec": 304,
+            "p50_usec": 211,
+            "p95_usec": 268,
+            "p99_usec": 268,
+            "total_usec": 2852
+          },
+          "init": {
+            "calls": 8,
+            "max_usec": 543,
+            "p50_usec": 440,
+            "p95_usec": 487,
+            "p99_usec": 487,
+            "total_usec": 3569
+          },
+          "prepare": {
+            "calls": 7,
+            "max_usec": 1269,
+            "p50_usec": 1065,
+            "p95_usec": 1161,
+            "p99_usec": 1161,
+            "total_usec": 7698
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 50739
+      },
+      "cancel": {
+        "finished_usec": -1,
+        "intent_usec": -1,
+        "kind": "scheduled external input deadline; includes advance until host observes",
+        "latency_usec": null,
+        "observed_usec": -1
+      },
+      "audit": null
+    }
+  ],
+  "audit_scope": "Independent static source/graph/seal/all-reward audit, identity-projected copy; no physics",
+  "returncode": 0
+}
