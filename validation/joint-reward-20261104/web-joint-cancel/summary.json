@@ -1,0 +1,208 @@
+{
+  "advance_budget": 1,
+  "algorithm": "stable-v5-joint-reward-plans",
+  "config_profile": "default",
+  "engine": "4.7.2-stable (custom_build.gunman_sd1)",
+  "host_scope": "standalone data scheduler, no game validation/assembly/physics/tools/screenshots",
+  "implementation": "mapgen/gdscript-experiment-0.6.0+3738e5100505",
+  "mode": "framed",
+  "soft_tick_usec": 8000,
+  "unit_cap": 128,
+  "wall_usec": 19490695,
+  "environment": {
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+    "crossOriginIsolated": true,
+    "hardwareConcurrency": 5,
+    "browser_version": "154.0.8037.57"
+  },
+  "launcher_elapsed_seconds": 21.400385403001565,
+  "errors": [],
+  "records": [
+    {
+      "advance_calls": 2162,
+      "advance_cpu_usec": 2084553,
+      "advance_distribution_usec": {
+        "count": 2162,
+        "max": 42570,
+        "p50": 170,
+        "p95": 4780,
+        "p99": 7180
+      },
+      "cancel": {},
+      "host_and_yield_usec": 1623852,
+      "host_duplicate_usec": 0,
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "created": {
+            "calls": 1,
+            "max_usec": 1426,
+            "p50_usec": 1426,
+            "p95_usec": 1426,
+            "p99_usec": 1426,
+            "total_usec": 1426
+          },
+          "derived_json": {
+            "calls": 348,
+            "max_usec": 19170,
+            "p50_usec": 529,
+            "p95_usec": 3390,
+            "p99_usec": 5484,
+            "total_usec": 339133
+          },
+          "file_hashes": {
+            "calls": 1149,
+            "max_usec": 5930,
+            "p50_usec": 95,
+            "p95_usec": 184,
+            "p99_usec": 1900,
+            "total_usec": 154738
+          },
+          "zip_entries": {
+            "calls": 658,
+            "max_usec": 42554,
+            "p50_usec": 1496,
+            "p95_usec": 6571,
+            "p99_usec": 15840,
+            "total_usec": 1552616
+          },
+          "zip_hash": {
+            "calls": 6,
+            "max_usec": 10475,
+            "p50_usec": 1146,
+            "p95_usec": 1709,
+            "p99_usec": 1709,
+            "total_usec": 16705
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 3715900
+      },
+      "seed": null,
+      "snapshot_usec": 40,
+      "stage": "preload",
+      "status": "PASS",
+      "tick_distribution_usec": {
+        "count": 194,
+        "max": 42574,
+        "p50": 9994,
+        "p95": 20455,
+        "p99": 24079
+      },
+      "tick_max_usec": 42574,
+      "ticks": 194,
+      "wall_usec": 3708405
+    },
+    {
+      "advance_calls": 11758,
+      "advance_cpu_usec": 8678498,
+      "advance_distribution_usec": {
+        "count": 11758,
+        "max": 30064,
+        "p50": 326,
+        "p95": 3439,
+        "p99": 6356
+      },
+      "cancel": {
+        "finished_ms": 21181.644999999553,
+        "handler_ms": 21171.449999999255,
+        "input_to_done_ms": 21.140000000596046,
+        "intent_ms": 21160.504999998957,
+        "observed_ms": 21175.474999997765,
+        "trusted": true
+      },
+      "canonical_bytes": 68739,
+      "canonical_serialize_usec": 9711,
+      "engine_serialize_usec": 3165,
+      "host_and_yield_usec": 7036066,
+      "host_duplicate_usec": 695,
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "closure_search": {
+            "calls": 972,
+            "max_usec": 19556,
+            "p50_usec": 195,
+            "p95_usec": 2294,
+            "p99_usec": 5134,
+            "total_usec": 515833
+          },
+          "created": {
+            "calls": 1,
+            "max_usec": 11945,
+            "p50_usec": 11945,
+            "p95_usec": 11945,
+            "p99_usec": 11945,
+            "total_usec": 11945
+          },
+          "goal_aware_terminals": {
+            "calls": 540,
+            "max_usec": 11421,
+            "p50_usec": 41,
+            "p95_usec": 664,
+            "p99_usec": 3940,
+            "total_usec": 95781
+          },
+          "growth": {
+            "calls": 10216,
+            "max_usec": 30050,
+            "p50_usec": 336,
+            "p95_usec": 3506,
+            "p99_usec": 6679,
+            "total_usec": 7809951
+          },
+          "init": {
+            "calls": 8,
+            "max_usec": 9596,
+            "p50_usec": 1464,
+            "p95_usec": 6130,
+            "p99_usec": 6130,
+            "total_usec": 24581
+          },
+          "prepare": {
+            "calls": 7,
+            "max_usec": 4964,
+            "p50_usec": 1939,
+            "p95_usec": 2560,
+            "p99_usec": 2560,
+            "total_usec": 16833
+          },
+          "reward_branches": {
+            "calls": 14,
+            "max_usec": 7445,
+            "p50_usec": 359,
+            "p95_usec": 4314,
+            "p99_usec": 4314,
+            "total_usec": 21898
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 15723165
+      },
+      "seed": 930001,
+      "snapshot_usec": 840,
+      "stage": "generate",
+      "tick_distribution_usec": {
+        "count": 849,
+        "max": 34994,
+        "p50": 9451,
+        "p95": 17956,
+        "p99": 23165
+      },
+      "tick_max_usec": 34994,
+      "ticks": 849,
+      "wall_usec": 15714564
+    }
+  ],
+  "export_sha256": {
+    "index.pck": "3dec8cb61a20a5cd8f7c6bf525f6c6dd561e8e7a4c1bd7a8fab68bb27dffc491",
+    "index.audio.worklet.js": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3",
+    "index.js": "73a938dc76c5de073337170e7e9e322a66049e05b33563c7a91ac5248cf529ba",
+    "index.png": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e",
+    "index.apple-touch-icon.png": "01d4f63e525941e06ce74f5187dad030d20a8d52a07ce365ae4e94af97a3b1f5",
+    "index.icon.png": "ad3c35ad0facf487c618204bd98db543034fc95224eadc7f08c7a9ff38d5b3b5",
+    "index.audio.position.worklet.js": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8",
+    "index.wasm": "1ffaa14e9d530c11de13dccb539c0ca1923bac24f6b103941631c015d12cdc64",
+    "index.html": "f138de4d8308aa3ba1f5167bc3a9375b434206bc54b9f9e05c685bc5f8e0b841"
+  }
+}

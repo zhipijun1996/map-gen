@@ -122,3 +122,7 @@ python tools/export_png.py
 - `experiments/seed-study/source/`：原批次冻结源码；SHA-256 见结果 JSON。
 - `experiments/seed-study/output/`：全部合格地图、拒绝候选、原始诊断、图表和推荐库。
 - `tools/`：存档验证、固定 Seed 重放和可选 PNG 导出。
+
+## 奖励联合规划优化实验（独立，未替换默认）
+
+见[joint_routes](joint_routes/README.md)：0.5.1为保持0.5.0行为的性能候选；0.6.0-experiment为提高两能力样本成功率但存在多样性退步的研究原型。[40图对照](joint_routes/comparison-v7/index.html)及全部失败保留。两包仍非生产就绪。

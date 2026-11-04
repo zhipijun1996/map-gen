@@ -45,6 +45,7 @@ def main():
     with (a.out/'module-usage.csv').open('w',encoding='utf-8-sig',newline='') as f:
         writer=csv.DictWriter(f,fieldnames=list(module_rows[0]));writer.writeheader();writer.writerows(module_rows)
     html=(ROOT/'branch_routes/tools/view.html').read_text().replace('0.4.2 varied-v1 → 新奖励路线算法','0.5.0 → 奖励联合规划实验').replace('同批60 seed','同批40个两能力请求 seed').replace('0.4.2 · varied-v1','0.5.0 · 原候选').replace('新候选 · stable-v4-reward-branches','联合规划研究原型 · stable-v5').replace('同批统计','共同成功seed的布局统计')
+    html=html.replace('旧图未提供同口径的支路规划记录；不据此断言旧图没有长奖励路径。','两版均显示实际支路记录；归并顺序依据各自冻结的主路径，整图物理未验证。').replace('新算法会为奖励支路增加连接模块','两版都会为奖励支路增加连接模块')
     data=dict(maps=maps,summary=dict(old=report['common_layout_metrics']['old'],new=report['common_layout_metrics']['new']))
     (a.out/'index.html').write_text(html.replace('__DATA__',json.dumps(data,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')))
     print(json.dumps({k:v for k,v in report.items() if k not in ['rows','sources']},ensure_ascii=False,indent=2))
