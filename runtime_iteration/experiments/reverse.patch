@@ -7,61 +7,35 @@
 +const SOURCE_IMPLEMENTATION="mapgen/gdscript-candidate-0.5.0-dev-perf"
 --- a/addons/mapgen/geometry.gd
 +++ b/addons/mapgen/geometry.gd
-@@ -13,7 +13,7 @@
- 	return result
- 
- static func permitted(port: Dictionary, direction: String) -> bool:
+@@ -16 +16 @@
 -	return port.permission in (["OUTPUT", "INOUT"] if direction == "out" else ["INPUT", "INOUT"])
 +	return port.permission == "INOUT" or port.permission == ("OUTPUT" if direction == "out" else "INPUT")
- 
- static func matching(a: Dictionary, b: Dictionary) -> bool:
- 	return a.world2 == b.world2 and OPPOSITE[a.face] == b.face and a.surface == b.surface and (permitted(a, "out") and permitted(b, "in") or permitted(b, "out") and permitted(a, "in"))
-@@ -38,7 +38,7 @@
- 	for item in items:
- 		for pid in item.ports:
- 			var port: Dictionary = item.ports[pid]
+@@ -41 +41 @@
 -			var key := coordinate_key(port.world2)
 +			var key: Array = port.world2 # Immutable exact integer pair, same insertion order.
- 			if not result.has(key):
- 				result[key] = []
- 			result[key].append([item, pid, port])
 --- a/addons/mapgen/protocol.gd
 +++ b/addons/mapgen/protocol.gd
-@@ -1,7 +1,7 @@
- extends RefCounted
- const SCHEMA = preload("schema_data.gd")
- const DATA = preload("data_json.gd")
+@@ -4 +4 @@
 -const IMPLEMENTATION := "mapgen/gdscript-candidate-0.4.1"
 +const IMPLEMENTATION := "mapgen/gdscript-candidate-0.5.0-dev-perf"
- const ALGORITHM := "stable-v3-reward-space"
- const MAX_SEED := 9007199254740991
- const PACKAGE_SHA := "5ad5a7871941b2c1ffa759b18f7b1e80f2fe7e571b72f95d1e0ef26031f08723"
 --- a/addons/mapgen/solver.gd
 +++ b/addons/mapgen/solver.gd
-@@ -259,30 +259,49 @@
- 	graph_cache[cache_key] = value
- 	return value
- 
+@@ -262,4 +262,2 @@
 -func reachable(g: Dictionary, start: String) -> Dictionary:
 -	# Graphs are immutable after publication. Identity is exact; no recursive
 -	# hash/equality of hundreds of graph nodes on each reachability cache hit.
 -	var entry: Dictionary = last_reach_entry if is_same(g,last_reach_graph) else {}
 +func reach_entry(g: Dictionary)->Dictionary:
 +	var entry: Dictionary=last_reach_entry if is_same(g,last_reach_graph) else {}
- 	if entry.is_empty():
- 		for candidate in reach_entries:
- 			if is_same(candidate.graph,g):entry=candidate;break
- 	if entry.is_empty():
+@@ -270 +268 @@
 -		entry={"graph":g,"starts":{}}
 +		entry={"graph":g,"starts":{},"reverse_starts":{}}
- 		if reach_entries.size()>=64:reach_entries.pop_front()
- 		reach_entries.append(entry)
- 	last_reach_graph=g;last_reach_entry=entry
+@@ -273,0 +272,4 @@
 +	return entry
 +
 +func reachable(g: Dictionary,start: String)->Dictionary:
 +	var entry:=reach_entry(g)
- 	if entry.starts.has(start):
+@@ -275,2 +277,21 @@
 -		await checkpoint()
 -		return entry.starts[start]
 +		await checkpoint();return entry.starts[start]
@@ -85,32 +59,16 @@
 +	return seen
 +
 +func walk_graph(g: Dictionary,start: String)->Dictionary:
- 	var seen: Dictionary={start:true}
+@@ -278,2 +299 @@
 -	var queue: Array=[start]
 -	var head:=0
 +	var queue: Array=[start];var head:=0
- 	while head<queue.size():
- 		if head%8==0 and not await checkpoint():return {}
- 		var at: String=queue[head];head+=1
- 		for node in g.get(at,[]):
- 			if not seen.has(node):seen[node]=true;queue.append(node)
+@@ -285 +304,0 @@
 -	entry.starts[start]=seen
- 	return seen
- 
- func reachable_frontier(occupied: Array) -> Array:
-@@ -336,7 +355,7 @@
- 	return not aborted()
- 
- func matched(port: Dictionary, lookup: Dictionary) -> bool:
+@@ -339 +358 @@
 -	for other in lookup.get(GEO.coordinate_key(port.world2), []):
 +	for other in lookup.get(port.world2, []):
- 		if GEO.matching(port, other):
- 			return true
- 	return false
-@@ -397,9 +416,11 @@
- 		var pid: String = source[1]
- 		if item.reward or item.module_id in ["START", "BOSS"] or not seen.has(item.id+"."+pid+":depart") or not GEO.permitted(source[2], "in"):
- 			continue
+@@ -400,3 +419,5 @@
 -		var onward := (await reachable(g, item.id+"."+pid+":arrive"))
 -		if require_boss and not onward.has("BOSS"):
 -			continue
@@ -119,24 +77,9 @@
 +			if not (await reverse_reachable(g,"BOSS")).has(item.id+"."+pid+":arrive"):continue
 +		else:
 +			onward=await reachable(g,item.id+"."+pid+":arrive")
- 		if not require_boss:
- 			var can_return := false
- 			for other in connected[item.id]:
-@@ -449,7 +470,7 @@
- 	var score: Dictionary = config.scoring
- 	var lookup: Dictionary = {}
- 	for row in GEO.frontier(items):
+@@ -452 +473 @@
 -		var key := GEO.coordinate_key(row[2].world2)
 +		var key: Array = row[2].world2
- 		if not lookup.has(key):
- 			lookup[key] = []
- 		lookup[key].append(row[2])
-@@ -662,7 +683,7 @@
- 		if nodes.is_empty():
- 			return false
- 		for node in nodes:
+@@ -665 +686 @@
 -			if not (await reachable(data[0], node[1])).has("BOSS"):
 +			if not (await reverse_reachable(data[0], "BOSS")).has(node[1]):
- 				return false
- 	return true
- 

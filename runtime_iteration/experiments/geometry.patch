@@ -7,136 +7,60 @@
 +const SOURCE_IMPLEMENTATION="mapgen/gdscript-candidate-0.5.0-dev-perf"
 --- a/addons/mapgen/geometry.gd
 +++ b/addons/mapgen/geometry.gd
-@@ -13,7 +13,7 @@
- 	return result
- 
- static func permitted(port: Dictionary, direction: String) -> bool:
+@@ -16 +16 @@
 -	return port.permission in (["OUTPUT", "INOUT"] if direction == "out" else ["INPUT", "INOUT"])
 +	return port.permission == "INOUT" or port.permission == ("OUTPUT" if direction == "out" else "INPUT")
- 
- static func matching(a: Dictionary, b: Dictionary) -> bool:
- 	return a.world2 == b.world2 and OPPOSITE[a.face] == b.face and a.surface == b.surface and (permitted(a, "out") and permitted(b, "in") or permitted(b, "out") and permitted(a, "in"))
-@@ -38,7 +38,7 @@
- 	for item in items:
- 		for pid in item.ports:
- 			var port: Dictionary = item.ports[pid]
+@@ -41 +41 @@
 -			var key := coordinate_key(port.world2)
 +			var key: Array = port.world2 # Immutable exact integer pair, same insertion order.
- 			if not result.has(key):
- 				result[key] = []
- 			result[key].append([item, pid, port])
 --- a/addons/mapgen/protocol.gd
 +++ b/addons/mapgen/protocol.gd
-@@ -1,7 +1,7 @@
- extends RefCounted
- const SCHEMA = preload("schema_data.gd")
- const DATA = preload("data_json.gd")
+@@ -4 +4 @@
 -const IMPLEMENTATION := "mapgen/gdscript-candidate-0.4.1"
 +const IMPLEMENTATION := "mapgen/gdscript-candidate-0.5.0-dev-perf"
- const ALGORITHM := "stable-v3-reward-space"
- const MAX_SEED := 9007199254740991
- const PACKAGE_SHA := "5ad5a7871941b2c1ffa759b18f7b1e80f2fe7e571b72f95d1e0ef26031f08723"
 --- a/addons/mapgen/solver.gd
 +++ b/addons/mapgen/solver.gd
-@@ -33,6 +33,9 @@
- var reward_sites_cache: Dictionary = {}
- var reward_seal_conflicts: Array = []
- var graph_cache: Dictionary = {}
+@@ -35,0 +36,3 @@
 +var geometry_cache: Dictionary = {}
 +var geometry_ring: Array = []
 +var geometry_cursor := 0
- var reach_entries: Array = []
- var last_reach_graph: Dictionary = {}
- var last_reach_entry: Dictionary = {}
-@@ -209,10 +212,8 @@
- 	graph[a].append(b)
- 
- func graph(occupied: Array, potential := false) -> Array:
+@@ -212,4 +215,2 @@
 -	var state: Array = ["potential" if potential else "actual"]
 -	for item in occupied:
 -		state.append([item.id,item.module_id,item.mirror_x,item.origin[0],item.origin[1]])
 -	var cache_key: Array = state # immutable value key; Dictionary checks equality on collisions
 +	var state: Array = placement_state(occupied)
 +	var cache_key: Array = [potential,state] # immutable value key; Dictionary checks equality on collisions
- 	if graph_cache.has(cache_key):
- 		await checkpoint()
- 		return graph_cache[cache_key]
-@@ -221,11 +222,12 @@
- 	var rewards: Array = []
- 	for item in occupied:
- 		connected[item.id] = {}
+@@ -224 +225 @@
 -	for group in GEO.connection_groups(occupied):
 +	for group in geometry_plan(occupied,state)[0]:
- 		if not await checkpoint():
- 			return [{},[],connected]
+@@ -227,2 +228,3 @@
 -		var a: Array = group[0]
 -		var b: Array = group[1]
 +		var ia: Dictionary=occupied[group[0]];var ib: Dictionary=occupied[group[2]]
 +		var a: Array = [ia,group[1],ia.ports[group[1]]]
 +		var b: Array = [ib,group[3],ib.ports[group[3]]]
- 		connected[a[0].id][a[1]] = true
- 		connected[b[0].id][b[1]] = true
- 		if GEO.permitted(a[2], "out") and GEO.permitted(b[2], "in"):
-@@ -287,7 +289,7 @@
- 
- func reachable_frontier(occupied: Array) -> Array:
- 	var seen := (await reachable((await graph(occupied, true))[0], "START"))
+@@ -290 +292 @@
 -	return GEO.frontier(occupied).filter(func(s): return seen.has(s[0].id+"."+s[1]+":depart") and GEO.permitted(s[2], "out"))
 +	return placement_frontier(occupied).filter(func(s): return seen.has(s[0].id+"."+s[1]+":depart") and GEO.permitted(s[2], "out"))
- 
- func safe_state(occupied: Array) -> bool:
- 	var connected: Dictionary = (await graph(occupied))[2]
-@@ -336,7 +338,7 @@
- 	return not aborted()
- 
- func matched(port: Dictionary, lookup: Dictionary) -> bool:
+@@ -339 +341 @@
 -	for other in lookup.get(GEO.coordinate_key(port.world2), []):
 +	for other in lookup.get(port.world2, []):
- 		if GEO.matching(port, other):
- 			return true
- 	return false
-@@ -392,7 +394,7 @@
- 	var proposed: Array = []
- 	var extra: Dictionary = {}
- 	var counts: Dictionary = {}
+@@ -395 +397 @@
 -	for source in GEO.frontier(occupied):
 +	for source in placement_frontier(occupied):
- 		var item: Dictionary = source[0]
- 		var pid: String = source[1]
- 		if item.reward or item.module_id in ["START", "BOSS"] or not seen.has(item.id+"."+pid+":depart") or not GEO.permitted(source[2], "in"):
-@@ -448,8 +450,8 @@
- 	var old_cost := NUM.shape_cost(old, config)
- 	var score: Dictionary = config.scoring
- 	var lookup: Dictionary = {}
+@@ -451,2 +453,2 @@
 -	for row in GEO.frontier(items):
 -		var key := GEO.coordinate_key(row[2].world2)
 +	for row in placement_frontier(items):
 +		var key: Array = row[2].world2
- 		if not lookup.has(key):
- 			lookup[key] = []
- 		lookup[key].append(row[2])
-@@ -540,7 +542,7 @@
- 	var g: Dictionary = (await graph(items, true))[0]
- 	for source in viable.slice(0, config.search.closure_source_limit):
- 		var targets: Array = []
+@@ -543 +545 @@
 -		for target in GEO.frontier(items):
 +		for target in placement_frontier(items):
- 			if target[0].id == source[0].id or not GEO.permitted(target[2], "in"):
- 				continue
- 			if distance2(target[2], source[2]) >= config.search.closure_target_distance2:
-@@ -604,7 +606,7 @@
- 	return absi(a.world2[0]-b.world2[0])+absi(a.world2[1]-b.world2[1])
- 
- func add_air_loop() -> bool:
+@@ -607 +609 @@
 -	var basefront := GEO.frontier(items)
 +	var basefront := placement_frontier(items)
- 	rng.shuffle(basefront) # Also consumed for the default empty AIR leg sets.
- 	for source in basefront:
- 		if source[2].surface != "ROCK" or not GEO.permitted(source[2], "out"):
-@@ -944,3 +946,41 @@
- 		for b in g[a]:edges.append([a,b])
- 	var result: Array=[edges,rewards];local_graph_cache[key]=result
- 	return result
+@@ -946,0 +949,38 @@
 +
 +static func placement_state(occupied: Array)->Array:
 +	var key: Array=[]

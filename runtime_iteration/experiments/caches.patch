@@ -7,54 +7,27 @@
 +const SOURCE_IMPLEMENTATION="mapgen/gdscript-candidate-0.5.0-dev-perf"
 --- a/addons/mapgen/geometry.gd
 +++ b/addons/mapgen/geometry.gd
-@@ -13,7 +13,7 @@
- 	return result
- 
- static func permitted(port: Dictionary, direction: String) -> bool:
+@@ -16 +16 @@
 -	return port.permission in (["OUTPUT", "INOUT"] if direction == "out" else ["INPUT", "INOUT"])
 +	return port.permission == "INOUT" or port.permission == ("OUTPUT" if direction == "out" else "INPUT")
- 
- static func matching(a: Dictionary, b: Dictionary) -> bool:
- 	return a.world2 == b.world2 and OPPOSITE[a.face] == b.face and a.surface == b.surface and (permitted(a, "out") and permitted(b, "in") or permitted(b, "out") and permitted(a, "in"))
-@@ -38,7 +38,7 @@
- 	for item in items:
- 		for pid in item.ports:
- 			var port: Dictionary = item.ports[pid]
+@@ -41 +41 @@
 -			var key := coordinate_key(port.world2)
 +			var key: Array = port.world2 # Immutable exact integer pair, same insertion order.
- 			if not result.has(key):
- 				result[key] = []
- 			result[key].append([item, pid, port])
 --- a/addons/mapgen/protocol.gd
 +++ b/addons/mapgen/protocol.gd
-@@ -1,7 +1,7 @@
- extends RefCounted
- const SCHEMA = preload("schema_data.gd")
- const DATA = preload("data_json.gd")
+@@ -4 +4 @@
 -const IMPLEMENTATION := "mapgen/gdscript-candidate-0.4.1"
 +const IMPLEMENTATION := "mapgen/gdscript-candidate-0.5.0-dev-perf"
- const ALGORITHM := "stable-v3-reward-space"
- const MAX_SEED := 9007199254740991
- const PACKAGE_SHA := "5ad5a7871941b2c1ffa759b18f7b1e80f2fe7e571b72f95d1e0ef26031f08723"
 --- a/addons/mapgen/solver.gd
 +++ b/addons/mapgen/solver.gd
-@@ -33,6 +33,12 @@
- var reward_sites_cache: Dictionary = {}
- var reward_seal_conflicts: Array = []
- var graph_cache: Dictionary = {}
+@@ -35,0 +36,6 @@
 +var placed_ports_cache: Dictionary = {}
 +var placed_ports_ring: Array = []
 +var placed_ports_cursor := 0
 +var prefix_cache: Dictionary = {}
 +var prefix_ring: Array = []
 +var prefix_cursor := 0
- var reach_entries: Array = []
- var last_reach_graph: Dictionary = {}
- var last_reach_entry: Dictionary = {}
-@@ -147,7 +153,19 @@
- 
- func make(mid: String, x: int, y: int, mirror := false, iid = null) -> Dictionary:
- 	var template: Dictionary = templates[mid]
+@@ -150 +156,13 @@
 -	return {"id": iid, "module_id": mid, "name": template.name, "origin": [x, y], "size_blocks": template.size_blocks, "mirror_x": mirror, "ports": GEO.placed_ports(template, x, y, mirror), "reward": template.reward}
 +	var key: Array = [mid,x,y,mirror]
 +	var ports: Dictionary
@@ -69,45 +42,21 @@
 +			placed_ports_cursor=(placed_ports_cursor+1)%512
 +		placed_ports_cache[key]=ports
 +	return {"id": iid, "module_id": mid, "name": template.name, "origin": [x, y], "size_blocks": template.size_blocks, "mirror_x": mirror, "ports": ports, "reward": template.reward}
- 
- func add(item: Dictionary) -> void:
- 	item.id = "M%02d" % (items.size()+1)
-@@ -234,10 +252,10 @@
- 			edge(g, b[0].id+"."+b[1]+":depart", a[0].id+"."+a[1]+":arrive")
- 	for item in occupied:
- 		if not await checkpoint():return [{},[],connected]
+@@ -237 +255 @@
 -		var local_graph: Array = await module_graph(item,connected[item.id],potential)
 +		var local_graph: Array = await prefixed_module_graph(item,connected[item.id],potential)
- 		if aborted():return [{},[],connected]
+@@ -239,2 +257,2 @@
 -		for pair in local_graph[0]:edge(g,item.id+pair[0],item.id+pair[1])
 -		for suffix in local_graph[1]:rewards.append([item.id,item.id+suffix])
 +		for pair in local_graph[0]:edge(g,pair[0],pair[1])
 +		for node in local_graph[1]:rewards.append([item.id,node])
- 	edge(g, "START", "M01.R:depart")
- 	for item in occupied:
- 		if item.module_id == "BOSS":
-@@ -336,7 +354,7 @@
- 	return not aborted()
- 
- func matched(port: Dictionary, lookup: Dictionary) -> bool:
+@@ -339 +357 @@
 -	for other in lookup.get(GEO.coordinate_key(port.world2), []):
 +	for other in lookup.get(port.world2, []):
- 		if GEO.matching(port, other):
- 			return true
- 	return false
-@@ -449,7 +467,7 @@
- 	var score: Dictionary = config.scoring
- 	var lookup: Dictionary = {}
- 	for row in GEO.frontier(items):
+@@ -452 +470 @@
 -		var key := GEO.coordinate_key(row[2].world2)
 +		var key: Array = row[2].world2
- 		if not lookup.has(key):
- 			lookup[key] = []
- 		lookup[key].append(row[2])
-@@ -944,3 +962,21 @@
- 		for b in g[a]:edges.append([a,b])
- 	var result: Array=[edges,rewards];local_graph_cache[key]=result
- 	return result
+@@ -946,0 +965,18 @@
 +
 +func prefixed_module_graph(item: Dictionary,selected: Dictionary,potential: bool)->Array:
 +	var ids: Array=selected.keys();ids.sort()
