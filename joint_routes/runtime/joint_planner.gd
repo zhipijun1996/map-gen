@@ -56,7 +56,7 @@ func score(option: Dictionary) -> float:
 func search(available: Array,count: int) -> bool:
 	if s.aborted():return false
 	if count==s.config.goals.reward_target:return await s.final_accept()
-	if available.size()<s.config.goals.reward_target-count:
+	if capacity_upper_bound(available)<s.config.goals.reward_target-count:
 		s.joint_stats.capacity_prunes+=1;return false
 	var ordered: Array=await s.sort_rows(available,func(a,b):return score(pool[a])>score(pool[b]))
 	var before: Array=s.items.duplicate(true)
@@ -65,7 +65,7 @@ func search(available: Array,count: int) -> bool:
 		var next: Array=[]
 		for other in available:
 			if other>index and not conflicts[index].has(other):next.append(other)
-		if next.size()<s.config.goals.reward_target-count-1:continue
+		if capacity_upper_bound(next)<s.config.goals.reward_target-count-1:continue
 		s.terminal_states+=1;s.joint_stats.search_nodes+=1
 		if s.terminal_states>s.config.search.max_terminal_states:
 			s.error_status="BUDGET_EXHAUSTED";s.error_message="terminal_state_budget";return false
@@ -85,3 +85,17 @@ func search(available: Array,count: int) -> bool:
 		if s.aborted() or s.terminal_slice_failed:return false
 	s.items=before;s.reward_branches=branches
 	return false
+
+func capacity_upper_bound(available: Array) -> int:
+	# Proper coloring of the compatibility graph bounds the size of any clique.
+	# Each color contains mutually conflicting alternatives, not real slots.
+	var colors: Array=[]
+	for index in available:
+		var assigned:=false
+		for color in colors:
+			var incompatible_all:=true
+			for other in color:
+				if not conflicts[index].has(other):incompatible_all=false;break
+			if incompatible_all:color.append(index);assigned=true;break
+		if not assigned:colors.append([index])
+	return colors.size()

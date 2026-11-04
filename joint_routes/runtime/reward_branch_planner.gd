@@ -2,6 +2,7 @@ extends RefCounted
 ## Bounded data search. Only declared directed Routes; no inferred reverse edges.
 const GEO = preload("geometry.gd")
 const NUM = preload("numeric.gd")
+const BRIDGE=preload("bridge_index.gd")
 var s
 var policy: Dictionary
 var core: Dictionary
@@ -130,6 +131,8 @@ func options(pool_mode := false) -> Array:
 		beam.append({"chain":[],"front":source,"root":source,"collected":false,"returnable":true})
 	var completed: Array = []
 	var completed_keys: Dictionary = {}
+	var bridges=BRIDGE.new(s)
+	if pool_mode and not await bridges.build(targets):return []
 	# Single-room returns are explicit base cases of this planner, not an old
 	# generator fallback. Keep simultaneously placeable witnesses represented
 	# even when speculative multi-room beams have many attractive dead ends.
@@ -183,6 +186,19 @@ func options(pool_mode := false) -> Array:
 					var selected := connections.duplicate(); selected[pin]=true; selected[pid]=true
 					# Cache-backed original local clearance, including all reward sites.
 					if not await s.configuration_ok(item,selected): continue
+					if pool_mode and depth+2<=policy.branch_depth:
+						for suffix in bridges.matches(item.ports[pid],not collected,state.root[0].id):
+							if not await s.tick():return []
+							var end: Dictionary=s.make(suffix.mid,suffix.x,suffix.y,suffix.mirror,"M%02d" % (s.items.size()+chain.size()+1))
+							var overlap:=false
+							for other in occupied+[item]:
+								if GEO.overlap(end,other):overlap=true;break
+							if overlap:continue
+							var joined: Array=chain+[end]
+							var joined_key:=signature(joined)
+							if not completed_keys.has(joined_key):
+								completed_keys[joined_key]=true
+								completed.append({"chain":joined,"root":state.root,"hint":"merge","score":chain_score(joined)+policy.merge_bonus})
 					var reverse := false
 					for route in s.transit[s.port_key(item.module_id,item.mirror_x,pid)]:
 						if route.to_port == pin: reverse = true

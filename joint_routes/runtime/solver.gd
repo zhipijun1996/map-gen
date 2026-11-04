@@ -54,6 +54,7 @@ var reward_core: Dictionary = {}
 var reward_core_rank: Dictionary = {}
 var reward_branches: Array = []
 var joint_stats: Dictionary = {"pools":0,"pool_candidates":0,"pair_conflicts":0,"search_nodes":0,"capacity_prunes":0}
+var capacity_cache: Dictionary={}
 
 func _init(job, req: Dictionary, prepared, cfg: Dictionary):
 	owner = weakref(job)
@@ -578,12 +579,13 @@ func growth_options() -> Array:
 			physical[key] = true
 			unique.append(row)
 	if items.size() >= config.search.reserve_from_growth_count:
-		var old_capacity: int = (await reservation(items, config.goals.reward_target)).size()
+		var old_capacity: int = await known_capacity(items)
 		var scored: Array = []
 		for row in unique:
-			var capacity: int = (await reservation(items+[row[1]], config.goals.reward_target)).size()
-			var missing: int=maxi(0,config.goals.reward_target-old_capacity)
-			var gain: int=mini(capacity,config.goals.reward_target)-mini(old_capacity,config.goals.reward_target)
+			var capacity: int = await known_capacity(items+[row[1]])
+			var desired: int=ceili(float(config.goals.reward_target)*(items.size()+1)/config.goals.growth_target)
+			var missing: int=maxi(0,desired-old_capacity)
+			var gain: int=mini(capacity,desired)-mini(old_capacity,desired)
 			scored.append([row[0]+score.reward_reserve*(1+missing)*gain, row[1]])
 			if aborted():
 				return []
@@ -601,6 +603,15 @@ func growth_options() -> Array:
 		var pick: int = rng.randrange(choices.size())
 		choices = [choices[pick]]+choices.slice(0, pick)+choices.slice(pick+1)
 	return choices
+
+func known_capacity(occupied: Array) -> int:
+	var key: Array=[]
+	for item in occupied:key.append([item.module_id,item.origin[0],item.origin[1],item.mirror_x])
+	if capacity_cache.has(key):return capacity_cache[key]
+	var value: int=(await reservation(occupied,config.goals.reward_target)).size()
+	if capacity_cache.size()>=64:capacity_cache.erase(capacity_cache.keys()[0])
+	capacity_cache[key]=value
+	return value
 
 func exit_value(count: int) -> float:
 	var result := 0.0
