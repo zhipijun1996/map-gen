@@ -1,0 +1,1 @@
+临时诊断变体，非发布实现。先按原0.4.1包SHA核验并独立解压，再从项目根运行 `git apply --unidiff-zero <patch>`；源码向量在同名JSON。派生缓存只修改实现绑定头，零上下文patch避免重复嵌入未改变的1.9MB载荷。实验输出的完整字节在 validation/runtime-iteration-20261104/raw-storage.json 所列gzip中。

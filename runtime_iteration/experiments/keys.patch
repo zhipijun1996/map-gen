@@ -1,0 +1,28 @@
+--- a/addons/mapgen/derived_library.gd
++++ b/addons/mapgen/derived_library.gd
+@@ -5,2 +5,2 @@
+-const IMPLEMENTATION="mapgen/gdscript-candidate-0.4.1"
+-const SOURCE_IMPLEMENTATION="mapgen/gdscript-candidate-0.4.1"
++const IMPLEMENTATION="mapgen/gdscript-candidate-0.5.0-dev-perf"
++const SOURCE_IMPLEMENTATION="mapgen/gdscript-candidate-0.5.0-dev-perf"
+--- a/addons/mapgen/geometry.gd
++++ b/addons/mapgen/geometry.gd
+@@ -16 +16 @@
+-	return port.permission in (["OUTPUT", "INOUT"] if direction == "out" else ["INPUT", "INOUT"])
++	return port.permission == "INOUT" or port.permission == ("OUTPUT" if direction == "out" else "INPUT")
+@@ -41 +41 @@
+-			var key := coordinate_key(port.world2)
++			var key: Array = port.world2 # Immutable exact integer pair, same insertion order.
+--- a/addons/mapgen/protocol.gd
++++ b/addons/mapgen/protocol.gd
+@@ -4 +4 @@
+-const IMPLEMENTATION := "mapgen/gdscript-candidate-0.4.1"
++const IMPLEMENTATION := "mapgen/gdscript-candidate-0.5.0-dev-perf"
+--- a/addons/mapgen/solver.gd
++++ b/addons/mapgen/solver.gd
+@@ -339 +339 @@
+-	for other in lookup.get(GEO.coordinate_key(port.world2), []):
++	for other in lookup.get(port.world2, []):
+@@ -452 +452 @@
+-		var key := GEO.coordinate_key(row[2].world2)
++		var key: Array = row[2].world2

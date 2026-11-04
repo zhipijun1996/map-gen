@@ -10,3 +10,5 @@
 0.4.1 性能修订继续 stable-v3-reward-space，保持 0.4.0 全结果语义；[调用及缓存合同](../performance_revision/README.md)、[旧新实际性能和未验证项](../performance_revision/REPORT.md)。它独立版本化，原包保持原样。
 
 [0.4.1 独立候选包与准确换锁交接](../performance_revision/HANDOFF.md)（含 SHA、固定下游版本准入位置及未验证项）。
+
+[0.4.2速度与可选多样性候选交接](../runtime_iteration/HANDOFF.md)：保留默认布局，可选repeat=8，附60seed/实际请求/原生与Web证据；未自动合并。

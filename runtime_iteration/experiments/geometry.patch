@@ -1,0 +1,101 @@
+--- a/addons/mapgen/derived_library.gd
++++ b/addons/mapgen/derived_library.gd
+@@ -5,2 +5,2 @@
+-const IMPLEMENTATION="mapgen/gdscript-candidate-0.4.1"
+-const SOURCE_IMPLEMENTATION="mapgen/gdscript-candidate-0.4.1"
++const IMPLEMENTATION="mapgen/gdscript-candidate-0.5.0-dev-perf"
++const SOURCE_IMPLEMENTATION="mapgen/gdscript-candidate-0.5.0-dev-perf"
+--- a/addons/mapgen/geometry.gd
++++ b/addons/mapgen/geometry.gd
+@@ -16 +16 @@
+-	return port.permission in (["OUTPUT", "INOUT"] if direction == "out" else ["INPUT", "INOUT"])
++	return port.permission == "INOUT" or port.permission == ("OUTPUT" if direction == "out" else "INPUT")
+@@ -41 +41 @@
+-			var key := coordinate_key(port.world2)
++			var key: Array = port.world2 # Immutable exact integer pair, same insertion order.
+--- a/addons/mapgen/protocol.gd
++++ b/addons/mapgen/protocol.gd
+@@ -4 +4 @@
+-const IMPLEMENTATION := "mapgen/gdscript-candidate-0.4.1"
++const IMPLEMENTATION := "mapgen/gdscript-candidate-0.5.0-dev-perf"
+--- a/addons/mapgen/solver.gd
++++ b/addons/mapgen/solver.gd
+@@ -35,0 +36,3 @@
++var geometry_cache: Dictionary = {}
++var geometry_ring: Array = []
++var geometry_cursor := 0
+@@ -212,4 +215,2 @@
+-	var state: Array = ["potential" if potential else "actual"]
+-	for item in occupied:
+-		state.append([item.id,item.module_id,item.mirror_x,item.origin[0],item.origin[1]])
+-	var cache_key: Array = state # immutable value key; Dictionary checks equality on collisions
++	var state: Array = placement_state(occupied)
++	var cache_key: Array = [potential,state] # immutable value key; Dictionary checks equality on collisions
+@@ -224 +225 @@
+-	for group in GEO.connection_groups(occupied):
++	for group in geometry_plan(occupied,state)[0]:
+@@ -227,2 +228,3 @@
+-		var a: Array = group[0]
+-		var b: Array = group[1]
++		var ia: Dictionary=occupied[group[0]];var ib: Dictionary=occupied[group[2]]
++		var a: Array = [ia,group[1],ia.ports[group[1]]]
++		var b: Array = [ib,group[3],ib.ports[group[3]]]
+@@ -290 +292 @@
+-	return GEO.frontier(occupied).filter(func(s): return seen.has(s[0].id+"."+s[1]+":depart") and GEO.permitted(s[2], "out"))
++	return placement_frontier(occupied).filter(func(s): return seen.has(s[0].id+"."+s[1]+":depart") and GEO.permitted(s[2], "out"))
+@@ -339 +341 @@
+-	for other in lookup.get(GEO.coordinate_key(port.world2), []):
++	for other in lookup.get(port.world2, []):
+@@ -395 +397 @@
+-	for source in GEO.frontier(occupied):
++	for source in placement_frontier(occupied):
+@@ -451,2 +453,2 @@
+-	for row in GEO.frontier(items):
+-		var key := GEO.coordinate_key(row[2].world2)
++	for row in placement_frontier(items):
++		var key: Array = row[2].world2
+@@ -543 +545 @@
+-		for target in GEO.frontier(items):
++		for target in placement_frontier(items):
+@@ -607 +609 @@
+-	var basefront := GEO.frontier(items)
++	var basefront := placement_frontier(items)
+@@ -946,0 +949,38 @@
++
++static func placement_state(occupied: Array)->Array:
++	var key: Array=[]
++	for item in occupied:key.append([item.id,item.module_id,item.mirror_x,item.origin[0],item.origin[1]])
++	return key
++
++func geometry_plan(occupied: Array,key: Array=[])->Array:
++	if key.is_empty():key=placement_state(occupied)
++	if geometry_cache.has(key):return geometry_cache[key]
++	var groups: Dictionary={}
++	for i in range(occupied.size()):
++		for pid in occupied[i].ports:
++			var port: Dictionary=occupied[i].ports[pid]
++			if not groups.has(port.world2):groups[port.world2]=[]
++			groups[port.world2].append([i,pid,port])
++	var connections: Array=[];var frontier: Array=[]
++	for group in groups.values():
++		if group.size()==2 and GEO.matching(group[0][2],group[1][2]):
++			connections.append([group[0][0],group[0][1],group[1][0],group[1][1]])
++			if occupied[group[0][0]].id!=occupied[group[1][0]].id:continue
++		for entry in group:
++			var joined:=false
++			for other in group:
++				if occupied[entry[0]].id!=occupied[other[0]].id and GEO.matching(entry[2],other[2]):joined=true;break
++			if not joined:frontier.append([entry[0],entry[1]])
++	var plan: Array=[connections,frontier]
++	if geometry_ring.size()<64:geometry_ring.append(key)
++	else:
++		geometry_cache.erase(geometry_ring[geometry_cursor]);geometry_ring[geometry_cursor]=key;geometry_cursor=(geometry_cursor+1)%64
++	geometry_cache[key]=plan
++	return plan
++
++func placement_frontier(occupied: Array)->Array:
++	var result: Array=[]
++	for slot in geometry_plan(occupied)[1]:
++		var item: Dictionary=occupied[slot[0]];var pid: String=slot[1]
++		result.append([item,pid,item.ports[pid]])
++	return result

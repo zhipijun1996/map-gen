@@ -1,0 +1,65 @@
+{
+  "algorithm": "stable-v3-reward-space",
+  "goals": {
+    "growth_target": 32,
+    "main_paths_required": 3,
+    "reward_target": 6
+  },
+  "random": {
+    "algorithm": "python-mt19937-v1",
+    "selection": "uniform_top_k"
+  },
+  "schema": "mapgen/generator-config/v1",
+  "scoring": {
+    "aspect": 60,
+    "auto_connection": 24,
+    "bidirectional_exit": 3,
+    "boss_distance": 1,
+    "closure_noise": 2,
+    "dead_end": -24,
+    "distinct_direction": 4,
+    "growth_noise": 3,
+    "height_bias": 0,
+    "left_bias": 0,
+    "perimeter": 0.35,
+    "repeat_module": 5,
+    "reservation_area": 0.1,
+    "reservation_repeat": 5,
+    "reward_near_penalty": 5,
+    "reward_near_radius": 8,
+    "reward_noise": 4,
+    "reward_reserve": 5,
+    "terminal_slot": 2,
+    "usable_exit": 8,
+    "vertical_exit": 8
+  },
+  "seals": {
+    "thickness_pixels": 32
+  },
+  "search": {
+    "boss_choice_count": 5,
+    "budget_check_interval": 256,
+    "candidate_expansion_budget": 500000,
+    "close_attempts": 3,
+    "close_depth": 3,
+    "closure_beam_width": 18,
+    "closure_distance_limit2": 32,
+    "closure_source_limit": 24,
+    "closure_target_distance2": 40,
+    "growth_choice_count": 5,
+    "growth_frontier_limit": 22,
+    "growth_shortlist": 18,
+    "max_growth_backtracks": 128,
+    "max_layout_repairs": 8,
+    "max_rewind_depth": 3,
+    "max_terminal_states": 128,
+    "per_seed_timeout_seconds": 90,
+    "reserve_from_growth_count": 24,
+    "reward_choice_count": 5
+  },
+  "shape": {
+    "max_aspect": 3.0,
+    "soft_tolerance": 1.35,
+    "target_ratio": 1.5
+  }
+}

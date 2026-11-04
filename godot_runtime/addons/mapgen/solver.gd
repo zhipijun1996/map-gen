@@ -259,30 +259,68 @@ func graph(occupied: Array, potential := false) -> Array:
 	graph_cache[cache_key] = value
 	return value
 
-func reachable(g: Dictionary, start: String) -> Dictionary:
-	# Graphs are immutable after publication. Identity is exact; no recursive
-	# hash/equality of hundreds of graph nodes on each reachability cache hit.
+func reach_entry(g: Dictionary) -> Dictionary:
+	# All cached graphs are immutable and owned by this solver. Forward and
+	# reverse queries share the existing bounded cache; no library mutation.
 	var entry: Dictionary = last_reach_entry if is_same(g,last_reach_graph) else {}
 	if entry.is_empty():
 		for candidate in reach_entries:
-			if is_same(candidate.graph,g):entry=candidate;break
+			if is_same(candidate.graph,g):
+				entry = candidate
+				break
 	if entry.is_empty():
-		entry={"graph":g,"starts":{}}
-		if reach_entries.size()>=64:reach_entries.pop_front()
+		entry = {"graph":g,"starts":{},"reverse_starts":{}}
+		if reach_entries.size() >= 64:
+			reach_entries.pop_front()
 		reach_entries.append(entry)
-	last_reach_graph=g;last_reach_entry=entry
+	last_reach_graph = g
+	last_reach_entry = entry
+	return entry
+
+func reachable(g: Dictionary, start: String) -> Dictionary:
+	var entry := reach_entry(g)
 	if entry.starts.has(start):
 		await checkpoint()
 		return entry.starts[start]
-	var seen: Dictionary={start:true}
-	var queue: Array=[start]
-	var head:=0
-	while head<queue.size():
-		if head%8==0 and not await checkpoint():return {}
-		var at: String=queue[head];head+=1
+	var seen: Dictionary = await walk_graph(g,start)
+	if not aborted():
+		entry.starts[start] = seen
+	return seen
+
+func reverse_reachable(g: Dictionary, target: String) -> Dictionary:
+	# u reaches target iff u is reachable from target in the reversed graph.
+	# This replaces many full BFS queries, without changing any candidate tick,
+	# declared edge/Route, RNG call or generation decision.
+	var entry := reach_entry(g)
+	if entry.reverse_starts.has(target):
+		await checkpoint()
+		return entry.reverse_starts[target]
+	if not entry.has("reverse_graph"):
+		var reverse: Dictionary = {}
+		for a in g:
+			for b in g[a]:
+				if not reverse.has(b):
+					reverse[b] = []
+				reverse[b].append(a)
+		entry.reverse_graph = reverse
+	var seen: Dictionary = await walk_graph(entry.reverse_graph,target)
+	if not aborted():
+		entry.reverse_starts[target] = seen
+	return seen
+
+func walk_graph(g: Dictionary, start: String) -> Dictionary:
+	var seen: Dictionary = {start:true}
+	var queue: Array = [start]
+	var head := 0
+	while head < queue.size():
+		if head%8 == 0 and not await checkpoint():
+			return {}
+		var at: String = queue[head]
+		head += 1
 		for node in g.get(at,[]):
-			if not seen.has(node):seen[node]=true;queue.append(node)
-	entry.starts[start]=seen
+			if not seen.has(node):
+				seen[node] = true
+				queue.append(node)
 	return seen
 
 func reachable_frontier(occupied: Array) -> Array:
@@ -336,7 +374,7 @@ func grow() -> bool:
 	return not aborted()
 
 func matched(port: Dictionary, lookup: Dictionary) -> bool:
-	for other in lookup.get(GEO.coordinate_key(port.world2), []):
+	for other in lookup.get(port.world2, []):
 		if GEO.matching(port, other):
 			return true
 	return false
@@ -397,9 +435,12 @@ func reservation(occupied: Array, limit: int, require_boss := false) -> Array:
 		var pid: String = source[1]
 		if item.reward or item.module_id in ["START", "BOSS"] or not seen.has(item.id+"."+pid+":depart") or not GEO.permitted(source[2], "in"):
 			continue
-		var onward := (await reachable(g, item.id+"."+pid+":arrive"))
-		if require_boss and not onward.has("BOSS"):
-			continue
+		var onward: Dictionary={}
+		if require_boss:
+			if not (await reverse_reachable(g,"BOSS")).has(item.id+"."+pid+":arrive"):
+				continue
+		else:
+			onward=await reachable(g,item.id+"."+pid+":arrive")
 		if not require_boss:
 			var can_return := false
 			for other in connected[item.id]:
@@ -449,7 +490,7 @@ func growth_options() -> Array:
 	var score: Dictionary = config.scoring
 	var lookup: Dictionary = {}
 	for row in GEO.frontier(items):
-		var key := GEO.coordinate_key(row[2].world2)
+		var key: Array = row[2].world2
 		if not lookup.has(key):
 			lookup[key] = []
 		lookup[key].append(row[2])
@@ -662,7 +703,7 @@ func valid_reward_state(occupied: Array) -> bool:
 		if nodes.is_empty():
 			return false
 		for node in nodes:
-			if not (await reachable(data[0], node[1])).has("BOSS"):
+			if not (await reverse_reachable(data[0], "BOSS")).has(node[1]):
 				return false
 	return true
 

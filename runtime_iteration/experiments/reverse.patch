@@ -1,0 +1,85 @@
+--- a/addons/mapgen/derived_library.gd
++++ b/addons/mapgen/derived_library.gd
+@@ -5,2 +5,2 @@
+-const IMPLEMENTATION="mapgen/gdscript-candidate-0.4.1"
+-const SOURCE_IMPLEMENTATION="mapgen/gdscript-candidate-0.4.1"
++const IMPLEMENTATION="mapgen/gdscript-candidate-0.5.0-dev-perf"
++const SOURCE_IMPLEMENTATION="mapgen/gdscript-candidate-0.5.0-dev-perf"
+--- a/addons/mapgen/geometry.gd
++++ b/addons/mapgen/geometry.gd
+@@ -16 +16 @@
+-	return port.permission in (["OUTPUT", "INOUT"] if direction == "out" else ["INPUT", "INOUT"])
++	return port.permission == "INOUT" or port.permission == ("OUTPUT" if direction == "out" else "INPUT")
+@@ -41 +41 @@
+-			var key := coordinate_key(port.world2)
++			var key: Array = port.world2 # Immutable exact integer pair, same insertion order.
+--- a/addons/mapgen/protocol.gd
++++ b/addons/mapgen/protocol.gd
+@@ -4 +4 @@
+-const IMPLEMENTATION := "mapgen/gdscript-candidate-0.4.1"
++const IMPLEMENTATION := "mapgen/gdscript-candidate-0.5.0-dev-perf"
+--- a/addons/mapgen/solver.gd
++++ b/addons/mapgen/solver.gd
+@@ -262,4 +262,2 @@
+-func reachable(g: Dictionary, start: String) -> Dictionary:
+-	# Graphs are immutable after publication. Identity is exact; no recursive
+-	# hash/equality of hundreds of graph nodes on each reachability cache hit.
+-	var entry: Dictionary = last_reach_entry if is_same(g,last_reach_graph) else {}
++func reach_entry(g: Dictionary)->Dictionary:
++	var entry: Dictionary=last_reach_entry if is_same(g,last_reach_graph) else {}
+@@ -270 +268 @@
+-		entry={"graph":g,"starts":{}}
++		entry={"graph":g,"starts":{},"reverse_starts":{}}
+@@ -273,0 +272,4 @@
++	return entry
++
++func reachable(g: Dictionary,start: String)->Dictionary:
++	var entry:=reach_entry(g)
+@@ -275,2 +277,21 @@
+-		await checkpoint()
+-		return entry.starts[start]
++		await checkpoint();return entry.starts[start]
++	var seen: Dictionary=await walk_graph(g,start)
++	if not aborted():entry.starts[start]=seen
++	return seen
++
++func reverse_reachable(g: Dictionary,target: String)->Dictionary:
++	var entry:=reach_entry(g)
++	if entry.reverse_starts.has(target):
++		await checkpoint();return entry.reverse_starts[target]
++	if not entry.has("reverse_graph"):
++		var reverse: Dictionary={}
++		for a in g:
++			for b in g[a]:
++				if not reverse.has(b):reverse[b]=[]
++				reverse[b].append(a)
++		entry.reverse_graph=reverse
++	var seen: Dictionary=await walk_graph(entry.reverse_graph,target)
++	if not aborted():entry.reverse_starts[target]=seen
++	return seen
++
++func walk_graph(g: Dictionary,start: String)->Dictionary:
+@@ -278,2 +299 @@
+-	var queue: Array=[start]
+-	var head:=0
++	var queue: Array=[start];var head:=0
+@@ -285 +304,0 @@
+-	entry.starts[start]=seen
+@@ -339 +358 @@
+-	for other in lookup.get(GEO.coordinate_key(port.world2), []):
++	for other in lookup.get(port.world2, []):
+@@ -400,3 +419,5 @@
+-		var onward := (await reachable(g, item.id+"."+pid+":arrive"))
+-		if require_boss and not onward.has("BOSS"):
+-			continue
++		var onward: Dictionary={}
++		if require_boss:
++			if not (await reverse_reachable(g,"BOSS")).has(item.id+"."+pid+":arrive"):continue
++		else:
++			onward=await reachable(g,item.id+"."+pid+":arrive")
+@@ -452 +473 @@
+-		var key := GEO.coordinate_key(row[2].world2)
++		var key: Array = row[2].world2
+@@ -665 +686 @@
+-			if not (await reachable(data[0], node[1])).has("BOSS"):
++			if not (await reverse_reachable(data[0], "BOSS")).has(node[1]):
