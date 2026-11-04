@@ -52,6 +52,10 @@ func solve() -> bool:
 
 func score(option: Dictionary) -> float:
 	var value: float=option.score
+	var extra: int=s.config.planning.structure_weight-1
+	if option.proof.kind=="forward_merge":value+=extra*s.config.diversity.merge_bonus
+	elif option.proof.kind=="core_merge":value+=extra*s.config.diversity.merge_bonus*0.75
+	elif option.proof.kind=="multi_return":value+=extra*s.config.diversity.multi_return_bonus
 	for item in option.chain:
 		var mid: String=s.templates[item.module_id].source_module_id
 		for placed in s.items:
