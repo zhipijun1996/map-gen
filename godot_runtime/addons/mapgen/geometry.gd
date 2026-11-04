@@ -13,7 +13,7 @@ static func placed_ports(template: Dictionary, x: int, y: int, mirror: bool, all
 	return result
 
 static func permitted(port: Dictionary, direction: String) -> bool:
-	return port.permission in (["OUTPUT", "INOUT"] if direction == "out" else ["INPUT", "INOUT"])
+	return port.permission == "INOUT" or port.permission == ("OUTPUT" if direction == "out" else "INPUT")
 
 static func matching(a: Dictionary, b: Dictionary) -> bool:
 	return a.world2 == b.world2 and OPPOSITE[a.face] == b.face and a.surface == b.surface and (permitted(a, "out") and permitted(b, "in") or permitted(b, "out") and permitted(a, "in"))
@@ -38,7 +38,7 @@ static func groups(items: Array) -> Dictionary:
 	for item in items:
 		for pid in item.ports:
 			var port: Dictionary = item.ports[pid]
-			var key := coordinate_key(port.world2)
+			var key: Array = port.world2 # Immutable exact integer pair, same insertion order.
 			if not result.has(key):
 				result[key] = []
 			result[key].append([item, pid, port])
