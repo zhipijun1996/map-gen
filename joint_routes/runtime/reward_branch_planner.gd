@@ -211,7 +211,7 @@ func options(pool_mode := false) -> Array:
 	var choices: Array = []
 	var signatures: Dictionary = {}
 	var considered: Array = []
-	var remaining_slots: int = maxi(0,policy.branch_completion_limit-base_cases.size())
+	var remaining_slots: int = policy.branch_completion_limit if pool_mode else maxi(0,policy.branch_completion_limit-base_cases.size())
 	var hints: Dictionary = {}
 	for option in completed:
 		# Verified base cases already represent single-room returns. They must

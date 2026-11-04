@@ -25,10 +25,6 @@ func solve() -> bool:
 	s.joint_stats.pools+=1
 	s.joint_stats.pool_candidates+=pool.size()
 	for option in pool:
-		option.core_ports={}
-		for group in GEO.connection_groups(s.items+option.chain):
-			for row in group:
-				if s.reward_core.has(row[0].id):option.core_ports[row[0].id+"."+row[1]]=true
 		# Only core-to-branch endpoints belong to the reservation. Existing
 		# core-to-core connections are common and must not conflict every plan.
 		option.core_ports={}

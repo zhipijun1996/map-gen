@@ -573,21 +573,27 @@ func growth_options() -> Array:
 	var unique: Array = []
 	var physical: Dictionary = {}
 	for row in ranked:
-		if row[0] < ranked[0][0]-policy.growth_score_slack: continue
 		var key: String = templates[row[1].module_id].source_module_id
 		if not physical.has(key):
 			physical[key] = true
 			unique.append(row)
-	unique = unique.slice(0, config.search.growth_choice_count)
 	if items.size() >= config.search.reserve_from_growth_count:
 		var old_capacity: int = (await reservation(items, config.goals.reward_target)).size()
 		var scored: Array = []
 		for row in unique:
 			var capacity: int = (await reservation(items+[row[1]], config.goals.reward_target)).size()
-			scored.append([row[0]+score.reward_reserve*(capacity-old_capacity), row[1]])
+			var missing: int=maxi(0,config.goals.reward_target-old_capacity)
+			var gain: int=mini(capacity,config.goals.reward_target)-mini(old_capacity,config.goals.reward_target)
+			scored.append([row[0]+score.reward_reserve*(1+missing)*gain, row[1]])
 			if aborted():
 				return []
 		unique = (await sort_rows(scored, func(a, b): return a[0] > b[0]))
+	# Capacity must influence admission to the uniformly sampled pool. Sorting
+	# an already-truncated top five does not change their selection probability.
+	if not unique.is_empty():
+		var best: float=unique[0][0]
+		unique=unique.filter(func(row):return row[0]>=best-policy.growth_score_slack)
+	unique=unique.slice(0,config.search.growth_choice_count)
 	var choices: Array = []
 	for row in unique:
 		choices.append(row[1])
