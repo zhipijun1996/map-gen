@@ -154,6 +154,17 @@ func options(pool_mode := false) -> Array:
 	var placed: int = reward_counts.values().reduce(func(a,b):return a+b,0)
 	var reserve: Array = [] if pool_mode else await s.reservation(s.items,s.config.goals.reward_target-placed,true)
 	var base_cases: Array = await direct_returns(fronts) if pool_mode else []
+	if pool_mode:
+		var witnessed: Array=[]
+		for original in s.reward_witness:
+			var item: Dictionary=original.duplicate(true);item.id="M%02d" % (s.items.size()+1)
+			for source in fronts:
+				var matches:=false
+				for port in item.ports.values():
+					if GEO.matching(port,source[2]):matches=true
+				if matches:
+					witnessed.append({"chain":[item],"root":source,"score":chain_score([item]),"hint":"single_return"});break
+		base_cases=witnessed+base_cases
 	for original in reserve:
 		var item: Dictionary = original.duplicate(true)
 		item.id = "M%02d" % (s.items.size()+1)

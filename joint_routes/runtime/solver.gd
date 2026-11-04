@@ -56,6 +56,7 @@ var reward_branches: Array = []
 var joint_stats: Dictionary = {"pools":0,"pool_candidates":0,"pair_conflicts":0,"search_nodes":0,"capacity_prunes":0}
 var capacity_cache: Dictionary={}
 var pool_evidence: Array=[]
+var reward_witness: Array=[]
 
 func _init(job, req: Dictionary, prepared, cfg: Dictionary):
 	owner = weakref(job)
@@ -624,6 +625,9 @@ func exit_value(count: int) -> float:
 
 func close_one(max_depth: int) -> bool:
 	phase = "closure_search"
+	# Preserve an existing positive six-branch arrangement; absence of such a
+	# witness is not a rejection and leaves joint branch search available.
+	var protected: bool=config.goals.reward_target>0 and await known_capacity(items)>=config.goals.reward_target
 	var fronts := (await reachable_frontier(items))
 	rng.shuffle(fronts)
 	var viable: Array = fronts.filter(func(s): return not s[0].reward and s[0].module_id != "START")
@@ -672,6 +676,8 @@ func close_one(max_depth: int) -> bool:
 								copy.id = "M%02d" % (trial.size()+1)
 								trial.append(copy)
 							if (await safe_state(trial)):
+								if protected and await known_capacity(trial)<config.goals.reward_target:
+									reject("closure_consumes_reward_witness");continue
 								items = trial
 								return true
 						var dist := 9223372036854775807
@@ -874,6 +880,7 @@ func finish() -> bool:
 	layout_terminal_start = terminal_states
 	terminal_slice_failed = false
 	var options: Array = []
+	var witness: Array=await reservation(items,config.goals.reward_target)
 	for source in (await reachable_frontier(items)):
 		if source[0].module_id == "START":
 			continue
@@ -888,11 +895,21 @@ func finish() -> bool:
 				if paths.size() < config.goals.main_paths_required:
 					reject("boss_main_path_diversity")
 				else:
-					options.append([config.scoring.boss_distance*origin_distance(item.origin), item, paths])
+					var reserved: Array=[]
+					if witness.size()==config.goals.reward_target:
+						var keeps:=true
+						for room in witness:
+							if GEO.overlap(room,item):keeps=false;break
+						if keeps:
+							var full: Array=trial.duplicate(true)
+							for room in witness:
+								var copy: Dictionary=room.duplicate(true);copy.id="M%02d" % (full.size()+1);full.append(copy);reserved.append(copy)
+							if aspect(full)>config.shape.max_aspect or not await valid_reward_state(full):reserved=[]
+					options.append([config.scoring.boss_distance*origin_distance(item.origin), item, paths, reserved])
 			row = await cursor.next()
 		if aborted():
 			return false
-	options = (await sort_rows(options, func(a, b): return a[0] > b[0]))
+	options = (await sort_rows(options, func(a, b): return a[3].size()>b[3].size() if a[3].size()!=b[3].size() else a[0]>b[0]))
 	if options.is_empty():
 		record_failure("no_goal_and_reservation_compatible_boss")
 		last_search_failure = "no_goal_and_reservation_compatible_boss"
@@ -903,6 +920,7 @@ func finish() -> bool:
 		items = before.duplicate(true)
 		rng.setstate(state)
 		add(row[1].duplicate(true))
+		reward_witness=row[3]
 		reward_core = {}; reward_core_rank = {}; reward_branches = []
 		for item in items: reward_core[item.id] = true
 		# "Forward" is ordered on this actual directed START->BOSS witness.
