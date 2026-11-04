@@ -571,6 +571,7 @@ func growth_options() -> Array:
 	var unique: Array = []
 	var physical: Dictionary = {}
 	for row in ranked:
+		if row[0] < ranked[0][0]-policy.growth_score_slack: continue
 		var key: String = templates[row[1].module_id].source_module_id
 		if not physical.has(key):
 			physical[key] = true

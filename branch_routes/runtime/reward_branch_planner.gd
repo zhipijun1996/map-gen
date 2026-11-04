@@ -117,7 +117,7 @@ func options() -> Array:
 				if collected and (joins or (item.reward and self_reward and state.returnable)) and not completed_keys.has(physical):
 					completed_keys[physical] = true
 					var bonus: float = policy.merge_bonus if joins else policy.multi_return_bonus if chain.size()>1 else 0.0
-					completed.append({"chain":chain,"root":state.root,"score":value+bonus+s.rng.random()*s.config.scoring.reward_noise})
+					completed.append({"chain":chain,"root":state.root,"hint":"merge" if joins else "multi_return" if chain.size()>1 else "single_return","score":value+bonus+s.rng.random()*s.config.scoring.reward_noise})
 				var exits: Dictionary = {}
 				for route in routes:
 					if route.to_port == pin or (item.reward and route.reward_ids.is_empty()): continue
@@ -131,7 +131,7 @@ func options() -> Array:
 					var reverse := false
 					for route in s.transit[s.port_key(item.module_id,item.mirror_x,pid)]:
 						if route.to_port == pin: reverse = true
-					var heuristic: float = value-0.25*distance_to_core(item.ports[pid],state.root[0].id)
+					var heuristic: float = value-0.25*distance_to_core(item.ports[pid],state.root[0].id)+(policy.multi_return_bonus if state.returnable and reverse else 0.0)
 					pending.append({"chain":chain,"front":[item,pid,item.ports[pid]],"root":state.root,"collected":collected,"returnable":state.returnable and reverse,"score":heuristic})
 				row = await cursor.next()
 			if s.aborted(): return []
@@ -150,7 +150,15 @@ func options() -> Array:
 	completed = await s.sort_rows(completed,func(a,b):return a.score>b.score)
 	var choices: Array = []
 	var signatures: Dictionary = {}
-	var considered: Array = completed.slice(0,maxi(0,policy.branch_completion_limit-base_cases.size()))+base_cases
+	var considered: Array = []
+	var remaining_slots: int = maxi(0,policy.branch_completion_limit-base_cases.size())
+	var hints: Dictionary = {}
+	for option in completed:
+		if hints.get(option.hint,0)>=maxi(1,remaining_slots/2): continue
+		hints[option.hint]=hints.get(option.hint,0)+1
+		considered.append(option)
+		if considered.size()>=remaining_slots: break
+	considered+=base_cases
 	var checked: Dictionary = {}
 	for option in considered:
 		var key := signature(option.chain)
@@ -223,5 +231,12 @@ func prove(chain: Array, root: Array, trial: Array) -> Dictionary:
 	for category in [["forward_merge",forward],["core_merge",merged],["multi_return" if chain.size()>1 else "single_return",returned]]:
 		var onward: Array=await path(g,outbound[-1],allowed,category[1])
 		if not onward.is_empty():
+			var used: Dictionary={}
+			for node in outbound+onward:
+				var iid: String=node.split(".")[0].split(":")[0]
+				if allowed.has(iid): used[iid]=true
+			# Extra placed rooms must actually participate in the witness. Do not
+			# relabel a single-room return as multi-room by adding unused padding.
+			if used.size()!=allowed.size(): continue
 			return {"kind":category[0],"instance_ids":allowed.keys(),"reward_instance_id":reward_id,"entry_instance_id":root[0].id,"entry_port_id":root[1],"outbound_path":outbound,"onward_path":onward,"scope":"declared directed graph witness; not physics or proof return is forbidden"}
 	return {}

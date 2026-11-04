@@ -327,7 +327,8 @@
         "branch_beam_width",
         "branch_source_limit",
         "branch_completion_limit",
-        "growth_poses_per_module"
+        "growth_poses_per_module",
+        "growth_score_slack"
       ],
       "properties": {
         "exit_decay": {
@@ -393,6 +394,10 @@
         "growth_poses_per_module": {
           "type": "integer",
           "minimum": 1
+        },
+        "growth_score_slack": {
+          "type": "number",
+          "minimum": 0
         }
       }
     }

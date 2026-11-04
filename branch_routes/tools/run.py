@@ -13,6 +13,7 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "runtime_packages/tools"))
 from mapgen import ModuleLibrary
 from validity import inspect_result
+from branch_routes.tools.audit_branches import inspect as inspect_branches
 
 
 def main():
@@ -79,6 +80,7 @@ def main():
         actual = record["result"]
         checks = {"expected_status":actual["status"] == ("CANCELLED" if case["id"].startswith("cancel-") else "SEARCH_EXHAUSTED" if case["id"] == "failure" else "PASS"), "failure_empty":actual["status"] == "PASS" or actual["map"] is None and actual["content_store"] == {}}
         audit = None
+        branch_audit = None
         if actual["status"] == "PASS":
             # Reuse independent source/geometry/graph/all-reward auditor on an
             # identity-projected copy. Never alter source actual or old oracle.
@@ -92,13 +94,19 @@ def main():
             except Exception as error:
                 audit = {"status":"FAIL", "error":repr(error)}
                 checks["independent_source_graph_all_rewards"] = False
-            checks["identity"] = actual["map"]["generator"]["implementation"] == "mapgen/gdscript-candidate-0.5.0" and actual["map"]["generator"]["algorithm"] == "stable-v4-reward-branches"
+            checks["identity"] = actual["map"]["generator"]["implementation"].startswith("mapgen/gdscript-candidate-0.5.0+") and actual["map"]["generator"]["algorithm"] == "stable-v4-reward-branches"
             checks["snapshot_inputs"] = actual["map"]["inputs"] == dict(request=json.loads(Path(case["request"]).read_text()), config=json.loads(Path(case["config"]).read_text()))
+            try:
+                branch_audit = inspect_branches(actual)
+                checks["exported_branch_witnesses"] = branch_audit["status"] == "PASS"
+            except Exception as error:
+                branch_audit = {"status":"FAIL", "error":repr(error)}
+                checks["exported_branch_witnesses"] = False
         normalized = copy.deepcopy(actual)
         normalized["metrics"].pop("generation_seconds", None)
         if primary is None: primary = normalized
         if case["id"].startswith("batch-"): checks["batch_equal"] = normalized == primary
-        rows.append(dict(case=case["id"], status=actual["status"], checks=checks, metrics=actual["metrics"], profile=record["profile"], cancel=record["cancel"], audit=audit))
+        rows.append(dict(case=case["id"], status=actual["status"], checks=checks, metrics=actual["metrics"], profile=record["profile"], cancel=record["cancel"], audit=audit, branch_audit=branch_audit))
         path.with_suffix(".json.gz").write_bytes(gzip.compress(path.read_bytes(), mtime=0))
         path.unlink()
     errors = "SCRIPT ERROR" in (args.out / "godot.log").read_text()
