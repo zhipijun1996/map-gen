@@ -4,6 +4,7 @@ import copy
 import gzip
 import hashlib
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -26,6 +27,7 @@ def main():
     parser.add_argument("--controller", action="store_true")
     parser.add_argument("--failure", action="store_true")
     parser.add_argument("--contract", action="store_true")
+    parser.add_argument("--baseline", type=Path)
     args = parser.parse_args()
     args.out.mkdir(parents=True, exist_ok=False)
     request_path = ROOT / ("runtime_iteration/upstream/controller-request.json" if args.controller else "godot_runtime/tests/request.json")
@@ -52,6 +54,9 @@ def main():
         case.update(request=str((folder / "request.json").resolve()), config=str((folder / "config.json").resolve()))
     (args.out / "cases.json").write_text(json.dumps(cases, indent=2) + "\n")
     lock = json.loads((args.project / "source-lock.json").read_text())
+    protocol=(args.project/"addons/mapgen/protocol.gd").read_text()
+    expected_impl=re.search(r'const IMPLEMENTATION := "([^"]+)"',protocol).group(1)
+    expected_algorithm=re.search(r'const ALGORITHM := "([^"]+)"',protocol).group(1)
     (args.out / "source-lock.json").write_text(json.dumps(lock, indent=2) + "\n")
     snapshot = args.out / "runtime-source"
     snapshot.mkdir()
@@ -96,7 +101,7 @@ def main():
             except Exception as error:
                 audit = {"status":"FAIL", "error":repr(error)}
                 checks["independent_source_graph_all_rewards"] = False
-            checks["identity"] = actual["map"]["generator"]["implementation"].startswith("mapgen/gdscript-experiment-0.6.0+") and actual["map"]["generator"]["algorithm"] == "stable-v5-joint-reward-plans"
+            checks["identity"] = actual["map"]["generator"]["implementation"]==expected_impl and actual["map"]["generator"]["algorithm"]==expected_algorithm
             checks["snapshot_inputs"] = actual["map"]["inputs"] == dict(request=json.loads(Path(case["request"]).read_text()), config=json.loads(Path(case["config"]).read_text()))
             try:
                 branch_audit = inspect_branches(actual)
@@ -108,6 +113,14 @@ def main():
         normalized["metrics"].pop("generation_seconds", None)
         if primary is None: primary = normalized
         if case["id"].startswith("batch-"): checks["batch_equal"] = normalized == primary
+        if args.baseline and not case["id"].startswith(("batch-","cancel-")):
+            previous=json.loads(gzip.decompress((args.baseline/path.with_suffix(".json.gz").name).read_bytes()))["result"]
+            def behavior(value):
+                value=copy.deepcopy(value);value['metrics'].pop('generation_seconds',None);value.pop('request_fingerprint');value['diagnostics'].pop('implementation',None)
+                if value['map']:
+                    value['map'].pop('map_id');value['map']['generator'].pop('implementation');value['map']['generator'].pop('request_fingerprint')
+                return value
+            checks['complete_baseline_behavior']=behavior(previous)==behavior(actual)
         rows.append(dict(case=case["id"], status=actual["status"], checks=checks, metrics=actual["metrics"], profile=record["profile"], cancel=record["cancel"], audit=audit, branch_audit=branch_audit))
         path.with_suffix(".json.gz").write_bytes(gzip.compress(path.read_bytes(), mtime=0))
         path.unlink()

@@ -57,6 +57,8 @@ var joint_stats: Dictionary = {"pools":0,"pool_candidates":0,"pair_conflicts":0,
 var capacity_cache: Dictionary={}
 var pool_evidence: Array=[]
 var reward_witness: Array=[]
+var preparing_reward_closure:=false
+var preplanned_branches: Array=[]
 
 func _init(job, req: Dictionary, prepared, cfg: Dictionary):
 	owner = weakref(job)
@@ -627,7 +629,8 @@ func close_one(max_depth: int) -> bool:
 	phase = "closure_search"
 	# Preserve an existing positive six-branch arrangement; absence of such a
 	# witness is not a rejection and leaves joint branch search available.
-	var protected: bool=config.goals.reward_target>0 and await known_capacity(items)>=config.goals.reward_target
+	var remaining: int=config.goals.reward_target-preplanned_branches.size()
+	var protected: bool=remaining>0 and await known_capacity(items)>=remaining
 	var fronts := (await reachable_frontier(items))
 	rng.shuffle(fronts)
 	var viable: Array = fronts.filter(func(s): return not s[0].reward and s[0].module_id != "START")
@@ -676,7 +679,7 @@ func close_one(max_depth: int) -> bool:
 								copy.id = "M%02d" % (trial.size()+1)
 								trial.append(copy)
 							if (await safe_state(trial)):
-								if protected and await known_capacity(trial)<config.goals.reward_target:
+								if protected and await known_capacity(trial)<remaining:
 									reject("closure_consumes_reward_witness");continue
 								items = trial
 								return true
@@ -880,7 +883,8 @@ func finish() -> bool:
 	layout_terminal_start = terminal_states
 	terminal_slice_failed = false
 	var options: Array = []
-	var witness: Array=await reservation(items,config.goals.reward_target)
+	var remaining: int=config.goals.reward_target-preplanned_branches.size()
+	var witness: Array=await reservation(items,remaining)
 	for source in (await reachable_frontier(items)):
 		if source[0].module_id == "START":
 			continue
@@ -896,7 +900,7 @@ func finish() -> bool:
 					reject("boss_main_path_diversity")
 				else:
 					var reserved: Array=[]
-					if witness.size()==config.goals.reward_target:
+					if witness.size()==remaining:
 						var keeps:=true
 						for room in witness:
 							if GEO.overlap(room,item):keeps=false;break
@@ -921,11 +925,22 @@ func finish() -> bool:
 		rng.setstate(state)
 		add(row[1].duplicate(true))
 		reward_witness=row[3]
-		reward_core = {}; reward_core_rank = {}; reward_branches = []
+		reward_core = {}; reward_core_rank = {}; reward_branches = preplanned_branches.duplicate(true)
 		for item in items: reward_core[item.id] = true
+		for branch in preplanned_branches:
+			for iid in branch.instance_ids:reward_core.erase(iid)
 		# "Forward" is ordered on this actual directed START->BOSS witness.
-		for index in range(row[2][0].size()):
-			var iid: String = row[2][0][index].split(".")[0].split(":")[0]
+		var reference: Array=row[2][0]
+		if not preplanned_branches.is_empty():
+			var full: Dictionary=(await graph(items))[0];var core_graph: Dictionary={}
+			for a in full:
+				if a not in ["START","BOSS"] and not reward_core.has(a.split(".")[0].split(":")[0]):continue
+				for b in full[a]:
+					if b in ["START","BOSS"] or reward_core.has(b.split(".")[0].split(":")[0]):edge(core_graph,a,b)
+			var core_paths: Array=await actual_paths(graph_edges(core_graph),1)
+			reference=core_paths[0] if not core_paths.is_empty() else []
+		for index in range(reference.size()):
+			var iid: String = reference[index].split(".")[0].split(":")[0]
 			if reward_core.has(iid) and not reward_core_rank.has(iid): reward_core_rank[iid]=index
 		if await JOINT.new(self).solve():
 			return true
@@ -977,8 +992,9 @@ func build() -> bool:
 		if not await grow():
 			return false
 		var growth := items.duplicate(true)
+		preplanned_branches=[];reward_witness=[]
 		for _i in range(config.search.close_attempts):
-			if await close_one(config.search.close_depth):
+			if await reward_closure() or await close_one(config.search.close_depth):
 				closed_loops += 1
 			if aborted():
 				return false
@@ -998,6 +1014,29 @@ func build() -> bool:
 			break
 	error_status = "SEARCH_EXHAUSTED"
 	error_message = last_search_failure
+	return false
+
+func reward_closure() -> bool:
+	if preplanned_branches.size()>=config.goals.reward_target:return false
+	preparing_reward_closure=true
+	reward_core={};reward_core_rank={};reward_witness=[]
+	for item in items:reward_core[item.id]=true
+	for branch in preplanned_branches:
+		for iid in branch.instance_ids:reward_core.erase(iid)
+	var options: Array=await BRANCH.new(self).options(true)
+	preparing_reward_closure=false
+	phase="reward_closure"
+	var prior: Dictionary=(await graph(items,true))[0]
+	for option in options:
+		var proof: Dictionary=option.proof
+		var end: String=proof.onward_path[-1]
+		var start: String=proof.entry_instance_id+"."+proof.entry_port_id+":depart"
+		if not (await reachable(prior,end)).has(start):continue
+		var trial: Array=items+option.chain
+		if not (await reachable((await graph(trial))[0],"START")).has(start):continue
+		for item in option.chain:add(item.duplicate(true))
+		preplanned_branches.append(proof.duplicate(true))
+		return true
 	return false
 
 func metrics() -> Dictionary:
