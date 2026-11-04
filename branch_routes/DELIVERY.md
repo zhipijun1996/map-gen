@@ -7,7 +7,7 @@
 - [独立ZIP不可变下载](https://raw.githubusercontent.com/zhipijun1996/map-gen/1b000de6b54b07875483af575ef3d13afb79b93e/runtime_packages/releases/0.5.0/mapgen-godot-candidate-0.5.0.zip)，4060459 bytes。
 - SHA-256：`aae047f5dc0058b5a3d0e6a5639d1df11c15a8cf32db8ab8f7da3819a2cf2309`。
 - [20文件安装锁](https://raw.githubusercontent.com/zhipijun1996/map-gen/1b000de6b54b07875483af575ef3d13afb79b93e/runtime_packages/releases/0.5.0/install-lock.json)复用manifest的package/module_package/protocol/addon_files字段，同时给出新配置SHA。
-- [独立验证收据](../../runtime_packages/releases/0.5.0/receipt.json)：独立目录解压、Godot verify_bundle 219项及CLI真实生成重放均通过。
+- [独立验证收据](../runtime_packages/releases/0.5.0/receipt.json)：独立目录解压、Godot verify_bundle 219项及CLI真实生成重放均通过。
 
 上方验证收据在仓库根目录`runtime_packages/releases/0.5.0/receipt.json`；ZIP内manifest保留实际源码身份，不将后续交付说明或PR提交冒充源码。
 

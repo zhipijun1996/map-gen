@@ -1,6 +1,6 @@
 # 《失序之钟》Map Generator
 
-新算法优化实验：[源模块候选分组、分阶段评分与完整奖励支路](branch_routes/README.md)。优先探索取奖后归并，支持多模块独立折返；使用独立算法身份与显式配置，验证和交付状态见该目录。
+新算法优化实验：[源模块候选分组、分阶段评分与完整奖励支路](branch_routes/README.md)，[0.5.0候选交付与不可变下载](branch_routes/DELIVERY.md)。优先探索取奖后归并，支持多模块独立折返；使用独立算法身份与显式配置，验证和交付状态见该目录。
 
 本轮优化候选：[0.4.2 速度与可选多样性配置](runtime_iteration/README.md)，[同 seed 地图对照](runtime_iteration/comparisons/index.html)及[实测报告](runtime_iteration/REPORT.md)。原默认结果保持；新配置单独选择，仍为 candidate。
 
