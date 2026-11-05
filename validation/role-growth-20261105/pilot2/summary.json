@@ -1,0 +1,1711 @@
+{
+  "status": "PASS",
+  "engine_sha256": "eeaec2b65dc3234168be1e1cbcc89731514bbb78dfb2c1b502920c50830a0638",
+  "source_sha256": {
+    "bridge_index.gd": "b62364b943ca4b7c6d670240874162e3dee68a7a10f5613454cd666c83eea3d7",
+    "candidate_cursor.gd": "b692da22a4b42be6c2c65b44ea04fca88d5c9cd50bf4aaa3bf29bf526cb50d08",
+    "content_transform.gd": "80ab9f4e58ceedb754c6062996e0e4a4f36a9542e7c54206639d7760ce92e2f2",
+    "data_json.gd": "cef6a962ae33d5d03aa29b57ca35fcef104a07f7a2de636122e3b32cb8d0ea9c",
+    "decimal64.gd": "a1c39dc62d62f8191a6d306942b2f549e674e09212970f8bd4a44153ed8e8109",
+    "derived_library.gd": "cdd675515fc3b27eb6db4f76bb05046aac16f4bb4caedfca52d8e4234ff63a2c",
+    "final_pipeline.gd": "c44fe36078a4cea5b20541f38c564e143ba4eaafbf6eb6edcf5bbb67d2ceb587",
+    "generation_job.gd": "effe3467aced7b978dbc9e2ccfc1492da5e7f8fd0087df066b30264cf12e3e8e",
+    "geometry.gd": "e1bed0c1abcf61ab9194f676cf94cc7b39d31560b54ed2fcaca232a6adf3443c",
+    "joint_basis.gd": "053bcaf5eaf7e209a95cfb006cff89de06563f5aecacc66d0dd8bdd344f9e2ec",
+    "joint_planner.gd": "8ce85f50d4d2734d555c3350ac644165f4283f3f646c7eb2e084cba0d3249f3f",
+    "merge_constructor.gd": "e33bb961a910cf41873d03d7b63f25dea2c027721ce50e5efaaa24542e83c354",
+    "module_archive.gd": "44c075d69db506ced4a2241e8205775a226861234786d43272633c1e7ba46742",
+    "motif_catalog.gd": "f330a338d2c52c765a57b9677afda47e2b61edc10d84c9e2922cbd0f372e695f",
+    "numeric.gd": "af1d58403d38687de902e4ded6770aa9972e91a9ea75e2ab5e92f98d41f90f7e",
+    "preload_job.gd": "3ea6be476d84262c83c536c943c170a80dd0884bfc441e60bb5fe43b6fc34e68",
+    "prepared_library.gd": "f572fe0f4811b1b116140e108a7a9dbc4d6e3b509df220feea66b8af2146cbaa",
+    "protocol.gd": "7f3da46bac2eb2530c1d51c9e4f9a7c2212634e8bf00e41fc1e4d3980ee837c3",
+    "python_rng.gd": "6b70397a8f8f7dbfd2ba9f2c49101c9e5174e22fc4b761e1e97c07c6a61964d4",
+    "reward_branch_planner.gd": "4957262c121206b0650d851109926633a47a66b7616c690ac1a610cc2e826c3f",
+    "reward_clearance.gd": "f1946c2e0bb5fc7c3b6d6229030cd548bc5540a3160a652a5121bd35baf24a02",
+    "role_cursor.gd": "5d8d2e0cd634a423c64f528a5209395dfe1dbf511fa485cde5d38e8b02b115b3",
+    "runtime_export.gd": "5be6d8fd72389acb60efb5651a945e9200a0bc7a15a4a1bff152ab2647311a5c",
+    "schema_data.gd": "609b851481588a41465553fbea062c611caf1103db9f698b18809d0a77adcec0",
+    "solver.gd": "5e4d6d2dbff2c4ebadf64d7d075dd39f291c4b33d1c482b1a94f5af505b7ee70",
+    "solver_basis.gd": "cd666d49b5f7be35c4b3a574ed3f6fb95ef9251b83e1d0a06f7f88c3540345e3",
+    "structure_basis.gd": "f713ce6231448d352c89af5784f00b77c6b4af20a381cda0e4c4ea998884f502",
+    "structure_planner.gd": "8f2889f206965baaa0364ac024916628dd4c64d12d92ed8abc70d3bbe75c8e8b",
+    "transit_index.gd": "3b166e376072de7ce0e3e79cb68fe5c4a26cc907a35e4dbb6b4539672e64bbd0",
+    "work_gate.gd": "fec67bc46e091be2d7919003aa0e525c0112772beab12ac82e6da1fcf41e4079"
+  },
+  "rows": [
+    {
+      "case": "seed-930001",
+      "status": "PASS",
+      "checks": {
+        "expected_status": true,
+        "failure_empty": true,
+        "independent_source_graph_all_rewards": true,
+        "identity": true,
+        "snapshot_inputs": true,
+        "exported_branch_witnesses": true,
+        "planned_branch_modes": true,
+        "growth_target": true,
+        "structure_proof": true
+      },
+      "metrics": {
+        "backtracks": 0,
+        "closed_loops_across_search": 3,
+        "expansions": 89610,
+        "generation_seconds": 3.403165,
+        "layout_repairs": 2,
+        "pruning": {
+          "committed_branch_boundary_changed": 3,
+          "entry_has_no_reward_route": 1,
+          "no_onward_route_from_actual_entry": 306,
+          "no_route_from_actual_entry": 12517,
+          "reward_claim_region_excluded_by_seals": 8
+        },
+        "recorded_failures": 2,
+        "terminal_states": 8
+      },
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "created": {
+            "calls": 1,
+            "max_usec": 2156,
+            "p50_usec": 2156,
+            "p95_usec": 2156,
+            "p99_usec": 2156,
+            "total_usec": 2156
+          },
+          "demand_core_routes": {
+            "calls": 1060,
+            "max_usec": 8516,
+            "p50_usec": 27,
+            "p95_usec": 941,
+            "p99_usec": 5174,
+            "total_usec": 266872
+          },
+          "export": {
+            "calls": 3,
+            "max_usec": 5826,
+            "p50_usec": 1856,
+            "p95_usec": 1856,
+            "p99_usec": 1856,
+            "total_usec": 8311
+          },
+          "final_audit": {
+            "calls": 65,
+            "max_usec": 2152,
+            "p50_usec": 45,
+            "p95_usec": 497,
+            "p99_usec": 981,
+            "total_usec": 9343
+          },
+          "final_decorate": {
+            "calls": 18,
+            "max_usec": 1085,
+            "p50_usec": 582,
+            "p95_usec": 1069,
+            "p99_usec": 1069,
+            "total_usec": 11560
+          },
+          "final_gate": {
+            "calls": 21,
+            "max_usec": 3466,
+            "p50_usec": 115,
+            "p95_usec": 1526,
+            "p99_usec": 1526,
+            "total_usec": 7904
+          },
+          "growth": {
+            "calls": 8553,
+            "max_usec": 7944,
+            "p50_usec": 223,
+            "p95_usec": 779,
+            "p99_usec": 2057,
+            "total_usec": 2596938
+          },
+          "init": {
+            "calls": 8,
+            "max_usec": 1071,
+            "p50_usec": 620,
+            "p95_usec": 1054,
+            "p99_usec": 1054,
+            "total_usec": 6019
+          },
+          "joint_merge": {
+            "calls": 81,
+            "max_usec": 9386,
+            "p50_usec": 360,
+            "p95_usec": 6596,
+            "p99_usec": 8214,
+            "total_usec": 90079
+          },
+          "motif_catalog": {
+            "calls": 38,
+            "max_usec": 2043,
+            "p50_usec": 1169,
+            "p95_usec": 1506,
+            "p99_usec": 1790,
+            "total_usec": 46528
+          },
+          "prepare": {
+            "calls": 7,
+            "max_usec": 1458,
+            "p50_usec": 1059,
+            "p95_usec": 1371,
+            "p99_usec": 1371,
+            "total_usec": 8215
+          },
+          "reward_branches": {
+            "calls": 32,
+            "max_usec": 1414,
+            "p50_usec": 243,
+            "p95_usec": 874,
+            "p99_usec": 883,
+            "total_usec": 12620
+          },
+          "structure_domains": {
+            "calls": 506,
+            "max_usec": 8786,
+            "p50_usec": 358,
+            "p95_usec": 1171,
+            "p99_usec": 1472,
+            "total_usec": 266448
+          },
+          "transit_catalog": {
+            "calls": 62,
+            "max_usec": 1206,
+            "p50_usec": 454,
+            "p95_usec": 651,
+            "p99_usec": 1035,
+            "total_usec": 29490
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 3424440
+      },
+      "cancel": {
+        "finished_usec": -1,
+        "intent_usec": -1,
+        "kind": "scheduled external input deadline; includes advance until host observes",
+        "latency_usec": null,
+        "observed_usec": -1
+      },
+      "audit": {
+        "status": "PASS",
+        "usable_map": true,
+        "sites_checked": 14,
+        "ordinary_sites": 8,
+        "target_sites": 6,
+        "sites": [
+          {
+            "instance": "M02",
+            "module_id": "generated-075be5b9171782cf385f2d8ea3c21e2f5fe876f688f2929ba61bc34487d2fe53",
+            "role": "traversal",
+            "reward_id": "visible-cache",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M05",
+            "module_id": "idea-orbit-choice-001",
+            "role": "traversal",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M08",
+            "module_id": "generated-075be5b9171782cf385f2d8ea3c21e2f5fe876f688f2929ba61bc34487d2fe53",
+            "role": "target_reward",
+            "reward_id": "visible-cache",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M13",
+            "module_id": "batch30-block-n04-0-2",
+            "role": "traversal",
+            "reward_id": "high-B",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M13",
+            "module_id": "batch30-block-n04-0-2",
+            "role": "traversal",
+            "reward_id": "high-C",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M25",
+            "module_id": "idea-plains-hq04-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M27",
+            "module_id": "idea-plains-hq04-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M29",
+            "module_id": "idea-spec02-s13-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M31",
+            "module_id": "idea-spec02-s13-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M32",
+            "module_id": "batch30-block-n04-0-2",
+            "role": "traversal",
+            "reward_id": "high-B",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M32",
+            "module_id": "batch30-block-n04-0-2",
+            "role": "traversal",
+            "reward_id": "high-C",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M33",
+            "module_id": "idea-plains-hq04-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M39",
+            "module_id": "b31-n08-reward-return-interface0",
+            "role": "traversal",
+            "reward_id": "upper-cache",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M46",
+            "module_id": "idea-0363f85c-16c0-4b5f-b3b0-461335608db7-enemies-2",
+            "role": "traversal",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          }
+        ],
+        "source_payload_validation": "PASS",
+        "physics": "NOT_RUN"
+      },
+      "branch_audit": {
+        "status": "PASS",
+        "branches": [
+          {
+            "kind": "forward_merge",
+            "instance_ids": [
+              "M08"
+            ],
+            "reward_instance_id": "M08",
+            "exported_outbound_path": [
+              "n0021",
+              "n0044",
+              "n0048"
+            ],
+            "exported_onward_path": [
+              "n0048",
+              "n0047",
+              "n0042"
+            ],
+            "scope": "actual exported directed graph, core-boundary constrained; no physics or irreversibility proof"
+          },
+          {
+            "kind": "multi_return",
+            "instance_ids": [
+              "M24",
+              "M25"
+            ],
+            "reward_instance_id": "M25",
+            "exported_outbound_path": [
+              "n0064",
+              "n0125",
+              "n0128",
+              "n0129",
+              "n0131"
+            ],
+            "exported_onward_path": [
+              "n0131",
+              "n0130",
+              "n0127",
+              "n0126",
+              "n0063"
+            ],
+            "scope": "actual exported directed graph, core-boundary constrained; no physics or irreversibility proof"
+          },
+          {
+            "kind": "multi_return",
+            "instance_ids": [
+              "M26",
+              "M27"
+            ],
+            "reward_instance_id": "M27",
+            "exported_outbound_path": [
+              "n0070",
+              "n0134",
+              "n0133",
+              "n0136",
+              "n0138"
+            ],
+            "exported_onward_path": [
+              "n0138",
+              "n0137",
+              "n0132",
+              "n0135",
+              "n0069"
+            ],
+            "scope": "actual exported directed graph, core-boundary constrained; no physics or irreversibility proof"
+          },
+          {
+            "kind": "multi_return",
+            "instance_ids": [
+              "M28",
+              "M29"
+            ],
+            "reward_instance_id": "M29",
+            "exported_outbound_path": [
+              "n0082",
+              "n0141",
+              "n0140",
+              "n0143",
+              "n0145"
+            ],
+            "exported_onward_path": [
+              "n0145",
+              "n0144",
+              "n0139",
+              "n0142",
+              "n0081"
+            ],
+            "scope": "actual exported directed graph, core-boundary constrained; no physics or irreversibility proof"
+          },
+          {
+            "kind": "multi_return",
+            "instance_ids": [
+              "M30",
+              "M31"
+            ],
+            "reward_instance_id": "M31",
+            "exported_outbound_path": [
+              "n0096",
+              "n0146",
+              "n0149",
+              "n0150",
+              "n0152"
+            ],
+            "exported_onward_path": [
+              "n0152",
+              "n0151",
+              "n0148",
+              "n0147",
+              "n0095"
+            ],
+            "scope": "actual exported directed graph, core-boundary constrained; no physics or irreversibility proof"
+          },
+          {
+            "kind": "multi_return",
+            "instance_ids": [
+              "M32",
+              "M33"
+            ],
+            "reward_instance_id": "M33",
+            "exported_outbound_path": [
+              "n0100",
+              "n0153",
+              "n0157",
+              "n0156",
+              "n0159",
+              "n0161"
+            ],
+            "exported_onward_path": [
+              "n0161",
+              "n0160",
+              "n0155",
+              "n0158",
+              "n0154",
+              "n0099"
+            ],
+            "scope": "actual exported directed graph, core-boundary constrained; no physics or irreversibility proof"
+          }
+        ]
+      }
+    },
+    {
+      "case": "seed-930007",
+      "status": "PASS",
+      "checks": {
+        "expected_status": true,
+        "failure_empty": true,
+        "independent_source_graph_all_rewards": true,
+        "identity": true,
+        "snapshot_inputs": true,
+        "exported_branch_witnesses": true,
+        "planned_branch_modes": true,
+        "growth_target": true,
+        "structure_proof": true
+      },
+      "metrics": {
+        "backtracks": 3,
+        "closed_loops_across_search": 2,
+        "expansions": 71679,
+        "generation_seconds": 2.846019,
+        "layout_repairs": 1,
+        "pruning": {
+          "no_onward_route_from_actual_entry": 108,
+          "no_route_from_actual_entry": 6915,
+          "reward_claim_region_excluded_by_seals": 7
+        },
+        "recorded_failures": 1,
+        "terminal_states": 8
+      },
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "created": {
+            "calls": 1,
+            "max_usec": 16952,
+            "p50_usec": 16952,
+            "p95_usec": 16952,
+            "p99_usec": 16952,
+            "total_usec": 16952
+          },
+          "demand_core_routes": {
+            "calls": 4552,
+            "max_usec": 14959,
+            "p50_usec": 28,
+            "p95_usec": 435,
+            "p99_usec": 1052,
+            "total_usec": 564770
+          },
+          "export": {
+            "calls": 3,
+            "max_usec": 5046,
+            "p50_usec": 1809,
+            "p95_usec": 1809,
+            "p99_usec": 1809,
+            "total_usec": 7469
+          },
+          "final_audit": {
+            "calls": 70,
+            "max_usec": 1605,
+            "p50_usec": 28,
+            "p95_usec": 397,
+            "p99_usec": 770,
+            "total_usec": 7477
+          },
+          "final_decorate": {
+            "calls": 17,
+            "max_usec": 837,
+            "p50_usec": 642,
+            "p95_usec": 753,
+            "p99_usec": 753,
+            "total_usec": 10065
+          },
+          "final_gate": {
+            "calls": 17,
+            "max_usec": 2217,
+            "p50_usec": 134,
+            "p95_usec": 1107,
+            "p99_usec": 1107,
+            "total_usec": 5632
+          },
+          "growth": {
+            "calls": 7184,
+            "max_usec": 5491,
+            "p50_usec": 128,
+            "p95_usec": 818,
+            "p99_usec": 1453,
+            "total_usec": 1872991
+          },
+          "init": {
+            "calls": 8,
+            "max_usec": 920,
+            "p50_usec": 530,
+            "p95_usec": 708,
+            "p99_usec": 708,
+            "total_usec": 4863
+          },
+          "joint_merge": {
+            "calls": 41,
+            "max_usec": 4242,
+            "p50_usec": 451,
+            "p95_usec": 2643,
+            "p99_usec": 3625,
+            "total_usec": 39252
+          },
+          "motif_catalog": {
+            "calls": 38,
+            "max_usec": 2638,
+            "p50_usec": 1113,
+            "p95_usec": 1449,
+            "p99_usec": 1638,
+            "total_usec": 44474
+          },
+          "prepare": {
+            "calls": 7,
+            "max_usec": 1435,
+            "p50_usec": 1198,
+            "p95_usec": 1322,
+            "p99_usec": 1322,
+            "total_usec": 8567
+          },
+          "reward_branches": {
+            "calls": 29,
+            "max_usec": 1551,
+            "p50_usec": 289,
+            "p95_usec": 926,
+            "p99_usec": 966,
+            "total_usec": 11271
+          },
+          "structure_domains": {
+            "calls": 371,
+            "max_usec": 5623,
+            "p50_usec": 358,
+            "p95_usec": 1199,
+            "p99_usec": 2234,
+            "total_usec": 196941
+          },
+          "transit_catalog": {
+            "calls": 62,
+            "max_usec": 830,
+            "p50_usec": 403,
+            "p95_usec": 629,
+            "p99_usec": 816,
+            "total_usec": 26796
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 2900627
+      },
+      "cancel": {
+        "finished_usec": -1,
+        "intent_usec": -1,
+        "kind": "scheduled external input deadline; includes advance until host observes",
+        "latency_usec": null,
+        "observed_usec": -1
+      },
+      "audit": {
+        "status": "PASS",
+        "usable_map": true,
+        "sites_checked": 11,
+        "ordinary_sites": 5,
+        "target_sites": 6,
+        "sites": [
+          {
+            "instance": "M02",
+            "module_id": "b31-n16-west-low-east-high-interface0",
+            "role": "traversal",
+            "reward_id": "crest-cache",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M06",
+            "module_id": "generated-b49032ba100b948c427c4eec92fded70bdfbf240659ea41b37991d2347483712",
+            "role": "traversal",
+            "reward_id": "visible-cache",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M08",
+            "module_id": "generated-b49032ba100b948c427c4eec92fded70bdfbf240659ea41b37991d2347483712",
+            "role": "target_reward",
+            "reward_id": "visible-cache",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M17",
+            "module_id": "batch30-n11-e-e-width96",
+            "role": "traversal",
+            "reward_id": "visible-cache",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M23",
+            "module_id": "idea-plains-hq04-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M25",
+            "module_id": "idea-spec02-s13-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M27",
+            "module_id": "idea-plains-hq04-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M29",
+            "module_id": "idea-plains-hq04-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M31",
+            "module_id": "idea-spec02-s13-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M33",
+            "module_id": "generated-3269642f7d82571d98a148a014f5c34c667ac5a7f805352c646f81d0d6733160",
+            "role": "traversal",
+            "reward_id": "visible-cache",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M34",
+            "module_id": "batch30-block-d05-0",
+            "role": "traversal",
+            "reward_id": "visible-cache",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          }
+        ],
+        "source_payload_validation": "PASS",
+        "physics": "NOT_RUN"
+      },
+      "branch_audit": {
+        "status": "PASS",
+        "branches": [
+          {
+            "kind": "forward_merge",
+            "instance_ids": [
+              "M08"
+            ],
+            "reward_instance_id": "M08",
+            "exported_outbound_path": [
+              "n0019",
+              "n0039",
+              "n0043"
+            ],
+            "exported_onward_path": [
+              "n0043",
+              "n0042",
+              "n0035"
+            ],
+            "scope": "actual exported directed graph, core-boundary constrained; no physics or irreversibility proof"
+          },
+          {
+            "kind": "multi_return",
+            "instance_ids": [
+              "M22",
+              "M23"
+            ],
+            "reward_instance_id": "M23",
+            "exported_outbound_path": [
+              "n0051",
+              "n0112",
+              "n0115",
+              "n0116",
+              "n0118"
+            ],
+            "exported_onward_path": [
+              "n0118",
+              "n0117",
+              "n0114",
+              "n0113",
+              "n0050"
+            ],
+            "scope": "actual exported directed graph, core-boundary constrained; no physics or irreversibility proof"
+          },
+          {
+            "kind": "multi_return",
+            "instance_ids": [
+              "M24",
+              "M25"
+            ],
+            "reward_instance_id": "M25",
+            "exported_outbound_path": [
+              "n0071",
+              "n0119",
+              "n0122",
+              "n0123",
+              "n0125"
+            ],
+            "exported_onward_path": [
+              "n0125",
+              "n0124",
+              "n0121",
+              "n0120",
+              "n0070"
+            ],
+            "scope": "actual exported directed graph, core-boundary constrained; no physics or irreversibility proof"
+          },
+          {
+            "kind": "multi_return",
+            "instance_ids": [
+              "M26",
+              "M27"
+            ],
+            "reward_instance_id": "M27",
+            "exported_outbound_path": [
+              "n0075",
+              "n0128",
+              "n0127",
+              "n0130",
+              "n0132"
+            ],
+            "exported_onward_path": [
+              "n0132",
+              "n0131",
+              "n0126",
+              "n0129",
+              "n0074"
+            ],
+            "scope": "actual exported directed graph, core-boundary constrained; no physics or irreversibility proof"
+          },
+          {
+            "kind": "multi_return",
+            "instance_ids": [
+              "M28",
+              "M29"
+            ],
+            "reward_instance_id": "M29",
+            "exported_outbound_path": [
+              "n0079",
+              "n0133",
+              "n0136",
+              "n0137",
+              "n0139"
+            ],
+            "exported_onward_path": [
+              "n0139",
+              "n0138",
+              "n0135",
+              "n0134",
+              "n0078"
+            ],
+            "scope": "actual exported directed graph, core-boundary constrained; no physics or irreversibility proof"
+          },
+          {
+            "kind": "multi_return",
+            "instance_ids": [
+              "M30",
+              "M31"
+            ],
+            "reward_instance_id": "M31",
+            "exported_outbound_path": [
+              "n0101",
+              "n0142",
+              "n0141",
+              "n0144",
+              "n0146"
+            ],
+            "exported_onward_path": [
+              "n0146",
+              "n0145",
+              "n0140",
+              "n0143",
+              "n0100"
+            ],
+            "scope": "actual exported directed graph, core-boundary constrained; no physics or irreversibility proof"
+          }
+        ]
+      }
+    },
+    {
+      "case": "seed-271028",
+      "status": "PASS",
+      "checks": {
+        "expected_status": true,
+        "failure_empty": true,
+        "independent_source_graph_all_rewards": true,
+        "identity": true,
+        "snapshot_inputs": true,
+        "exported_branch_witnesses": true,
+        "planned_branch_modes": true,
+        "growth_target": true,
+        "structure_proof": true
+      },
+      "metrics": {
+        "backtracks": 0,
+        "closed_loops_across_search": 2,
+        "expansions": 108664,
+        "generation_seconds": 4.981735,
+        "layout_repairs": 3,
+        "pruning": {
+          "entry_has_no_reward_route": 12,
+          "no_onward_route_from_actual_entry": 452,
+          "no_route_from_actual_entry": 16734,
+          "reward_claim_region_excluded_by_seals": 8
+        },
+        "recorded_failures": 3,
+        "terminal_states": 9
+      },
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "created": {
+            "calls": 1,
+            "max_usec": 3040,
+            "p50_usec": 3040,
+            "p95_usec": 3040,
+            "p99_usec": 3040,
+            "total_usec": 3040
+          },
+          "demand_core_routes": {
+            "calls": 3031,
+            "max_usec": 24282,
+            "p50_usec": 27,
+            "p95_usec": 769,
+            "p99_usec": 3702,
+            "total_usec": 651546
+          },
+          "export": {
+            "calls": 3,
+            "max_usec": 5301,
+            "p50_usec": 1887,
+            "p95_usec": 1887,
+            "p99_usec": 1887,
+            "total_usec": 7777
+          },
+          "final_audit": {
+            "calls": 78,
+            "max_usec": 2145,
+            "p50_usec": 27,
+            "p95_usec": 438,
+            "p99_usec": 1049,
+            "total_usec": 8893
+          },
+          "final_decorate": {
+            "calls": 16,
+            "max_usec": 1039,
+            "p50_usec": 628,
+            "p95_usec": 980,
+            "p99_usec": 980,
+            "total_usec": 10695
+          },
+          "final_gate": {
+            "calls": 17,
+            "max_usec": 2858,
+            "p50_usec": 133,
+            "p95_usec": 1355,
+            "p99_usec": 1355,
+            "total_usec": 6433
+          },
+          "growth": {
+            "calls": 10197,
+            "max_usec": 5589,
+            "p50_usec": 266,
+            "p95_usec": 648,
+            "p99_usec": 2117,
+            "total_usec": 3214937
+          },
+          "init": {
+            "calls": 8,
+            "max_usec": 776,
+            "p50_usec": 562,
+            "p95_usec": 717,
+            "p99_usec": 717,
+            "total_usec": 4745
+          },
+          "joint_merge": {
+            "calls": 159,
+            "max_usec": 20326,
+            "p50_usec": 399,
+            "p95_usec": 4591,
+            "p99_usec": 13899,
+            "total_usec": 230792
+          },
+          "motif_catalog": {
+            "calls": 38,
+            "max_usec": 1957,
+            "p50_usec": 1128,
+            "p95_usec": 1424,
+            "p99_usec": 1662,
+            "total_usec": 44694
+          },
+          "prepare": {
+            "calls": 7,
+            "max_usec": 1413,
+            "p50_usec": 1210,
+            "p95_usec": 1409,
+            "p99_usec": 1409,
+            "total_usec": 8735
+          },
+          "reward_branches": {
+            "calls": 37,
+            "max_usec": 2030,
+            "p50_usec": 216,
+            "p95_usec": 1082,
+            "p99_usec": 1347,
+            "total_usec": 14328
+          },
+          "structure_domains": {
+            "calls": 2680,
+            "max_usec": 5882,
+            "p50_usec": 135,
+            "p95_usec": 728,
+            "p99_usec": 1282,
+            "total_usec": 680096
+          },
+          "transit_catalog": {
+            "calls": 62,
+            "max_usec": 789,
+            "p50_usec": 416,
+            "p95_usec": 657,
+            "p99_usec": 694,
+            "total_usec": 27176
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 5031623
+      },
+      "cancel": {
+        "finished_usec": -1,
+        "intent_usec": -1,
+        "kind": "scheduled external input deadline; includes advance until host observes",
+        "latency_usec": null,
+        "observed_usec": -1
+      },
+      "audit": {
+        "status": "PASS",
+        "usable_map": true,
+        "sites_checked": 15,
+        "ordinary_sites": 9,
+        "target_sites": 6,
+        "sites": [
+          {
+            "instance": "M02",
+            "module_id": "generated-769066fe5fa1b2332bd7d35c56fa814f01db2b06eb8c65ef9ecf1e586db3ca0b",
+            "role": "traversal",
+            "reward_id": "visible-cache",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M07",
+            "module_id": "batch30-block-n04-0-2",
+            "role": "traversal",
+            "reward_id": "high-B",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M07",
+            "module_id": "batch30-block-n04-0-2",
+            "role": "traversal",
+            "reward_id": "high-C",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M08",
+            "module_id": "generated-1ff2da49936b180bfa76a3285e8392db0f5945aff17b746dac48511bfe9b23a9",
+            "role": "target_reward",
+            "reward_id": "visible-cache",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M21",
+            "module_id": "idea-orbit-choice-001",
+            "role": "traversal",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M22",
+            "module_id": "generated-a8f918f1ee9e8e682a919cdbb67ba2015fcfe075d54e5f25147fbe04dd156d2a",
+            "role": "traversal",
+            "reward_id": "visible-cache",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M26",
+            "module_id": "idea-spec02-s13-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M28",
+            "module_id": "idea-spec02-s13-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M30",
+            "module_id": "idea-plains-hq04-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M32",
+            "module_id": "idea-spec02-s13-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M34",
+            "module_id": "idea-plains-hq04-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M38",
+            "module_id": "b31-n08-reward-return-interface0",
+            "role": "traversal",
+            "reward_id": "upper-cache",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M42",
+            "module_id": "generated-075be5b9171782cf385f2d8ea3c21e2f5fe876f688f2929ba61bc34487d2fe53",
+            "role": "traversal",
+            "reward_id": "visible-cache",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M43",
+            "module_id": "block-demand-c07-horizontal",
+            "role": "traversal",
+            "reward_id": "visible-cache",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M46",
+            "module_id": "generated-8df5613256e70989f6ae5795803344bdc3e636fe3232c2e35175fae612f633ba",
+            "role": "traversal",
+            "reward_id": "visible-cache",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          }
+        ],
+        "source_payload_validation": "PASS",
+        "physics": "NOT_RUN"
+      },
+      "branch_audit": {
+        "status": "PASS",
+        "branches": [
+          {
+            "kind": "forward_merge",
+            "instance_ids": [
+              "M08"
+            ],
+            "reward_instance_id": "M08",
+            "exported_outbound_path": [
+              "n0011",
+              "n0046",
+              "n0050"
+            ],
+            "exported_onward_path": [
+              "n0050",
+              "n0049",
+              "n0034"
+            ],
+            "scope": "actual exported directed graph, core-boundary constrained; no physics or irreversibility proof"
+          },
+          {
+            "kind": "multi_return",
+            "instance_ids": [
+              "M25",
+              "M26"
+            ],
+            "reward_instance_id": "M26",
+            "exported_outbound_path": [
+              "n0064",
+              "n0132",
+              "n0131",
+              "n0134",
+              "n0136"
+            ],
+            "exported_onward_path": [
+              "n0136",
+              "n0135",
+              "n0130",
+              "n0133",
+              "n0063"
+            ],
+            "scope": "actual exported directed graph, core-boundary constrained; no physics or irreversibility proof"
+          },
+          {
+            "kind": "multi_return",
+            "instance_ids": [
+              "M27",
+              "M28"
+            ],
+            "reward_instance_id": "M28",
+            "exported_outbound_path": [
+              "n0070",
+              "n0139",
+              "n0138",
+              "n0141",
+              "n0143"
+            ],
+            "exported_onward_path": [
+              "n0143",
+              "n0142",
+              "n0137",
+              "n0140",
+              "n0069"
+            ],
+            "scope": "actual exported directed graph, core-boundary constrained; no physics or irreversibility proof"
+          },
+          {
+            "kind": "multi_return",
+            "instance_ids": [
+              "M29",
+              "M30"
+            ],
+            "reward_instance_id": "M30",
+            "exported_outbound_path": [
+              "n0076",
+              "n0144",
+              "n0147",
+              "n0148",
+              "n0150"
+            ],
+            "exported_onward_path": [
+              "n0150",
+              "n0149",
+              "n0146",
+              "n0145",
+              "n0075"
+            ],
+            "scope": "actual exported directed graph, core-boundary constrained; no physics or irreversibility proof"
+          },
+          {
+            "kind": "multi_return",
+            "instance_ids": [
+              "M31",
+              "M32"
+            ],
+            "reward_instance_id": "M32",
+            "exported_outbound_path": [
+              "n0084",
+              "n0153",
+              "n0152",
+              "n0155",
+              "n0157"
+            ],
+            "exported_onward_path": [
+              "n0157",
+              "n0156",
+              "n0151",
+              "n0154",
+              "n0083"
+            ],
+            "scope": "actual exported directed graph, core-boundary constrained; no physics or irreversibility proof"
+          },
+          {
+            "kind": "multi_return",
+            "instance_ids": [
+              "M33",
+              "M34"
+            ],
+            "reward_instance_id": "M34",
+            "exported_outbound_path": [
+              "n0086",
+              "n0158",
+              "n0161",
+              "n0162",
+              "n0164"
+            ],
+            "exported_onward_path": [
+              "n0164",
+              "n0163",
+              "n0160",
+              "n0159",
+              "n0085"
+            ],
+            "scope": "actual exported directed graph, core-boundary constrained; no physics or irreversibility proof"
+          }
+        ]
+      }
+    },
+    {
+      "case": "seed-271029",
+      "status": "PASS",
+      "checks": {
+        "expected_status": true,
+        "failure_empty": true,
+        "independent_source_graph_all_rewards": true,
+        "identity": true,
+        "snapshot_inputs": true,
+        "exported_branch_witnesses": true,
+        "planned_branch_modes": true,
+        "growth_target": true,
+        "structure_proof": true
+      },
+      "metrics": {
+        "backtracks": 0,
+        "closed_loops_across_search": 2,
+        "expansions": 50659,
+        "generation_seconds": 2.190413,
+        "layout_repairs": 0,
+        "pruning": {
+          "entry_has_no_reward_route": 2,
+          "no_onward_route_from_actual_entry": 88,
+          "no_route_from_actual_entry": 6244,
+          "reward_claim_region_excluded_by_seals": 8
+        },
+        "recorded_failures": 0,
+        "terminal_states": 6
+      },
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "created": {
+            "calls": 1,
+            "max_usec": 3120,
+            "p50_usec": 3120,
+            "p95_usec": 3120,
+            "p99_usec": 3120,
+            "total_usec": 3120
+          },
+          "demand_core_routes": {
+            "calls": 485,
+            "max_usec": 5301,
+            "p50_usec": 27,
+            "p95_usec": 615,
+            "p99_usec": 1860,
+            "total_usec": 73029
+          },
+          "export": {
+            "calls": 3,
+            "max_usec": 5077,
+            "p50_usec": 1965,
+            "p95_usec": 1965,
+            "p99_usec": 1965,
+            "total_usec": 7608
+          },
+          "final_audit": {
+            "calls": 91,
+            "max_usec": 2149,
+            "p50_usec": 27,
+            "p95_usec": 353,
+            "p99_usec": 703,
+            "total_usec": 9072
+          },
+          "final_decorate": {
+            "calls": 18,
+            "max_usec": 1100,
+            "p50_usec": 634,
+            "p95_usec": 1046,
+            "p99_usec": 1046,
+            "total_usec": 12226
+          },
+          "final_gate": {
+            "calls": 20,
+            "max_usec": 2811,
+            "p50_usec": 137,
+            "p95_usec": 1806,
+            "p99_usec": 1806,
+            "total_usec": 7978
+          },
+          "growth": {
+            "calls": 5259,
+            "max_usec": 5321,
+            "p50_usec": 154,
+            "p95_usec": 861,
+            "p99_usec": 1629,
+            "total_usec": 1539070
+          },
+          "init": {
+            "calls": 8,
+            "max_usec": 788,
+            "p50_usec": 551,
+            "p95_usec": 722,
+            "p99_usec": 722,
+            "total_usec": 4760
+          },
+          "joint_merge": {
+            "calls": 7,
+            "max_usec": 3204,
+            "p50_usec": 357,
+            "p95_usec": 473,
+            "p99_usec": 473,
+            "total_usec": 5251
+          },
+          "motif_catalog": {
+            "calls": 38,
+            "max_usec": 1912,
+            "p50_usec": 1130,
+            "p95_usec": 1527,
+            "p99_usec": 1813,
+            "total_usec": 44629
+          },
+          "prepare": {
+            "calls": 7,
+            "max_usec": 1370,
+            "p50_usec": 1258,
+            "p95_usec": 1315,
+            "p99_usec": 1315,
+            "total_usec": 8558
+          },
+          "reward_branches": {
+            "calls": 31,
+            "max_usec": 1370,
+            "p50_usec": 217,
+            "p95_usec": 1000,
+            "p99_usec": 1007,
+            "total_usec": 11183
+          },
+          "structure_domains": {
+            "calls": 1234,
+            "max_usec": 12003,
+            "p50_usec": 221,
+            "p95_usec": 1111,
+            "p99_usec": 1414,
+            "total_usec": 413725
+          },
+          "transit_catalog": {
+            "calls": 62,
+            "max_usec": 949,
+            "p50_usec": 430,
+            "p95_usec": 695,
+            "p99_usec": 794,
+            "total_usec": 28266
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 2242866
+      },
+      "cancel": {
+        "finished_usec": -1,
+        "intent_usec": -1,
+        "kind": "scheduled external input deadline; includes advance until host observes",
+        "latency_usec": null,
+        "observed_usec": -1
+      },
+      "audit": {
+        "status": "PASS",
+        "usable_map": true,
+        "sites_checked": 16,
+        "ordinary_sites": 10,
+        "target_sites": 6,
+        "sites": [
+          {
+            "instance": "M02",
+            "module_id": "b31-n16-west-low-east-high-interface0",
+            "role": "traversal",
+            "reward_id": "crest-cache",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M07",
+            "module_id": "batch30-block-n04-0-2",
+            "role": "traversal",
+            "reward_id": "high-B",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M07",
+            "module_id": "batch30-block-n04-0-2",
+            "role": "traversal",
+            "reward_id": "high-C",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M08",
+            "module_id": "generated-8df5613256e70989f6ae5795803344bdc3e636fe3232c2e35175fae612f633ba",
+            "role": "target_reward",
+            "reward_id": "visible-cache",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M23",
+            "module_id": "batch30-block-n04-0-2",
+            "role": "traversal",
+            "reward_id": "high-B",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M23",
+            "module_id": "batch30-block-n04-0-2",
+            "role": "traversal",
+            "reward_id": "high-C",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M24",
+            "module_id": "idea-plains-hq04-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M26",
+            "module_id": "idea-plains-hq04-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M28",
+            "module_id": "idea-plains-hq04-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M30",
+            "module_id": "idea-spec02-s13-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M32",
+            "module_id": "idea-plains-hq04-001",
+            "role": "target_reward",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M33",
+            "module_id": "generated-b49032ba100b948c427c4eec92fded70bdfbf240659ea41b37991d2347483712",
+            "role": "traversal",
+            "reward_id": "visible-cache",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M40",
+            "module_id": "generated-3269642f7d82571d98a148a014f5c34c667ac5a7f805352c646f81d0d6733160",
+            "role": "traversal",
+            "reward_id": "visible-cache",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M41",
+            "module_id": "idea-0363f85c-16c0-4b5f-b3b0-461335608db7-enemies-2",
+            "role": "traversal",
+            "reward_id": "reward",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M47",
+            "module_id": "generated-630ca6aff78c132669a9cf11e47448041319a2593c6506b86ca098b9a1b5a4ac",
+            "role": "traversal",
+            "reward_id": "visible-cache",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          },
+          {
+            "instance": "M48",
+            "module_id": "generated-5ec84823c9c2ca8da9bf7895512839fabdeccaed02d4c8c85d1f60cf34172994",
+            "role": "traversal",
+            "reward_id": "visible-cache",
+            "fully_excluded": false,
+            "physical": "UNKNOWN"
+          }
+        ],
+        "source_payload_validation": "PASS",
+        "physics": "NOT_RUN"
+      },
+      "branch_audit": {
+        "status": "PASS",
+        "branches": [
+          {
+            "kind": "forward_merge",
+            "instance_ids": [
+              "M08"
+            ],
+            "reward_instance_id": "M08",
+            "exported_outbound_path": [
+              "n0019",
+              "n0046",
+              "n0050"
+            ],
+            "exported_onward_path": [
+              "n0050",
+              "n0049",
+              "n0032"
+            ],
+            "scope": "actual exported directed graph, core-boundary constrained; no physics or irreversibility proof"
+          },
+          {
+            "kind": "multi_return",
+            "instance_ids": [
+              "M23",
+              "M24"
+            ],
+            "reward_instance_id": "M24",
+            "exported_outbound_path": [
+              "n0070",
+              "n0125",
+              "n0124",
+              "n0128",
+              "n0130"
+            ],
+            "exported_onward_path": [
+              "n0130",
+              "n0129",
+              "n0123",
+              "n0127",
+              "n0126",
+              "n0069"
+            ],
+            "scope": "actual exported directed graph, core-boundary constrained; no physics or irreversibility proof"
+          },
+          {
+            "kind": "multi_return",
+            "instance_ids": [
+              "M25",
+              "M26"
+            ],
+            "reward_instance_id": "M26",
+            "exported_outbound_path": [
+              "n0076",
+              "n0131",
+              "n0134",
+              "n0135",
+              "n0137"
+            ],
+            "exported_onward_path": [
+              "n0137",
+              "n0136",
+              "n0133",
+              "n0132",
+              "n0075"
+            ],
+            "scope": "actual exported directed graph, core-boundary constrained; no physics or irreversibility proof"
+          },
+          {
+            "kind": "multi_return",
+            "instance_ids": [
+              "M27",
+              "M28"
+            ],
+            "reward_instance_id": "M28",
+            "exported_outbound_path": [
+              "n0078",
+              "n0140",
+              "n0139",
+              "n0142",
+              "n0144"
+            ],
+            "exported_onward_path": [
+              "n0144",
+              "n0143",
+              "n0138",
+              "n0141",
+              "n0077"
+            ],
+            "scope": "actual exported directed graph, core-boundary constrained; no physics or irreversibility proof"
+          },
+          {
+            "kind": "multi_return",
+            "instance_ids": [
+              "M29",
+              "M30"
+            ],
+            "reward_instance_id": "M30",
+            "exported_outbound_path": [
+              "n0092",
+              "n0145",
+              "n0148",
+              "n0149",
+              "n0151"
+            ],
+            "exported_onward_path": [
+              "n0151",
+              "n0150",
+              "n0147",
+              "n0146",
+              "n0091"
+            ],
+            "scope": "actual exported directed graph, core-boundary constrained; no physics or irreversibility proof"
+          },
+          {
+            "kind": "multi_return",
+            "instance_ids": [
+              "M31",
+              "M32"
+            ],
+            "reward_instance_id": "M32",
+            "exported_outbound_path": [
+              "n0094",
+              "n0152",
+              "n0155",
+              "n0156",
+              "n0158"
+            ],
+            "exported_onward_path": [
+              "n0158",
+              "n0157",
+              "n0154",
+              "n0153",
+              "n0093"
+            ],
+            "scope": "actual exported directed graph, core-boundary constrained; no physics or irreversibility proof"
+          }
+        ]
+      }
+    }
+  ],
+  "audit_scope": "Independent static source/graph/seal/all-reward audit, identity-projected copy; no physics",
+  "returncode": 0
+}

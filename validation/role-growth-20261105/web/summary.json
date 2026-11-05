@@ -1,0 +1,406 @@
+{
+  "advance_budget": 1,
+  "algorithm": "experimental-v8-role-aware-growth",
+  "config_profile": "default",
+  "engine": "4.7.2-stable (custom_build.gunman_sd1)",
+  "host_scope": "standalone data scheduler, no game validation/assembly/physics/tools/screenshots",
+  "implementation": "mapgen/gdscript-experiment-0.9.0+45a0e78b9f75",
+  "mode": "framed",
+  "soft_tick_usec": 8000,
+  "unit_cap": 128,
+  "wall_usec": 38673419,
+  "environment": {
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+    "crossOriginIsolated": true,
+    "hardwareConcurrency": 5,
+    "browser_version": "154.0.8037.57"
+  },
+  "launcher_elapsed_seconds": 42.901688657992054,
+  "errors": [],
+  "records": [
+    {
+      "advance_calls": 2162,
+      "advance_cpu_usec": 2390538,
+      "advance_distribution_usec": {
+        "count": 2162,
+        "max": 35145,
+        "p50": 100,
+        "p95": 5339,
+        "p99": 8495
+      },
+      "cancel": {},
+      "host_and_yield_usec": 1906837,
+      "host_duplicate_usec": 0,
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "created": {
+            "calls": 1,
+            "max_usec": 3190,
+            "p50_usec": 3190,
+            "p95_usec": 3190,
+            "p99_usec": 3190,
+            "total_usec": 3190
+          },
+          "derived_json": {
+            "calls": 348,
+            "max_usec": 15445,
+            "p50_usec": 515,
+            "p95_usec": 4170,
+            "p99_usec": 5581,
+            "total_usec": 343038
+          },
+          "file_hashes": {
+            "calls": 1149,
+            "max_usec": 5245,
+            "p50_usec": 65,
+            "p95_usec": 95,
+            "p99_usec": 1155,
+            "total_usec": 106394
+          },
+          "zip_entries": {
+            "calls": 658,
+            "max_usec": 35121,
+            "p50_usec": 1951,
+            "p95_usec": 7206,
+            "p99_usec": 17940,
+            "total_usec": 1883099
+          },
+          "zip_hash": {
+            "calls": 6,
+            "max_usec": 8050,
+            "p50_usec": 1205,
+            "p95_usec": 3076,
+            "p99_usec": 3076,
+            "total_usec": 16789
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 4307089
+      },
+      "seed": null,
+      "snapshot_usec": 34,
+      "stage": "preload",
+      "status": "PASS",
+      "tick_distribution_usec": {
+        "count": 223,
+        "max": 35145,
+        "p50": 10020,
+        "p95": 18031,
+        "p99": 24359
+      },
+      "tick_max_usec": 35145,
+      "ticks": 223,
+      "wall_usec": 4297375
+    },
+    {
+      "advance_calls": 10455,
+      "advance_cpu_usec": 10303102,
+      "advance_distribution_usec": {
+        "count": 10455,
+        "max": 26280,
+        "p50": 415,
+        "p95": 4569,
+        "p99": 10424
+      },
+      "cancel": {},
+      "canonical_bytes": 598336,
+      "canonical_serialize_usec": 55096,
+      "engine_serialize_usec": 19001,
+      "host_and_yield_usec": 7825293,
+      "host_duplicate_usec": 6165,
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "created": {
+            "calls": 1,
+            "max_usec": 4259,
+            "p50_usec": 4259,
+            "p95_usec": 4259,
+            "p99_usec": 4259,
+            "total_usec": 4259
+          },
+          "demand_core_routes": {
+            "calls": 1060,
+            "max_usec": 25386,
+            "p50_usec": 59,
+            "p95_usec": 3755,
+            "p99_usec": 12381,
+            "total_usec": 706822
+          },
+          "export": {
+            "calls": 3,
+            "max_usec": 9144,
+            "p50_usec": 1456,
+            "p95_usec": 1456,
+            "p99_usec": 1456,
+            "total_usec": 11440
+          },
+          "final_audit": {
+            "calls": 65,
+            "max_usec": 6521,
+            "p50_usec": 89,
+            "p95_usec": 1205,
+            "p99_usec": 3380,
+            "total_usec": 21575
+          },
+          "final_decorate": {
+            "calls": 18,
+            "max_usec": 2665,
+            "p50_usec": 750,
+            "p95_usec": 1665,
+            "p99_usec": 1665,
+            "total_usec": 16761
+          },
+          "final_gate": {
+            "calls": 21,
+            "max_usec": 18936,
+            "p50_usec": 186,
+            "p95_usec": 7805,
+            "p99_usec": 7805,
+            "total_usec": 32676
+          },
+          "growth": {
+            "calls": 8553,
+            "max_usec": 26266,
+            "p50_usec": 435,
+            "p95_usec": 4361,
+            "p99_usec": 9466,
+            "total_usec": 8097681
+          },
+          "init": {
+            "calls": 8,
+            "max_usec": 4166,
+            "p50_usec": 1175,
+            "p95_usec": 1620,
+            "p99_usec": 1620,
+            "total_usec": 12487
+          },
+          "joint_merge": {
+            "calls": 81,
+            "max_usec": 14846,
+            "p50_usec": 636,
+            "p95_usec": 13160,
+            "p99_usec": 14250,
+            "total_usec": 196108
+          },
+          "motif_catalog": {
+            "calls": 38,
+            "max_usec": 19970,
+            "p50_usec": 1784,
+            "p95_usec": 6860,
+            "p99_usec": 7189,
+            "total_usec": 120667
+          },
+          "prepare": {
+            "calls": 7,
+            "max_usec": 7220,
+            "p50_usec": 1679,
+            "p95_usec": 4205,
+            "p99_usec": 4205,
+            "total_usec": 20434
+          },
+          "reward_branches": {
+            "calls": 32,
+            "max_usec": 6599,
+            "p50_usec": 480,
+            "p95_usec": 5930,
+            "p99_usec": 6074,
+            "total_usec": 46301
+          },
+          "structure_domains": {
+            "calls": 506,
+            "max_usec": 21725,
+            "p50_usec": 775,
+            "p95_usec": 5504,
+            "p99_usec": 6740,
+            "total_usec": 758270
+          },
+          "transit_catalog": {
+            "calls": 62,
+            "max_usec": 14659,
+            "p50_usec": 756,
+            "p95_usec": 4885,
+            "p99_usec": 10600,
+            "total_usec": 92116
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 18148424
+      },
+      "seed": 930001,
+      "snapshot_usec": 9085,
+      "stage": "generate",
+      "tick_distribution_usec": {
+        "count": 971,
+        "max": 31746,
+        "p50": 9779,
+        "p95": 18499,
+        "p99": 25201
+      },
+      "tick_max_usec": 31746,
+      "ticks": 971,
+      "wall_usec": 18128395
+    },
+    {
+      "advance_calls": 12400,
+      "advance_cpu_usec": 9147309,
+      "advance_distribution_usec": {
+        "count": 12400,
+        "max": 28160,
+        "p50": 205,
+        "p95": 3775,
+        "p99": 7389
+      },
+      "cancel": {},
+      "canonical_bytes": 537138,
+      "canonical_serialize_usec": 43350,
+      "engine_serialize_usec": 17401,
+      "host_and_yield_usec": 6840091,
+      "host_duplicate_usec": 4790,
+      "profile": {
+        "classification": "phase at advance entry; boundary call charged to entry phase",
+        "phases": {
+          "created": {
+            "calls": 1,
+            "max_usec": 3064,
+            "p50_usec": 3064,
+            "p95_usec": 3064,
+            "p99_usec": 3064,
+            "total_usec": 3064
+          },
+          "demand_core_routes": {
+            "calls": 4552,
+            "max_usec": 27219,
+            "p50_usec": 60,
+            "p95_usec": 1459,
+            "p99_usec": 6451,
+            "total_usec": 1842864
+          },
+          "export": {
+            "calls": 3,
+            "max_usec": 11299,
+            "p50_usec": 1489,
+            "p95_usec": 1489,
+            "p99_usec": 1489,
+            "total_usec": 13377
+          },
+          "final_audit": {
+            "calls": 70,
+            "max_usec": 4729,
+            "p50_usec": 41,
+            "p95_usec": 861,
+            "p99_usec": 2805,
+            "total_usec": 16185
+          },
+          "final_decorate": {
+            "calls": 17,
+            "max_usec": 5246,
+            "p50_usec": 1020,
+            "p95_usec": 4841,
+            "p99_usec": 4841,
+            "total_usec": 28507
+          },
+          "final_gate": {
+            "calls": 17,
+            "max_usec": 19364,
+            "p50_usec": 190,
+            "p95_usec": 6541,
+            "p99_usec": 6541,
+            "total_usec": 31803
+          },
+          "growth": {
+            "calls": 7184,
+            "max_usec": 28150,
+            "p50_usec": 264,
+            "p95_usec": 4266,
+            "p99_usec": 7220,
+            "total_usec": 5977818
+          },
+          "init": {
+            "calls": 8,
+            "max_usec": 1035,
+            "p50_usec": 704,
+            "p95_usec": 986,
+            "p99_usec": 986,
+            "total_usec": 6371
+          },
+          "joint_merge": {
+            "calls": 41,
+            "max_usec": 12235,
+            "p50_usec": 744,
+            "p95_usec": 9074,
+            "p99_usec": 11949,
+            "total_usec": 92347
+          },
+          "motif_catalog": {
+            "calls": 38,
+            "max_usec": 19621,
+            "p50_usec": 1645,
+            "p95_usec": 7249,
+            "p99_usec": 11179,
+            "total_usec": 120356
+          },
+          "prepare": {
+            "calls": 7,
+            "max_usec": 1924,
+            "p50_usec": 1495,
+            "p95_usec": 1784,
+            "p99_usec": 1784,
+            "total_usec": 10500
+          },
+          "reward_branches": {
+            "calls": 29,
+            "max_usec": 14501,
+            "p50_usec": 656,
+            "p95_usec": 5010,
+            "p99_usec": 6465,
+            "total_usec": 47716
+          },
+          "structure_domains": {
+            "calls": 371,
+            "max_usec": 20134,
+            "p50_usec": 719,
+            "p95_usec": 6060,
+            "p99_usec": 16109,
+            "total_usec": 674867
+          },
+          "transit_catalog": {
+            "calls": 62,
+            "max_usec": 14920,
+            "p50_usec": 574,
+            "p95_usec": 910,
+            "p99_usec": 5620,
+            "total_usec": 60610
+          }
+        },
+        "quantum_checkpoints": 16,
+        "wall_usec": 16031011
+      },
+      "seed": 930007,
+      "snapshot_usec": 4616,
+      "stage": "generate",
+      "tick_distribution_usec": {
+        "count": 863,
+        "max": 30920,
+        "p50": 9811,
+        "p95": 19749,
+        "p99": 25171
+      },
+      "tick_max_usec": 30920,
+      "ticks": 863,
+      "wall_usec": 15987400
+    }
+  ],
+  "export_sha256": {
+    "index.pck": "23039903de6b7ffc7dcb78306d7444cae9ca8e6745f500d779e246f588cbda82",
+    "index.audio.worklet.js": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3",
+    "index.js": "73a938dc76c5de073337170e7e9e322a66049e05b33563c7a91ac5248cf529ba",
+    "index.png": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e",
+    "index.apple-touch-icon.png": "01d4f63e525941e06ce74f5187dad030d20a8d52a07ce365ae4e94af97a3b1f5",
+    "index.icon.png": "ad3c35ad0facf487c618204bd98db543034fc95224eadc7f08c7a9ff38d5b3b5",
+    "index.audio.position.worklet.js": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8",
+    "index.wasm": "1ffaa14e9d530c11de13dccb539c0ca1923bac24f6b103941631c015d12cdc64",
+    "index.html": "60227e5f08b21091b80860e2e7022fdbb8a306e4e7fd32e273a30849f8099f73"
+  }
+}
