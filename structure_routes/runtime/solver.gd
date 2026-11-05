@@ -135,6 +135,7 @@ func complete_infill(prefix_count: int) -> bool:
 			if not original_ids.has(item.id):growth_instance_ids.append(item.id)
 		for item in items:
 			if not branch_ids.has(item.id):reward_core[item.id]=true
+		air_connected=await add_air_loop() if request.air_loop.enabled else false
 		if await final_accept():return true
 	items=before;branch_locks=locks_before;branch_ids={};growth_target_reached=false
 	return false
@@ -161,6 +162,7 @@ func build() -> bool:
 		if not has_paths:record_failure("structure_main_path_domain_empty");continue
 		if await STRUCTURE.new(self).solve(prefix):return true
 		record_failure("structure_reward_or_infill_exhausted")
+	if aborted():return false
 	error_status="SEARCH_EXHAUSTED";error_message="structure_plan_exhausted"
 	return false
 

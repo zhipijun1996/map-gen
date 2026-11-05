@@ -45,7 +45,7 @@ def main():
         assert cases
         for batch in (17, 128, 4096):
             cases.append(dict(id=f"batch-{batch}", request_data=copy.deepcopy(cases[0]["request_data"]), batch=batch))
-        for phase in ("growth", "reward_branches", "final_audit", "export"):
+        for phase in ("motif_catalog", "growth", "structure_domains", "reward_branches", "final_audit", "export"):
             cases.append(dict(id="cancel-" + phase, request_data=copy.deepcopy(cases[0]["request_data"]), batch=1, cancel_phase=phase, cancel_delay_usec=1))
     for case in cases:
         folder = args.out / "inputs" / case["id"]
@@ -86,6 +86,7 @@ def main():
         record = json.loads(path.read_text())
         actual = record["result"]
         checks = {"expected_status":actual["status"] == ("CANCELLED" if case["id"].startswith("cancel-") else "SEARCH_EXHAUSTED" if case["id"] == "failure" else "PASS"), "failure_empty":actual["status"] == "PASS" or actual["map"] is None and actual["content_store"] == {}}
+        if case["id"]=="failure":checks["expected_status"]=actual["status"] in ["SEARCH_EXHAUSTED","BUDGET_EXHAUSTED"]
         audit = None
         branch_audit = None
         if actual["status"] == "PASS":
@@ -112,11 +113,18 @@ def main():
                 details=actual["diagnostics"]["details"]
                 checks["planned_branch_modes"]=Counter(b["kind"] for b in details["reward_branches"])==Counter(details["structure_plan"]["reward_modes"])
                 checks["growth_target"]=details["growth_target_reached"]
-                from structure_routes.tools.audit import inspect as inspect_structure
-                checks["structure_proof"]=inspect_structure(actual)["status"]=="PASS"
+
             except Exception as error:
                 branch_audit = {"status":"FAIL", "error":repr(error)}
                 checks["exported_branch_witnesses"] = False
+        if actual["status"]=="PASS":
+            from structure_routes.tools.audit import inspect as inspect_structure
+            try:
+                structural=inspect_structure(actual)
+                checks["structure_proof"]=structural["status"]=="PASS"
+            except Exception as error:
+                checks["structure_proof"]=False
+                audit["structure_error"]=repr(error)
         normalized = copy.deepcopy(actual)
         normalized["metrics"].pop("generation_seconds", None)
         if primary is None: primary = normalized

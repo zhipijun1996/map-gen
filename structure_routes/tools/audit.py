@@ -17,6 +17,7 @@ def inspect(result):
         if n['kind'].startswith('port_'):name=n['instance_id']+'.'+n['port_id']+':'+n['kind'].removeprefix('port_')
         elif n['kind']=='start':name='START'
         elif n['kind']=='boss':name='BOSS'
+        elif n['kind']=='reward':name=n['instance_id']+':reward:'+n['route_id']+('' if n['target'] else ':'+n['reward_ids'][0])
         else:continue
         named[name]=nid
         if n['kind'].startswith('port_'):

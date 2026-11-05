@@ -6,6 +6,7 @@ var s
 var pool: Array=[]
 var conflicts: Array=[]
 var prefix:=0
+var bound_helper
 func _init(solver):s=solver
 
 func solve(growth_prefix: int) -> bool:
@@ -52,6 +53,8 @@ func solve(growth_prefix: int) -> bool:
 		for j in range(i):
 			if helper.incompatible(pool[i],pool[j]):row[j]=true;conflicts[j][i]=true
 		conflicts.append(row)
+	bound_helper=JOINT.new(s)
+	bound_helper.conflicts=conflicts
 	var domains: Array=[]
 	for kind in s.blueprint.reward_modes:
 		var domain: Array=[]
@@ -65,6 +68,13 @@ func assign(domains: Array,chosen: Dictionary) -> bool:
 	if s.aborted():return false
 	s.phase="reward_branches"
 	if chosen.size()==domains.size():return await s.complete_infill(prefix)
+	var union: Dictionary={}
+	for i in range(domains.size()):
+		if not chosen.has(i):
+			for value in domains[i]:union[value]=true
+	# A proper compatibility-graph coloring is a safe finite-domain upper bound.
+	if bound_helper.capacity_upper_bound(union.keys())<domains.size()-chosen.size():
+		s.structure_stats.domain_prunes+=1;return false
 	var slot: int=-1
 	for i in range(domains.size()):
 		if not chosen.has(i) and (slot<0 or domains[i].size()<domains[slot].size()):slot=i
