@@ -11,3 +11,16 @@
 交付包runtime_packages/experiments/0.9.0-experiment及receipt记录不可变源码commit、ZIP SHA、完整运行文件摘要、独立解压核验。readiness为research-prototype。真实成功样例、980005预算失败、980010搜索失败和jump-only失败均保留；失败无可用map/content_store。
 
 该实验尚无按动作时间计算的分叉间隔，阶段职责也未扩展为每条路线的完整任务状态。主路线宏构造和奖励构造沿用v7。map-edit不需要为了本实验改外围或升级模块；若调查低频模块应先定位具体连接/封口冲突，再提出有证据的作者修改。无随机布怪或新增危险，地图附加物不参与本轮对比。
+
+## 不可变产物
+
+- 实际源码commit：`27be7c0e1710f5b3c0a2b85ceb31ae428a44cf32`。
+- 产物commit：`d1cc57fb67b32ff67ec39ef14936b08e2acae0c5`。
+- 实现：`mapgen/gdscript-experiment-0.9.0+45a0e78b9f75`，30个运行文件。
+- [独立ZIP下载](https://raw.githubusercontent.com/zhipijun1996/map-gen/d1cc57fb67b32ff67ec39ef14936b08e2acae0c5/runtime_packages/experiments/0.9.0-experiment/mapgen-godot-experiment-0.9.0.zip)。
+- ZIP SHA256：`7009f3793e299508918cc920e00525bfcbb5f540d7295cbdef2f0e7d4830839e`。
+- manifest SHA256：`c2c4b364f99e7173ece27fef346fb377633069ea0506dbd619656b9f9726f78c`。
+- 仓库外独立解压并实际Godot重放：94项PASS，包含2成功＋3失败的完整结果比较及文件摘要。
+- 证据审阅122项PASS；它表示证据一致与安全检查通过，**不表示50次生成全成功**。
+
+包内HANDOFF在源码提交时冻结，不回写产物commit；本文件和receipt补充产物定位。安装/调用见[PACKAGE_USAGE.md](PACKAGE_USAGE.md)。未更改当前正式候选、宿主、模块锁或附加物组件。
