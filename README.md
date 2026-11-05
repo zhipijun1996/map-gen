@@ -130,3 +130,9 @@ python tools/export_png.py
 ## 结构生成新算法实验（0.7.0，非默认）
 
 [版本登记](structure_routes/VERSIONS.md)与[报告](structure_routes/REPORT.md)对比stable-v4、stable-v5和experimental-v6。新算法实际执行真实骨架、奖励motif有限域联合选择及普通填充；[60个seed地图对照](structure_routes/comparison/index.html)保留所有失败。两种结构配置有额外硬要求，不标作生产升级，不替换旧包。
+
+## 真实路线联合构造实验（0.8.0，非默认）
+
+[优化项与架构](route_construction/OPTIMIZATIONS.md)、[80个seed效果报告](route_construction/REPORT.md)、[地图对照](route_construction/comparison/index.html)。新算法联合奖励臂、未来汇合、主线绕行及Boss，显著提高同归并目标完成率；普通模块路线覆盖和Boss流程缩短的代价单列，保持研究状态。
+
+后续功能设计：[稀疏边界移动齿轮与分岔交互告示牌](docs/feature-proposals/boundary-hazards-and-signs.md)。已核对1.1.0输入并记录所需最小锚点，当前未实现，不计入0.8.0验证。
