@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "mapgen/map-additions-config/v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "signage",
+    "moving_saws",
+    "budget"
+  ],
+  "properties": {
+    "schema": {
+      "const": "mapgen/map-additions-config/v1"
+    },
+    "signage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "enabled",
+        "board_size_pixels",
+        "sample_step_pixels",
+        "interact_radius_pixels",
+        "search_radius_pixels",
+        "merge_radius_pixels",
+        "branch_separation_pixels",
+        "allow_suspended"
+      ],
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "board_size_pixels": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "sample_step_pixels": {
+          "type": "integer",
+          "minimum": 0,
+          "exclusiveMinimum": 0
+        },
+        "interact_radius_pixels": {
+          "type": "integer",
+          "minimum": 0,
+          "exclusiveMinimum": 0
+        },
+        "search_radius_pixels": {
+          "type": "integer",
+          "minimum": 0,
+          "exclusiveMinimum": 0
+        },
+        "merge_radius_pixels": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "branch_separation_pixels": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "allow_suspended": {
+          "type": "boolean"
+        }
+      }
+    },
+    "moving_saws": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "enabled",
+        "max_groups",
+        "radius_pixels",
+        "min_travel_pixels",
+        "max_travel_pixels",
+        "min_spacing_pixels",
+        "density_radius_pixels",
+        "max_local_groups",
+        "margin_pixels",
+        "period_seconds",
+        "random_keep_probability",
+        "candidate_limit"
+      ],
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "max_groups": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "radius_pixels": {
+          "type": "integer",
+          "minimum": 0,
+          "exclusiveMinimum": 0
+        },
+        "min_travel_pixels": {
+          "type": "integer",
+          "minimum": 0,
+          "exclusiveMinimum": 0
+        },
+        "max_travel_pixels": {
+          "type": "integer",
+          "minimum": 0,
+          "exclusiveMinimum": 0
+        },
+        "min_spacing_pixels": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "density_radius_pixels": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "max_local_groups": {
+          "type": "integer",
+          "minimum": 0,
+          "exclusiveMinimum": 0
+        },
+        "margin_pixels": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "period_seconds": {
+          "type": "number",
+          "minimum": 0,
+          "exclusiveMinimum": 0
+        },
+        "random_keep_probability": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "candidate_limit": {
+          "type": "integer",
+          "minimum": 0,
+          "exclusiveMinimum": 0
+        }
+      }
+    },
+    "budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "max_work_units"
+      ],
+      "properties": {
+        "max_work_units": {
+          "type": "integer",
+          "minimum": 0,
+          "exclusiveMinimum": 0
+        }
+      }
+    }
+  }
+}

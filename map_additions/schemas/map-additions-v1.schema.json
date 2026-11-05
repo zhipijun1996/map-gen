@@ -1,0 +1,595 @@
+{
+  "type": "object",
+  "properties": {
+    "schema": {
+      "const": "mapgen/map-additions/v1"
+    },
+    "status": {
+      "enum": [
+        "PASS",
+        "PARTIAL",
+        "INVALID_INPUT",
+        "BUDGET_EXHAUSTED",
+        "CANCELLED"
+      ]
+    },
+    "implementation": {
+      "type": "string"
+    },
+    "source_map_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_sha256": {
+      "type": "string"
+    },
+    "fingerprint": {
+      "type": "string"
+    },
+    "targets": {
+      "type": "object"
+    },
+    "signs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "instance_id": {
+            "type": "string"
+          },
+          "position_pixels": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "interaction_position_pixels": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "actor_stand_position_pixels": {
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "mount": {
+            "enum": [
+              "floor",
+              "suspended"
+            ]
+          },
+          "views": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "decision_id": {
+                  "type": "string"
+                },
+                "arrival_port_id": {
+                  "type": "string"
+                },
+                "directions": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exit_port_id": {
+                        "type": "string"
+                      },
+                      "route_ids": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "uniqueItems": true
+                      },
+                      "exit_position_pixels": {
+                        "type": "array",
+                        "items": {
+                          "type": "number"
+                        },
+                        "minItems": 2,
+                        "maxItems": 2
+                      },
+                      "categories": {
+                        "type": "array",
+                        "items": {
+                          "enum": [
+                            "chest",
+                            "shop",
+                            "boss"
+                          ]
+                        },
+                        "uniqueItems": true
+                      },
+                      "targets": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "uniqueItems": true
+                      },
+                      "route_direction_vector": {
+                        "type": "array",
+                        "items": {
+                          "type": "number"
+                        },
+                        "minItems": 2,
+                        "maxItems": 2
+                      },
+                      "arrow": {
+                        "enum": [
+                          "left",
+                          "right",
+                          "up",
+                          "down",
+                          "up_left",
+                          "up_right",
+                          "down_left",
+                          "down_right"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "exit_port_id",
+                      "route_ids",
+                      "exit_position_pixels",
+                      "categories",
+                      "targets",
+                      "route_direction_vector",
+                      "arrow"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "minItems": 2
+                },
+                "shared_targets": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "uniqueItems": true
+                },
+                "shared_categories": {
+                  "type": "array",
+                  "items": {
+                    "enum": [
+                      "chest",
+                      "shop",
+                      "boss"
+                    ]
+                  },
+                  "uniqueItems": true
+                }
+              },
+              "required": [
+                "decision_id",
+                "arrival_port_id",
+                "directions",
+                "shared_targets",
+                "shared_categories"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1
+          },
+          "collidable": {
+            "const": false
+          },
+          "interaction": {
+            "const": "inspect_routes"
+          },
+          "placement_validation": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "instance_id",
+          "position_pixels",
+          "interaction_position_pixels",
+          "actor_stand_position_pixels",
+          "mount",
+          "views",
+          "collidable",
+          "interaction",
+          "placement_validation"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "moving_saws": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "kind": {
+            "const": "moving_saw"
+          },
+          "origin": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "travel": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "radius": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "period": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "initial_phase": {
+            "type": "number",
+            "minimum": 0,
+            "exclusiveMaximum": 1
+          },
+          "center_pixels": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "swept_envelope_pixels": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 4,
+            "maxItems": 4
+          },
+          "protected_envelope_pixels": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 4,
+            "maxItems": 4
+          },
+          "boundary_instances": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "boundary_class": {
+            "enum": [
+              "internal",
+              "outer"
+            ]
+          },
+          "placement_validation": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "origin",
+          "travel",
+          "radius",
+          "period",
+          "initial_phase",
+          "center_pixels",
+          "swept_envelope_pixels",
+          "protected_envelope_pixels",
+          "boundary_instances",
+          "boundary_class",
+          "placement_validation"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "gaps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "decision_id": {
+            "type": "string"
+          },
+          "instance_id": {
+            "type": "string"
+          },
+          "arrival_port_id": {
+            "type": "string"
+          },
+          "reason": {
+            "enum": [
+              "NO_TAGGABLE_TARGET",
+              "NO_CLEAR_SUPPORTED_OR_SUSPENDED_PLACEMENT"
+            ]
+          },
+          "fork_position_pixels": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          }
+        },
+        "required": [
+          "decision_id",
+          "instance_id",
+          "arrival_port_id",
+          "reason",
+          "fork_position_pixels"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "stats": {
+      "type": "object"
+    },
+    "error": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "readiness": {
+      "const": "research-prototype"
+    },
+    "config": {
+      "$ref": "#/$defs/config"
+    },
+    "validation": {
+      "type": "object"
+    },
+    "metrics": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema",
+    "status",
+    "implementation",
+    "source_map_id",
+    "source_sha256",
+    "fingerprint",
+    "targets",
+    "signs",
+    "moving_saws",
+    "gaps",
+    "stats",
+    "error",
+    "readiness"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "mapgen/map-additions/v1",
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "enum": [
+              "PASS",
+              "PARTIAL"
+            ]
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "config",
+          "validation",
+          "metrics"
+        ]
+      },
+      "else": {
+        "properties": {
+          "signs": {
+            "maxItems": 0
+          },
+          "moving_saws": {
+            "maxItems": 0
+          },
+          "targets": {
+            "maxProperties": 0
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "config": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema",
+        "signage",
+        "moving_saws",
+        "budget"
+      ],
+      "properties": {
+        "schema": {
+          "const": "mapgen/map-additions-config/v1"
+        },
+        "signage": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "enabled",
+            "board_size_pixels",
+            "sample_step_pixels",
+            "interact_radius_pixels",
+            "search_radius_pixels",
+            "merge_radius_pixels",
+            "branch_separation_pixels",
+            "allow_suspended"
+          ],
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "board_size_pixels": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "sample_step_pixels": {
+              "type": "integer",
+              "minimum": 0,
+              "exclusiveMinimum": 0
+            },
+            "interact_radius_pixels": {
+              "type": "integer",
+              "minimum": 0,
+              "exclusiveMinimum": 0
+            },
+            "search_radius_pixels": {
+              "type": "integer",
+              "minimum": 0,
+              "exclusiveMinimum": 0
+            },
+            "merge_radius_pixels": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "branch_separation_pixels": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "allow_suspended": {
+              "type": "boolean"
+            }
+          }
+        },
+        "moving_saws": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "enabled",
+            "max_groups",
+            "radius_pixels",
+            "min_travel_pixels",
+            "max_travel_pixels",
+            "min_spacing_pixels",
+            "density_radius_pixels",
+            "max_local_groups",
+            "margin_pixels",
+            "period_seconds",
+            "random_keep_probability",
+            "candidate_limit"
+          ],
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "max_groups": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "radius_pixels": {
+              "type": "integer",
+              "minimum": 0,
+              "exclusiveMinimum": 0
+            },
+            "min_travel_pixels": {
+              "type": "integer",
+              "minimum": 0,
+              "exclusiveMinimum": 0
+            },
+            "max_travel_pixels": {
+              "type": "integer",
+              "minimum": 0,
+              "exclusiveMinimum": 0
+            },
+            "min_spacing_pixels": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "density_radius_pixels": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "max_local_groups": {
+              "type": "integer",
+              "minimum": 0,
+              "exclusiveMinimum": 0
+            },
+            "margin_pixels": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "period_seconds": {
+              "type": "number",
+              "minimum": 0,
+              "exclusiveMinimum": 0
+            },
+            "random_keep_probability": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "candidate_limit": {
+              "type": "integer",
+              "minimum": 0,
+              "exclusiveMinimum": 0
+            }
+          }
+        },
+        "budget": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "max_work_units"
+          ],
+          "properties": {
+            "max_work_units": {
+              "type": "integer",
+              "minimum": 0,
+              "exclusiveMinimum": 0
+            }
+          }
+        }
+      }
+    }
+  }
+}

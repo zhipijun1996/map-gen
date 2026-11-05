@@ -1,0 +1,33 @@
+{
+  "schema": "mapgen/map-additions-config/v1",
+  "signage": {
+    "enabled": true,
+    "board_size_pixels": [
+      32,
+      32
+    ],
+    "sample_step_pixels": 16,
+    "interact_radius_pixels": 96,
+    "search_radius_pixels": 256,
+    "merge_radius_pixels": 64,
+    "branch_separation_pixels": 64,
+    "allow_suspended": true
+  },
+  "moving_saws": {
+    "enabled": true,
+    "max_groups": 8,
+    "radius_pixels": 16,
+    "min_travel_pixels": 64,
+    "max_travel_pixels": 192,
+    "min_spacing_pixels": 384,
+    "density_radius_pixels": 640,
+    "max_local_groups": 2,
+    "margin_pixels": 8,
+    "period_seconds": 5.0,
+    "random_keep_probability": 0.25,
+    "candidate_limit": 512
+  },
+  "budget": {
+    "max_work_units": 2000000
+  }
+}
