@@ -1,0 +1,123 @@
+{
+  "schema": "mapgen/generator-config/v1",
+  "algorithm": "experimental-v8-role-aware-growth",
+  "random": {
+    "algorithm": "python-mt19937-v1",
+    "selection": "uniform_top_k"
+  },
+  "goals": {
+    "growth_target": 32,
+    "reward_target": 6,
+    "main_paths_required": 3
+  },
+  "shape": {
+    "target_ratio": 1.5,
+    "soft_tolerance": 1.35,
+    "max_aspect": 3.0
+  },
+  "scoring": {
+    "auto_connection": 24,
+    "repeat_module": 8,
+    "growth_noise": 3,
+    "perimeter": 0.35,
+    "aspect": 60,
+    "left_bias": 0,
+    "height_bias": 0,
+    "usable_exit": 8,
+    "bidirectional_exit": 3,
+    "terminal_slot": 2,
+    "dead_end": -24,
+    "vertical_exit": 8,
+    "distinct_direction": 4,
+    "reward_reserve": 24,
+    "reservation_repeat": 5,
+    "reservation_area": 0.1,
+    "reward_noise": 4,
+    "reward_near_radius": 8,
+    "reward_near_penalty": 5,
+    "closure_noise": 2,
+    "boss_distance": 1
+  },
+  "search": {
+    "growth_frontier_limit": 22,
+    "growth_choice_count": 5,
+    "close_attempts": 3,
+    "close_depth": 3,
+    "closure_beam_width": 18,
+    "candidate_expansion_budget": 500000,
+    "per_seed_timeout_seconds": 90,
+    "max_growth_backtracks": 128,
+    "max_rewind_depth": 3,
+    "max_terminal_states": 128,
+    "max_layout_repairs": 8,
+    "growth_shortlist": 18,
+    "closure_source_limit": 24,
+    "closure_target_distance2": 40,
+    "closure_distance_limit2": 32,
+    "boss_choice_count": 5,
+    "reward_choice_count": 5,
+    "budget_check_interval": 256,
+    "reserve_from_growth_count": 8
+  },
+  "seals": {
+    "thickness_pixels": 32
+  },
+  "diversity": {
+    "exit_decay": 0.95,
+    "repeat_power": 1.0,
+    "early_fraction": 0.25,
+    "late_fraction": 0.75,
+    "late_exit_weight": 0.95,
+    "reward_repeat_penalty": 8.0,
+    "merge_bonus": 20.0,
+    "multi_return_bonus": 6.0,
+    "branch_length_bonus": 1.0,
+    "connector_repeat_penalty": 2.0,
+    "branch_depth": 3,
+    "branch_beam_width": 6,
+    "branch_source_limit": 6,
+    "branch_completion_limit": 18,
+    "growth_poses_per_module": 3,
+    "growth_score_slack": 12.0
+  },
+  "planning": {
+    "candidate_pool_limit": 48,
+    "direct_scan_limit": 96,
+    "merge_target_limit": 12,
+    "bridge_matches_per_front": 4
+  },
+  "topology": {
+    "backbone_min": 16,
+    "backbone_max": 20,
+    "domain_limit": 48,
+    "reward_modes": [
+      "forward_merge",
+      "multi_return",
+      "multi_return",
+      "multi_return",
+      "multi_return",
+      "multi_return"
+    ]
+  },
+  "construction": {
+    "anchor_growth_count": 4,
+    "max_anchor_growth_count": 8,
+    "bypass_depth": 2,
+    "macro_candidate_limit": 96,
+    "core_loop_policy": "path_gain"
+  },
+  "growth_roles": {
+    "large_min_area": 24,
+    "early_large_target": 2,
+    "large_early_limit": 12,
+    "frontier_target": 4,
+    "large_bonus": 36,
+    "continue_exit_penalty": 6,
+    "adjacent_fork_penalty": 24,
+    "new_fork_penalty": 8,
+    "selection_slack": 3,
+    "role_enabled": true,
+    "large_enabled": true,
+    "spacing_enabled": true
+  }
+}

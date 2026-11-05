@@ -1,5 +1,7 @@
 # 《失序之钟》Map Generator
 
+最新独立实验：[v8 路线职责生长与大型双口模块](role_growth/README.md)、[同 seed 地图对照](role_growth/comparison/index.html)、[结果与失败报告](role_growth/REPORT.md)。共同成功图的分叉相邻减少约29%，大型双口使用增加；全新10个seed仅8个成功，暂不替换v7或正式候选。
+
 新算法优化实验：[源模块候选分组、分阶段评分与完整奖励支路](branch_routes/README.md)，[0.5.0候选交付与不可变下载](branch_routes/DELIVERY.md)。优先探索取奖后归并，支持多模块独立折返；使用独立算法身份与显式配置，验证和交付状态见该目录。
 
 本轮优化候选：[0.4.2 速度与可选多样性配置](runtime_iteration/README.md)，[同 seed 地图对照](runtime_iteration/comparisons/index.html)及[实测报告](runtime_iteration/REPORT.md)。原默认结果保持；新配置单独选择，仍为 candidate。
