@@ -3,7 +3,7 @@ import argparse,gzip,hashlib,json,shutil,subprocess,tempfile,zipfile
 from pathlib import Path
 from map_additions.tools.setup import ROOT,assemble
 from map_additions.tools.fixtures import fixture,shop_anchors
-p=argparse.ArgumentParser(__doc__);p.add_argument('--out',type=Path,required=True);p.add_argument('--godot',type=Path,required=True);a=p.parse_args();a.out.mkdir(parents=True,exist_ok=False)
+p=argparse.ArgumentParser(__doc__);p.add_argument('--out',type=Path,required=True);p.add_argument('--godot',type=Path,required=True);a=p.parse_args();a.out=a.out.resolve();a.out.mkdir(parents=True,exist_ok=False)
 source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
 with tempfile.TemporaryDirectory(prefix='map-additions-build-') as tmp:
  root=Path(tmp)/'mapgen-map-additions-candidate-0.1.0';assemble(root);(root/'examples').mkdir();shutil.copytree(ROOT/'map_additions/profiles',root/'profiles');shutil.copytree(ROOT/'map_additions/schemas',root/'schemas')
@@ -24,4 +24,4 @@ with tempfile.TemporaryDirectory(prefix='map-additions-build-') as tmp:
   for f in sorted(root.rglob('*')):
    if f.is_file():
     info=zipfile.ZipInfo(str(f.relative_to(root.parent)),date_time=(2026,11,5,0,0,0));info.compress_type=zipfile.ZIP_DEFLATED;info.external_attr=0o100644<<16;z.writestr(info,f.read_bytes())
- digest=hashlib.sha256(path.read_bytes()).hexdigest();path.with_suffix('.zip.sha256').write_text(digest+'  '+path.name+'\n');receipt=dict(path=str(path.relative_to(ROOT)),sha256=digest,bytes=path.stat().st_size,source_commit=source_commit,manifest_sha256=hashlib.sha256((root/'manifest.json').read_bytes()).hexdigest(),runtime_file_count=len(lock),runtime_target=manifest['runtime_target'],readiness=manifest['readiness']);(a.out/'receipt.json').write_text(json.dumps(receipt,indent=2)+'\n');print(json.dumps(receipt,indent=2))
+ digest=hashlib.sha256(path.read_bytes()).hexdigest();path.with_suffix('.zip.sha256').write_text(digest+'  '+path.name+'\n');receipt=dict(path=str(path.relative_to(ROOT)) if path.is_relative_to(ROOT) else str(path),sha256=digest,bytes=path.stat().st_size,source_commit=source_commit,manifest_sha256=hashlib.sha256((root/'manifest.json').read_bytes()).hexdigest(),runtime_file_count=len(lock),runtime_target=manifest['runtime_target'],readiness=manifest['readiness']);(a.out/'receipt.json').write_text(json.dumps(receipt,indent=2)+'\n');print(json.dumps(receipt,indent=2))
