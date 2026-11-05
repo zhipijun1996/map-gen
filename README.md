@@ -126,3 +126,7 @@ python tools/export_png.py
 ## 奖励联合规划优化实验（独立，未替换默认）
 
 见[joint_routes](joint_routes/README.md)：0.5.1为保持0.5.0行为的性能候选；0.6.0-experiment为提高两能力样本成功率但存在多样性退步的研究原型。[40图对照](joint_routes/comparison-v7/index.html)及全部失败保留。两包仍非生产就绪。
+
+## 结构生成新算法实验（0.7.0，非默认）
+
+[版本登记](structure_routes/VERSIONS.md)与[报告](structure_routes/REPORT.md)对比stable-v4、stable-v5和experimental-v6。新算法实际执行真实骨架、奖励motif有限域联合选择及普通填充；[60个seed地图对照](structure_routes/comparison/index.html)保留所有失败。两种结构配置有额外硬要求，不标作生产升级，不替换旧包。
