@@ -136,3 +136,7 @@ python tools/export_png.py
 [优化项与架构](route_construction/OPTIMIZATIONS.md)、[80个seed效果报告](route_construction/REPORT.md)、[地图对照](route_construction/comparison/index.html)。新算法联合奖励臂、未来汇合、主线绕行及Boss，显著提高同归并目标完成率；普通模块路线覆盖和Boss流程缩短的代价单列，保持研究状态。
 
 后续功能设计：[稀疏边界移动齿轮与分岔交互告示牌](docs/feature-proposals/boundary-hazards-and-signs.md)。已核对1.1.0输入并记录所需最小锚点，当前未实现，不计入0.8.0验证。
+
+### 地图级附加物候选（独立于生成算法）
+
+[map_additions 0.1.0](map_additions/README.md)：整图后自动路线告示牌与稀疏边界移动齿轮；[同批40seed对照](map_additions/comparison/index.html)、[算法整体选择与缺口](map_additions/REPORT.md)。旧生成包和默认锁保持不变；当前为静态候选与审图实现，主游戏伤害、交互和整图可玩性待验。

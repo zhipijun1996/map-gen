@@ -1,0 +1,48 @@
+{
+  "source_lock": {
+    "data_json.gd": "eff4d19c0b8186a1467bb449cd496a4a68dea7d4b73040691340d1da60aadde5",
+    "decimal64.gd": "a1c39dc62d62f8191a6d306942b2f549e674e09212970f8bd4a44153ed8e8109",
+    "geometry.gd": "a8ed05ae931ea03eb5aecd2abbd24b1e6411722058cdf672cf0c8744a1231af8",
+    "job.gd": "04505f2913db4daaeee05603188b5e9e855072b70e04e8667489cd7f74f75870",
+    "moving_saws.gd": "0ae14ed45651d85b8160228b5e0f10f6ec41245ecd3ba434edf54d6400af9fa7",
+    "protocol.gd": "b8b762359198f7ebe634e7d0527feba8b883d743871d2b7e66bcb2e0e2d78d08",
+    "python_rng.gd": "6b70397a8f8f7dbfd2ba9f2c49101c9e5174e22fc4b761e1e97c07c6a61964d4",
+    "signage.gd": "90b8bbe4b8394888cf38050fbb602f287bd70bf2c182f8ee220ce0f5495c0e88",
+    "work_gate.gd": "fec67bc46e091be2d7919003aa0e525c0112772beab12ac82e6da1fcf41e4079"
+  },
+  "config": {
+    "schema": "mapgen/map-additions-config/v1",
+    "signage": {
+      "enabled": true,
+      "board_size_pixels": [
+        32,
+        32
+      ],
+      "sample_step_pixels": 16,
+      "interact_radius_pixels": 96,
+      "search_radius_pixels": 256,
+      "merge_radius_pixels": 64,
+      "branch_separation_pixels": 64,
+      "allow_suspended": true
+    },
+    "moving_saws": {
+      "enabled": true,
+      "max_groups": 8,
+      "radius_pixels": 16,
+      "min_travel_pixels": 64,
+      "max_travel_pixels": 192,
+      "min_spacing_pixels": 384,
+      "density_radius_pixels": 640,
+      "max_local_groups": 2,
+      "margin_pixels": 8,
+      "period_seconds": 5.0,
+      "random_keep_probability": 0.25,
+      "candidate_limit": 512
+    },
+    "budget": {
+      "max_work_units": 2000000
+    }
+  },
+  "config_file_sha256": "857a9b085c761800727de32c3fb6ca8ffa693600465b4ad2db59c4dae3baa7a8",
+  "rule": "pilot1-4 used calibration seeds930001/930007; frozen before full40; no reroll of base generation"
+}
